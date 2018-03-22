@@ -1,0 +1,8 @@
+baseURL = "http://superdanby.github.io/blog"
+languageCode = "en-us"
+title = "Yee"
+theme = "zmd"
+publishDir = "docs"
+FootnoteReturnLinkContents = "↩"
+uglyurls = true
+preserveTaxonomyNames = true
