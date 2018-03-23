@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on Yee</title>
+    <link>http://superdanby.github.io/Blog/tags/security.html</link>
+    <description>Recent content in Security on Yee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://superdanby.github.io/Blog/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Security</title>
+      <link>http://superdanby.github.io/Blog/security.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/security.html</guid>
+      <description>Foot Printing Search Engines Google, duckduckgo, bing, Archive
+Google inurl, allinurl, intitle, allintitle, site, related, filetype, intext
+GHDB People Facebook, Linkedin, Google+, Twitter
+Website Debugger-&amp;gt;Network-&amp;gt;Server Version, Content-Types, Cookie, Powered-By
+Chrome Dev Tool, Firebug, Burp Suite, Zaproxy, Wirershark, cli:telnet
+Html Source: Dev comments, frameworks
+Grabbing Websites cli:wget --recursive --depth=10, httrack(Windows), Pavu, WebRipper 2.0, WinWSD
+Email Tracking 1.hidden element 2.Link Redirection 3.Tools - YesWare - HubSpot - BananaTag - GetNotify - ReadNotify - WhoReadMe - MsgTag - DidTheyReadIt</description>
+    </item>
+    
+  </channel>
+</rss>

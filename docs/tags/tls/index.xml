@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TLS on Yee</title>
+    <link>http://superdanby.github.io/Blog/tags/tls.html</link>
+    <description>Recent content in TLS on Yee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 26 Feb 2018 14:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://superdanby.github.io/Blog/tags/tls/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Manually Obtain Letsencrypt Certificate for Websites</title>
+      <link>http://superdanby.github.io/Blog/manualcertbot.html</link>
+      <pubDate>Mon, 26 Feb 2018 14:00:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/manualcertbot.html</guid>
+      <description>There are sometimes you need your website to have Https connection. The most common to get a free certificate is to use Let&amp;rsquo;s Encrypt. Setting up a certificate with shell access on the same machine is pretty easy. But Certbot requires you to have root privileges. That&amp;rsquo;s really a pain in the ass. A work around is to use manual mode on another machine where allows you to sudo.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,409 @@
+<html lang="tw">
+    <head>
+        <title>
+        
+    Security | Yee
+
+        </title>
+
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <link rel="shortcut icon" type="image/jpeg" href="/Blog/abouts/me.jpg" />
+        
+        
+        <link rel="stylesheet" href="/Blog/style.min.css">
+
+        
+        
+    </head>
+
+    <body>
+        
+        <header>
+
+    
+    <div class="icon">
+        <a href="http://superdanby.github.io/Blog"><img src="/Blog/abouts/me.gif" alt="me"></a>
+    </div>
+
+    
+    <div class="name">
+        <a href="http://superdanby.github.io/Blog">Superdanby</a>
+    </div>
+
+    
+    <div class="menu">
+        <a href="/Blog/abouts.html">ABOUT</a>
+        <a href="/Blog/categories.html">CATEGORY</a>
+        <a href="/Blog/tags.html">TAG</a>
+    </div>
+
+</header>
+
+
+        
+        <main>
+            
+    <article>
+
+    
+    <div class="info">
+        <div class="top">
+            <span title="Date">0001/01/01</span>
+            <span>@</span>
+            <span>
+                
+                   
+                   <a href="http://superdanby.github.io/Blog/categories/security.html">Security</a>
+                
+            </span>
+        </div>
+
+        <h1 class="title">Security</h1>
+
+        <div class="bottom">
+            
+                <a href="http://superdanby.github.io/Blog/tags/security.html">Security</a>
+            
+        </div>
+    </div>
+
+    
+    
+    <div class="md-content">
+        
+        
+            <div class="toc">
+                <span>TOC</span>
+                <nav id="TableOfContents">
+<ul>
+<li><a href="#foot-printing">Foot Printing</a>
+<ul>
+<li><a href="#search-engines">Search Engines</a>
+<ul>
+<li><a href="#google">Google</a></li>
+<li><a href="#ghdb-http-www-hackersforcharity-org-ghdb"><a href="http://www.hackersforcharity.org/ghdb/">GHDB</a></a></li>
+</ul></li>
+<li><a href="#people">People</a></li>
+<li><a href="#website">Website</a>
+<ul>
+<li><a href="#grabbing-websites">Grabbing Websites</a></li>
+</ul></li>
+<li><a href="#email-tracking">Email Tracking</a></li>
+<li><a href="#ip-blocks">IP Blocks</a></li>
+<li><a href="#os">OS</a></li>
+<li><a href="#path-analysis">Path Analysis</a></li>
+<li><a href="#dns-whois">DNS/WhoIs</a></li>
+<li><a href="#tools">Tools</a></li>
+<li><a href="#icmp-scanning">ICMP Scanning</a></li>
+</ul></li>
+<li><a href="#network-scanning">Network Scanning</a>
+<ul>
+<li><a href="#tcp-ip-package-builder">TCP/IP Package Builder</a></li>
+<li><a href="#tcp-scanning-types">TCP Scanning Types</a></li>
+<li><a href="#avoid-intrusion-detection-prevention-systems">Avoid Intrusion Detection/Prevention Systems</a></li>
+<li><a href="#banner-grabbing">Banner Grabbing</a></li>
+<li><a href="#banner-hiding">Banner Hiding</a></li>
+<li><a href="#http-tunnel">HTTP Tunnel</a></li>
+<li><a href="#ssh-tunnel">SSH Tunnel</a></li>
+<li><a href="#ip-spoofing-detection">IP Spoofing Detection</a></li>
+</ul></li>
+<li><a href="#enumeration">Enumeration</a>
+<ul>
+<li><a href="#common-services-ports">Common Services/Ports</a></li>
+<li><a href="#netbios">NetBIOS</a></li>
+</ul></li>
+</ul>
+</nav>
+            </div>
+        
+        
+        
+
+<h1 id="foot-printing">Foot Printing</h1>
+
+<h2 id="search-engines">Search Engines</h2>
+
+<p><a href="https://www.google.com/">Google</a>, <a href="https://duckduckgo.com/">duckduckgo</a>, <a href="https://www.bing.com/">bing</a>, <a href="https://archive.org/">Archive</a></p>
+
+<h3 id="google">Google</h3>
+
+<p>inurl, allinurl, intitle, allintitle, site, related, filetype, intext</p>
+
+<h3 id="ghdb-http-www-hackersforcharity-org-ghdb"><a href="http://www.hackersforcharity.org/ghdb/">GHDB</a></h3>
+
+<h2 id="people">People</h2>
+
+<p><a href="https://www.facebook.com/">Facebook</a>, <a href="https://www.linkedin.com/">Linkedin</a>, <a href="https://plus.google.com/">Google+</a>, <a href="https://twitter.com/?lang=en">Twitter</a></p>
+
+<h2 id="website">Website</h2>
+
+<p>Debugger-&gt;Network-&gt;Server Version, Content-Types, Cookie, Powered-By</p>
+
+<p>Chrome Dev Tool, Firebug, Burp Suite, Zaproxy, Wirershark, cli:<code>telnet</code></p>
+
+<p>Html Source: Dev comments, frameworks</p>
+
+<h3 id="grabbing-websites">Grabbing Websites</h3>
+
+<p>cli:<code>wget --recursive --depth=10</code>, httrack(Windows), Pavu, <a href="www.calluna-software.com">WebRipper 2.0</a>, <a href="winwsd.uw.hu">WinWSD</a></p>
+
+<h2 id="email-tracking">Email Tracking</h2>
+
+<p>1.hidden element
+2.Link Redirection
+3.Tools
+    -   YesWare
+    -   HubSpot
+    -   BananaTag
+    -   GetNotify
+    -   ReadNotify
+    -   WhoReadMe
+    -   MsgTag
+    -   DidTheyReadIt</p>
+
+<h2 id="ip-blocks">IP Blocks</h2>
+
+<p>cli:<code>host [domain]</code>, ARIN, AFRINIC, APNIC, LACNIC, RIPE NCC</p>
+
+<h2 id="os">OS</h2>
+
+<p>Netcraft, Shodan</p>
+
+<p>cli: <code>nmap -A [domain]</code></p>
+
+<h2 id="path-analysis">Path Analysis</h2>
+
+<p>Unix:<code>traceroute [domain/ip]</code>: UDP by default, -I to use ICMP
+Windows:<code>tracert</code>: ICMP only</p>
+
+<p>Tools: <a href="http://visualtraceroute.net/">OpenVisualTrace</a></p>
+
+<h2 id="dns-whois">DNS/WhoIs</h2>
+
+<p>cli:<code>nslookup</code>, <code>dig ANY [domain]</code>, <code>whois [domain]</code></p>
+
+<h2 id="tools">Tools</h2>
+
+<p><a href="https://www.paterva.com/web7/">Maltego</a>, <a href="https://domainpunch.com/dnapro/">Domain Name Analyzer Pro</a>, <a href="http://www.webextractor.com/download.htm">Web Extractor</a>, cli: <code>tctrace</code></p>
+
+<h2 id="icmp-scanning">ICMP Scanning</h2>
+
+<p><code>nmap -sS [domain/subnet]</code></p>
+
+<h1 id="network-scanning">Network Scanning</h1>
+
+<h2 id="tcp-ip-package-builder">TCP/IP Package Builder</h2>
+
+<p><code>nmap</code></p>
+
+<p><a href="http://www.hping.org/">hping3</a></p>
+
+<h2 id="tcp-scanning-types">TCP Scanning Types</h2>
+
+<ul>
+<li><p>Full: Will be logged(friendly).</p>
+
+<ul>
+<li>Open: SYN-&gt;, SYN/ACK&lt;-, ACK/RST-&gt;</li>
+<li>Closed: SYN-&gt;, RST&lt;-</li>
+</ul></li>
+
+<li><p>Half-Open:</p>
+
+<ul>
+<li>Open: SYN-&gt;, SYN/ACK, RST-&gt;</li>
+<li>Closed: SYN-&gt;, RST&lt;-</li>
+</ul></li>
+
+<li><p>XMAS:</p>
+
+<ul>
+<li>Open: FIN/PSH/URG-&gt;, NO RESPONSE</li>
+<li>Closed: FIN/PSH/URG-&gt;, RST&lt;-</li>
+</ul></li>
+
+<li><p>FIN:</p>
+
+<ul>
+<li>Open: FIN-&gt;,  NO RESPONSE</li>
+<li>Closed: FIN-&gt;,  RST/ACK&lt;-</li>
+</ul></li>
+
+<li><p>NULL:</p>
+
+<ul>
+<li>Open: NO FLAGS-&gt;, NO RESPONSE</li>
+<li>Closed: NO FLAGS-&gt;, RST/ACK&lt;-</li>
+</ul></li>
+
+<li><p>IDLE: Determined by IP ID increment. Zombie ports are closed.</p>
+
+<ul>
+<li>Open(increment by 2):
+
+<ol>
+<li>A-&gt;Zombie: SYN/ACK</li>
+<li>Zombie-&gt;A: RST(Get IP ID in the header)</li>
+<li>Spoofed Zombie-&gt;B: SYN</li>
+<li>B-&gt;Zombie: SYN/ACK</li>
+<li>Zombie-&gt;B(IP ID ++): RST</li>
+<li>A-&gt;Zombie: SYN/ACK</li>
+<li>Zombie-&gt;A(IP ID ++): RST</li>
+</ol></li>
+<li>Closed(increment by 1):
+
+<ol>
+<li>A-&gt;Zombie: SYN/ACK</li>
+<li>Zombie-&gt;A: RST(Get IP ID in the header)</li>
+<li>Spoofed Zombie-&gt;B: SYN</li>
+<li>B-&gt;Zombie: RST</li>
+<li>A-&gt;Zombie: SYN/ACK</li>
+<li>Zombie-&gt;A(IP ID ++): RST</li>
+</ol></li>
+</ul></li>
+
+<li><p>Inverse TCP: invalid flags will be ignored when port is open. E.g. XMAS, FIN, NULL, etc.</p></li>
+
+<li><p>ACK: Can only check if there is a filter between Src and Dest.</p>
+
+<ul>
+<li>Reachable: Open, Closed: RST</li>
+<li>Unreachable: NO RESPONSE</li>
+</ul></li>
+</ul>
+
+<h2 id="avoid-intrusion-detection-prevention-systems">Avoid Intrusion Detection/Prevention Systems</h2>
+
+<ol>
+<li>Fragmentation(commonly used): send small MTU packets and reassemble on destination.</li>
+<li>IP Spoofing: like IDLE scan.</li>
+<li>via Proxy.</li>
+<li>Source Routing: specify intermediate hops, rarely used.</li>
+</ol>
+
+<h2 id="banner-grabbing">Banner Grabbing</h2>
+
+<ul>
+<li><code>telnet [Host IP] [Port]</code></li>
+<li><code>nc [Host IP] [Port]</code></li>
+<li><a href="grc.com">grc.com</a></li>
+<li><a href="netcraft.com">netcraft.com</a></li>
+</ul>
+
+<p>Extension:
+    Microsoft IIS: .aspx</p>
+
+<h2 id="banner-hiding">Banner Hiding</h2>
+
+<ul>
+<li><p>Apache:</p>
+
+<ul>
+<li>apache2.conf:
+
+<ul>
+<li>ServerSignature Off</li>
+<li>ServerTokens Prod</li>
+</ul></li>
+<li>mod_headers:
+
+<ul>
+<li>set Server &ldquo;CheetOS 1.2&rdquo;</li>
+</ul></li>
+</ul></li>
+
+<li><p>IIS:</p>
+
+<ul>
+<li>IIS Lockdown Tool</li>
+</ul></li>
+</ul>
+
+<h2 id="http-tunnel">HTTP Tunnel</h2>
+
+<p>Recuires VNC(?</p>
+
+<p><a href="https://tools.kali.org/maintaining-access/http-tunnel">httptunnel</a></p>
+
+<h2 id="ssh-tunnel">SSH Tunnel</h2>
+
+<p>Recuires VNC(?</p>
+
+<p><code>ssh -L [Local Port]:[Dest. VNC IP]:[Dest. Port] [Username]@[Dest. SSH IP]</code></p>
+
+<h2 id="ip-spoofing-detection">IP Spoofing Detection</h2>
+
+<p><a href="http://seclab.cs.ucdavis.edu/papers/DetectingSpoofed-DISCEX.pdf">DetectingSpoofed-DISCEX.pdf</a></p>
+
+<ol>
+<li>TTL: should be the same</li>
+<li>IP ID: should be near or greater</li>
+<li>TCP Flow: Window Size should not be 0, with SYN/ACK</li>
+<li>Router: Incomming Ip should not be an IP inside. Leaving destination should not target the IPs inside.</li>
+</ol>
+
+<h1 id="enumeration">Enumeration</h1>
+
+<h2 id="common-services-ports">Common Services/Ports</h2>
+
+<ul>
+<li>DNS: TCP/UDP 53</li>
+<li>SMB: TCP/UDP 445</li>
+<li>SNMP: UDP 161</li>
+<li>LDAP: TCP/UDP 389</li>
+<li>RPC: TCP/UDP 135</li>
+<li>NBNS: TCP/UDP 137</li>
+<li>NBSS: TCP/UDP 139</li>
+</ul>
+
+<p><strong>Ports are subject to change.</strong></p>
+
+<h2 id="netbios">NetBIOS</h2>
+
+<p>Network Basic Input/Ouptput System</p>
+
+<p>RFC 1001 RFC 1002 RFC 1987</p>
+
+    </div>
+
+    
+</article>
+    <div class="social">
+    <a class="icon facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fsuperdanby.github.io%2fBlog%2fsecurity.html" title="Share to Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round"
+            stroke-miterlimit="1.414">
+            <path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.48-1.195 1.18v1.54h2.39l-.31 2.42h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0"
+                fill-rule="nonzero" />
+        </svg>
+    </a>
+    <a class="icon googleplus" target="_blank" href="https://plus.google.com/share?url=http%3a%2f%2fsuperdanby.github.io%2fBlog%2fsecurity.html" title="Share to Google+">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round"
+            stroke-miterlimit="1.414">
+            <path d="M5.09 7.273v1.745h2.89c-.116.75-.873 2.197-2.887 2.197-1.737 0-3.155-1.44-3.155-3.215S3.353 4.785 5.09 4.785c.99 0 1.652.422 2.03.786l1.382-1.33c-.887-.83-2.037-1.33-3.41-1.33C2.275 2.91 0 5.19 0 8s2.276 5.09 5.09 5.09c2.94 0 4.888-2.065 4.888-4.974 0-.334-.036-.59-.08-.843H5.09zm10.91 0h-1.455V5.818H13.09v1.455h-1.454v1.454h1.455v1.455h1.46V8.727H16"
+            />
+        </svg>
+    </a>
+    <a class="icon twitter" target="_blank" href="https://twitter.com/home?status=http%3a%2f%2fsuperdanby.github.io%2fBlog%2fsecurity.html" title="Share to Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round"
+            stroke-miterlimit="1.414">
+            <path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z"
+                fill-rule="nonzero" />
+        </svg>
+    </a>
+</div>
+
+        </main>
+
+        
+        <footer>
+    <div class="hr"></div>
+    <p>
+        Powered by <a href="https://gohugo.io/">Hugo</a> with theme
+        <a href="https://github.com/amoshyc/hugo-zmd-theme">zmd</a>
+    </p>
+</footer>
+</body>
+
+</html>

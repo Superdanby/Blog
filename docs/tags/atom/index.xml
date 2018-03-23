@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Atom on Yee</title>
+    <link>http://superdanby.github.io/Blog/tags/atom.html</link>
+    <description>Recent content in Atom on Yee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 25 Jul 2017 00:20:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://superdanby.github.io/Blog/tags/atom/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Atom Text Editor</title>
+      <link>http://superdanby.github.io/Blog/atom.html</link>
+      <pubDate>Tue, 25 Jul 2017 00:20:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/atom.html</guid>
+      <description>Official Website Popular Community Packages atom-beautify Beautify HTML, CSS, JavaScript, PHP, Python, Ruby, Java, C, C++, C#, Objective-C, CoffeeScript, TypeScript, Coldfusion, SQL, and more in Atom.
+ Installation:  Terminal: apm install atom-beautify Built-in package manager  Usage:  Right click and select &amp;ldquo;Beautify editor contents&amp;rdquo;. Scope: selected contents or the whole file if not.  My uncrustify.cfg  autoclose-html Will automatically add closing tags when you complete the opening tag.</description>
+    </item>
+    
+  </channel>
+</rss>

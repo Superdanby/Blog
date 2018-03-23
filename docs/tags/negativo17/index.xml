@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Negativo17 on Yee</title>
+    <link>http://superdanby.github.io/Blog/tags/negativo17.html</link>
+    <description>Recent content in Negativo17 on Yee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Jul 2017 18:30:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://superdanby.github.io/Blog/tags/negativo17/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dealing with Nvidia Optimus</title>
+      <link>http://superdanby.github.io/Blog/dealingwithnvidia.html</link>
+      <pubDate>Mon, 24 Jul 2017 18:30:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/dealingwithnvidia.html</guid>
+      <description>Battery Life Matters Since the release of Fedora 26, Mesa doesn&amp;rsquo;t conflict with Nvidia anymore. Generally, the Nvidia driver can be installed from either Bumblebee or Negativo17&amp;rsquo;s repo. Both methods are easy to install, but the former one is likely to have more problems.
+A brief comparison table:
+    Bumblebee Negativo17     Nvidia Driver Version Old Up to date   Usage Turn on when needed Always on with Nvidia Optimus   Status No updates since 2013 Still being maintained and has good support   Platform Wayland &amp;amp; X Only on X    I&amp;rsquo;d like to have more battery life with my laptop.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SST on Yee</title>
+    <link>http://superdanby.github.io/Blog/tags/sst.html</link>
+    <description>Recent content in SST on Yee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 31 May 2017 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://superdanby.github.io/Blog/tags/sst/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Enabling Intel Speed Shift(SST) on XPS 9550</title>
+      <link>http://superdanby.github.io/Blog/xps-15-9550-sst.html</link>
+      <pubDate>Wed, 31 May 2017 00:00:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/xps-15-9550-sst.html</guid>
+      <description>Download Customized grub https://www.firewolf.science/wp-content/uploads/2015/04/EFI-shell.zip
+Configurations in BIOS  Disable Secure Boot. Boot from the downloaded grub file Check the value of 0xD8: setup_var 0xD8  If the value is 0x01 SST is on already. Otherwise the value should be 0x0 in default.  Enable SST: setup_var 0xD8 0x01. Make sure the value is changed, then reboot. Re-enable Secure Boot. Poof! You&amp;rsquo;re all set.  Caution XPS 15 9560 is not suitable for this guide!</description>
+    </item>
+    
+  </channel>
+</rss>

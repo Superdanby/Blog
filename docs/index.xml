@@ -6,18 +6,226 @@
     <description>Recent content on Yee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Mar 2018 18:31:23 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 23 Mar 2018 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="http://superdanby.github.io/Blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Fedora Installation</title>
+      <link>http://superdanby.github.io/Blog/fedorainstallation.html</link>
+      <pubDate>Fri, 23 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/fedorainstallation.html</guid>
+      <description>Preparation If you&amp;rsquo;re using Windows and wish to install Fedora alongside with it. You can open Disk Management and shrink a drive to make space for Fedora.
+Create a live USB with Fedora Media Writer
+Installation Partitioning Automatic: Anaconda will automatically create mountpoints /, /home, swap with LVM2.
+Custom: This lets you decide which mountpoints to create, the size of each mountpoint, and the partition type. The rest would be handled by Anaconda.</description>
+    </item>
+    
+    <item>
+      <title>Blog Setup</title>
+      <link>http://superdanby.github.io/Blog/blogsetup.html</link>
+      <pubDate>Thu, 01 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/blogsetup.html</guid>
+      <description> git clone git@github.com:Superdanby/Blog.git git clone git@github.com:Superdanby/hugo-zmd-theme.git themes/zmd  </description>
+    </item>
+    
+    <item>
+      <title>Manually Obtain Letsencrypt Certificate for Websites</title>
+      <link>http://superdanby.github.io/Blog/manualcertbot.html</link>
+      <pubDate>Mon, 26 Feb 2018 14:00:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/manualcertbot.html</guid>
+      <description>There are sometimes you need your website to have Https connection. The most common to get a free certificate is to use Let&amp;rsquo;s Encrypt. Setting up a certificate with shell access on the same machine is pretty easy. But Certbot requires you to have root privileges. That&amp;rsquo;s really a pain in the ass. A work around is to use manual mode on another machine where allows you to sudo.</description>
+    </item>
+    
+    <item>
+      <title>Laravel 使用心得(竟然是中文!!)</title>
+      <link>http://superdanby.github.io/Blog/laravel.html</link>
+      <pubDate>Mon, 25 Sep 2017 00:20:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/laravel.html</guid>
+      <description>前情提要 暑假的時候，因為學校總務處想要一個新的網站，後來決定使用 Laravel 來架設，不過那時候我還只會一點點的 html &amp;amp;&amp;amp; css，所以很多東西都是邊學邊作。
+主要選用Laravel的原因是舊的網站是php寫的，想說有些東西可以複製貼上(結果幾乎沒有OAO)。
+安裝 如果是用 Fedora 可以在這裏找到所有安裝步驟。
+接著最麻煩的問題就來了：SELinux會導致權限不足
+很多人都會說直接把SELinux關掉就可以了 setenforce 0 ，但是這非常危險！正確的做法是到新建的project底下執行: chcon -R -t httpd_sys_rw_content_t storage
+另外，如果有資料夾是要直接給apache存取的，不要把權限設爲 777 而是應該把那個資料夾的group設爲apache並且將權限設爲 775
+使用 接下來就是瘋狂地看 documentation。說實在話，我覺的官網文檔寫的並不好，資料很多很雜，看完不一定知道要怎麼做才能作出自己想要的東西，還是必須要瘋狂去 Google。
+成品 國立中正大學總務處網站
+Tips 如果後臺登入想要用 username 而不是 email 的話，可以參考這個影片</description>
+    </item>
+    
+    <item>
+      <title>Atom Text Editor</title>
+      <link>http://superdanby.github.io/Blog/atom.html</link>
+      <pubDate>Tue, 25 Jul 2017 00:20:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/atom.html</guid>
+      <description>Official Website Popular Community Packages atom-beautify Beautify HTML, CSS, JavaScript, PHP, Python, Ruby, Java, C, C++, C#, Objective-C, CoffeeScript, TypeScript, Coldfusion, SQL, and more in Atom.
+ Installation:  Terminal: apm install atom-beautify Built-in package manager  Usage:  Right click and select &amp;ldquo;Beautify editor contents&amp;rdquo;. Scope: selected contents or the whole file if not.  My uncrustify.cfg  autoclose-html Will automatically add closing tags when you complete the opening tag.</description>
+    </item>
+    
+    <item>
+      <title>Dealing with Nvidia Optimus</title>
+      <link>http://superdanby.github.io/Blog/dealingwithnvidia.html</link>
+      <pubDate>Mon, 24 Jul 2017 18:30:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/dealingwithnvidia.html</guid>
+      <description>Battery Life Matters Since the release of Fedora 26, Mesa doesn&amp;rsquo;t conflict with Nvidia anymore. Generally, the Nvidia driver can be installed from either Bumblebee or Negativo17&amp;rsquo;s repo. Both methods are easy to install, but the former one is likely to have more problems.
+A brief comparison table:
+    Bumblebee Negativo17     Nvidia Driver Version Old Up to date   Usage Turn on when needed Always on with Nvidia Optimus   Status No updates since 2013 Still being maintained and has good support   Platform Wayland &amp;amp; X Only on X    I&amp;rsquo;d like to have more battery life with my laptop.</description>
+    </item>
+    
+    <item>
+      <title>Managing Signed Keys with Machine Owner Key</title>
+      <link>http://superdanby.github.io/Blog/mok.html</link>
+      <pubDate>Sun, 23 Jul 2017 21:46:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/mok.html</guid>
+      <description>Introduction With MOK we can sign, manage, and delete keys for installed kernel modules.
+Usage Enrolling a key The guide can be found here.
+List all the enrolled keys: `mokutil -l`  Deleting a key First, you have to export the keys: mokutil --export
+Delete the key: mokutil -dTheFile, E.g. mokutil -d MOK-0001.der</description>
+    </item>
+    
+    <item>
+      <title>Enabling Intel Speed Shift(SST) on XPS 9550</title>
+      <link>http://superdanby.github.io/Blog/xps-15-9550-sst.html</link>
+      <pubDate>Wed, 31 May 2017 00:00:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/xps-15-9550-sst.html</guid>
+      <description>Download Customized grub https://www.firewolf.science/wp-content/uploads/2015/04/EFI-shell.zip
+Configurations in BIOS  Disable Secure Boot. Boot from the downloaded grub file Check the value of 0xD8: setup_var 0xD8  If the value is 0x01 SST is on already. Otherwise the value should be 0x0 in default.  Enable SST: setup_var 0xD8 0x01. Make sure the value is changed, then reboot. Re-enable Secure Boot. Poof! You&amp;rsquo;re all set.  Caution XPS 15 9560 is not suitable for this guide!</description>
+    </item>
+    
+    <item>
+      <title>Signing Kernel Modules for Secure Boot</title>
+      <link>http://superdanby.github.io/Blog/signingmodules.html</link>
+      <pubDate>Thu, 25 May 2017 13:46:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/signingmodules.html</guid>
+      <description>Preparation Make sure your Secure Boot is off. In order to sign the modules, they should exist in the current environment. Turning on Secure Boot will block the modules to load in the first place.
+Key Creation Create Signing Keys openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -nodes -days 36500 -subj &amp;quot;/CN=Descriptive name/&amp;quot; Descriptive name is the name of the key. E.g. &amp;quot;/CN=Yee~&amp;quot;
+Sign the Module sudo /usr/src/kernels/$(uname -r)/scripts/sign-file sha256 .</description>
+    </item>
+    
+    <item>
+      <title>Fedora Introduction</title>
+      <link>http://superdanby.github.io/Blog/fedora.html</link>
+      <pubDate>Wed, 24 May 2017 16:30:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/fedora.html</guid>
+      <description>Get Fedora Now! IMO, the best Linux distro. 1. The one always deploies the newest technologies. 2. Gnome 3. Cares about security A LOT(Secure Boot, SELinux, Wayland). 4. Redhat supported. - Next version: 26 - Release date: 2017/06/27 - Expected features: 1. No conflicts between Mesa and negativo17.org Nvidia drivers 2. Gnome 3.24 3. dnf 2.0
+Tweaks Bookmark Locations in Files(nautilus) The upper left icon in the group of 6.</description>
+    </item>
+    
+    <item>
+      <title>Windows 10</title>
+      <link>http://superdanby.github.io/Blog/windows10.html</link>
+      <pubDate>Sat, 20 May 2017 00:00:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/windows10.html</guid>
+      <description>Tweaks Night Light A Built-in blue light filter.
+(Mingw-w64)[https://sourceforge.net/projects/mingw-w64/] The GNU/GCC compiler on Windows.
+(WSL)[https://blogs.msdn.microsoft.com/wsl/] Built-in Linux sub-systems for Windows 10.
+ Now available: Ubuntu Upcoming: Fedora and OpenSUSE  (Github Desktop)[https://desktop.github.com/] Github Desktop client on Windows It&amp;rsquo;s an alternative if you&amp;rsquo;re not using  Atom
+(Dolphin Emulator)[https://dolphin-emu.org/] The world&amp;rsquo;s best emulator for Wii and Gamecube.
+(Rufus)[https://rufus.akeo.ie/] Bootable USB creator. Everything you need is here in general use.
+(BlueStacks)[http://www.bluestacks.com] Well-made Android emulator.</description>
+    </item>
+    
+    <item>
+      <title>Markdown Demo</title>
+      <link>http://superdanby.github.io/Blog/markdowndemo.html</link>
+      <pubDate>Tue, 21 Mar 2017 11:20:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/markdowndemo.html</guid>
+      <description>Welcome to StackEdit! Hey! I&amp;rsquo;m your first Markdown document in StackEdit1. Don&amp;rsquo;t delete me, I&amp;rsquo;m very helpful! I can be recovered anyway in the Utils tab of the  Settings dialog.
+Documents StackEdit stores your documents in your browser, which means all your documents are automatically saved locally and are accessible offline!
+ Note:
+ StackEdit is accessible offline after the application has been loaded for the first time. Your local documents are not shared between different browsers or computers.</description>
+    </item>
+    
+    <item>
+      <title>System Program on Linux</title>
+      <link>http://superdanby.github.io/Blog/linux.html</link>
+      <pubDate>Wed, 15 Mar 2017 20:20:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/linux.html</guid>
+      <description>gcc Options:
+-pg: Used for gprofile analysis.
+--static: Includes the libraries used by the program into itself. So, if a program used this option to compile, it can be run anywhere. Also, it may run slightly faster because the system don&amp;rsquo;t have to link the libraries dynamically during runtime. The downside is that it will have a larger size than usual.
+gprofile strace Inspect programs&amp;rsquo; system call during runtime.</description>
+    </item>
+    
+    <item>
+      <title>XPS 15 9550 Issues with Fedora 25</title>
+      <link>http://superdanby.github.io/Blog/xps-15-9550-issues-with-fedora-25.html</link>
+      <pubDate>Thu, 09 Mar 2017 11:00:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/xps-15-9550-issues-with-fedora-25.html</guid>
+      <description>Firewalld fails to stop when shutting down. Current Workaround Set CleanupOnExit=no in /etc/firewalld/firewalld.conf
+
+Bluetooth not seeing any devices. Current Workaround sudo dnf install linux-firmware https://fedoraproject.org/wiki/Firmware</description>
+    </item>
+    
+    <item>
+      <title>User Experience Enhancements</title>
+      <link>http://superdanby.github.io/Blog/user-experience-enhencements.html</link>
+      <pubDate>Mon, 27 Feb 2017 20:20:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/user-experience-enhencements.html</guid>
+      <description>All Platforms Atom A beautiful and hackable cross-platform text editor with wonderful Github integration.
+Fedora Media Writer It has been fixed on Version 4.1.0-1.fc25. On Fedora, the only downside is that the scaling factor in Gnome Tweak Tool has no effect on it.
+Intel Speed Shift Better power management for Skylake processors and above.</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>http://superdanby.github.io/Blog/test.html</link>
+      <pubDate>Thu, 23 Feb 2017 23:20:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/test.html</guid>
+      <description>ye2s  Ouch!  OMG! This is sooo g o o d 
+#!cpp #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; const int MAX_N = 1e6; const int MAX_M = 1e3; int N, M; int A[MAX_N]; bool dp[MAX_M][MAX_M]; inline int mod(int a, int b) { return (a + b) % b; } int main() { scanf(&amp;quot;%d %d&amp;quot;, &amp;amp;N, &amp;amp;M); for (int i = 0; i &amp;lt; N; i++) scanf(&amp;quot;%d&amp;quot;, &amp;amp;A[i]); if (N &amp;gt; M) { puts(&amp;quot;YES&amp;quot;); return 0; } // dp[i][j] = 前 i + 1 個數可否組出 mod m = j 的數 // dp[i][j] = true if dp[i - 1][(j - (a[i] mod m)) mod m] or // dp[i - 1][j] or // j = a[i] % m dp[0][A[0] % M] = true; for (int i = 1; i &amp;lt; N; i++) { dp[i][A[i] % M] = true; for (int j = 0; j &amp;lt; M; j++) { if (dp[i - 1][j] || dp[i - 1][mod(j - A[i] % M, M)]) { dp[i][j] = true; } } } puts(((dp[N - 1][0]) ?</description>
+    </item>
+    
+    <item>
       <title>Yee</title>
       <link>http://superdanby.github.io/Blog/yee.html</link>
-      <pubDate>Thu, 22 Mar 2018 18:31:23 +0800</pubDate>
+      <pubDate>Tue, 22 Mar 2016 18:31:23 +0800</pubDate>
       
       <guid>http://superdanby.github.io/Blog/yee.html</guid>
-      <description>Yee</description>
+      <description>Following is a review of my favoxbgcngcngdchgd p9 aerutgjepoirjfgeprite mechanical keyboard.
+Y YE YEE YEEE YEEEE  What is this?
+ ##2 *This is too yee
+  OMG
+ A B C
+ 156 2 3 647
+ you
+  yes
+ a b c   13 2 3  yee?  loll   bar  
+ollledsdklfmlkds
+cout&amp;lt;&amp;lt;&amp;quot;yes&amp;quot;;   Here is some text. Let us try the ::: version of syntax highlighting.</description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>http://superdanby.github.io/Blog/security.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/security.html</guid>
+      <description>Foot Printing Search Engines Google, duckduckgo, bing, Archive
+Google inurl, allinurl, intitle, allintitle, site, related, filetype, intext
+GHDB People Facebook, Linkedin, Google+, Twitter
+Website Debugger-&amp;gt;Network-&amp;gt;Server Version, Content-Types, Cookie, Powered-By
+Chrome Dev Tool, Firebug, Burp Suite, Zaproxy, Wirershark, cli:telnet
+Html Source: Dev comments, frameworks
+Grabbing Websites cli:wget --recursive --depth=10, httrack(Windows), Pavu, WebRipper 2.0, WinWSD
+Email Tracking 1.hidden element 2.Link Redirection 3.Tools - YesWare - HubSpot - BananaTag - GetNotify - ReadNotify - WhoReadMe - MsgTag - DidTheyReadIt</description>
     </item>
     
   </channel>
