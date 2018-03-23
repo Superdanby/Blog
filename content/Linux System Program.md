@@ -1,5 +1,5 @@
 ---
-title: "System Program on Linux"
+title: "Linux System Program"
 date: 2017-03-15T20:20:00+08:00
 categories: [System Program]
 tags: [System Program]

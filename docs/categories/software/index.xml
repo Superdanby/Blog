@@ -13,10 +13,10 @@
     
     <item>
       <title>Atom Text Editor</title>
-      <link>http://superdanby.github.io/Blog/atom.html</link>
+      <link>http://superdanby.github.io/Blog/atom-text-editor.html</link>
       <pubDate>Tue, 25 Jul 2017 00:20:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/atom.html</guid>
+      <guid>http://superdanby.github.io/Blog/atom-text-editor.html</guid>
       <description>Official Website Popular Community Packages atom-beautify Beautify HTML, CSS, JavaScript, PHP, Python, Ruby, Java, C, C++, C#, Objective-C, CoffeeScript, TypeScript, Coldfusion, SQL, and more in Atom.
  Installation:  Terminal: apm install atom-beautify Built-in package manager  Usage:  Right click and select &amp;ldquo;Beautify editor contents&amp;rdquo;. Scope: selected contents or the whole file if not.  My uncrustify.cfg  autoclose-html Will automatically add closing tags when you complete the opening tag.</description>
     </item>

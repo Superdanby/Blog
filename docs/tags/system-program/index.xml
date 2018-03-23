@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>System Program on Linux</title>
-      <link>http://superdanby.github.io/Blog/linux.html</link>
+      <title>Linux System Program</title>
+      <link>http://superdanby.github.io/Blog/linux-system-program.html</link>
       <pubDate>Wed, 15 Mar 2017 20:20:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/linux.html</guid>
+      <guid>http://superdanby.github.io/Blog/linux-system-program.html</guid>
       <description>gcc Options:
 -pg: Used for gprofile analysis.
 --static: Includes the libraries used by the program into itself. So, if a program used this option to compile, it can be run anywhere. Also, it may run slightly faster because the system don&amp;rsquo;t have to link the libraries dynamically during runtime. The downside is that it will have a larger size than usual.

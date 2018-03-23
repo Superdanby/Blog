@@ -60,10 +60,10 @@ Tips 如果後臺登入想要用 username 而不是 email 的話，可以參考�
     
     <item>
       <title>Atom Text Editor</title>
-      <link>http://superdanby.github.io/Blog/atom.html</link>
+      <link>http://superdanby.github.io/Blog/atom-text-editor.html</link>
       <pubDate>Tue, 25 Jul 2017 00:20:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/atom.html</guid>
+      <guid>http://superdanby.github.io/Blog/atom-text-editor.html</guid>
       <description>Official Website Popular Community Packages atom-beautify Beautify HTML, CSS, JavaScript, PHP, Python, Ruby, Java, C, C++, C#, Objective-C, CoffeeScript, TypeScript, Coldfusion, SQL, and more in Atom.
  Installation:  Terminal: apm install atom-beautify Built-in package manager  Usage:  Right click and select &amp;ldquo;Beautify editor contents&amp;rdquo;. Scope: selected contents or the whole file if not.  My uncrustify.cfg  autoclose-html Will automatically add closing tags when you complete the opening tag.</description>
     </item>
@@ -81,10 +81,10 @@ A brief comparison table:
     
     <item>
       <title>Managing Signed Keys with Machine Owner Key</title>
-      <link>http://superdanby.github.io/Blog/mok.html</link>
+      <link>http://superdanby.github.io/Blog/managing-signed-keys-with-machine-owner-key.html</link>
       <pubDate>Sun, 23 Jul 2017 21:46:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/mok.html</guid>
+      <guid>http://superdanby.github.io/Blog/managing-signed-keys-with-machine-owner-key.html</guid>
       <description>Introduction With MOK we can sign, manage, and delete keys for installed kernel modules.
 Usage Enrolling a key The guide can be found here.
 List all the enrolled keys: `mokutil -l`  Deleting a key First, you have to export the keys: mokutil --export
@@ -103,10 +103,10 @@ Configurations in BIOS  Disable Secure Boot. Boot from the downloaded grub file 
     
     <item>
       <title>Signing Kernel Modules for Secure Boot</title>
-      <link>http://superdanby.github.io/Blog/signingmodules.html</link>
+      <link>http://superdanby.github.io/Blog/signing-kernel-modules-for-secure-boot.html</link>
       <pubDate>Thu, 25 May 2017 13:46:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/signingmodules.html</guid>
+      <guid>http://superdanby.github.io/Blog/signing-kernel-modules-for-secure-boot.html</guid>
       <description>Preparation Make sure your Secure Boot is off. In order to sign the modules, they should exist in the current environment. Turning on Secure Boot will block the modules to load in the first place.
 Key Creation Create Signing Keys openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -nodes -days 36500 -subj &amp;quot;/CN=Descriptive name/&amp;quot; Descriptive name is the name of the key. E.g. &amp;quot;/CN=Yee~&amp;quot;
 Sign the Module sudo /usr/src/kernels/$(uname -r)/scripts/sign-file sha256 .</description>
@@ -139,10 +139,10 @@ Tweaks Bookmark Locations in Files(nautilus) The upper left icon in the group of
     
     <item>
       <title>Markdown Demo</title>
-      <link>http://superdanby.github.io/Blog/markdowndemo.html</link>
+      <link>http://superdanby.github.io/Blog/markdown-demo.html</link>
       <pubDate>Tue, 21 Mar 2017 11:20:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/markdowndemo.html</guid>
+      <guid>http://superdanby.github.io/Blog/markdown-demo.html</guid>
       <description>Welcome to StackEdit! Hey! I&amp;rsquo;m your first Markdown document in StackEdit1. Don&amp;rsquo;t delete me, I&amp;rsquo;m very helpful! I can be recovered anyway in the Utils tab of the  Settings dialog.
 Documents StackEdit stores your documents in your browser, which means all your documents are automatically saved locally and are accessible offline!
  Note:
@@ -150,11 +150,11 @@ Documents StackEdit stores your documents in your browser, which means all your 
     </item>
     
     <item>
-      <title>System Program on Linux</title>
-      <link>http://superdanby.github.io/Blog/linux.html</link>
+      <title>Linux System Program</title>
+      <link>http://superdanby.github.io/Blog/linux-system-program.html</link>
       <pubDate>Wed, 15 Mar 2017 20:20:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/linux.html</guid>
+      <guid>http://superdanby.github.io/Blog/linux-system-program.html</guid>
       <description>gcc Options:
 -pg: Used for gprofile analysis.
 --static: Includes the libraries used by the program into itself. So, if a program used this option to compile, it can be run anywhere. Also, it may run slightly faster because the system don&amp;rsquo;t have to link the libraries dynamically during runtime. The downside is that it will have a larger size than usual.
