@@ -13,10 +13,10 @@
     
     <item>
       <title>Blog Setup</title>
-      <link>http://superdanby.github.io/Blog/blogsetup.html</link>
+      <link>http://superdanby.github.io/Blog/blog-setup.html</link>
       <pubDate>Thu, 01 Mar 2018 00:00:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/blogsetup.html</guid>
+      <guid>http://superdanby.github.io/Blog/blog-setup.html</guid>
       <description> git clone git@github.com:Superdanby/Blog.git git clone git@github.com:Superdanby/hugo-zmd-theme.git themes/zmd  </description>
     </item>
     

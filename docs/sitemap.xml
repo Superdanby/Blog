@@ -3,17 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://superdanby.github.io/Blog/fedorainstallation.html</loc>
+    <loc>http://superdanby.github.io/Blog/fedora-installation.html</loc>
     <lastmod>2018-03-23T00:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://superdanby.github.io/Blog/blogsetup.html</loc>
+    <loc>http://superdanby.github.io/Blog/blog-setup.html</loc>
     <lastmod>2018-03-01T00:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://superdanby.github.io/Blog/manualcertbot.html</loc>
+    <loc>http://superdanby.github.io/Blog/manually-obtain-letsencrypt-certificate-for-websites.html</loc>
     <lastmod>2018-02-26T14:00:00+08:00</lastmod>
   </url>
   
@@ -28,7 +28,7 @@
   </url>
   
   <url>
-    <loc>http://superdanby.github.io/Blog/dealingwithnvidia.html</loc>
+    <loc>http://superdanby.github.io/Blog/dealing-with-nvidia.html</loc>
     <lastmod>2017-07-24T18:30:00+08:00</lastmod>
   </url>
   

@@ -13,10 +13,10 @@
     
     <item>
       <title>Fedora Installation</title>
-      <link>http://superdanby.github.io/Blog/fedorainstallation.html</link>
+      <link>http://superdanby.github.io/Blog/fedora-installation.html</link>
       <pubDate>Fri, 23 Mar 2018 00:00:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/fedorainstallation.html</guid>
+      <guid>http://superdanby.github.io/Blog/fedora-installation.html</guid>
       <description>Preparation If you&amp;rsquo;re using Windows and wish to install Fedora alongside with it. You can open Disk Management and shrink a drive to make space for Fedora.
 Create a live USB with Fedora Media Writer
 Installation Partitioning Automatic: Anaconda will automatically create mountpoints /, /home, swap with LVM2.
@@ -25,10 +25,10 @@ Custom: This lets you decide which mountpoints to create, the size of each mount
     
     <item>
       <title>Dealing with Nvidia Optimus</title>
-      <link>http://superdanby.github.io/Blog/dealingwithnvidia.html</link>
+      <link>http://superdanby.github.io/Blog/dealing-with-nvidia.html</link>
       <pubDate>Mon, 24 Jul 2017 18:30:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/dealingwithnvidia.html</guid>
+      <guid>http://superdanby.github.io/Blog/dealing-with-nvidia.html</guid>
       <description>Battery Life Matters Since the release of Fedora 26, Mesa doesn&amp;rsquo;t conflict with Nvidia anymore. Generally, the Nvidia driver can be installed from either Bumblebee or Negativo17&amp;rsquo;s repo. Both methods are easy to install, but the former one is likely to have more problems.
 A brief comparison table:
     Bumblebee Negativo17     Nvidia Driver Version Old Up to date   Usage Turn on when needed Always on with Nvidia Optimus   Status No updates since 2013 Still being maintained and has good support   Platform Wayland &amp;amp; X Only on X    I&amp;rsquo;d like to have more battery life with my laptop.</description>
