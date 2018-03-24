@@ -26,7 +26,7 @@ math: false
 ##	`sshfs`
 
 -	`-o reconnect,ServerAliveInterval=5,ServerAliveCountMax=3`
--	Mac requires [osxfuse](https://github.com/osxfuse/osxfuse), `defer_permissions`[^defer_permissions] to work correctly.
+-	Mac requires [osxfuse](https://github.com/osxfuse/osxfuse) and the option, `defer_permissions`[^defer_permissions], to work correctly.
 
 ##	Basic Laravel File Structure
 
@@ -213,6 +213,81 @@ math: false
 
 -	[https://tools.ietf.org/html/rfc4252#section-7](https://tools.ietf.org/html/rfc4252#section-7)
 
+## [`brew`](https://brew.sh/)
+
+The missing package management system for macOS.
+
+## [HTML Walk-through](https://www.w3schools.com/html/default.asp)
+
+## [Markdown](https://daringfireball.net/projects/markdown/syntax)
+
+Why bother with all those HTML syntax?
+
+## Python Virtual Envirionment
+
+-	`python -m venv venv`
+
+### Python Resources
+
+-	[Official Tutorial](https://docs.python.org/3/tutorial/index.html)
+-	[Scientific Calculation Quick Start](https://amoshyc.github.io/blog/2018/scientific-python-quickstart-1.html)
+
+## `git`
+
+-	`git clone`
+-	`git add`
+-	`git commit`
+-	`git push`
+-	`git pull`
+-	`git merge`
+-	`git fetch`
+-	`git rebase`
+-	`git status`
+-	`git branch`
+-	`git checkout`
+
+## Setup a Github Blog
+
+-	[Hugo](https://superdanby.github.io/Blog/create-a-new-hugo-site.html)
+-	Additional [Hugo Content](https://gohugo.io/content-management/)
+
+# Queue
+
+## CSS Walk-through
+
+## Javascript Walk-through
+
+## Get, Post
+
+## Apache
+
+## MariaDB
+
+## Installing an Operating System
+
+## `top`
+
+## `ps`
+
+## `journalctl`
+
+## SELinux
+
+## Crontab
+
+## Shell Script
+
+## Systemd
+
+## Laravel Controller
+
+## Laravel Database
+
+## SSL/TLS HTTPS
+
+## Grubd
+
+## Docker
 
 [^defer_permissions]: [https://github.com/osxfuse/osxfuse/issues/45](https://github.com/osxfuse/osxfuse/issues/45)
 [^MBR]: [Master Boot Record](https://en.wikipedia.org/wiki/Master_boot_record)
