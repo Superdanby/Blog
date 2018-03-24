@@ -117,7 +117,9 @@ math: false
 	-	[CVE-2017-5689](https://nvd.nist.gov/vuln/detail/CVE-2017-5689)
 5.	1991: Linux released, Unix-like
 6.	1995: Free Software Foundation established
-![Unix History](https://upload.wikimedia.org/wikipedia/commons/c/cd/Unix_timeline.en.svg)
+
+{{< figure src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Unix_timeline.en.svg" title="Unix History" width="600" >}}
+
 
 ###	License:
 

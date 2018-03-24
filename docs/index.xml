@@ -55,7 +55,7 @@ Initial Setup  hugo new site PROJECT NAME cd PROJECT NAME git init  Setup a Gith
       <pubDate>Sat, 09 Dec 2017 13:55:37 +0800</pubDate>
       
       <guid>http://superdanby.github.io/Blog/markdown-cheetsheet.html</guid>
-      <description>https://github.com/amoshyc/blog/blob/master/content/2017/Markdown%20Cheatsheet.md
+      <description>Original Post: https://github.com/amoshyc/blog/blob/master/content/2017/Markdown%20Cheatsheet.md
 Standard Markdown Inline Markup 常見的 Markdown 行內標記包含粗體、斜體 、刪除、程式碼、Footnote1 與超連結。他們使用方法分別為：
  粗體 ：**粗體** 或 __粗體__。 斜體 ：*斜體* 或 _斜體_。 刪除 ：~~刪除~~。 程式碼 ：將內容用 ` 包起來。 1：[^id]，其連結的位置為 [^id]: xxx。 超連結：[text](link “tooltip&amp;quot;)，&amp;quot;tooltip&amp;quot; 可以不寫。  其中要注意的是斜體後面得有空白，造成中文書寫時會有多餘空白，因此書寫中文時建議使用粗體代替。在這個 theme 中，所有的換行都會被保留，這有別於其他 theme，我認為這樣的書寫比較符合我自己的習慣。如果使用本 theme，建議將你的編輯器調成 wrap line 的模式。
 Image ![Fedora 26](https://i.imgur.com/QzfKyxm.jpg)  這種圖片寬度固定為 theme 的寬度（預設是 700px）。
