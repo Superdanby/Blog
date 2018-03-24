@@ -1,7 +1,7 @@
 ---
 title: "Create a New Hugo Site"
 date: 2018-03-24T17:46:50+08:00
-categories: [Hugo]
+categories: [Blog]
 tags: [Hugo, Fedora]
 toc: true
 math: false

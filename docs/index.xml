@@ -218,35 +218,6 @@ Intel Speed Shift Better power management for Skylake processors and above.</des
     </item>
     
     <item>
-      <title>Test</title>
-      <link>http://superdanby.github.io/Blog/test.html</link>
-      <pubDate>Thu, 23 Feb 2017 23:20:00 +0800</pubDate>
-      
-      <guid>http://superdanby.github.io/Blog/test.html</guid>
-      <description>ye2s  Ouch!  OMG! This is sooo g o o d 
-#!cpp #include &amp;lt;bits/stdc++.h&amp;gt; using namespace std; const int MAX_N = 1e6; const int MAX_M = 1e3; int N, M; int A[MAX_N]; bool dp[MAX_M][MAX_M]; inline int mod(int a, int b) { return (a + b) % b; } int main() { scanf(&amp;quot;%d %d&amp;quot;, &amp;amp;N, &amp;amp;M); for (int i = 0; i &amp;lt; N; i++) scanf(&amp;quot;%d&amp;quot;, &amp;amp;A[i]); if (N &amp;gt; M) { puts(&amp;quot;YES&amp;quot;); return 0; } // dp[i][j] = 前 i + 1 個數可否組出 mod m = j 的數 // dp[i][j] = true if dp[i - 1][(j - (a[i] mod m)) mod m] or // dp[i - 1][j] or // j = a[i] % m dp[0][A[0] % M] = true; for (int i = 1; i &amp;lt; N; i++) { dp[i][A[i] % M] = true; for (int j = 0; j &amp;lt; M; j++) { if (dp[i - 1][j] || dp[i - 1][mod(j - A[i] % M, M)]) { dp[i][j] = true; } } } puts(((dp[N - 1][0]) ?</description>
-    </item>
-    
-    <item>
-      <title>Yee</title>
-      <link>http://superdanby.github.io/Blog/yee.html</link>
-      <pubDate>Tue, 22 Mar 2016 18:31:23 +0800</pubDate>
-      
-      <guid>http://superdanby.github.io/Blog/yee.html</guid>
-      <description>Following is a review of my favoxbgcngcngdchgd p9 aerutgjepoirjfgeprite mechanical keyboard.
-Y YE YEE YEEE YEEEE  What is this?
- ##2 *This is too yee
-  OMG
- A B C
- 156 2 3 647
- you
-  yes
- a b c   13 2 3  yee?  loll   bar  
-ollledsdklfmlkds
-cout&amp;lt;&amp;lt;&amp;quot;yes&amp;quot;;   Here is some text. Let us try the ::: version of syntax highlighting.</description>
-    </item>
-    
-    <item>
       <title>Security</title>
       <link>http://superdanby.github.io/Blog/security.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0800</pubDate>
