@@ -7,7 +7,7 @@ toc: true
 math: true
 ---
 
-Original Post: [https://github.com/amoshyc/blog/blob/master/content/2017/Markdown%20Cheatsheet.md](https://github.com/amoshyc/blog/blob/master/content/2017/Markdown%20Cheatsheet.md)
+[Original Post](https://github.com/amoshyc/blog/blob/master/content/2017/Markdown%20Cheatsheet.md)
 
 
 # Standard Markdown

@@ -22,14 +22,5 @@ Install Hugo on Fedora sudo dnf install hugo 1. sudo dnf install snap 2. snap in
 Initial Setup  hugo new site PROJECT NAME cd PROJECT NAME git init  Setup a Github Repository  Create a new repository Repository settings &amp;gt; Source: master branch /docs folder git remote add origin REPO ADDRESS: usually git@github.com:...git git pull origin master  Setup Custom Theme: zmd  Fork the Github repository.</description>
     </item>
     
-    <item>
-      <title>Blog Setup</title>
-      <link>http://superdanby.github.io/Blog/blog-setup.html</link>
-      <pubDate>Thu, 01 Mar 2018 00:00:00 +0800</pubDate>
-      
-      <guid>http://superdanby.github.io/Blog/blog-setup.html</guid>
-      <description> git clone git@github.com:Superdanby/Blog.git git clone git@github.com:Superdanby/hugo-zmd-theme.git themes/zmd  </description>
-    </item>
-    
   </channel>
 </rss>
