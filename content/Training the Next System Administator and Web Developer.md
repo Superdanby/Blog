@@ -97,14 +97,16 @@ math: false
 	1.	2 ZiB storage limit
 	2.	Common sector size: 4 KiB, 512 bytes
 	3.	Has a secondary GPT header in case the primary one is broken.
-	![GPT](https://upload.wikimedia.org/wikipedia/commons/0/07/GUID_Partition_Table_Scheme.svg)
+
+{{< figure src="https://upload.wikimedia.org/wikipedia/commons/0/07/GUID_Partition_Table_Scheme.svg"  width="400" >}}
 
 ###	System Structure Overview
 -	Linux, BSD: Monolithic kernel[^Mono Kernel]
 -	Real-time systems: Micro kernel[^Micro Kernel]
 -	Windows NT(Windows 10...), XNU(macOS...): Hybrid Kernel[^Hybrid Kernel]
 
-![System Structure](https://upload.wikimedia.org/wikipedia/commons/6/67/OS-structure.svg)
+{{< figure src="https://upload.wikimedia.org/wikipedia/commons/6/67/OS-structure.svg"  width="700" >}}
+
 
 ## Linux Backgrounds
 
@@ -118,7 +120,7 @@ math: false
 5.	1991: Linux released, Unix-like
 6.	1995: Free Software Foundation established
 
-{{< figure src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Unix_timeline.en.svg" title="Unix History" width="600" >}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Unix_timeline.en.svg" title="Unix History" width="700" >}}
 
 
 ###	License:
