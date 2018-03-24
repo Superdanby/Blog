@@ -289,6 +289,8 @@ Why bother with all those HTML syntax?
 
 ## Docker
 
+## [Fedora Developer Portal](https://developer.fedoraproject.org)
+
 [^defer_permissions]: [https://github.com/osxfuse/osxfuse/issues/45](https://github.com/osxfuse/osxfuse/issues/45)
 [^MBR]: [Master Boot Record](https://en.wikipedia.org/wiki/Master_boot_record)
 [^GPT]: [GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table)
