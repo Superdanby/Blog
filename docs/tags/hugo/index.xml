@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Yee</title>
+    <link>http://superdanby.github.io/Blog/tags/hugo.html</link>
+    <description>Recent content in Hugo on Yee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 Mar 2018 17:46:50 +0800</lastBuildDate>
+    
+	<atom:link href="http://superdanby.github.io/Blog/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Create a New Hugo Site</title>
+      <link>http://superdanby.github.io/Blog/create-a-new-hugo-site.html</link>
+      <pubDate>Sat, 24 Mar 2018 17:46:50 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/create-a-new-hugo-site.html</guid>
+      <description>Prerequisites hugo
+Install Hugo on Fedora sudo dnf install hugo 1. sudo dnf install snap 2. snap install hugo
+Initial Setup  hugo new site PROJECT NAME cd PROJECT NAME git init  Setup a Github Repository  Create a new repository Repository settings &amp;gt; Source: master branch /docs folder git remote add origin REPO ADDRESS: usually git@github.com:...git git pull origin master  Setup Custom Theme: zmd  Fork the Github repository.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,10 +6,30 @@
     <description>Recent content on Yee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Mar 2018 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 24 Mar 2018 17:46:50 +0800</lastBuildDate>
     
 	<atom:link href="http://superdanby.github.io/Blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Create a New Hugo Site</title>
+      <link>http://superdanby.github.io/Blog/create-a-new-hugo-site.html</link>
+      <pubDate>Sat, 24 Mar 2018 17:46:50 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/create-a-new-hugo-site.html</guid>
+      <description>Prerequisites hugo
+Install Hugo on Fedora sudo dnf install hugo 1. sudo dnf install snap 2. snap install hugo
+Initial Setup  hugo new site PROJECT NAME cd PROJECT NAME git init  Setup a Github Repository  Create a new repository Repository settings &amp;gt; Source: master branch /docs folder git remote add origin REPO ADDRESS: usually git@github.com:...git git pull origin master  Setup Custom Theme: zmd  Fork the Github repository.</description>
+    </item>
+    
+    <item>
+      <title>Training the Next System Administator and Web Developer</title>
+      <link>http://superdanby.github.io/Blog/training-the-next-system-administator-and-web-developer.html</link>
+      <pubDate>Sat, 24 Mar 2018 10:47:06 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/training-the-next-system-administator-and-web-developer.html</guid>
+      <description>2018.3.4 Remote Connection with SSH  sshusername@hostaddress git:  git config --global user.name &amp;quot;USERNAME&amp;quot; git config --global user.email &amp;quot;EMAIL&amp;quot; ssh setup for Github  ssh-keygen sshd: public private Key setup, disabling password authentication  .ssh permissions: 700 .ssh/authorized_keys permissions: 644   2018.3.11 sshfs  -o reconnect,ServerAliveInterval=5,ServerAliveCountMax=3 Mac requires osxfuse, defer_permissions1 to work correctly.  Basic Laravel File Structure  routes/web.php: routing control resources/views: blade template system(section, yield, include) public: stores contents that is accessible by anyone.</description>
+    </item>
     
     <item>
       <title>Fedora Installation</title>
@@ -39,6 +59,20 @@ Custom: This lets you decide which mountpoints to create, the size of each mount
       
       <guid>http://superdanby.github.io/Blog/manually-obtain-letsencrypt-certificate-for-websites.html</guid>
       <description>There are sometimes you need your website to have Https connection. The most common to get a free certificate is to use Let&amp;rsquo;s Encrypt. Setting up a certificate with shell access on the same machine is pretty easy. But Certbot requires you to have root privileges. That&amp;rsquo;s really a pain in the ass. A work around is to use manual mode on another machine where allows you to sudo.</description>
+    </item>
+    
+    <item>
+      <title>Markdown Cheatsheet</title>
+      <link>http://superdanby.github.io/Blog/markdown-cheetsheet.html</link>
+      <pubDate>Sat, 09 Dec 2017 13:55:37 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/markdown-cheetsheet.html</guid>
+      <description>https://github.com/amoshyc/blog/blob/master/content/2017/Markdown%20Cheatsheet.md
+Standard Markdown Inline Markup 常見的 Markdown 行內標記包含粗體、斜體 、刪除、程式碼、Footnote1 與超連結。他們使用方法分別為：
+ 粗體 ：**粗體** 或 __粗體__。 斜體 ：*斜體* 或 _斜體_。 刪除 ：~~刪除~~。 程式碼 ：將內容用 ` 包起來。 1：[^id]，其連結的位置為 [^id]: xxx。 超連結：[text](link “tooltip&amp;quot;)，&amp;quot;tooltip&amp;quot; 可以不寫。  其中要注意的是斜體後面得有空白，造成中文書寫時會有多餘空白，因此書寫中文時建議使用粗體代替。在這個 theme 中，所有的換行都會被保留，這有別於其他 theme，我認為這樣的書寫比較符合我自己的習慣。如果使用本 theme，建議將你的編輯器調成 wrap line 的模式。
+Image ![Fedora 26](https://i.imgur.com/QzfKyxm.jpg)  這種圖片寬度固定為 theme 的寬度（預設是 700px）。
+Code Block Code Block 一般用來放置一些簡短的、不需要顏色渲染的程式碼，例如在 conda 中創造一個虛擬環境的指令為：
+conda create -n venv python=3.6 source activate venv  Block Quote  Block Quote 一般用來放要強調的東西。 也可以用來放詩詞等。</description>
     </item>
     
     <item>

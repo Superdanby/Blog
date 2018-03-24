@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://superdanby.github.io/Blog/create-a-new-hugo-site.html</loc>
+    <lastmod>2018-03-24T17:46:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://superdanby.github.io/Blog/training-the-next-system-administator-and-web-developer.html</loc>
+    <lastmod>2018-03-24T10:47:06+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://superdanby.github.io/Blog/fedora-installation.html</loc>
     <lastmod>2018-03-23T00:00:00+08:00</lastmod>
   </url>
@@ -15,6 +25,11 @@
   <url>
     <loc>http://superdanby.github.io/Blog/manually-obtain-letsencrypt-certificate-for-websites.html</loc>
     <lastmod>2018-02-26T14:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://superdanby.github.io/Blog/markdown-cheetsheet.html</loc>
+    <lastmod>2017-12-09T13:55:37+08:00</lastmod>
   </url>
   
   <url>
@@ -124,14 +139,26 @@
   </url>
   
   <url>
+    <loc>http://superdanby.github.io/Blog/tags/cheatsheet.html</loc>
+    <lastmod>2017-12-09T13:55:37+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://superdanby.github.io/Blog/categories/cheatsheet.html</loc>
+    <lastmod>2017-12-09T13:55:37+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://superdanby.github.io/Blog/tags/fedora.html</loc>
-    <lastmod>2018-03-23T00:00:00+08:00</lastmod>
+    <lastmod>2018-03-24T17:46:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://superdanby.github.io/Blog/categories/fedora.html</loc>
-    <lastmod>2018-03-23T00:00:00+08:00</lastmod>
+    <lastmod>2018-03-24T10:47:06+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -144,6 +171,18 @@
   <url>
     <loc>http://superdanby.github.io/Blog/tags/https.html</loc>
     <lastmod>2018-02-26T14:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://superdanby.github.io/Blog/tags/hugo.html</loc>
+    <lastmod>2018-03-24T17:46:50+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://superdanby.github.io/Blog/categories/hugo.html</loc>
+    <lastmod>2018-03-24T17:46:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -192,6 +231,12 @@
   <url>
     <loc>http://superdanby.github.io/Blog/tags/manual.html</loc>
     <lastmod>2018-02-26T14:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://superdanby.github.io/Blog/tags/markdown.html</loc>
+    <lastmod>2017-03-21T11:20:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -341,7 +386,7 @@
   
   <url>
     <loc>http://superdanby.github.io/Blog/</loc>
-    <lastmod>2018-03-23T00:00:00+08:00</lastmod>
+    <lastmod>2018-03-24T17:46:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
