@@ -277,6 +277,8 @@ Why bother with all those HTML syntax?
 
 ## Shell Script
 
+### `argbash`
+
 ## Systemd
 
 ## Laravel Controller
