@@ -92,14 +92,5 @@
       <description></description>
     </item>
     
-    <item>
-      <title>Test</title>
-      <link>http://superdanby.github.io/Blog/categories/test.html</link>
-      <pubDate>Tue, 21 Mar 2017 11:20:00 +0800</pubDate>
-      
-      <guid>http://superdanby.github.io/Blog/categories/test.html</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

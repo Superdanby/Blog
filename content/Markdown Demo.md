@@ -1,8 +1,8 @@
 ---
 title: "Markdown Demo"
 date: 2017-03-21T11:20:00+08:00
-categories: [Test]
-tags: [Markdown, Test]
+categories: [Cheatsheet]
+tags: [Markdown, Cheatsheet]
 toc: true
 math: false
 ---
