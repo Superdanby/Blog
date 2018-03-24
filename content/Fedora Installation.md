@@ -1,6 +1,6 @@
 ---
 title: "Fedora Installation"
-date: 2018-03-23T00:00:00+08:00
+date: 2017-07-15T00:00:00+08:00
 categories: [Fedora]
 tags: [Fedora]
 toc: true

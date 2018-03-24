@@ -13,11 +13,6 @@
   </url>
   
   <url>
-    <loc>http://superdanby.github.io/Blog/fedora-installation.html</loc>
-    <lastmod>2018-03-23T00:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://superdanby.github.io/Blog/blog-setup.html</loc>
     <lastmod>2018-03-01T00:00:00+08:00</lastmod>
   </url>
@@ -50,6 +45,11 @@
   <url>
     <loc>http://superdanby.github.io/Blog/managing-signed-keys-with-machine-owner-key.html</loc>
     <lastmod>2017-07-23T21:46:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://superdanby.github.io/Blog/fedora-installation.html</loc>
+    <lastmod>2017-07-15T00:00:00+08:00</lastmod>
   </url>
   
   <url>

@@ -32,18 +32,6 @@ Initial Setup  hugo new site PROJECT NAME cd PROJECT NAME git init  Setup a Gith
     </item>
     
     <item>
-      <title>Fedora Installation</title>
-      <link>http://superdanby.github.io/Blog/fedora-installation.html</link>
-      <pubDate>Fri, 23 Mar 2018 00:00:00 +0800</pubDate>
-      
-      <guid>http://superdanby.github.io/Blog/fedora-installation.html</guid>
-      <description>Preparation If you&amp;rsquo;re using Windows and wish to install Fedora alongside with it. You can open Disk Management and shrink a drive to make space for Fedora.
-Create a live USB with Fedora Media Writer
-Installation Partitioning Automatic: Anaconda will automatically create mountpoints /, /home, swap with LVM2.
-Custom: This lets you decide which mountpoints to create, the size of each mountpoint, and the partition type. The rest would be handled by Anaconda.</description>
-    </item>
-    
-    <item>
       <title>Dealing with Nvidia Optimus</title>
       <link>http://superdanby.github.io/Blog/dealing-with-nvidia-optimus.html</link>
       <pubDate>Mon, 24 Jul 2017 18:30:00 +0800</pubDate>
@@ -64,6 +52,18 @@ A brief comparison table:
 Usage Enrolling a key The guide can be found here.
 List all the enrolled keys: `mokutil -l`  Deleting a key First, you have to export the keys: mokutil --export
 Delete the key: mokutil -dTheFile, E.g. mokutil -d MOK-0001.der</description>
+    </item>
+    
+    <item>
+      <title>Fedora Installation</title>
+      <link>http://superdanby.github.io/Blog/fedora-installation.html</link>
+      <pubDate>Sat, 15 Jul 2017 00:00:00 +0800</pubDate>
+      
+      <guid>http://superdanby.github.io/Blog/fedora-installation.html</guid>
+      <description>Preparation If you&amp;rsquo;re using Windows and wish to install Fedora alongside with it. You can open Disk Management and shrink a drive to make space for Fedora.
+Create a live USB with Fedora Media Writer
+Installation Partitioning Automatic: Anaconda will automatically create mountpoints /, /home, swap with LVM2.
+Custom: This lets you decide which mountpoints to create, the size of each mountpoint, and the partition type. The rest would be handled by Anaconda.</description>
     </item>
     
     <item>
