@@ -17,7 +17,8 @@
       <pubDate>Sat, 24 Mar 2018 10:47:06 +0800</pubDate>
       
       <guid>http://superdanby.github.io/Blog/training-the-next-system-administator-and-web-developer.html</guid>
-      <description>2018.3.4 Remote Connection with SSH  sshusername@hostaddress git:  git config --global user.name &amp;quot;USERNAME&amp;quot; git config --global user.email &amp;quot;EMAIL&amp;quot; ssh setup for Github  ssh-keygen sshd: public private Key setup, disabling password authentication  .ssh permissions: 700 .ssh/authorized_keys permissions: 644   2018.3.11 sshfs  -o reconnect,ServerAliveInterval=5,ServerAliveCountMax=3 Mac requires osxfuse and the option, defer_permissions1, to work correctly.  Basic Laravel File Structure  routes/web.php: routing control resources/views: blade template system(section, yield, include) public: stores contents that is accessible by anyone.</description>
+      <description>2018.3.4 Remote Connection with SSH  sshusername@hostaddress git:  git config --global user.name &amp;quot;USERNAME&amp;quot; git config --global user.email &amp;quot;EMAIL&amp;quot; ssh setup for Github  ssh-keygen sshd: public private Key setup, disabling password authentication  .ssh permissions: 700 .ssh/authorized_keys permissions: 644   2018.3.11 sshfs -o reconnect,ServerAliveInterval=5,ServerAliveCountMax=3 - Mac requires osxfuse and the option, defer_permissions1, to work correctly.
+Basic Laravel File Structure  routes/web.php: routing control resources/views: blade template system(section, yield, include) public: stores contents that is accessible by anyone.</description>
     </item>
     
     <item>

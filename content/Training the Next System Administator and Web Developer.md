@@ -25,7 +25,9 @@ math: false
 
 ##	`sshfs`
 
--	`-o reconnect,ServerAliveInterval=5,ServerAliveCountMax=3`
+{{< highlight sh "noclasses=false" >}}
+-o reconnect,ServerAliveInterval=5,ServerAliveCountMax=3
+{{< / highlight >}}
 -	Mac requires [osxfuse](https://github.com/osxfuse/osxfuse) and the option, `defer_permissions`[^defer_permissions], to work correctly.
 
 ##	Basic Laravel File Structure
