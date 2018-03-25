@@ -211,7 +211,7 @@ math: false
 -	`mv`
 -	`rename`
 
-# 2018.3.25
+# ~~2018.3.25~~ Postponed
 
 ## Public Private Key Revisit
 
