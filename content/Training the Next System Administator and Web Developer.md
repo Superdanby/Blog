@@ -63,7 +63,10 @@ math: false
 
 -	e.g. `GiB` vs `GB`
 
-###	Clock Rates: CPU > Memory
+###	Clock Rates
+
+How many clock cycles in 1 second.
+-	CPU > Memory
 
 ###	Memory
 
@@ -112,7 +115,7 @@ math: false
 
 ## Linux Backgrounds
 
-###	Time line[^Linux Time Line]:
+###	Time line
 
 1.	1971: Unix published
 2.	1977: BSD released, based on Unix v6
@@ -122,10 +125,10 @@ math: false
 5.	1991: Linux released, Unix-like
 6.	1995: Free Software Foundation established
 
-{{< figure src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Unix_timeline.en.svg" title="Unix History" width="700" >}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Unix_timeline.en.svg" title="Unix History" width="700" >}}[^Linux Time Line]
 
 
-###	License:
+###	License
 
 [Specifically](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/tree/COPYING), GNU GPLv2
 
@@ -215,7 +218,7 @@ math: false
 
 ## Public Private Key Revisit
 
--	[https://tools.ietf.org/html/rfc4252#section-7](https://tools.ietf.org/html/rfc4252#section-7)
+-	[rfc4252#section-7](https://tools.ietf.org/html/rfc4252#section-7)
 
 ## [`brew`](https://brew.sh/)
 
@@ -297,7 +300,7 @@ Why bother with all those HTML syntax?
 
 ## [Fedora Developer Portal](https://developer.fedoraproject.org)
 
-[^defer_permissions]: [https://github.com/osxfuse/osxfuse/issues/45](https://github.com/osxfuse/osxfuse/issues/45)
+[^defer_permissions]: [osxfuse defer_permissions](https://github.com/osxfuse/osxfuse/issues/45)
 [^MBR]: [Master Boot Record](https://en.wikipedia.org/wiki/Master_boot_record)
 [^GPT]: [GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table)
 [^Mono Kernel]: [Monolithic Kernel](https://en.wikipedia.org/wiki/Monolithic_kernel)
