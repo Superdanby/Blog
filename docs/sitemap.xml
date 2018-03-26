@@ -286,6 +286,12 @@
   </url>
   
   <url>
+    <loc>http://superdanby.github.io/Blog/</loc>
+    <lastmod>2018-03-24T17:46:50+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://superdanby.github.io/Blog/categories/system.html</loc>
     <lastmod>2017-05-31T00:00:00+08:00</lastmod>
     <priority>0</priority>
@@ -324,12 +330,6 @@
   <url>
     <loc>http://superdanby.github.io/Blog/tags/xps-15-9550.html</loc>
     <lastmod>2017-05-31T00:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://superdanby.github.io/Blog/</loc>
-    <lastmod>2018-03-24T17:46:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
