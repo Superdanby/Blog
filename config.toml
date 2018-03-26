@@ -11,3 +11,4 @@ googleAnalytics = "UA-116389618-1"
 [params]
     avatar = "abouts/me.gif"
 	anchor = true
+	author = "Superdanby"

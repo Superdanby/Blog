@@ -10,7 +10,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
         <link rel="shortcut icon" type="image/jpeg" href="/Blog/abouts/me.gif" />
-        
+
         
         <link rel="stylesheet" href="/Blog/style.min.css">
 
@@ -32,6 +32,58 @@
 
         
         
+
+        
+        <script>
+document.addEventListener("DOMContentLoaded", function() {
+	var article = document.getElementsByTagName("article")[0];
+
+	var s = article.getElementsByTagName("a");
+	var i = 0;
+	while (s[i] && typeof s[i].innerHTML != "undefined")
+	{
+		var parent = s[i].parentElement;
+		var flag = true;
+		while (parent)
+		{
+			if (parent.tagName == "PRE")
+			{
+				flag = false;
+				break;
+			}
+			parent = parent.parentElement;
+		}
+		if (flag)
+		{
+			s[i].innerHTML = s[i].innerHTML.replace(new RegExp("([^a-zA-Z\d])","g"),"$1<wbr>");
+		}
+		++i;
+	}
+
+	s = article.getElementsByTagName("code");
+	i = 0;
+	while (s[i] && typeof s[i].innerHTML != "undefined")
+	{
+		var parent = s[i].parentElement;
+		var flag = true;
+		while (parent)
+		{
+			if (parent.tagName == "PRE")
+			{
+				flag = false;
+				break;
+			}
+			parent = parent.parentElement;
+		}
+		if (flag)
+		{
+			s[i].innerHTML = s[i].innerHTML.replace(new RegExp("([^a-zA-Z\d])","g"),"$1<wbr>");
+		}
+		++i;
+	}
+});
+</script>
+
 
     </head>
 
@@ -163,10 +215,13 @@
 
         
         <footer>
-    <div class="hr"></div>
+    
     <p>
         Powered by <a href="https://gohugo.io/">Hugo</a> with theme
         <a href="https://github.com/amoshyc/hugo-zmd-theme">zmd</a>
+    </p>
+    <p>
+        © 2018 by Superdanby
     </p>
 </footer>
 
