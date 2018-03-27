@@ -209,8 +209,8 @@ You&rsquo;ll be prompt to enter a password for later use in MOK.</p>
 function expand_disqus() {
     
     
-    
-    
+    if (window.location.hostname == "localhost")
+        return;
 
     document.getElementById('expand-btn').style.display = "none";
 

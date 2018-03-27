@@ -187,8 +187,8 @@ Go <a href="http://forum.notebookreview.com/threads/xps-15-9560-owners-thread.80
 function expand_disqus() {
     
     
-    
-    
+    if (window.location.hostname == "localhost")
+        return;
 
     document.getElementById('expand-btn').style.display = "none";
 
