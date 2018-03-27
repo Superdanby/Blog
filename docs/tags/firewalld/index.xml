@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Firewalld on Superdanby</title>
-    <link>http://superdanby.github.io/Blog/tags/firewalld.html</link>
+    <link>https://superdanby.github.io/Blog/tags/firewalld.html</link>
     <description>Recent content in Firewalld on Superdanby</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 09 Mar 2017 11:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://superdanby.github.io/Blog/tags/firewalld/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://superdanby.github.io/Blog/tags/firewalld/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>XPS 15 9550 Issues with Fedora 25</title>
-      <link>http://superdanby.github.io/Blog/xps-15-9550-issues-with-fedora-25.html</link>
+      <link>https://superdanby.github.io/Blog/xps-15-9550-issues-with-fedora-25.html</link>
       <pubDate>Thu, 09 Mar 2017 11:00:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/xps-15-9550-issues-with-fedora-25.html</guid>
+      <guid>https://superdanby.github.io/Blog/xps-15-9550-issues-with-fedora-25.html</guid>
       <description>Firewalld fails to stop when shutting down. Current Workaround Set CleanupOnExit=no in /etc/firewalld/firewalld.conf
 
 Bluetooth not seeing any devices. Current Workaround sudo dnf install linux-firmware https://fedoraproject.org/wiki/Firmware</description>

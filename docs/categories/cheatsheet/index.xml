@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cheatsheet on Superdanby</title>
-    <link>http://superdanby.github.io/Blog/categories/cheatsheet.html</link>
+    <link>https://superdanby.github.io/Blog/categories/cheatsheet.html</link>
     <description>Recent content in Cheatsheet on Superdanby</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 09 Dec 2017 13:55:37 +0800</lastBuildDate>
     
-	<atom:link href="http://superdanby.github.io/Blog/categories/cheatsheet/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://superdanby.github.io/Blog/categories/cheatsheet/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Markdown Cheatsheet</title>
-      <link>http://superdanby.github.io/Blog/markdown-cheetsheet.html</link>
+      <link>https://superdanby.github.io/Blog/markdown-cheetsheet.html</link>
       <pubDate>Sat, 09 Dec 2017 13:55:37 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/markdown-cheetsheet.html</guid>
+      <guid>https://superdanby.github.io/Blog/markdown-cheetsheet.html</guid>
       <description>Original Post
 Standard Markdown Inline Markup 常見的 Markdown 行內標記包含粗體、斜體 、刪除、程式碼、Footnote1 與超連結。他們使用方法分別為：
  粗體 ：**粗體** 或 __粗體__。 斜體 ：*斜體* 或 _斜體_。 刪除 ：~~刪除~~。 程式碼 ：將內容用 ` 包起來。 1：[^id]，其連結的位置為 [^id]: xxx。 超連結：[text](link “tooltip&amp;quot;)，&amp;quot;tooltip&amp;quot; 可以不寫。  其中要注意的是斜體後面得有空白，造成中文書寫時會有多餘空白，因此書寫中文時建議使用粗體代替。在這個 theme 中，所有的換行都會被保留，這有別於其他 theme，我認為這樣的書寫比較符合我自己的習慣。如果使用本 theme，建議將你的編輯器調成 wrap line 的模式。
@@ -27,10 +27,10 @@ conda create -n venv python=3.6 source activate venv  Block Quote  Block Quote �
     
     <item>
       <title>Markdown Demo</title>
-      <link>http://superdanby.github.io/Blog/markdown-demo.html</link>
+      <link>https://superdanby.github.io/Blog/markdown-demo.html</link>
       <pubDate>Tue, 21 Mar 2017 11:20:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/markdown-demo.html</guid>
+      <guid>https://superdanby.github.io/Blog/markdown-demo.html</guid>
       <description>Welcome to StackEdit! Hey! I&amp;rsquo;m your first Markdown document in StackEdit1. Don&amp;rsquo;t delete me, I&amp;rsquo;m very helpful! I can be recovered anyway in the Utils tab of the  Settings dialog.
 Documents StackEdit stores your documents in your browser, which means all your documents are automatically saved locally and are accessible offline!
  Note:

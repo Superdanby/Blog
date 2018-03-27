@@ -2,42 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fedora on Superdanby</title>
-    <link>http://superdanby.github.io/Blog/tags/fedora.html</link>
+    <link>https://superdanby.github.io/Blog/tags/fedora.html</link>
     <description>Recent content in Fedora on Superdanby</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 24 Mar 2018 17:46:50 +0800</lastBuildDate>
     
-	<atom:link href="http://superdanby.github.io/Blog/tags/fedora/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://superdanby.github.io/Blog/tags/fedora/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Create a New Hugo Site</title>
-      <link>http://superdanby.github.io/Blog/create-a-new-hugo-site.html</link>
+      <link>https://superdanby.github.io/Blog/create-a-new-hugo-site.html</link>
       <pubDate>Sat, 24 Mar 2018 17:46:50 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/create-a-new-hugo-site.html</guid>
+      <guid>https://superdanby.github.io/Blog/create-a-new-hugo-site.html</guid>
       <description>Prerequisites hugo
 Install Hugo on Fedora sudo dnf install hugo 1. sudo dnf install snap 2. snap install hugo
 Initial Setup  hugo new site PROJECT NAME cd PROJECT NAME git init  Setup a Github Repository  Create a new repository Repository settings &amp;gt; Source: master branch /docs folder git remote add origin REPO ADDRESS: usually git@github.com:...git git pull origin master  Setup Custom Theme: zmd  Fork the Github repository.</description>
     </item>
     
     <item>
-      <title>Training the Next System Administator and Web Developer</title>
-      <link>http://superdanby.github.io/Blog/training-the-next-system-administator-and-web-developer.html</link>
+      <title>Training the Next System Administrator and Web Developer</title>
+      <link>https://superdanby.github.io/Blog/training-the-next-system-administator-and-web-developer.html</link>
       <pubDate>Sat, 24 Mar 2018 10:47:06 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/training-the-next-system-administator-and-web-developer.html</guid>
+      <guid>https://superdanby.github.io/Blog/training-the-next-system-administator-and-web-developer.html</guid>
       <description>2018.3.4 Remote Connection with SSH  sshusername@hostaddress git:  git config --global user.name &amp;quot;USERNAME&amp;quot; git config --global user.email &amp;quot;EMAIL&amp;quot; ssh setup for Github  ssh-keygen sshd: public private Key setup, disabling password authentication  .ssh permissions: 700 .ssh/authorized_keys permissions: 644   2018.3.11 sshfs -o reconnect,ServerAliveInterval=5,ServerAliveCountMax=3 - Mac requires osxfuse and the option, defer_permissions1, to work correctly.
 Basic Laravel File Structure  routes/web.php: routing control resources/views: blade template system(section, yield, include) public: stores contents that is accessible by anyone.</description>
     </item>
     
     <item>
       <title>Dealing with Nvidia Optimus</title>
-      <link>http://superdanby.github.io/Blog/dealing-with-nvidia-optimus.html</link>
+      <link>https://superdanby.github.io/Blog/dealing-with-nvidia-optimus.html</link>
       <pubDate>Mon, 24 Jul 2017 18:30:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/dealing-with-nvidia-optimus.html</guid>
+      <guid>https://superdanby.github.io/Blog/dealing-with-nvidia-optimus.html</guid>
       <description>Battery Life Matters Since the release of Fedora 26, Mesa doesn&amp;rsquo;t conflict with Nvidia anymore. Generally, the Nvidia driver can be installed from either Bumblebee or Negativo17&amp;rsquo;s repo. Both methods are easy to install, but the former one is likely to have more problems.
 A brief comparison table:
     Bumblebee Negativo17     Nvidia Driver Version Old Up to date   Usage Turn on when needed Always on with Nvidia Optimus   Status No updates since 2013 Still being maintained and has good support   Platform Wayland &amp;amp; X Only on X    I&amp;rsquo;d like to have more battery life with my laptop.</description>
@@ -45,10 +45,10 @@ A brief comparison table:
     
     <item>
       <title>Managing Signed Keys with Machine Owner Key</title>
-      <link>http://superdanby.github.io/Blog/managing-signed-keys-with-machine-owner-key.html</link>
+      <link>https://superdanby.github.io/Blog/managing-signed-keys-with-machine-owner-key.html</link>
       <pubDate>Sun, 23 Jul 2017 21:46:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/managing-signed-keys-with-machine-owner-key.html</guid>
+      <guid>https://superdanby.github.io/Blog/managing-signed-keys-with-machine-owner-key.html</guid>
       <description>Introduction With MOK we can sign, manage, and delete keys for installed kernel modules.
 Usage Enrolling a key The guide can be found here.
 List all the enrolled keys: `mokutil -l`  Deleting a key First, you have to export the keys: mokutil --export
@@ -57,10 +57,10 @@ Delete the key: mokutil -dTheFile, E.g. mokutil -d MOK-0001.der</description>
     
     <item>
       <title>Fedora Installation</title>
-      <link>http://superdanby.github.io/Blog/fedora-installation.html</link>
+      <link>https://superdanby.github.io/Blog/fedora-installation.html</link>
       <pubDate>Sat, 15 Jul 2017 00:00:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/fedora-installation.html</guid>
+      <guid>https://superdanby.github.io/Blog/fedora-installation.html</guid>
       <description>Preparation If you&amp;rsquo;re using Windows and wish to install Fedora alongside with it. You can open Disk Management and shrink a drive to make space for Fedora.
 Create a live USB with Fedora Media Writer
 Installation Partitioning Automatic: Anaconda will automatically create mountpoints /, /home, swap with LVM2.
@@ -69,10 +69,10 @@ Custom: This lets you decide which mountpoints to create, the size of each mount
     
     <item>
       <title>Signing Kernel Modules for Secure Boot</title>
-      <link>http://superdanby.github.io/Blog/signing-kernel-modules-for-secure-boot.html</link>
+      <link>https://superdanby.github.io/Blog/signing-kernel-modules-for-secure-boot.html</link>
       <pubDate>Thu, 25 May 2017 13:46:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/signing-kernel-modules-for-secure-boot.html</guid>
+      <guid>https://superdanby.github.io/Blog/signing-kernel-modules-for-secure-boot.html</guid>
       <description>Preparation Make sure your Secure Boot is off. In order to sign the modules, they should exist in the current environment. Turning on Secure Boot will block the modules to load in the first place.
 Key Creation Create Signing Keys openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -nodes -days 36500 -subj &amp;quot;/CN=Descriptive name/&amp;quot; Descriptive name is the name of the key. E.g. &amp;quot;/CN=Yee~&amp;quot;
 Sign the Module sudo /usr/src/kernels/$(uname -r)/scripts/sign-file sha256 .</description>
@@ -80,20 +80,20 @@ Sign the Module sudo /usr/src/kernels/$(uname -r)/scripts/sign-file sha256 .</de
     
     <item>
       <title>Fedora Introduction</title>
-      <link>http://superdanby.github.io/Blog/fedora.html</link>
+      <link>https://superdanby.github.io/Blog/fedora.html</link>
       <pubDate>Wed, 24 May 2017 16:30:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/fedora.html</guid>
+      <guid>https://superdanby.github.io/Blog/fedora.html</guid>
       <description>Get Fedora Now! IMO, the best Linux distro. 1. The one always deploies the newest technologies. 2. Gnome 3. Cares about security A LOT(Secure Boot, SELinux, Wayland). 4. Redhat supported. - Next version: 26 - Release date: 2017/06/27 - Expected features: 1. No conflicts between Mesa and negativo17.org Nvidia drivers 2. Gnome 3.24 3. dnf 2.0
 Tweaks Bookmark Locations in Files(nautilus) The upper left icon in the group of 6.</description>
     </item>
     
     <item>
       <title>XPS 15 9550 Issues with Fedora 25</title>
-      <link>http://superdanby.github.io/Blog/xps-15-9550-issues-with-fedora-25.html</link>
+      <link>https://superdanby.github.io/Blog/xps-15-9550-issues-with-fedora-25.html</link>
       <pubDate>Thu, 09 Mar 2017 11:00:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/xps-15-9550-issues-with-fedora-25.html</guid>
+      <guid>https://superdanby.github.io/Blog/xps-15-9550-issues-with-fedora-25.html</guid>
       <description>Firewalld fails to stop when shutting down. Current Workaround Set CleanupOnExit=no in /etc/firewalld/firewalld.conf
 
 Bluetooth not seeing any devices. Current Workaround sudo dnf install linux-firmware https://fedoraproject.org/wiki/Firmware</description>
@@ -101,10 +101,10 @@ Bluetooth not seeing any devices. Current Workaround sudo dnf install linux-firm
     
     <item>
       <title>User Experience Enhancements</title>
-      <link>http://superdanby.github.io/Blog/user-experience-enhencements.html</link>
+      <link>https://superdanby.github.io/Blog/user-experience-enhencements.html</link>
       <pubDate>Mon, 27 Feb 2017 20:20:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/user-experience-enhencements.html</guid>
+      <guid>https://superdanby.github.io/Blog/user-experience-enhencements.html</guid>
       <description>All Platforms Atom A beautiful and hackable cross-platform text editor with wonderful Github integration.
 Fedora Media Writer It has been fixed on Version 4.1.0-1.fc25. On Fedora, the only downside is that the scaling factor in Gnome Tweak Tool has no effect on it.
 Intel Speed Shift Better power management for Skylake processors and above.</description>

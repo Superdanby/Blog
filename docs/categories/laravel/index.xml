@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Laravel on Superdanby</title>
-    <link>http://superdanby.github.io/Blog/categories/laravel.html</link>
+    <link>https://superdanby.github.io/Blog/categories/laravel.html</link>
     <description>Recent content in Laravel on Superdanby</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 25 Sep 2017 00:20:00 +0800</lastBuildDate>
     
-	<atom:link href="http://superdanby.github.io/Blog/categories/laravel/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://superdanby.github.io/Blog/categories/laravel/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Laravel 使用心得(竟然是中文!!)</title>
-      <link>http://superdanby.github.io/Blog/laravel.html</link>
+      <link>https://superdanby.github.io/Blog/laravel.html</link>
       <pubDate>Mon, 25 Sep 2017 00:20:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/laravel.html</guid>
+      <guid>https://superdanby.github.io/Blog/laravel.html</guid>
       <description>前情提要 暑假的時候，因為學校總務處想要一個新的網站，後來決定使用 Laravel 來架設，不過那時候我還只會一點點的 html &amp;amp;&amp;amp; css，所以很多東西都是邊學邊作。
 主要選用Laravel的原因是舊的網站是php寫的，想說有些東西可以複製貼上(結果幾乎沒有OAO)。
 安裝 如果是用 Fedora 可以在這裏找到所有安裝步驟。

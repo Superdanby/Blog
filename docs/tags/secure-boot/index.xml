@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Secure Boot on Superdanby</title>
-    <link>http://superdanby.github.io/Blog/tags/secure-boot.html</link>
+    <link>https://superdanby.github.io/Blog/tags/secure-boot.html</link>
     <description>Recent content in Secure Boot on Superdanby</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 23 Jul 2017 21:46:00 +0800</lastBuildDate>
     
-	<atom:link href="http://superdanby.github.io/Blog/tags/secure-boot/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://superdanby.github.io/Blog/tags/secure-boot/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Managing Signed Keys with Machine Owner Key</title>
-      <link>http://superdanby.github.io/Blog/managing-signed-keys-with-machine-owner-key.html</link>
+      <link>https://superdanby.github.io/Blog/managing-signed-keys-with-machine-owner-key.html</link>
       <pubDate>Sun, 23 Jul 2017 21:46:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/managing-signed-keys-with-machine-owner-key.html</guid>
+      <guid>https://superdanby.github.io/Blog/managing-signed-keys-with-machine-owner-key.html</guid>
       <description>Introduction With MOK we can sign, manage, and delete keys for installed kernel modules.
 Usage Enrolling a key The guide can be found here.
 List all the enrolled keys: `mokutil -l`  Deleting a key First, you have to export the keys: mokutil --export
@@ -25,10 +25,10 @@ Delete the key: mokutil -dTheFile, E.g. mokutil -d MOK-0001.der</description>
     
     <item>
       <title>Signing Kernel Modules for Secure Boot</title>
-      <link>http://superdanby.github.io/Blog/signing-kernel-modules-for-secure-boot.html</link>
+      <link>https://superdanby.github.io/Blog/signing-kernel-modules-for-secure-boot.html</link>
       <pubDate>Thu, 25 May 2017 13:46:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/signing-kernel-modules-for-secure-boot.html</guid>
+      <guid>https://superdanby.github.io/Blog/signing-kernel-modules-for-secure-boot.html</guid>
       <description>Preparation Make sure your Secure Boot is off. In order to sign the modules, they should exist in the current environment. Turning on Secure Boot will block the modules to load in the first place.
 Key Creation Create Signing Keys openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -nodes -days 36500 -subj &amp;quot;/CN=Descriptive name/&amp;quot; Descriptive name is the name of the key. E.g. &amp;quot;/CN=Yee~&amp;quot;
 Sign the Module sudo /usr/src/kernels/$(uname -r)/scripts/sign-file sha256 .</description>

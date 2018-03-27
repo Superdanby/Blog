@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Security on Superdanby</title>
-    <link>http://superdanby.github.io/Blog/tags/security.html</link>
+    <link>https://superdanby.github.io/Blog/tags/security.html</link>
     <description>Recent content in Security on Superdanby</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://superdanby.github.io/Blog/tags/security/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://superdanby.github.io/Blog/tags/security/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Security</title>
-      <link>http://superdanby.github.io/Blog/security.html</link>
+      <link>https://superdanby.github.io/Blog/security.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/security.html</guid>
+      <guid>https://superdanby.github.io/Blog/security.html</guid>
       <description>Foot Printing Search Engines Google, duckduckgo, bing, Archive
 Google inurl, allinurl, intitle, allintitle, site, related, filetype, intext
 GHDB People Facebook, Linkedin, Google+, Twitter

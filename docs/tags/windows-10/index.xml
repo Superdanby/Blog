@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows 10 on Superdanby</title>
-    <link>http://superdanby.github.io/Blog/tags/windows-10.html</link>
+    <link>https://superdanby.github.io/Blog/tags/windows-10.html</link>
     <description>Recent content in Windows 10 on Superdanby</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 20 May 2017 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://superdanby.github.io/Blog/tags/windows-10/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://superdanby.github.io/Blog/tags/windows-10/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Windows 10</title>
-      <link>http://superdanby.github.io/Blog/windows10.html</link>
+      <link>https://superdanby.github.io/Blog/windows10.html</link>
       <pubDate>Sat, 20 May 2017 00:00:00 +0800</pubDate>
       
-      <guid>http://superdanby.github.io/Blog/windows10.html</guid>
+      <guid>https://superdanby.github.io/Blog/windows10.html</guid>
       <description>Tweaks Night Light A Built-in blue light filter.
 (Mingw-w64)[https://sourceforge.net/projects/mingw-w64/] The GNU/GCC compiler on Windows.
 (WSL)[https://blogs.msdn.microsoft.com/wsl/] Built-in Linux sub-systems for Windows 10.

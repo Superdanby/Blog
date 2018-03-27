@@ -1,5 +1,5 @@
 ---
-title: "Training the Next System Administator and Web Developer"
+title: "Training the Next System Administrator and Web Developer"
 date: 2018-03-24T10:47:06+08:00
 categories: [Fedora]
 tags: [Fedora]

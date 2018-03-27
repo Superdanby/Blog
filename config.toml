@@ -1,4 +1,4 @@
-baseURL = "http://superdanby.github.io/Blog"
+baseURL = "https://superdanby.github.io/Blog"
 languageCode = "en-us"
 title = "Superdanby"
 theme = "zmd"
