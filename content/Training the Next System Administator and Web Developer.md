@@ -3,7 +3,7 @@ title: "Training the Next System Administrator and Web Developer"
 date: 2018-03-28T00:00:00+08:00
 categories: [Training the Next System Administrator and Web Developer]
 tags: [Fedora]
-toc: true
+toc: false
 math: false
 ---
 
