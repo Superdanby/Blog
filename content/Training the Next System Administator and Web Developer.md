@@ -9,7 +9,7 @@ math: false
 
 # About
 
-[This series](https://superdanby.github.io/Blog/categories/training-the-next-system-administator-and-web-developer.html) is a record of me training my successor as both the system administrator and web developer of [National Chung Cheng Univeristy General Affairs](https://affairs.ccu.edu.tw/). The content inside will not be rich due to the limited time I have. However, many important keywords will be brought up. So, you can just Google them to learn more.
+[This series](https://superdanby.github.io/Blog/categories/training-the-next-system-administrator-and-web-developer.html) is a record of me training my successor as both the system administrator and web developer of [National Chung Cheng Univeristy General Affairs](https://affairs.ccu.edu.tw/). The content inside will not be rich due to the limited time I have. However, many important keywords will be brought up. So, you can just Google them to learn more.
 
 # Environment
 
