@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sshfs on Superdanby</title>
+    <link>https://superdanby.github.io/Blog/tags/sshfs.html</link>
+    <description>Recent content in Sshfs on Superdanby</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Mar 2018 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://superdanby.github.io/Blog/tags/sshfs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2018 March 11th</title>
+      <link>https://superdanby.github.io/Blog/training-the-next-system-administrator-and-web-developer/20180311.html</link>
+      <pubDate>Sun, 11 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/training-the-next-system-administrator-and-web-developer/20180311.html</guid>
+      <description> sshfs  -o reconnect,ServerAliveInterval=5,ServerAliveCountMax=3 Mac requires osxfuse and the option, defer_permissions1, to work correctly.  Basic Laravel File Structure  routes/web.php: routing control resources/views: blade template system(section, yield, include) public: stores contents that is accessible by anyone. storage: stores to-be-managed contents. .env: basic environment settings php artisan down/up: website accessibility.   osxfuse defer_permissions ↩   </description>
+    </item>
+    
+  </channel>
+</rss>

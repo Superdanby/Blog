@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SSH on Superdanby</title>
+    <link>https://superdanby.github.io/Blog/tags/ssh.html</link>
+    <description>Recent content in SSH on Superdanby</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Mar 2018 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://superdanby.github.io/Blog/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2018 March 11th</title>
+      <link>https://superdanby.github.io/Blog/training-the-next-system-administrator-and-web-developer/20180311.html</link>
+      <pubDate>Sun, 11 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/training-the-next-system-administrator-and-web-developer/20180311.html</guid>
+      <description> sshfs  -o reconnect,ServerAliveInterval=5,ServerAliveCountMax=3 Mac requires osxfuse and the option, defer_permissions1, to work correctly.  Basic Laravel File Structure  routes/web.php: routing control resources/views: blade template system(section, yield, include) public: stores contents that is accessible by anyone. storage: stores to-be-managed contents. .env: basic environment settings php artisan down/up: website accessibility.   osxfuse defer_permissions ↩   </description>
+    </item>
+    
+    <item>
+      <title>2018 March 4th</title>
+      <link>https://superdanby.github.io/Blog/training-the-next-system-administrator-and-web-developer/20180304.html</link>
+      <pubDate>Sun, 04 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/training-the-next-system-administrator-and-web-developer/20180304.html</guid>
+      <description> Remote Connection with SSH  sshusername@hostaddress git:  git config --global user.name &amp;quot;USERNAME&amp;quot; git config --global user.email &amp;quot;EMAIL&amp;quot; ssh setup for Github  ssh-keygen sshd: public private Key setup, disabling password authentication  .ssh permissions: 700 .ssh/authorized_keys permissions: 644   </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,10 +6,21 @@
     <description>Recent content in Fedora on Superdanby</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 24 Mar 2018 17:46:50 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 28 Mar 2018 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://superdanby.github.io/Blog/tags/fedora/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Training the Next System Administrator and Web Developer</title>
+      <link>https://superdanby.github.io/Blog/training-the-next-system-administator-and-web-developer.html</link>
+      <pubDate>Wed, 28 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/training-the-next-system-administator-and-web-developer.html</guid>
+      <description>About This series is a record of me training my successor as both the system administrator and web developer of National Chung Cheng Univeristy General Affairs. The content inside will not be rich due to the limited time I have. However, many important keywords will be brought up. So, you can just Google them to learn more.
+Environment Operating System: Fedora Workstation Website Framework: Laravel
+Queue Public Private Key Revisit  rfc4252#section-7  brew The missing package management system for macOS.</description>
+    </item>
     
     <item>
       <title>Create a New Hugo Site</title>
@@ -23,13 +34,13 @@ Initial Setup  hugo new site PROJECT NAME cd PROJECT NAME git init  Setup a Gith
     </item>
     
     <item>
-      <title>Training the Next System Administrator and Web Developer</title>
-      <link>https://superdanby.github.io/Blog/training-the-next-system-administator-and-web-developer.html</link>
-      <pubDate>Sat, 24 Mar 2018 10:47:06 +0800</pubDate>
+      <title>2018 March 16th</title>
+      <link>https://superdanby.github.io/Blog/training-the-next-system-administrator-and-web-developer/20180316.html</link>
+      <pubDate>Fri, 16 Mar 2018 00:00:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/training-the-next-system-administator-and-web-developer.html</guid>
-      <description>2018.3.4 Remote Connection with SSH  sshusername@hostaddress git:  git config --global user.name &amp;quot;USERNAME&amp;quot; git config --global user.email &amp;quot;EMAIL&amp;quot; ssh setup for Github  ssh-keygen sshd: public private Key setup, disabling password authentication  .ssh permissions: 700 .ssh/authorized_keys permissions: 644   2018.3.11 sshfs -o reconnect,ServerAliveInterval=5,ServerAliveCountMax=3 - Mac requires osxfuse and the option, defer_permissions1, to work correctly.
-Basic Laravel File Structure  routes/web.php: routing control resources/views: blade template system(section, yield, include) public: stores contents that is accessible by anyone.</description>
+      <guid>https://superdanby.github.io/Blog/training-the-next-system-administrator-and-web-developer/20180316.html</guid>
+      <description>Computer Fundamentals Core Elements  Central Processing Unit:  Control Unit Arithmetic Logic Unit Memory Management Unit Registers  Memory Input/Output Storage  CPU Architecture  RISC / CISC: ARM, IBM PowerPC / Intel, AMD Bits: 32 -&amp;gt; 64  Metric Prefix  e.g. GiB vs GB  Clock Rates How many clock cycles in 1 second. - CPU &amp;gt; Memory
+Memory  SRAM vs DRAM Memory Comparison     Storage Speed Volume     Register Fastest Smallest   L1 Cache 2 4   L2 Cache 3 3   L3 Cache 4 2   Main Memory Slowest Largest    Storage  HDD vs SSD  Interfaces  USB Thunderbolt PCIe  Storage Partition  Master Boot Record1</description>
     </item>
     
     <item>

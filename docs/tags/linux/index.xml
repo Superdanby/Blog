@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Superdanby</title>
+    <link>https://superdanby.github.io/Blog/tags/linux.html</link>
+    <description>Recent content in Linux on Superdanby</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Mar 2018 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://superdanby.github.io/Blog/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2018 March 23rd</title>
+      <link>https://superdanby.github.io/Blog/training-the-next-system-administrator-and-web-developer/20180323.html</link>
+      <pubDate>Fri, 23 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/training-the-next-system-administrator-and-web-developer/20180323.html</guid>
+      <description>Linux File System  /: file system root /bin: system binaries, will be used when booting up, should be on the same partition of / /dev: devices, should be on the same partition of / /etc: system settings, should be on the same partition of / /lib: system libraries, should be on the same partition of / /sbin: privileged system libraries, should be on the same partition of / /usr: unix specific resources  /usr/bin: system binaries not used on boot /usr/sbin: system privileged binaries not used on boot /usr/local/bin: user installed binaries /usr/local/sbin: user installed privileged binaries  /var: highly variable data, e.</description>
+    </item>
+    
+    <item>
+      <title>2018 March 18th</title>
+      <link>https://superdanby.github.io/Blog/training-the-next-system-administrator-and-web-developer/20180318.html</link>
+      <pubDate>Sun, 18 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/training-the-next-system-administrator-and-web-developer/20180318.html</guid>
+      <description>Atom A hackable text editor for the 21st century.
+Linux Usage Bash settings  .bashrc .bash_profile  Linux command argument conventions:  shortened: -alias, can stick together without a new - full: --full name  Manual  man info  vim vi improved</description>
+    </item>
+    
+    <item>
+      <title>2018 March 16th</title>
+      <link>https://superdanby.github.io/Blog/training-the-next-system-administrator-and-web-developer/20180316.html</link>
+      <pubDate>Fri, 16 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/training-the-next-system-administrator-and-web-developer/20180316.html</guid>
+      <description>Computer Fundamentals Core Elements  Central Processing Unit:  Control Unit Arithmetic Logic Unit Memory Management Unit Registers  Memory Input/Output Storage  CPU Architecture  RISC / CISC: ARM, IBM PowerPC / Intel, AMD Bits: 32 -&amp;gt; 64  Metric Prefix  e.g. GiB vs GB  Clock Rates How many clock cycles in 1 second. - CPU &amp;gt; Memory
+Memory  SRAM vs DRAM Memory Comparison     Storage Speed Volume     Register Fastest Smallest   L1 Cache 2 4   L2 Cache 3 3   L3 Cache 4 2   Main Memory Slowest Largest    Storage  HDD vs SSD  Interfaces  USB Thunderbolt PCIe  Storage Partition  Master Boot Record1</description>
+    </item>
+    
+  </channel>
+</rss>

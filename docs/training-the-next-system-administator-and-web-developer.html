@@ -98,12 +98,12 @@ document.addEventListener("DOMContentLoaded", function() {
     
     <div class="info">
         <div class="top">
-            <span title="Date">2018/03/24</span>
+            <span title="Date">2018/03/28</span>
             <span>@</span>
             <span>
                 
                    
-                   <a href="https://superdanby.github.io/Blog/categories/fedora.html">Fedora</a>
+                   <a href="https://superdanby.github.io/Blog/categories/training-the-next-system-administrator-and-web-developer.html">Training the Next System Administrator and Web Developer</a>
                 
             </span>
         </div>
@@ -126,60 +126,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 <span>TOC</span>
                 <nav id="TableOfContents">
 <ul>
-<li><a href="#2018-3-4">2018.3.4</a>
-<ul>
-<li><a href="#remote-connection-with-ssh">Remote Connection with SSH</a></li>
-</ul></li>
-<li><a href="#2018-3-11">2018.3.11</a>
-<ul>
-<li><a href="#sshfs"><code>sshfs</code></a></li>
-<li><a href="#basic-laravel-file-structure">Basic Laravel File Structure</a></li>
-</ul></li>
-<li><a href="#2018-3-16">2018.3.16</a>
-<ul>
-<li><a href="#computer-fundamentals">Computer Fundamentals</a>
-<ul>
-<li><a href="#core-elements">Core Elements</a></li>
-<li><a href="#cpu-architecture">CPU Architecture</a></li>
-<li><a href="#metric-prefix-https-en-wikipedia-org-wiki-metric-prefix"><a href="https://en.wikipedia.org/wiki/Metric_prefix">Metric Prefix</a></a></li>
-<li><a href="#clock-rates">Clock Rates</a></li>
-<li><a href="#memory">Memory</a></li>
-<li><a href="#storage">Storage</a></li>
-<li><a href="#interfaces">Interfaces</a></li>
-<li><a href="#storage-partition">Storage Partition</a></li>
-<li><a href="#system-structure-overview">System Structure Overview</a></li>
-</ul></li>
-<li><a href="#linux-backgrounds">Linux Backgrounds</a>
-<ul>
-<li><a href="#time-line">Time line</a></li>
-<li><a href="#license">License</a></li>
-<li><a href="#free-software-definition">Free software definition:</a></li>
-<li><a href="#linux-branches">Linux Branches</a></li>
-<li><a href="#fedora">Fedora</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#2018-3-18">2018.3.18</a>
-<ul>
-<li><a href="#atom-https-superdanby-github-io-blog-atom-text-editor-html"><a href="https://superdanby.github.io/Blog/atom-text-editor.html">Atom</a></a></li>
-<li><a href="#linux-usage">Linux Usage</a>
-<ul>
-<li><a href="#bash-settings">Bash settings</a></li>
-<li><a href="#linux-command-argument-conventions">Linux command argument conventions:</a></li>
-<li><a href="#manual">Manual</a></li>
-<li><a href="#vim"><code>vim</code></a></li>
-</ul></li>
-</ul></li>
-<li><a href="#2018-3-23">2018.3.23</a>
-<ul>
-<li><a href="#linux-file-system">Linux File System</a>
-<ul>
-<li><a href="#inode">inode</a></li>
-</ul></li>
-<li><a href="#common-file-systems">Common File Systems</a></li>
-<li><a href="#file-links">File Links</a></li>
-<li><a href="#related-commands">Related Commands</a></li>
-</ul></li>
-<li><a href="#2018-3-25-postponed"><del>2018.3.25</del> Postponed</a>
+<li><a href="#about">About</a></li>
+<li><a href="#environment">Environment</a></li>
+<li><a href="#queue">Queue</a>
 <ul>
 <li><a href="#public-private-key-revisit">Public Private Key Revisit</a></li>
 <li><a href="#brew-https-brew-sh"><a href="https://brew.sh/"><code>brew</code></a></a></li>
@@ -191,9 +140,6 @@ document.addEventListener("DOMContentLoaded", function() {
 </ul></li>
 <li><a href="#git"><code>git</code></a></li>
 <li><a href="#setup-a-github-blog">Setup a Github Blog</a></li>
-</ul></li>
-<li><a href="#queue">Queue</a>
-<ul>
 <li><a href="#css-walk-through">CSS Walk-through</a></li>
 <li><a href="#javascript-walk-through">Javascript Walk-through</a></li>
 <li><a href="#get-post">Get, Post</a></li>
@@ -224,333 +170,16 @@ document.addEventListener("DOMContentLoaded", function() {
         
         
 
-<h1 id="2018-3-4">2018.3.4</h1>
+<h1 id="about">About</h1>
 
-<h2 id="remote-connection-with-ssh">Remote Connection with SSH</h2>
+<p><a href="https://superdanby.github.io/Blog/categories/training-the-next-system-administator-and-web-developer.html">This series</a> is a record of me training my successor as both the system administrator and web developer of <a href="https://affairs.ccu.edu.tw/">National Chung Cheng Univeristy General Affairs</a>. The content inside will not be rich due to the limited time I have. However, many important keywords will be brought up. So, you can just Google them to learn more.</p>
 
-<ol>
-<li><code>ssh</code><strong><em>username</em></strong><code>@</code><strong><em>hostaddress</em></strong></li>
-<li><code>git</code>:
+<h1 id="environment">Environment</h1>
 
-<ul>
-<li><code>git config --global user.name &quot;</code><strong><em>USERNAME</em></strong><code>&quot;</code></li>
-<li><code>git config --global user.email &quot;</code><strong><em>EMAIL</em></strong><code>&quot;</code></li>
-<li>ssh setup for <a href="https://github.com/">Github</a></li>
-</ul></li>
-<li><code>ssh-keygen</code></li>
-<li><code>sshd</code>: public private Key setup, disabling password authentication
+<p>Operating System: Fedora Workstation
+Website Framework: Laravel</p>
 
-<ul>
-<li><code>.ssh</code> permissions: <code>700</code></li>
-<li><code>.ssh/authorized_keys</code> permissions: <code>644</code></li>
-</ul></li>
-</ol>
-
-<h1 id="2018-3-11">2018.3.11</h1>
-
-<h2 id="sshfs"><code>sshfs</code></h2>
-
-<p><div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">-o reconnect,ServerAliveInterval<span class="o">=</span><span class="m">5</span>,ServerAliveCountMax<span class="o">=</span><span class="m">3</span></code></pre></div>
--   Mac requires <a href="https://github.com/osxfuse/osxfuse">osxfuse</a> and the option, <code>defer_permissions</code><sup class="footnote-ref" id="fnref:defer-permissions"><a href="#fn:defer-permissions">1</a></sup>, to work correctly.</p>
-
-<h2 id="basic-laravel-file-structure">Basic Laravel File Structure</h2>
-
-<ul>
-<li><code>routes/web.php</code>: routing control</li>
-<li><code>resources/views</code>: blade template system(section, yield, include)</li>
-<li><code>public</code>: stores contents that is accessible by anyone.</li>
-<li><code>storage</code>: stores to-be-managed contents.</li>
-<li><code>.env</code>: basic environment settings</li>
-<li><code>php artisan down/up</code>: website accessibility.</li>
-</ul>
-
-<h1 id="2018-3-16">2018.3.16</h1>
-
-<h2 id="computer-fundamentals">Computer Fundamentals</h2>
-
-<h3 id="core-elements">Core Elements</h3>
-
-<ul>
-<li>Central Processing Unit:
-
-<ul>
-<li>Control Unit</li>
-<li>Arithmetic Logic Unit</li>
-<li>Memory Management Unit</li>
-<li>Registers</li>
-</ul></li>
-<li>Memory</li>
-<li>Input/Output</li>
-<li>Storage</li>
-</ul>
-
-<h3 id="cpu-architecture">CPU Architecture</h3>
-
-<ul>
-<li>RISC / CISC: ARM, IBM PowerPC / Intel, AMD</li>
-<li>Bits: 32 -&gt; 64</li>
-</ul>
-
-<h3 id="metric-prefix-https-en-wikipedia-org-wiki-metric-prefix"><a href="https://en.wikipedia.org/wiki/Metric_prefix">Metric Prefix</a></h3>
-
-<ul>
-<li>e.g. <code>GiB</code> vs <code>GB</code></li>
-</ul>
-
-<h3 id="clock-rates">Clock Rates</h3>
-
-<p>How many clock cycles in 1 second.
--   CPU &gt; Memory</p>
-
-<h3 id="memory">Memory</h3>
-
-<ol>
-<li>SRAM vs DRAM</li>
-<li>Memory Comparison</li>
-</ol>
-
-<table>
-<thead>
-<tr>
-<th>Storage</th>
-<th>Speed</th>
-<th>Volume</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Register</td>
-<td>Fastest</td>
-<td>Smallest</td>
-</tr>
-
-<tr>
-<td>L1 Cache</td>
-<td>2</td>
-<td>4</td>
-</tr>
-
-<tr>
-<td>L2 Cache</td>
-<td>3</td>
-<td>3</td>
-</tr>
-
-<tr>
-<td>L3 Cache</td>
-<td>4</td>
-<td>2</td>
-</tr>
-
-<tr>
-<td>Main Memory</td>
-<td>Slowest</td>
-<td>Largest</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="storage">Storage</h3>
-
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Hard_disk_drive">HDD</a> vs <a href="https://en.wikipedia.org/wiki/Solid-state_drive">SSD</a></li>
-</ul>
-
-<h3 id="interfaces">Interfaces</h3>
-
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/USB">USB</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Thunderbolt_(interface)">Thunderbolt</a></li>
-<li><a href="https://en.wikipedia.org/wiki/PCI_Express">PCIe</a></li>
-</ul>
-
-<h3 id="storage-partition">Storage Partition</h3>
-
-<ol>
-<li><p>Master Boot Record<sup class="footnote-ref" id="fnref:MBR"><a href="#fn:MBR">2</a></sup></p>
-
-<ol>
-<li>Can only have at most 4 primary partitions.</li>
-<li>2 TiB storage limit</li>
-<li>Maximum disk sector size: 512 bytes</li>
-<li>First sector: base partition table, bootstrap code</li>
-</ol></li>
-
-<li><p>GUID Partition Table<sup class="footnote-ref" id="fnref:GPT"><a href="#fn:GPT">3</a></sup></p>
-
-<ol>
-<li>2 ZiB storage limit</li>
-<li>Common sector size: 4 KiB, 512 bytes</li>
-<li>Has a secondary GPT header in case the primary one is broken.</li>
-</ol></li>
-</ol>
-
-
-<figure>
-    
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/GUID_Partition_Table_Scheme.svg" width="400" />
-    
-    
-</figure>
-
-
-<h3 id="system-structure-overview">System Structure Overview</h3>
-
-<ul>
-<li>Linux, BSD: Monolithic kernel<sup class="footnote-ref" id="fnref:Mono-Kernel"><a href="#fn:Mono-Kernel">4</a></sup></li>
-<li>Real-time systems: Micro kernel<sup class="footnote-ref" id="fnref:Micro-kernel"><a href="#fn:Micro-kernel">5</a></sup></li>
-<li>Windows NT(Windows 10&hellip;), XNU(macOS&hellip;): Hybrid Kernel<sup class="footnote-ref" id="fnref:Hybrid-Kernel"><a href="#fn:Hybrid-Kernel">6</a></sup></li>
-</ul>
-
-
-<figure>
-    
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/OS-structure.svg" width="700" />
-    
-    
-</figure>
-
-
-<h2 id="linux-backgrounds">Linux Backgrounds</h2>
-
-<h3 id="time-line">Time line</h3>
-
-<ol>
-<li>1971: Unix published</li>
-<li>1977: BSD released, based on Unix v6</li>
-<li>1983: GNU project started</li>
-<li>1987: Minix released, Unix-like
-
-<ul>
-<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2017-5689">CVE-2017-5689</a></li>
-</ul></li>
-<li>1991: Linux released, Unix-like</li>
-<li>1995: Free Software Foundation established</li>
-</ol>
-
-<p>
-<figure>
-    
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Unix_timeline.en.svg" width="700" />
-    
-    
-    <figcaption>
-        <h4>Unix History</h4>
-        
-    </figcaption>
-    
-</figure>
-<sup class="footnote-ref" id="fnref:Linux-Time-Line"><a href="#fn:Linux-Time-Line">7</a></sup></p>
-
-<h3 id="license">License</h3>
-
-<p><a href="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/tree/COPYING">Specifically</a>, GNU GPLv2</p>
-
-<h3 id="free-software-definition">Free software definition:</h3>
-
-<ol>
-<li>The freedom to run the program as you wish, for any purpose (freedom 0).</li>
-<li>The freedom to study how the program works, and change it so it does your computing as you wish (freedom 1). Access to the source code is a precondition for this.</li>
-<li>The freedom to redistribute copies so you can help your neighbor (freedom 2).</li>
-<li>The freedom to distribute copies of your modified versions to others (freedom 3). By doing this you can give the whole community a chance to benefit from your changes. Access to the source code is a precondition for this.</li>
-</ol>
-
-<h3 id="linux-branches">Linux Branches</h3>
-
-<ol>
-<li>Mainline: constantly under development.</li>
-<li>Stable: a version of mainline which is considered stable. Will be maintained for a period.</li>
-<li>Longterm: just as stable, but will be maintained for a long time.</li>
-<li>EOL: end of life.</li>
-</ol>
-
-<h3 id="fedora">Fedora</h3>
-
-<p><a href="https://getfedora.org/">is your best choice.</a></p>
-
-<h1 id="2018-3-18">2018.3.18</h1>
-
-<h2 id="atom-https-superdanby-github-io-blog-atom-text-editor-html"><a href="https://superdanby.github.io/Blog/atom-text-editor.html">Atom</a></h2>
-
-<h2 id="linux-usage">Linux Usage</h2>
-
-<h3 id="bash-settings">Bash settings</h3>
-
-<ul>
-<li><code>.bashrc</code></li>
-<li><code>.bash_profile</code></li>
-</ul>
-
-<h3 id="linux-command-argument-conventions">Linux command argument conventions:</h3>
-
-<ul>
-<li>shortened: <code>-</code><strong><em>alias</em></strong>, can stick together without a new <code>-</code></li>
-<li>full: <code>--</code><strong><em>full name</em></strong></li>
-</ul>
-
-<h3 id="manual">Manual</h3>
-
-<ul>
-<li><code>man</code></li>
-<li><code>info</code></li>
-</ul>
-
-<h3 id="vim"><code>vim</code></h3>
-
-<h1 id="2018-3-23">2018.3.23</h1>
-
-<h2 id="linux-file-system">Linux File System</h2>
-
-<ul>
-<li><code>/</code>: file system root</li>
-<li><code>/bin</code>: system binaries, will be used when booting up, should be on the same partition of <code>/</code></li>
-<li><code>/dev</code>: devices, should be on the same partition of <code>/</code></li>
-<li><code>/etc</code>: system settings, should be on the same partition of <code>/</code></li>
-<li><code>/lib</code>: system libraries, should be on the same partition of <code>/</code></li>
-<li><code>/sbin</code>: privileged system libraries, should be on the same partition of <code>/</code></li>
-<li><code>/usr</code>: unix specific resources
-
-<ul>
-<li><code>/usr/bin</code>: system binaries not used on boot</li>
-<li><code>/usr/sbin</code>: system privileged binaries not used on boot</li>
-<li><code>/usr/local/bin</code>: user installed binaries</li>
-<li><code>/usr/local/sbin</code>: user installed privileged binaries</li>
-</ul></li>
-<li><code>/var</code>: highly variable data, e.g. cache, logs</li>
-<li><code>/media</code>: auto mounted removable devices</li>
-</ul>
-
-<h3 id="inode">inode</h3>
-
-<h2 id="common-file-systems">Common File Systems</h2>
-
-<ul>
-<li>Ext, Btrfs, APFS, NTFS, XFS&hellip;</li>
-</ul>
-
-<h2 id="file-links">File Links</h2>
-
-<ul>
-<li>Symbolic Link: <code>ln -s</code>, can link to files or directories.</li>
-<li>Hard Link: <code>ln</code>, can only link to files. It is actually just a file entry. Cannot Link between partitions, because it stores the inode value of an file.</li>
-</ul>
-
-<h2 id="related-commands">Related Commands</h2>
-
-<ul>
-<li><code>ls</code>: <code>-latuhi</code>, <code>--time=ctime</code></li>
-<li><code>pwd</code></li>
-<li><code>stat</code></li>
-<li><code>touch</code></li>
-<li><code>mkdir</code></li>
-<li><code>rm</code></li>
-<li><code>cp</code>: <code>-apu</code></li>
-<li><code>mv</code></li>
-<li><code>rename</code></li>
-</ul>
-
-<h1 id="2018-3-25-postponed"><del>2018.3.25</del> Postponed</h1>
+<h1 id="queue">Queue</h1>
 
 <h2 id="public-private-key-revisit">Public Private Key Revisit</h2>
 
@@ -604,8 +233,6 @@ document.addEventListener("DOMContentLoaded", function() {
 <li>Additional <a href="https://gohugo.io/content-management/">Hugo Content</a></li>
 </ul>
 
-<h1 id="queue">Queue</h1>
-
 <h2 id="css-walk-through">CSS Walk-through</h2>
 
 <h2 id="javascript-walk-through">Javascript Walk-through</h2>
@@ -645,27 +272,6 @@ document.addEventListener("DOMContentLoaded", function() {
 <h2 id="docker">Docker</h2>
 
 <h2 id="fedora-developer-portal-https-developer-fedoraproject-org"><a href="https://developer.fedoraproject.org">Fedora Developer Portal</a></h2>
-<div class="footnotes">
-
-<hr />
-
-<ol>
-<li id="fn:defer-permissions"><a href="https://github.com/osxfuse/osxfuse/issues/45">https://github.com/osxfuse/osxfuse/issues/45</a>
- <a class="footnote-return" href="#fnref:defer-permissions">↩</a></li>
-<li id="fn:MBR"><a href="https://en.wikipedia.org/wiki/Master_boot_record">https://en.wikipedia.org/wiki/Master_boot_record</a>
- <a class="footnote-return" href="#fnref:MBR">↩</a></li>
-<li id="fn:GPT"><a href="https://en.wikipedia.org/wiki/GUID_Partition_Table">https://en.wikipedia.org/wiki/GUID_Partition_Table</a>
- <a class="footnote-return" href="#fnref:GPT">↩</a></li>
-<li id="fn:Mono-Kernel"><a href="https://en.wikipedia.org/wiki/Monolithic_kernel">https://en.wikipedia.org/wiki/Monolithic_kernel</a>
- <a class="footnote-return" href="#fnref:Mono-Kernel">↩</a></li>
-<li id="fn:Micro-kernel"><a href="https://en.wikipedia.org/wiki/Microkernel">https://en.wikipedia.org/wiki/Microkernel</a>
- <a class="footnote-return" href="#fnref:Micro-kernel">↩</a></li>
-<li id="fn:Hybrid-Kernel"><a href="https://en.wikipedia.org/wiki/Hybrid_kernel">https://en.wikipedia.org/wiki/Hybrid_kernel</a>
- <a class="footnote-return" href="#fnref:Hybrid-Kernel">↩</a></li>
-<li id="fn:Linux-Time-Line"><a href="https://en.wikipedia.org/wiki/History_of_Linux">https://en.wikipedia.org/wiki/History_of_Linux</a>
- <a class="footnote-return" href="#fnref:Linux-Time-Line">↩</a></li>
-</ol>
-</div>
 
     </div>
 
@@ -702,12 +308,13 @@ function expand_disqus() {
     
     <p>
         Powered by <a href="https://gohugo.io/">Hugo</a> with theme
-        <a href="https://github.com/amoshyc/hugo-zmd-theme">zmd</a>
+        <a href="https://github.com/Superdanby/hugo-zmd-theme">zmd</a>
     </p>
     <p>
         © 2018 by Superdanby
     </p>
 </footer>
+
 
         
         

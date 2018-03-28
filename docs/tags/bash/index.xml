@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bash on Superdanby</title>
+    <link>https://superdanby.github.io/Blog/tags/bash.html</link>
+    <description>Recent content in Bash on Superdanby</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 18 Mar 2018 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://superdanby.github.io/Blog/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2018 March 18th</title>
+      <link>https://superdanby.github.io/Blog/training-the-next-system-administrator-and-web-developer/20180318.html</link>
+      <pubDate>Sun, 18 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/training-the-next-system-administrator-and-web-developer/20180318.html</guid>
+      <description>Atom A hackable text editor for the 21st century.
+Linux Usage Bash settings  .bashrc .bash_profile  Linux command argument conventions:  shortened: -alias, can stick together without a new - full: --full name  Manual  man info  vim vi improved</description>
+    </item>
+    
+  </channel>
+</rss>

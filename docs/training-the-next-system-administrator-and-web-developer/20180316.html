@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="tw">
+    <head>
+        <title> 
+    2018 March 16th | Superdanby
+ </title>
+
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <link rel="shortcut icon" type="image/jpeg" href="/Blog/abouts/me.gif" />
+
+        
+        <link rel="stylesheet" href="/Blog/style.min.css">
+
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"></script>
+        
+
+        
+        
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116389618-1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'UA-116389618-1');
+            </script>
+        
+
+        
+        
+
+        
+        <script>
+document.addEventListener("DOMContentLoaded", function() {
+	var article = document.getElementsByTagName("article")[0];
+
+	if (typeof article == "undefined")
+		return;
+
+	var s = article.getElementsByTagName("a");
+	var i = 0;
+	var re = new RegExp("([\\.\\/\\,\\s]|\w\-)","g");
+	while (s[i] && typeof s[i].innerHTML != "undefined")
+	{
+		if (s[i].getElementsByTagName("code").length == 0)
+			s[i].innerHTML = s[i].innerHTML.replace(re,"$1<wbr>");
+		++i;
+	}
+
+	s = article.getElementsByTagName("code");
+	i = 0;
+	while (s[i] && typeof s[i].innerHTML != "undefined")
+	{
+		var parent = s[i].parentElement;
+		while (parent && parent.tagName != "PRE" && parent.tagName != "A")
+			parent = parent.parentElement;
+		if (!parent)
+			s[i].innerHTML = s[i].innerHTML.replace(re,"$1<wbr>");
+		++i;
+	}
+});
+</script>
+
+
+    </head>
+
+    <body>
+        
+        <header>
+    
+    
+    <div class="icon">
+        <a href="https://superdanby.github.io/Blog"><img src="/Blog/abouts/me.gif" alt="me"></a>
+    </div>
+
+    
+    <div class="name">
+        <a href="https://superdanby.github.io/Blog">Superdanby</a>
+    </div>
+
+    
+    <div class="menu">
+        <a href="/Blog/abouts.html">ABOUT</a>
+        <a href="/Blog/categories.html">CATEGORY</a>
+        <a href="/Blog/tags.html">TAG</a>
+    </div>
+
+</header>
+
+        
+        <main>
+            
+    <article>
+
+    
+    <div class="info">
+        <div class="top">
+            <span title="Date">2018/03/16</span>
+            <span>@</span>
+            <span>
+                
+                   
+                   <a href="https://superdanby.github.io/Blog/categories/training-the-next-system-administrator-and-web-developer.html">Training the Next System Administrator and Web Developer</a>
+                
+            </span>
+        </div>
+
+        <h1 class="title">2018 March 16th</h1>
+
+        <div class="bottom">
+            
+                <a href="https://superdanby.github.io/Blog/tags/linux.html">Linux</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/fedora.html">Fedora</a>
+            
+        </div>
+    </div>
+
+    
+    
+    <div class="md-content">
+        
+        
+            <div class="toc">
+                <span>TOC</span>
+                <nav id="TableOfContents">
+<ul>
+<li><a href="#computer-fundamentals">Computer Fundamentals</a>
+<ul>
+<li><a href="#core-elements">Core Elements</a></li>
+<li><a href="#cpu-architecture">CPU Architecture</a></li>
+<li><a href="#metric-prefix-https-en-wikipedia-org-wiki-metric-prefix"><a href="https://en.wikipedia.org/wiki/Metric_prefix">Metric Prefix</a></a></li>
+<li><a href="#clock-rates">Clock Rates</a></li>
+<li><a href="#memory">Memory</a></li>
+<li><a href="#storage">Storage</a></li>
+<li><a href="#interfaces">Interfaces</a></li>
+<li><a href="#storage-partition">Storage Partition</a></li>
+<li><a href="#system-structure-overview">System Structure Overview</a></li>
+</ul></li>
+<li><a href="#linux-backgrounds">Linux Backgrounds</a>
+<ul>
+<li><a href="#author">Author</a></li>
+<li><a href="#time-line">Time line</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#free-software-definition">Free software definition:</a></li>
+<li><a href="#linux-branches">Linux Branches</a></li>
+<li><a href="#fedora">Fedora</a></li>
+</ul></li>
+</ul>
+</nav>
+            </div>
+        
+        
+        
+
+<h1 id="computer-fundamentals">Computer Fundamentals</h1>
+
+<h2 id="core-elements">Core Elements</h2>
+
+<ul>
+<li>Central Processing Unit:
+
+<ul>
+<li>Control Unit</li>
+<li>Arithmetic Logic Unit</li>
+<li>Memory Management Unit</li>
+<li>Registers</li>
+</ul></li>
+<li>Memory</li>
+<li>Input/Output</li>
+<li>Storage</li>
+</ul>
+
+<h2 id="cpu-architecture">CPU Architecture</h2>
+
+<ul>
+<li>RISC / CISC: ARM, IBM PowerPC / Intel, AMD</li>
+<li>Bits: 32 -&gt; 64</li>
+</ul>
+
+<h2 id="metric-prefix-https-en-wikipedia-org-wiki-metric-prefix"><a href="https://en.wikipedia.org/wiki/Metric_prefix">Metric Prefix</a></h2>
+
+<ul>
+<li>e.g. <code>GiB</code> vs <code>GB</code></li>
+</ul>
+
+<h2 id="clock-rates">Clock Rates</h2>
+
+<p>How many clock cycles in 1 second.
+-   CPU &gt; Memory</p>
+
+<h2 id="memory">Memory</h2>
+
+<ol>
+<li>SRAM vs DRAM</li>
+<li>Memory Comparison</li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>Storage</th>
+<th>Speed</th>
+<th>Volume</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Register</td>
+<td>Fastest</td>
+<td>Smallest</td>
+</tr>
+
+<tr>
+<td>L1 Cache</td>
+<td>2</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>L2 Cache</td>
+<td>3</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>L3 Cache</td>
+<td>4</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>Main Memory</td>
+<td>Slowest</td>
+<td>Largest</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="storage">Storage</h2>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Hard_disk_drive">HDD</a> vs <a href="https://en.wikipedia.org/wiki/Solid-state_drive">SSD</a></li>
+</ul>
+
+<h2 id="interfaces">Interfaces</h2>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/USB">USB</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Thunderbolt_(interface)">Thunderbolt</a></li>
+<li><a href="https://en.wikipedia.org/wiki/PCI_Express">PCIe</a></li>
+</ul>
+
+<h2 id="storage-partition">Storage Partition</h2>
+
+<ol>
+<li><p>Master Boot Record<sup class="footnote-ref" id="fnref:MBR"><a href="#fn:MBR">1</a></sup></p>
+
+<ol>
+<li>Can only have at most 4 primary partitions.</li>
+<li>2 TiB storage limit</li>
+<li>Maximum disk sector size: 512 bytes</li>
+<li>First sector: base partition table, bootstrap code</li>
+</ol></li>
+
+<li><p>GUID Partition Table<sup class="footnote-ref" id="fnref:GPT"><a href="#fn:GPT">2</a></sup></p>
+
+<ol>
+<li>2 ZiB storage limit</li>
+<li>Common sector size: 4 KiB, 512 bytes</li>
+<li>Has a secondary GPT header in case the primary one is broken.</li>
+</ol></li>
+</ol>
+
+
+<figure>
+    
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/GUID_Partition_Table_Scheme.svg" width="400" />
+    
+    
+</figure>
+
+
+<h2 id="system-structure-overview">System Structure Overview</h2>
+
+<ul>
+<li>Linux, BSD: Monolithic kernel<sup class="footnote-ref" id="fnref:Mono-Kernel"><a href="#fn:Mono-Kernel">3</a></sup></li>
+<li>Real-time systems: Micro kernel<sup class="footnote-ref" id="fnref:Micro-kernel"><a href="#fn:Micro-kernel">4</a></sup></li>
+<li>Windows NT(Windows 10&hellip;), XNU(macOS&hellip;): Hybrid Kernel<sup class="footnote-ref" id="fnref:Hybrid-Kernel"><a href="#fn:Hybrid-Kernel">5</a></sup></li>
+</ul>
+
+
+<figure>
+    
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/OS-structure.svg" width="700" />
+    
+    
+</figure>
+
+
+<h1 id="linux-backgrounds">Linux Backgrounds</h1>
+
+<h2 id="author">Author</h2>
+
+<p>Linus Torvalds</p>
+
+<h2 id="time-line">Time line</h2>
+
+<ol>
+<li>1971: Unix published</li>
+<li>1977: BSD released, based on Unix v6</li>
+<li>1983: GNU project started</li>
+<li>1987: Minix released, Unix-like
+
+<ul>
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2017-5689">CVE-2017-5689</a></li>
+</ul></li>
+<li>1991: Linux released, Unix-like</li>
+<li>1995: Free Software Foundation established</li>
+</ol>
+
+<p>
+<figure>
+    
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Unix_timeline.en.svg" width="700" />
+    
+    
+    <figcaption>
+        <h4>Unix History</h4>
+        
+    </figcaption>
+    
+</figure>
+<sup class="footnote-ref" id="fnref:Linux-Time-Line"><a href="#fn:Linux-Time-Line">6</a></sup></p>
+
+<h2 id="license">License</h2>
+
+<p><a href="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/tree/COPYING">Specifically</a>, GNU GPLv2</p>
+
+<h2 id="free-software-definition">Free software definition:</h2>
+
+<ol>
+<li>The freedom to run the program as you wish, for any purpose (freedom 0).</li>
+<li>The freedom to study how the program works, and change it so it does your computing as you wish (freedom 1). Access to the source code is a precondition for this.</li>
+<li>The freedom to redistribute copies so you can help your neighbor (freedom 2).</li>
+<li>The freedom to distribute copies of your modified versions to others (freedom 3). By doing this you can give the whole community a chance to benefit from your changes. Access to the source code is a precondition for this.</li>
+</ol>
+
+<h2 id="linux-branches">Linux Branches</h2>
+
+<ol>
+<li>Mainline: constantly under development.</li>
+<li>Stable: a version of mainline which is considered stable. Will be maintained for a period.</li>
+<li>Longterm: just as stable, but will be maintained for a long time.</li>
+<li>EOL: end of life.</li>
+</ol>
+
+<h2 id="fedora">Fedora</h2>
+
+<p><a href="https://getfedora.org/">is your best choice.</a></p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:MBR"><a href="https://en.wikipedia.org/wiki/Master_boot_record">Master Boot Record</a>
+ <a class="footnote-return" href="#fnref:MBR">↩</a></li>
+<li id="fn:GPT"><a href="https://en.wikipedia.org/wiki/GUID_Partition_Table">GUID Partition Table</a>
+ <a class="footnote-return" href="#fnref:GPT">↩</a></li>
+<li id="fn:Mono-Kernel"><a href="https://en.wikipedia.org/wiki/Monolithic_kernel">Monolithic Kernel</a>
+ <a class="footnote-return" href="#fnref:Mono-Kernel">↩</a></li>
+<li id="fn:Micro-kernel"><a href="https://en.wikipedia.org/wiki/Microkernel">Micro kernel</a>
+ <a class="footnote-return" href="#fnref:Micro-kernel">↩</a></li>
+<li id="fn:Hybrid-Kernel"><a href="https://en.wikipedia.org/wiki/Hybrid_kernel">Hybrid kernel</a>
+ <a class="footnote-return" href="#fnref:Hybrid-Kernel">↩</a></li>
+<li id="fn:Linux-Time-Line"><a href="https://en.wikipedia.org/wiki/History_of_Linux">Linux Time Line</a>
+ <a class="footnote-return" href="#fnref:Linux-Time-Line">↩</a></li>
+</ol>
+</div>
+
+    </div>
+
+    
+    
+        <div id="comments">
+    <button id="expand-btn" href="" onclick="expand_disqus()">Comments</button>
+    <div id="disqus_thread"></div>
+</div>
+
+<script type="text/javascript">
+
+function expand_disqus() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    document.getElementById('expand-btn').style.display = "none";
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = false;
+    var disqus_shortname = 'superdanby-blog';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+};
+</script>
+    
+</article>
+
+        </main>
+
+        
+        <footer>
+    
+    <p>
+        Powered by <a href="https://gohugo.io/">Hugo</a> with theme
+        <a href="https://github.com/Superdanby/hugo-zmd-theme">zmd</a>
+    </p>
+    <p>
+        © 2018 by Superdanby
+    </p>
+</footer>
+
+
+        
+        
+            <script>
+                anchors.options = {
+                    placement: 'right',
+                };
+                anchors.add('.md-content > h1, .md-content > h2, .md-content > h3, .md-content > h4');
+            </script>
+        
+</body>
+
+</html>

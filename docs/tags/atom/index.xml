@@ -6,10 +6,20 @@
     <description>Recent content in Atom on Superdanby</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Jul 2017 00:20:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 18 Mar 2018 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://superdanby.github.io/Blog/tags/atom/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2018 March 18th</title>
+      <link>https://superdanby.github.io/Blog/training-the-next-system-administrator-and-web-developer/20180318.html</link>
+      <pubDate>Sun, 18 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/training-the-next-system-administrator-and-web-developer/20180318.html</guid>
+      <description>Atom A hackable text editor for the 21st century.
+Linux Usage Bash settings  .bashrc .bash_profile  Linux command argument conventions:  shortened: -alias, can stick together without a new - full: --full name  Manual  man info  vim vi improved</description>
+    </item>
     
     <item>
       <title>Atom Text Editor</title>

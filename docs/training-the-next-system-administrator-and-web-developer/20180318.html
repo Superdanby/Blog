@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="tw">
+    <head>
+        <title> 
+    2018 March 18th | Superdanby
+ </title>
+
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <link rel="shortcut icon" type="image/jpeg" href="/Blog/abouts/me.gif" />
+
+        
+        <link rel="stylesheet" href="/Blog/style.min.css">
+
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"></script>
+        
+
+        
+        
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116389618-1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'UA-116389618-1');
+            </script>
+        
+
+        
+        
+
+        
+        <script>
+document.addEventListener("DOMContentLoaded", function() {
+	var article = document.getElementsByTagName("article")[0];
+
+	if (typeof article == "undefined")
+		return;
+
+	var s = article.getElementsByTagName("a");
+	var i = 0;
+	var re = new RegExp("([\\.\\/\\,\\s]|\w\-)","g");
+	while (s[i] && typeof s[i].innerHTML != "undefined")
+	{
+		if (s[i].getElementsByTagName("code").length == 0)
+			s[i].innerHTML = s[i].innerHTML.replace(re,"$1<wbr>");
+		++i;
+	}
+
+	s = article.getElementsByTagName("code");
+	i = 0;
+	while (s[i] && typeof s[i].innerHTML != "undefined")
+	{
+		var parent = s[i].parentElement;
+		while (parent && parent.tagName != "PRE" && parent.tagName != "A")
+			parent = parent.parentElement;
+		if (!parent)
+			s[i].innerHTML = s[i].innerHTML.replace(re,"$1<wbr>");
+		++i;
+	}
+});
+</script>
+
+
+    </head>
+
+    <body>
+        
+        <header>
+    
+    
+    <div class="icon">
+        <a href="https://superdanby.github.io/Blog"><img src="/Blog/abouts/me.gif" alt="me"></a>
+    </div>
+
+    
+    <div class="name">
+        <a href="https://superdanby.github.io/Blog">Superdanby</a>
+    </div>
+
+    
+    <div class="menu">
+        <a href="/Blog/abouts.html">ABOUT</a>
+        <a href="/Blog/categories.html">CATEGORY</a>
+        <a href="/Blog/tags.html">TAG</a>
+    </div>
+
+</header>
+
+        
+        <main>
+            
+    <article>
+
+    
+    <div class="info">
+        <div class="top">
+            <span title="Date">2018/03/18</span>
+            <span>@</span>
+            <span>
+                
+                   
+                   <a href="https://superdanby.github.io/Blog/categories/training-the-next-system-administrator-and-web-developer.html">Training the Next System Administrator and Web Developer</a>
+                
+            </span>
+        </div>
+
+        <h1 class="title">2018 March 18th</h1>
+
+        <div class="bottom">
+            
+                <a href="https://superdanby.github.io/Blog/tags/atom.html">Atom</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/linux.html">Linux</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/bash.html">Bash</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/vim.html">vim</a>
+            
+        </div>
+    </div>
+
+    
+    
+    <div class="md-content">
+        
+        
+            <div class="toc">
+                <span>TOC</span>
+                <nav id="TableOfContents">
+<ul>
+<li><a href="#atom-https-superdanby-github-io-blog-atom-text-editor-html"><a href="https://superdanby.github.io/Blog/atom-text-editor.html">Atom</a></a></li>
+<li><a href="#linux-usage">Linux Usage</a>
+<ul>
+<li><a href="#bash-settings">Bash settings</a></li>
+<li><a href="#linux-command-argument-conventions">Linux command argument conventions:</a></li>
+<li><a href="#manual">Manual</a></li>
+<li><a href="#vim"><code>vim</code></a></li>
+</ul></li>
+</ul>
+</nav>
+            </div>
+        
+        
+        
+
+<h1 id="atom-https-superdanby-github-io-blog-atom-text-editor-html"><a href="https://superdanby.github.io/Blog/atom-text-editor.html">Atom</a></h1>
+
+<p>A hackable text editor for the 21st century.</p>
+
+<h1 id="linux-usage">Linux Usage</h1>
+
+<h2 id="bash-settings">Bash settings</h2>
+
+<ul>
+<li><code>.bashrc</code></li>
+<li><code>.bash_profile</code></li>
+</ul>
+
+<h2 id="linux-command-argument-conventions">Linux command argument conventions:</h2>
+
+<ul>
+<li>shortened: <code>-</code><strong><em>alias</em></strong>, can stick together without a new <code>-</code></li>
+<li>full: <code>--</code><strong><em>full name</em></strong></li>
+</ul>
+
+<h2 id="manual">Manual</h2>
+
+<ul>
+<li><code>man</code></li>
+<li><code>info</code></li>
+</ul>
+
+<h2 id="vim"><code>vim</code></h2>
+
+<p>vi improved</p>
+
+    </div>
+
+    
+    
+        <div id="comments">
+    <button id="expand-btn" href="" onclick="expand_disqus()">Comments</button>
+    <div id="disqus_thread"></div>
+</div>
+
+<script type="text/javascript">
+
+function expand_disqus() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    document.getElementById('expand-btn').style.display = "none";
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = false;
+    var disqus_shortname = 'superdanby-blog';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+};
+</script>
+    
+</article>
+
+        </main>
+
+        
+        <footer>
+    
+    <p>
+        Powered by <a href="https://gohugo.io/">Hugo</a> with theme
+        <a href="https://github.com/Superdanby/hugo-zmd-theme">zmd</a>
+    </p>
+    <p>
+        © 2018 by Superdanby
+    </p>
+</footer>
+
+
+        
+        
+            <script>
+                anchors.options = {
+                    placement: 'right',
+                };
+                anchors.add('.md-content > h1, .md-content > h2, .md-content > h3, .md-content > h4');
+            </script>
+        
+</body>
+
+</html>
