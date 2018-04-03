@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://superdanby.github.io/Blog/system-upgrading-fedora-through-dnf.html</loc>
+    <lastmod>2018-04-03T23:45:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://superdanby.github.io/Blog/training-the-next-system-administator-and-web-developer.html</loc>
     <lastmod>2018-03-28T00:00:00+08:00</lastmod>
   </url>
@@ -161,14 +166,20 @@
   </url>
   
   <url>
+    <loc>https://superdanby.github.io/Blog/tags/dnf.html</loc>
+    <lastmod>2018-04-03T23:45:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://superdanby.github.io/Blog/tags/fedora.html</loc>
-    <lastmod>2018-03-28T00:00:00+08:00</lastmod>
+    <lastmod>2018-04-03T23:45:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://superdanby.github.io/Blog/categories/fedora.html</loc>
-    <lastmod>2017-07-24T18:30:00+08:00</lastmod>
+    <lastmod>2018-04-03T23:45:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -342,7 +353,7 @@
   
   <url>
     <loc>https://superdanby.github.io/Blog/</loc>
-    <lastmod>2018-03-28T00:00:00+08:00</lastmod>
+    <lastmod>2018-04-03T23:45:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -365,6 +376,12 @@
   </url>
   
   <url>
+    <loc>https://superdanby.github.io/Blog/tags/system-upgrade.html</loc>
+    <lastmod>2018-04-03T23:45:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://superdanby.github.io/Blog/tags/tls.html</loc>
     <lastmod>2018-02-26T14:00:00+08:00</lastmod>
     <priority>0</priority>
@@ -378,7 +395,7 @@
   
   <url>
     <loc>https://superdanby.github.io/Blog/categories/training-the-next-system-administrator-and-web-developer.html</loc>
-    <lastmod>2018-03-28T00:00:00+08:00</lastmod>
+    <lastmod>2018-04-03T23:45:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   

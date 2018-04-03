@@ -57,9 +57,18 @@
     </item>
     
     <item>
+      <title>DNF</title>
+      <link>https://superdanby.github.io/Blog/tags/dnf.html</link>
+      <pubDate>Tue, 03 Apr 2018 23:45:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/dnf.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Fedora</title>
       <link>https://superdanby.github.io/Blog/tags/fedora.html</link>
-      <pubDate>Wed, 28 Mar 2018 00:00:00 +0800</pubDate>
+      <pubDate>Tue, 03 Apr 2018 23:45:00 +0800</pubDate>
       
       <guid>https://superdanby.github.io/Blog/tags/fedora.html</guid>
       <description></description>
@@ -287,6 +296,15 @@
       <pubDate>Wed, 15 Mar 2017 20:20:00 +0800</pubDate>
       
       <guid>https://superdanby.github.io/Blog/tags/system-program.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>System Upgrade</title>
+      <link>https://superdanby.github.io/Blog/tags/system-upgrade.html</link>
+      <pubDate>Tue, 03 Apr 2018 23:45:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/system-upgrade.html</guid>
       <description></description>
     </item>
     
