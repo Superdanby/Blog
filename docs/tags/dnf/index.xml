@@ -17,7 +17,7 @@
       <pubDate>Tue, 03 Apr 2018 23:45:00 +0800</pubDate>
       
       <guid>https://superdanby.github.io/Blog/system-upgrading-fedora-through-dnf.html</guid>
-      <description>Ideal procedures  Make sure the system is up to date: sudo dnf upgrade --refresh Reboot the system Install the system upgrade plugin: sudo dnf install dnf-plugin-system-upgrade System upgrade to the targeted release: sudo dnf system-upgrade download --refresh --releasever=28 There may be some dependency issues. Use --allowerasing or --best wisely. Trigger the upgrade: sudo dnf system-upgrade reboot  More Information https://fedoraproject.org/wiki/DNF_system_upgrade `</description>
+      <description>Ideal procedures  Make sure the system is up to date: sudo dnf upgrade --refresh Reboot the system Install the system upgrade plugin: sudo dnf install dnf-plugin-system-upgrade System upgrade to the targeted release: sudo dnf system-upgrade download --refresh --releasever=28 There may be some dependency issues. Use --allowerasing or --best wisely.   Upgrade Failure    Trigger the upgrade: sudo dnf system-upgrade reboot  More Information https://fedoraproject.org/wiki/DNF_system_upgrade `</description>
     </item>
     
   </channel>

@@ -149,7 +149,20 @@ document.addEventListener("DOMContentLoaded", function() {
 <li>Reboot the system</li>
 <li>Install the system upgrade plugin: <code>sudo dnf install dnf-plugin-system-upgrade</code></li>
 <li>System upgrade to the targeted release: <code>sudo dnf system-upgrade download --refresh --releasever=28</code></li>
-<li>There may be some dependency issues. Use <code>--allowerasing</code> or <code>--best</code> wisely.</li>
+<li>There may be some dependency issues. Use <code>--allowerasing</code> or <code>--best</code> wisely.
+
+<figure>
+    
+        <img src="https://raw.githubusercontent.com/Superdanby/Blog/master/content/System-Upgrade-DNF.png" width="600" />
+    
+    
+    <figcaption>
+        <h4>Upgrade Failure</h4>
+        
+    </figcaption>
+    
+</figure>
+</li>
 <li>Trigger the upgrade: <code>sudo dnf system-upgrade reboot</code></li>
 </ol>
 
