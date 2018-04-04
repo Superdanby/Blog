@@ -14,7 +14,7 @@ math: false
 3.	Install the system upgrade plugin: `sudo dnf install dnf-plugin-system-upgrade`
 4.	System upgrade to the targeted release: `sudo dnf system-upgrade download --refresh --releasever=28`
 5.	There may be some dependency issues. Use `--allowerasing` or `--best` wisely.
-{{< figure src="https://raw.githubusercontent.com/Superdanby/Blog/master/content/System-Upgrade-DNF.png" title="Upgrade Failure" width="600" >}}
+{{< figure src="https://raw.githubusercontent.com/Superdanby/Blog/master/content/System%20Upgrade%20DNF.png" title="Upgrade Failure" width="600" >}}
 6.	Trigger the upgrade: `sudo dnf system-upgrade reboot`
 
 # More Information
