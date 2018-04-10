@@ -77,6 +77,7 @@ Why bother with all those HTML syntax?
 ## `ps`
 
 ## `journalctl`
+	`-u sshd`
 
 ## SELinux
 
@@ -99,3 +100,10 @@ Why bother with all those HTML syntax?
 ## Docker
 
 ## [Fedora Developer Portal](https://developer.fedoraproject.org)
+
+## More on Security
+https://unix.stackexchange.com/questions/268395/my-box-is-under-attack
+http://www.pc-freak.net/blog/how-to-make-sure-your-linux-system-users-wont-hide-or-delete-their-bash_history-securing-bash_history-file/
+https://askubuntu.com/questions/3850/how-can-i-audit-users-and-access-attempts-to-ssh-on-my-server
+`last`
+`lastlog`
