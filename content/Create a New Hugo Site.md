@@ -13,9 +13,10 @@ math: false
 
 ## Install Hugo on Fedora
 
-~~`sudo dnf install hugo`~~
-1.	`sudo dnf install snap`
-2.	`snap install hugo`
+-	Fedora 28+: `sudo dnf install hugo`
+-	Fedora 27-:
+	1.	`sudo dnf install snap`
+	2.	`snap install hugo`
 
 # Initial Setup
 
@@ -26,14 +27,16 @@ math: false
 # Setup a Github Repository
 
 1.	Create a new repository
-2.	Repository settings > Source: master branch /docs folder
-3.	`git remote add origin` ***REPO ADDRESS***: usually `git@github.com:...git`
-4.	`git pull origin master`
+2.	`git remote add origin` ***REPO ADDRESS***: usually `git@github.com:...git`
+3.	`git pull origin master`
+4.	`git push`
+5.	Repository settings > Source: master branch /docs folder
 
-# Setup Custom Theme: [zmd](https://github.com/amoshyc/hugo-zmd-theme)
+
+# Setup Custom Theme: [zmd](https://github.com/Superdanby/hugo-zmd-theme)
 
 1.	Fork the Github repository.
-2.	`git submodule add https://github.com/amoshyc/hugo-zmd-theme themes/zmd`
+2.	`git submodule add https://github.com/Superdanby/hugo-zmd-theme themes/zmd`
 3.	Backup `config.toml` and replace it with `themes/zmd/exampleSite/config.toml`
 4.	Backup `archetypes/default.md` and replace it with`themes/zmd/exampleSite/archetypes/default.md`
 5.	`mkdir content/abouts`

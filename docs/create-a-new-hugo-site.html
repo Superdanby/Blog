@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </ul></li>
 <li><a href="#initial-setup">Initial Setup</a></li>
 <li><a href="#setup-a-github-repository">Setup a Github Repository</a></li>
-<li><a href="#setup-custom-theme-zmd-https-github-com-amoshyc-hugo-zmd-theme">Setup Custom Theme: <a href="https://github.com/amoshyc/hugo-zmd-theme">zmd</a></a>
+<li><a href="#setup-custom-theme-zmd-https-github-com-superdanby-hugo-zmd-theme">Setup Custom Theme: <a href="https://github.com/Superdanby/hugo-zmd-theme">zmd</a></a>
 <ul>
 <li><a href="#there-are-some-settings-needs-to-be-modified">There are some settings needs to be modified:</a></li>
 </ul></li>
@@ -153,9 +153,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <h2 id="install-hugo-on-fedora">Install Hugo on Fedora</h2>
 
-<p><del><code>sudo dnf install hugo</code></del>
-1.  <code>sudo dnf install snap</code>
-2.  <code>snap install hugo</code></p>
+<ul>
+<li>Fedora 28+: <code>sudo dnf install hugo</code></li>
+<li>Fedora 27-:
+
+<ol>
+<li><code>sudo dnf install snap</code></li>
+<li><code>snap install hugo</code></li>
+</ol></li>
+</ul>
 
 <h1 id="initial-setup">Initial Setup</h1>
 
@@ -169,16 +175,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <ol>
 <li>Create a new repository</li>
-<li>Repository settings &gt; Source: master branch /docs folder</li>
 <li><code>git remote add origin</code> <strong><em>REPO ADDRESS</em></strong>: usually <code>git@github.com:...git</code></li>
 <li><code>git pull origin master</code></li>
+<li><code>git push</code></li>
+<li>Repository settings &gt; Source: master branch /docs folder</li>
 </ol>
 
-<h1 id="setup-custom-theme-zmd-https-github-com-amoshyc-hugo-zmd-theme">Setup Custom Theme: <a href="https://github.com/amoshyc/hugo-zmd-theme">zmd</a></h1>
+<h1 id="setup-custom-theme-zmd-https-github-com-superdanby-hugo-zmd-theme">Setup Custom Theme: <a href="https://github.com/Superdanby/hugo-zmd-theme">zmd</a></h1>
 
 <ol>
 <li>Fork the Github repository.</li>
-<li><code>git submodule add https://github.com/amoshyc/hugo-zmd-theme themes/zmd</code></li>
+<li><code>git submodule add https://github.com/Superdanby/hugo-zmd-theme themes/zmd</code></li>
 <li>Backup <code>config.toml</code> and replace it with <code>themes/zmd/exampleSite/config.toml</code></li>
 <li>Backup <code>archetypes/default.md</code> and replace it with<code>themes/zmd/exampleSite/archetypes/default.md</code></li>
 <li><code>mkdir content/abouts</code></li>

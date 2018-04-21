@@ -18,8 +18,7 @@
       
       <guid>https://superdanby.github.io/Blog/create-a-new-hugo-site.html</guid>
       <description>Prerequisites hugo
-Install Hugo on Fedora sudo dnf install hugo 1. sudo dnf install snap 2. snap install hugo
-Initial Setup  hugo new site PROJECT NAME cd PROJECT NAME git init  Setup a Github Repository  Create a new repository Repository settings &amp;gt; Source: master branch /docs folder git remote add origin REPO ADDRESS: usually git@github.com:...git git pull origin master  Setup Custom Theme: zmd  Fork the Github repository.</description>
+Install Hugo on Fedora  Fedora 28+: sudo dnf install hugo Fedora 27-:  sudo dnf install snap snap install hugo   Initial Setup  hugo new site PROJECT NAME cd PROJECT NAME git init  Setup a Github Repository  Create a new repository git remote add origin REPO ADDRESS: usually git@github.com:...git git pull origin master git push Repository settings &amp;gt; Source: master branch /docs folder  Setup Custom Theme: zmd  Fork the Github repository.</description>
     </item>
     
   </channel>
