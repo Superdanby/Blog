@@ -6,10 +6,19 @@
     <description>Recent content on Superdanby</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Apr 2018 23:45:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 30 Apr 2018 13:55:37 +0800</lastBuildDate>
     
 	<atom:link href="https://superdanby.github.io/Blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux 的目錄配置</title>
+      <link>https://superdanby.github.io/Blog/linux%E7%9A%84%E7%9B%AE%E9%8C%84%E9%85%8D%E7%BD%AE.html</link>
+      <pubDate>Mon, 30 Apr 2018 13:55:37 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/linux%E7%9A%84%E7%9B%AE%E9%8C%84%E9%85%8D%E7%BD%AE.html</guid>
+      <description>目錄配置的內容    目錄 應放置檔案內容     / 根目錄，一般建議只接檔案。   /root 系統管理員（root)的家目錄。   /boot Linux系統開機會用到的檔案。   /home 使用者的家目錄。   /lib,/lib64 系統會使用到函式庫的內容。   /tmp 暫時放置檔案資料的地方。   /proc 是虛擬（假）的檔案系統，放置執行中程式的資料。   /var 系統執行中變動檔案放置的目錄，ex:log。   /usr unix software resource。   /lost+found 放置遺失的資料（孤兒）或壞掉的資料。   /media 可移除媒體裝置的掛載點，ex:USB。   /bin,/usr/bin 放置使用者可執行的binary file的目錄，ex:ls、rm。   /sbin 放置系統管理員用的執行檔。   /etc 系統的設定檔幾乎都放在這。   /dev 裝置或設備都以檔案型態存在這個目錄，ex:鍵盤、硬碟。    </description>
+    </item>
     
     <item>
       <title>System Upgrading Fedora Through DNF</title>
