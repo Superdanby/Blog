@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About on Superdanby</title>
+    <link>https://superdanby.github.io/Blog/categories/about.html</link>
+    <description>Recent content in About on Superdanby</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 16 May 2018 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://superdanby.github.io/Blog/categories/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About Me</title>
+      <link>https://superdanby.github.io/Blog/abouts/me.html</link>
+      <pubDate>Wed, 16 May 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/abouts/me.html</guid>
+      <description>My name is 陳鐸元. A College student majoring computer science and information engineering. I&amp;rsquo;m a Fedora user since F23. Also, I like to play table tennis very much.</description>
+    </item>
+    
+  </channel>
+</rss>
