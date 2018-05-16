@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         
 
-<p>There are sometimes you need your website to have Https connection. The most common to get a free certificate is to use <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a>. <a href="https://letsencrypt.org/getting-started/">Setting up a certificate with shell access on the same machine</a> is pretty easy. But <a href="https://certbot.eff.org/">Certbot</a> requires you to have root privileges. <del>That&rsquo;s really a pain in the ass.</del> A work around is to use <strong>manual</strong> mode on another machine where allows you to <code>sudo</code>.</p>
+<p>There are sometimes you need your website to have Https connection. The most common to get a free certificate is to use <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a>. <a href="https://letsencrypt.org/getting-started/">Setting up a certificate with shell access on the same machine</a> is pretty easy. But <a href="https://certbot.eff.org/">Certbot</a> requires you to have root privileges. <del>That&rsquo;s really a pain in the ass.</del> A work around is to tell your system administrator give you <strong>the permission to replace the certificate</strong>. Now you can use <strong>manual</strong> mode on another machine where allows you to <code>sudo</code>.</p>
 
 <h1 id="installation">Installation</h1>
 
@@ -173,7 +173,29 @@ Route::get('.well-known/acme-challenge/xxx', function() {
 
 <h1 id="renew">Renew</h1>
 
-<p>Certificates from <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a> expires after 90 days. Be sure to renew the Certificate before due date. Execute <code>certbot renew</code> and all your certificate setup on this machine will be renewed. Also, it is recommended to setup <code>crontab</code> to automate this process.</p>
+<p>Certificates from <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a> expires after 90 days. Be sure to renew the Certificate before due date. Execute <code>certbot renew</code> and all your certificate setup on this machine will be renewed. After renewing the certificates, simply copy them to the target destination and you&rsquo;re done.</p>
+
+<div class="admonition">
+    
+    
+
+    
+        
+        
+    
+    
+    
+    
+        
+    
+
+    <span class="title" style="background-color: #f44336">
+        Warning!
+    </span>
+
+    <div class="content"><p>After replacing the certificates, you still need to restart the server to take effect.</p>
+</div>
+</div>
 
     </div>
 

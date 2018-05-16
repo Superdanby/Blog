@@ -7,7 +7,7 @@ toc: true
 math: false
 ---
 
-There are sometimes you need your website to have Https connection. The most common to get a free certificate is to use [Let's Encrypt](https://letsencrypt.org/). [Setting up a certificate with shell access on the same machine](https://letsencrypt.org/getting-started/) is pretty easy. But [Certbot](https://certbot.eff.org/) requires you to have root privileges. <del>That's really a pain in the ass.</del> A work around is to use **manual** mode on another machine where allows you to `sudo`.
+There are sometimes you need your website to have Https connection. The most common to get a free certificate is to use [Let's Encrypt](https://letsencrypt.org/). [Setting up a certificate with shell access on the same machine](https://letsencrypt.org/getting-started/) is pretty easy. But [Certbot](https://certbot.eff.org/) requires you to have root privileges. ~~That's really a pain in the ass.~~ A work around is to tell your system administrator give you **the permission to replace the certificate**. Now you can use **manual** mode on another machine where allows you to `sudo`.
 
 # Installation
 
@@ -33,4 +33,8 @@ Congratz! You have now obtained a valid certificate for your website!
 
 # Renew
 
-Certificates from [Let's Encrypt](https://letsencrypt.org/) expires after 90 days. Be sure to renew the Certificate before due date. Execute `certbot renew` and all your certificate setup on this machine will be renewed. Also, it is recommended to setup `crontab` to automate this process.
+Certificates from [Let's Encrypt](https://letsencrypt.org/) expires after 90 days. Be sure to renew the Certificate before due date. Execute `certbot renew` and all your certificate setup on this machine will be renewed. After renewing the certificates, simply copy them to the target destination and you're done.
+
+{{% admonition title="Warning!" color="red" %}}
+After replacing the certificates, you still need to restart the server to take effect.
+{{% /admonition %}}

@@ -17,7 +17,7 @@
       <pubDate>Mon, 26 Feb 2018 14:00:00 +0800</pubDate>
       
       <guid>https://superdanby.github.io/Blog/manually-obtain-letsencrypt-certificate-for-websites.html</guid>
-      <description>There are sometimes you need your website to have Https connection. The most common to get a free certificate is to use Let&amp;rsquo;s Encrypt. Setting up a certificate with shell access on the same machine is pretty easy. But Certbot requires you to have root privileges. That&amp;rsquo;s really a pain in the ass. A work around is to use manual mode on another machine where allows you to sudo.</description>
+      <description>There are sometimes you need your website to have Https connection. The most common to get a free certificate is to use Let&amp;rsquo;s Encrypt. Setting up a certificate with shell access on the same machine is pretty easy. But Certbot requires you to have root privileges. That&amp;rsquo;s really a pain in the ass. A work around is to tell your system administrator give you the permission to replace the certificate.</description>
     </item>
     
   </channel>
