@@ -65,34 +65,38 @@ Also, the root password should be set.
     -   `sudo update-alternatives --config javac`
 9.  Replace [.bashrc](https://gist.github.com/Superdanby/fd864ba673975ca550f013bf3e9c9665)
 10. Setup fstab: noatime,nodiratime and compress=lzo(btrfs only)
-11. Install gnome-tweak-tool:
+11. Gnome Terminal Settings:
+    -   Edit > Preferences:
+        -   check Transparent background
+        -   uncheck Show bold text in bright colors
+12. Install gnome-tweak-tool:
     -   `sudo dnf install gnome-tweak-tool`
-12. Right click to open terminal from nautilus:
+13. Right click to open terminal from nautilus:
     -   `sudo dnf install gnome-terminal-nautilus`
-13. [Lollypop Music Player](https://gnumdk.github.io/lollypop-web/):
+14. [Lollypop Music Player](https://gnumdk.github.io/lollypop-web/):
     -   `sudo dnf install lollypop`
-14. [VLC Media Player](https://www.videolan.org/vlc/index.html) Setup vlc:
+15. [VLC Media Player](https://www.videolan.org/vlc/index.html) Setup vlc:
     -   `sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm`
     -   `sudo dnf install vlc`
-15. [Powertop](https://01.org/zh/powertop?langredirect=1), a Linux tool to diagnose issues with power consumption and power management.
+16. [Powertop](https://01.org/zh/powertop?langredirect=1), a Linux tool to diagnose issues with power consumption and power management.
     -   `sudo dnf install powertop`
-16. [TLP](https://github.com/linrunner/TLP), advanced power management for linux:
+17. [TLP](https://github.com/linrunner/TLP), advanced power management for linux:
     -   `sudo dnf install tlp`
-17. Setup Graphics Drivers for Nvidia:
+18. Setup Graphics Drivers for Nvidia:
     -   Install [negativo17 drivers](https://negativo17.org/nvidia-driver/).
     -   [Sign the modules](https://superdanby.github.io/Blog/signing-kernel-modules-for-secure-boot.html) (usually nvidia, nvidia_drm, nvidia_modeset) for Secure Boot.
     -   For battery life optimization, run [BlacklistNvidia.sh](https://gist.github.com/Superdanby/12ce20158300c378d4e0f196b279d388#file-blacklistnvidia-sh) with root privileges to disable Nvidia modules on all boot entries and create a new Nvidia-enabled entry at the bottom of the list. Re-run the script on every kernel updates.
     -   More about [Nvidia Optimus driver setup](https://superdanby.github.io/Blog/dealing-with-nvidia-optimus.html)
-18. [Dolphin](https://dolphin-emu.org/), the best WII/GC emulator:
+19. [Dolphin](https://dolphin-emu.org/), the best WII/GC emulator:
     -   `sudo dnf install dolphin`
-19. [Wirershark](https://www.wireshark.org/):
+20. [Wirershark](https://www.wireshark.org/):
     -   `sudo dnf install wireshark`
-20. [Fedora Media Writer](https://fedoramagazine.org/make-fedora-usb-stick/):
+21. [Fedora Media Writer](https://fedoramagazine.org/make-fedora-usb-stick/):
     -   `sudo dnf install mediawriter`
-21. Sync [shell extensions](https://superdanby.github.io/Blog/fedora-introduction.html#shell-extensions) with Google Chrome:
+22. Sync [shell extensions](https://superdanby.github.io/Blog/fedora-introduction.html#shell-extensions) with Google Chrome:
     -   `sudo dnf copr enable region51/chrome-gnome-shell`
     -   `sudo dnf install chrome-gnome-shell`
-22. [paper-icon-theme](https://github.com/snwh/paper-icon-theme)
+23. [paper-icon-theme](https://github.com/snwh/paper-icon-theme)
     -   Designed according to Material Design guidelines.
     -   You can change icon themes with Gnome Tweak Tool.
     -   `mkdir ~/.icons`
@@ -103,7 +107,7 @@ Also, the root password should be set.
     -   `./autogen.sh`
     -   `make`
     -   `sudo make install`
-23. Here's a script for steps 11 to 22:
+24. Here's a script for steps 11 to 22:
     -   Run it with Secure Boot turned off and with root privileges: [11-22.sh](https://gist.github.com/Superdanby/12ce20158300c378d4e0f196b279d388#file-11-22-sh)
 
 **Don't install vlc from negativo17's multimedia repo. It crashes in Wayland.
