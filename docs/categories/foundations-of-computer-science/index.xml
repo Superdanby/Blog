@@ -6,10 +6,19 @@
     <description>Recent content in Foundations of Computer Science on Superdanby</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Dec 2018 11:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 03 Dec 2018 11:50:00 +0800</lastBuildDate>
     
 	<atom:link href="https://superdanby.github.io/Blog/categories/foundations-of-computer-science/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Foundations of Computer Science</title>
+      <link>https://superdanby.github.io/Blog/foundations-of-computer-science.html</link>
+      <pubDate>Mon, 03 Dec 2018 11:50:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/foundations-of-computer-science.html</guid>
+      <description>The series contains the essential materials of the foundations of coumputer science. The original purpose is to mentor my close friend who has decided to march in the world of Computer Science. However, anyone is welcomed to read the contents and give feedback. :)</description>
+    </item>
     
     <item>
       <title>Data Representation</title>
