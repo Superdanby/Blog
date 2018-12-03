@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="tw">
+    <head>
+        <title> 
+    Computer Hardware | Superdanby
+ </title>
+
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <link rel="shortcut icon" type="image/jpeg" href="/Blog/abouts/me.gif" />
+
+        
+        <link rel="stylesheet" href="/Blog/style.min.css">
+
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"></script>
+        
+
+        
+        
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116389618-1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'UA-116389618-1');
+            </script>
+        
+
+        
+        
+
+        
+        <script>
+document.addEventListener("DOMContentLoaded", function() {
+	var article = document.getElementsByTagName("article")[0];
+
+	if (typeof article == "undefined")
+		return;
+
+	var s = article.getElementsByTagName("a");
+	var i = 0;
+	var re = new RegExp("([\\.\\/\\,\\s]|\w\-)","g");
+	while (s[i] && typeof s[i].innerHTML != "undefined")
+	{
+		if (s[i].getElementsByTagName("code").length == 0)
+			s[i].innerHTML = s[i].innerHTML.replace(re,"$1<wbr>");
+		++i;
+	}
+
+	s = article.getElementsByTagName("code");
+	i = 0;
+	while (s[i] && typeof s[i].innerHTML != "undefined")
+	{
+		var parent = s[i].parentElement;
+		while (parent && parent.tagName != "PRE" && parent.tagName != "A")
+			parent = parent.parentElement;
+		if (!parent)
+			s[i].innerHTML = s[i].innerHTML.replace(re,"$1<wbr>");
+		++i;
+	}
+});
+</script>
+
+
+    </head>
+
+    <body>
+        
+        <header>
+    
+    
+    <div class="icon">
+        <a href="https://superdanby.github.io/Blog"><img src="/Blog/abouts/me.gif" alt="me"></a>
+    </div>
+
+    
+    <div class="name">
+        <a href="https://superdanby.github.io/Blog">Superdanby</a>
+    </div>
+
+    
+    <div class="menu">
+        <a href="/Blog/abouts.html">ABOUT</a>
+        <a href="/Blog/categories.html">CATEGORY</a>
+        <a href="/Blog/tags.html">TAG</a>
+    </div>
+
+</header>
+
+        
+        <main>
+            
+    <article>
+
+    
+    <div class="info">
+        <div class="top">
+            <span title="Date">2018/11/29</span>
+            <span>@</span>
+            <span>
+                
+                   
+                   <a href="https://superdanby.github.io/Blog/categories/foundations-of-computer-science.html">Foundations of Computer Science</a>
+                
+            </span>
+        </div>
+
+        <h1 class="title">Computer Hardware</h1>
+
+        <div class="bottom">
+            
+                <a href="https://superdanby.github.io/Blog/tags/cpu.html">CPU</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/gpu.html">GPU</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/memory.html">Memory</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/ssd.html">SSD</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/hdd.html">HDD</a>
+            
+        </div>
+    </div>
+
+    
+    
+    <div class="md-content">
+        
+        
+            <div class="toc">
+                <span>TOC</span>
+                <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#questions">Questions</a></li>
+</ul></li>
+</ul>
+</nav>
+            </div>
+        
+        
+        
+
+<ul>
+<li>CPU
+
+<ul>
+<li>CU</li>
+<li>ALU</li>
+<li>Data registers</li>
+<li>I/O
+<img src="https://qph.fs.quoracdn.net/main-qimg-9be4168022f2e8a08981cbd1134651c3" alt="" /></li>
+<li>Architecture: x86, x86-64, ARM, RISC-V, MIPS</li>
+<li>Vendors: Intel, AMD, Apple</li>
+</ul></li>
+
+<li><p>Storage</p>
+
+<ul>
+<li>Register
+
+<ul>
+<li>User accessible
+
+<ul>
+<li>General purpose register: stores data or addresses</li>
+<li>Data register: stores data</li>
+<li>Address register: stores address</li>
+<li>Stack pointer: address of the top of the current program stack</li>
+<li>Base pointer: address of the starting position of the current stack frame</li>
+<li>Program counter: address of the next instruction</li>
+<li>Constant register: e.g. 0, pi</li>
+</ul></li>
+<li>Internal registers
+
+<ul>
+<li>Instruction register: current instruction being executed</li>
+<li>Memory address register: address of the data to be fetched/stored</li>
+<li>Memory data register: data to be fetched/stored</li>
+</ul></li>
+</ul></li>
+<li>Cache
+
+<ul>
+<li>L1 ~ L3</li>
+<li>Motivation: Fetching data from main memory takes a lot of time.</li>
+</ul></li>
+<li>(Main) memory = RAM
+
+<ul>
+<li>What is RAM</li>
+<li>Volatile
+
+<ul>
+<li>SRAM
+
+<ul>
+<li>Fast</li>
+</ul></li>
+<li>DRAM
+
+<ul>
+<li>Slow</li>
+</ul></li>
+<li>SDRAM
+
+<ul>
+<li>DDR1 ~ DDR4</li>
+</ul></li>
+<li>Speed: 2133, 2400, 1600MHz</li>
+</ul></li>
+<li>Non-volatile(NVRAM)
+
+<ul>
+<li>Flash</li>
+</ul></li>
+</ul></li>
+
+<li><p>Storage</p>
+
+<ul>
+<li>SSD
+
+<ul>
+<li>Fast, short lived, integrated circuit</li>
+</ul></li>
+<li>HDD
+
+<ul>
+<li>Slow, long lived, magnetic storage</li>
+<li>Weak against magnetic fields and vibration</li>
+<li>speed: 5400rpm, 7200rpm</li>
+<li><img src="https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/images/Chapter10/10_01_DiskMechanism.jpg" alt="" /></li>
+</ul></li>
+<li>SSD vs HDD?</li>
+
+<li><p>Interfaces</p>
+
+<ol>
+<li>Drivers: NVME vs Intel RAID vs AHCI vs IDE</li>
+<li>PCIE vs SATA</li>
+<li>M.2(right) vs mSATA(left)
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/M.2_and_mSATA_SSDs_comparison.jpg" alt="mSATA vs M.2" /></li>
+</ol>
+
+<p><img src="https://cclgroupltd.com/wp-content/uploads/2018/07/03_SATA_Express_interface.png" alt="" />
+4. Valid combinations:
+    - PCIE, NVME
+    - PCIE, AHCI
+    - SATA, AHCI</p></li>
+</ul></li>
+
+<li><p>Speed</p></li>
+
+<li><p><img src="https://images.bit-tech.net/content_images/2007/11/the_secrets_of_pc_memory_part_1/hei.png" alt="" /></p></li>
+</ul></li>
+
+<li><p>Bus</p>
+
+<ul>
+<li>Internal
+
+<ul>
+<li>SATA</li>
+<li>PCIE</li>
+</ul></li>
+<li>External
+
+<ul>
+<li>USB Type A(2.0, 3.0, 3.1gen1), C(3.1gen2, 3.2, thunderbolt)</li>
+<li>HDMI</li>
+<li>VGA</li>
+<li>SD card</li>
+<li>Ethernet</li>
+<li>3.5mm Audio Jack</li>
+</ul></li>
+</ul></li>
+
+<li><p>GPU</p>
+
+<ul>
+<li>Purpose: large scale, highly paralleled simple tasks</li>
+<li>Vendors: Intel, Nvidia, AMD
+-
+| CPU |  GPU |
+|:-:| :&mdash;&mdash;&mdash;-: |
+| sophisticated tasks, precision | highly paralleled simple tasks|
+| small amount of calculations per time | large anoumt of calculations per time |
+| complilation, virtual machine emulation, complex control flows and branching | Graphics, neural networks, crypto mining, password/hash cracking |</li>
+</ul></li>
+
+<li><p>Motherboard
+<img src="https://i.imgur.com/tD2o5a5.png" alt="" /></p>
+
+<ul>
+<li>North birdge is vanishing over time.</li>
+</ul></li>
+
+<li><p>Peripherals</p>
+
+<ul>
+<li>Keyboard</li>
+<li>Mouse</li>
+<li>Touchpad</li>
+<li>Screen</li>
+<li>Printer</li>
+</ul></li>
+</ul>
+
+<h2 id="questions">Questions</h2>
+
+<ol>
+<li>What is your laptop specifications?</li>
+<li>Find your ideal laptop.</li>
+<li>What are the following components? CPU, GPU, SSD, HDD, DDR3 RAM, register, cache.</li>
+</ol>
+
+    </div>
+
+    
+    
+        <div id="comments">
+    <button id="expand-btn" href="" onclick="expand_disqus()">Comments</button>
+    <div id="disqus_thread"></div>
+</div>
+
+<script type="text/javascript">
+
+function expand_disqus() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    document.getElementById('expand-btn').style.display = "none";
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = false;
+    var disqus_shortname = 'superdanby-blog';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+};
+</script>
+    
+</article>
+
+        </main>
+
+        
+        <footer>
+    
+    <p>
+        Powered by <a href="https://gohugo.io/">Hugo</a> with theme
+        <a href="https://github.com/Superdanby/hugo-zmd-theme">zmd</a>
+    </p>
+    <p>
+        © 2018 by Superdanby
+        <a href="./index.xml" title="RSS">♥</a>
+    </p>
+</footer>
+
+
+        
+        
+            <script>
+                anchors.options = {
+                    placement: 'right',
+                };
+                anchors.add('.md-content > h1, .md-content > h2, .md-content > h3, .md-content > h4');
+            </script>
+        
+</body>
+
+</html>

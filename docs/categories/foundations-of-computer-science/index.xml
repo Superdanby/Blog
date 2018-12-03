@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Foundations of Computer Science on Superdanby</title>
+    <link>https://superdanby.github.io/Blog/categories/foundations-of-computer-science.html</link>
+    <description>Recent content in Foundations of Computer Science on Superdanby</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 Dec 2018 11:30:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://superdanby.github.io/Blog/categories/foundations-of-computer-science/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Data Representation</title>
+      <link>https://superdanby.github.io/Blog/foundations-of-computer-science/data-representation.html</link>
+      <pubDate>Mon, 03 Dec 2018 11:30:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/foundations-of-computer-science/data-representation.html</guid>
+      <description>Data Representation Units  bit, byte, kilobytes, megabytes, gigabytes, terabytes, petabytes 1000 base, MB 1024 base, MiB b vs B  Numerical Encoding  Excess 3 BCD  Exercise: base 10, 9&amp;rsquo;s complement vs 10&amp;rsquo;s complement  Integers(fixed point)  2&amp;rsquo;s complement: mainly used 1&amp;rsquo;s complement: postive &amp;amp; negative 0 Sign and magnitude Gray code  Benefit: filp 1 bit at a time, has a good pattern   Floating point  Sign and magnitude Float(32bits, 1 + 8 + 23), excess-127 Double(64bits, 1 + 11 + 48)   Overflow &amp;amp; Underflow Conversion  10110.</description>
+    </item>
+    
+    <item>
+      <title>Computer Hardware</title>
+      <link>https://superdanby.github.io/Blog/foundations-of-computer-science/computer-hardware.html</link>
+      <pubDate>Thu, 29 Nov 2018 22:30:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/foundations-of-computer-science/computer-hardware.html</guid>
+      <description>CPU  CU ALU Data registers I/O  Architecture: x86, x86-64, ARM, RISC-V, MIPS Vendors: Intel, AMD, Apple  Storage
+ Register  User accessible  General purpose register: stores data or addresses Data register: stores data Address register: stores address Stack pointer: address of the top of the current program stack Base pointer: address of the starting position of the current stack frame Program counter: address of the next instruction Constant register: e.</description>
+    </item>
+    
+    <item>
+      <title>Basic Computation Models</title>
+      <link>https://superdanby.github.io/Blog/foundations-of-computer-science/basic-computation-models.html</link>
+      <pubDate>Thu, 29 Nov 2018 21:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/foundations-of-computer-science/basic-computation-models.html</guid>
+      <description>Turing Machine  A machine operates on a infinite tape. On this tape are symbols, which the machine can read and write, one at a time, using a tape head. Operation is fully determined by a finite set of elementary instructions. Despite the model&amp;rsquo;s simplicity, given any computer algorithm, a Turing machine capable of simulating that algorithm&amp;rsquo;s logic can be constructed.(Incredibly powerful) - | | same program | different program | |:-:| :&amp;mdash;&amp;mdash;&amp;mdash;-: | :&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;: | | same data | remains the same | click | |different data| click | - |  Universal Turing Machine A Universal Turing Machine can simulate any arbitrary Turing machine on arbitrary input.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Excess on Superdanby</title>
+    <link>https://superdanby.github.io/Blog/tags/excess.html</link>
+    <description>Recent content in Excess on Superdanby</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 Dec 2018 11:30:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://superdanby.github.io/Blog/tags/excess/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Data Representation</title>
+      <link>https://superdanby.github.io/Blog/foundations-of-computer-science/data-representation.html</link>
+      <pubDate>Mon, 03 Dec 2018 11:30:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/foundations-of-computer-science/data-representation.html</guid>
+      <description>Data Representation Units  bit, byte, kilobytes, megabytes, gigabytes, terabytes, petabytes 1000 base, MB 1024 base, MiB b vs B  Numerical Encoding  Excess 3 BCD  Exercise: base 10, 9&amp;rsquo;s complement vs 10&amp;rsquo;s complement  Integers(fixed point)  2&amp;rsquo;s complement: mainly used 1&amp;rsquo;s complement: postive &amp;amp; negative 0 Sign and magnitude Gray code  Benefit: filp 1 bit at a time, has a good pattern   Floating point  Sign and magnitude Float(32bits, 1 + 8 + 23), excess-127 Double(64bits, 1 + 11 + 48)   Overflow &amp;amp; Underflow Conversion  10110.</description>
+    </item>
+    
+  </channel>
+</rss>
