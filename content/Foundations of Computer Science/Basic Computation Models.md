@@ -11,10 +11,10 @@ math: false
 - A machine operates on a **infinite** tape. On this tape are symbols, which the machine can read and write, one at a time, using a tape head. Operation is fully determined by a **finite** set of elementary instructions.![](https://web.mit.edu/manoli/turing/www/turing.gif)
 - Despite the model's simplicity, given any computer algorithm, a Turing machine capable of simulating that algorithm's logic can be constructed.(Incredibly powerful)
 
-| - | same program | different program |
- -- | ------------ | ----------------- 
+|   | same program | different program |
+ -- | ------------ | -----------------
 | same data | remains the same | [click](https://drive.google.com/file/d/1K3VAs5Hpg4xKEnAZ3kAgZg0IIYlhO9Qy/view?usp=sharing) |
-|different data| [click](https://drive.google.com/file/d/1jyigOHhJb-49BV3us9ZPxHuG7Gnac0PF/view?usp=sharing) | - |
+| different data | [click](https://drive.google.com/file/d/1jyigOHhJb-49BV3us9ZPxHuG7Gnac0PF/view?usp=sharing) | - |
 
 ### Universal Turing Machine
 
