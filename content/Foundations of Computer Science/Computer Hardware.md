@@ -82,11 +82,12 @@ math: false
     - Purpose: large scale, highly paralleled simple tasks
     - Vendors: Intel, Nvidia, AMD
     -
-| CPU |  GPU |
-|:-:| :----------: |
+|              CPU               |              GPU              |
+| ------------------------------ | ----------------------------- |
 | sophisticated tasks, precision | highly paralleled simple tasks|
 | small amount of calculations per time | large anoumt of calculations per time |
 | complilation, virtual machine emulation, complex control flows and branching | Graphics, neural networks, crypto mining, password/hash cracking |
+
 - Motherboard
 ![](https://i.imgur.com/tD2o5a5.png)
     - North birdge is vanishing over time.
