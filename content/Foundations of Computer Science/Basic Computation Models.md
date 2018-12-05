@@ -12,7 +12,7 @@ math: false
 - Despite the model's simplicity, given any computer algorithm, a Turing machine capable of simulating that algorithm's logic can be constructed.(Incredibly powerful)
 
 | - | same program | different program |
-| - | ------------ | ----------------- |
+ -- | ------------ | ----------------- 
 | same data | remains the same | [click](https://drive.google.com/file/d/1K3VAs5Hpg4xKEnAZ3kAgZg0IIYlhO9Qy/view?usp=sharing) |
 |different data| [click](https://drive.google.com/file/d/1jyigOHhJb-49BV3us9ZPxHuG7Gnac0PF/view?usp=sharing) | - |
 
