@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Substract on Superdanby</title>
+    <link>https://superdanby.github.io/Blog/tags/substract.html</link>
+    <description>Recent content in Substract on Superdanby</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Dec 2018 12:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://superdanby.github.io/Blog/tags/substract/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Data Operations</title>
+      <link>https://superdanby.github.io/Blog/foundations-of-computer-science/data-operations.html</link>
+      <pubDate>Wed, 05 Dec 2018 12:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/foundations-of-computer-science/data-operations.html</guid>
+      <description>Logic Operations  Example: 23, 11  Shift Operations  Example: 15, -15  Questions  Let X and Y be 39 and 127 respectively. Both are 8-bit unsigned numbers.  Apply 1-bit logical/arithmetic left/right shift on X and Y. Show the process in binary format. Apply NOT, AND, NAND, OR, NOR, XOR, and XNOR on X and Y. Show the process in binary format.  Show the results of problem 1.</description>
+    </item>
+    
+  </channel>
+</rss>

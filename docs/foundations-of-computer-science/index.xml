@@ -6,10 +6,19 @@
     <description>Recent content in Foundations of Computer Sciences on Superdanby</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Dec 2018 11:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 05 Dec 2018 12:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://superdanby.github.io/Blog/foundations-of-computer-science/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Data Operations</title>
+      <link>https://superdanby.github.io/Blog/foundations-of-computer-science/data-operations.html</link>
+      <pubDate>Wed, 05 Dec 2018 12:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/foundations-of-computer-science/data-operations.html</guid>
+      <description>Logic Operations  Example: 23, 11  Shift Operations  Example: 15, -15  Questions  Let X and Y be 39 and 127 respectively. Both are 8-bit unsigned numbers.  Apply 1-bit logical/arithmetic left/right shift on X and Y. Show the process in binary format. Apply NOT, AND, NAND, OR, NOR, XOR, and XNOR on X and Y. Show the process in binary format.  Show the results of problem 1.</description>
+    </item>
     
     <item>
       <title>Data Representation</title>
