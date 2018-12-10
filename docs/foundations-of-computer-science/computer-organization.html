@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="tw">
+    <head>
+        <title> 
+    Computer Organization | Superdanby
+ </title>
+
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <link rel="shortcut icon" type="image/jpeg" href="/Blog/abouts/me.gif" />
+
+        
+        <link rel="stylesheet" href="/Blog/style.min.css">
+
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"></script>
+        
+
+        
+        
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116389618-1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'UA-116389618-1');
+            </script>
+        
+
+        
+        
+
+        
+        <script>
+document.addEventListener("DOMContentLoaded", function() {
+	var article = document.getElementsByTagName("article")[0];
+
+	if (typeof article == "undefined")
+		return;
+
+	var s = article.getElementsByTagName("a");
+	var i = 0;
+	var re = new RegExp("([\\.\\/\\,\\s]|\w\-)","g");
+	while (s[i] && typeof s[i].innerHTML != "undefined")
+	{
+		if (s[i].getElementsByTagName("code").length == 0)
+			s[i].innerHTML = s[i].innerHTML.replace(re,"$1<wbr>");
+		++i;
+	}
+
+	s = article.getElementsByTagName("code");
+	i = 0;
+	while (s[i] && typeof s[i].innerHTML != "undefined")
+	{
+		var parent = s[i].parentElement;
+		while (parent && parent.tagName != "PRE" && parent.tagName != "A")
+			parent = parent.parentElement;
+		if (!parent)
+			s[i].innerHTML = s[i].innerHTML.replace(re,"$1<wbr>");
+		++i;
+	}
+});
+</script>
+
+
+    </head>
+
+    <body>
+        
+        <header>
+    
+    
+    <div class="icon">
+        <a href="https://superdanby.github.io/Blog"><img src="/Blog/abouts/me.gif" alt="me"></a>
+    </div>
+
+    
+    <div class="name">
+        <a href="https://superdanby.github.io/Blog">Superdanby</a>
+    </div>
+
+    
+    <div class="menu">
+        <a href="/Blog/abouts.html">ABOUT</a>
+        <a href="/Blog/categories.html">CATEGORY</a>
+        <a href="/Blog/tags.html">TAG</a>
+    </div>
+
+</header>
+
+        
+        <main>
+            
+    <article>
+
+    
+    <div class="info">
+        <div class="top">
+            <span title="Date">2018/12/09</span>
+            <span>@</span>
+            <span>
+                
+                   
+                   <a href="https://superdanby.github.io/Blog/categories/foundations-of-computer-science.html">Foundations of Computer Science</a>
+                
+            </span>
+        </div>
+
+        <h1 class="title">Computer Organization</h1>
+
+        <div class="bottom">
+            
+                <a href="https://superdanby.github.io/Blog/tags/cpu.html">CPU</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/gpu.html">GPU</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/memory.html">Memory</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/register.html">Register</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/cache.html">Cache</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/ssd.html">SSD</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/hdd.html">HDD</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/cd.html">CD</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/dvd.html">DVD</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/i/o.html">I/O</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/dma.html">DMA</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/cisc.html">CISC</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/risc.html">RISC</a>
+            
+        </div>
+    </div>
+
+    
+    
+    <div class="md-content">
+        
+        
+            <div class="toc">
+                <span>TOC</span>
+                <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#cpu">CPU</a></li>
+<li><a href="#memory">Memory</a>
+<ul>
+<li><a href="#cache">Cache</a></li>
+</ul></li>
+<li><a href="#input-output-devices">Input/Output Devices</a>
+<ul>
+<li><a href="#nonstorage-devices">Nonstorage Devices</a></li>
+<li><a href="#storage-devices">Storage Devices</a>
+<ul>
+<li><a href="#integrated-circuit">Integrated Circuit</a></li>
+<li><a href="#magnetic">Magnetic</a></li>
+<li><a href="#optical">Optical</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#subsystem-interconnection">Subsystem Interconnection</a>
+<ul>
+<li><a href="#cpu-and-memory-connection">CPU and Memory Connection</a></li>
+<li><a href="#i-o-connections">I/O Connections</a></li>
+<li><a href="#port-mapped-i-o-pmio">Port-mapped I/O (PMIO)</a></li>
+<li><a href="#memory-mapped-i-o-mmio">Memory-mapped I/O (MMIO)</a></li>
+<li><a href="#interrupt">Interrupt</a></li>
+</ul></li>
+<li><a href="#program-execution">Program Execution</a>
+<ul>
+<li><a href="#instructions">Instructions</a></li>
+<li><a href="#input-output">Input/Output</a>
+<ul>
+<li><a href="#programmed-i-o">Programmed I/O</a></li>
+<li><a href="#interrupt-i-o">Interrupt I/O</a></li>
+<li><a href="#direct-memory-access">Direct Memory Access</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#instruction-set-architecture-isa">Instruction Set Architecture(ISA)</a>
+<ul>
+<li><a href="#complex-instruction-set-computer-cisc">Complex Instruction Set Computer(CISC)</a></li>
+<li><a href="#reduced-instruction-set-computer-risc">Reduced Instruction Set Computer(RISC)</a></li>
+<li><a href="#pipelining">Pipelining</a></li>
+<li><a href="#parallel-processing">Parallel Processing</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+            </div>
+        
+        
+        
+
+<h2 id="cpu">CPU</h2>
+
+<ul>
+<li>Control Unit
+
+<ul>
+<li>A logic circuit that controls the CPU in respond of the given instructions.</li>
+</ul></li>
+<li>Arithmetic Logic Unit
+
+<ul>
+<li>logic operations, shift operations, arithmetic operations</li>
+</ul></li>
+<li>Registers(basic C programming knowledge required)
+
+<ul>
+<li>word size: 64 bits vs 32 bits</li>
+<li>User accessible:
+
+<ul>
+<li>General purpose register: stores data or addresses</li>
+<li>Data register: stores data</li>
+<li>Address register: stores address</li>
+<li>Stack pointer: address of the top of the current program stack</li>
+<li>Base pointer: address of the starting position of the current stack frame</li>
+<li>Program counter: address of the next instruction</li>
+<li>Constant register: e.g. 0, pi</li>
+</ul></li>
+<li>Internal:
+
+<ul>
+<li>Instruction register: current instruction being executed</li>
+<li>Memory address register: address of the data to be fetched/stored</li>
+<li>Memory data register: data to be fetched/stored</li>
+<li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Call_stack_layout.svg/342px-Call_stack_layout.svg.png" alt="" /></li>
+</ul></li>
+<li>I/O</li>
+</ul></li>
+</ul>
+
+<h2 id="memory">Memory</h2>
+
+<ul>
+<li>Addressing
+
+<ul>
+<li>Smallest addressing unit in convention: byte</li>
+<li>Question:
+
+<ul>
+<li>How many bits do you need in order to map 64 MB of memory?</li>
+<li>How much memory can you map with 32 bits?</li>
+</ul></li>
+</ul></li>
+<li>RAM: volatile</li>
+<li>ROM: contents written by manufacturer, can&rsquo;t be erased</li>
+<li>PROM: contents can be write by user once, can&rsquo;t be erased</li>
+<li>EPROM: a PROM that can be erased with UV light, requires physical removal</li>
+<li>EEPROM: a PROM that can be erased with electronic impulses</li>
+<li>Speed: RAM &gt;&gt; ROM</li>
+</ul>
+
+<h3 id="cache">Cache</h3>
+
+<p>Acting as a memory device in between registers and main memory.
+- Size: x KB ~ x MB
+- Very efficient: frequently accessed data are usually in the minority.
+- Procedure:
+    1. CPU needs specific data
+    2. Check cache
+        1. Cache hit: Jump to 3
+        2. Cache miss:
+            1. Copy data from memory to cache
+    3. Get data from cache</p>
+
+<h2 id="input-output-devices">Input/Output Devices</h2>
+
+<h3 id="nonstorage-devices">Nonstorage Devices</h3>
+
+<ul>
+<li>Monitor</li>
+<li>Speaker</li>
+<li>Keyboard</li>
+<li>Touchpad</li>
+<li>Mouse</li>
+<li>Microphone</li>
+<li>Camera</li>
+<li>Printer</li>
+</ul>
+
+<h3 id="storage-devices">Storage Devices</h3>
+
+<h4 id="integrated-circuit">Integrated Circuit</h4>
+
+<ul>
+<li>SSD</li>
+</ul>
+
+<h4 id="magnetic">Magnetic</h4>
+
+<ul>
+<li><a href="https://hackmd.io/nV0oHCiDR-uZ63IXOFrlAg?both#Storage">HDD</a>
+
+<ul>
+<li>Random Access</li>
+<li>Disks</li>
+<li>Tracks</li>
+<li>Sectors
+<img src="https://gateoverflow.in/?qa=blob&amp;qa_blobid=2012281201284991156" alt="" /></li>
+<li>Performance:
+
+<ul>
+<li>Slow, compared to SSD</li>
+<li>Rotational speed</li>
+<li>Seek time</li>
+<li>Seeking algorithms
+
+<ul>
+<li>FCFS vs SSTF</li>
+<li><img src="https://i.imgur.com/LFB2qPT.png" alt="" /></li>
+<li><img src="https://i.imgur.com/US0o6e2.png" alt="" /></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Magnetic Tape
+
+<ul>
+<li>Sequential Access</li>
+</ul></li>
+</ul>
+
+<p><img src="https://img.bhs4.com/17/5/175512094F06E00D9869A8E36974F8DFCECFCC13_large.jpg" alt="" /></p>
+
+<p><img src="https://www.sfu.ca/sonic-studio-webdav/handbook/Graphics/Emulsion2.gif" alt="" /></p>
+
+<h4 id="optical">Optical</h4>
+
+<ul>
+<li><p>CD
+<img src="https://preview.redd.it/ginx3f15wb221.jpg?width=640&amp;crop=smart&amp;auto=webp&amp;s=753e2c90a817fe03d348638de39310145f0beb25" alt="" /></p>
+
+<ul>
+<li>CD-ROM
+
+<ul>
+<li><a href="https://drive.google.com/file/d/1g3up957qY22A_bWUMCnc1h-2RrsJ3dyX/view?usp=sharing">Production</a></li>
+</ul></li>
+<li>CD-R
+
+<ul>
+<li>Simulated pits/lands</li>
+<li>Aluminum</li>
+</ul></li>
+<li>CD-RW
+
+<ul>
+<li>Simulated pits/lands</li>
+<li>Gold</li>
+</ul></li>
+<li>Size: 650MB ~ 900MB</li>
+</ul></li>
+
+<li><p>DVD</p>
+
+<ul>
+<li>Red laser</li>
+</ul></li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Capacity</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Single-sided, single-layer</td>
+<td>4.7 GB</td>
+</tr>
+
+<tr>
+<td>Single-sided, dual-layer</td>
+<td>8.5 GB</td>
+</tr>
+
+<tr>
+<td>Double-sided, single-layer</td>
+<td>9.4 GB</td>
+</tr>
+
+<tr>
+<td>Double-sided, dual-layer</td>
+<td>17 GB</td>
+</tr>
+</tbody>
+</table>
+
+<p><img src="http://kopyrite.com/wp-content/uploads/2013/02/DVD-1.gif" alt="" /></p>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Comparison_CD_DVD_HDDVD_BD.svg" alt="" /></p>
+
+<h2 id="subsystem-interconnection">Subsystem Interconnection</h2>
+
+<h3 id="cpu-and-memory-connection">CPU and Memory Connection</h3>
+
+<ul>
+<li>Data bus
+
+<ul>
+<li>native support of 64 bit integer operations</li>
+<li>m bits data needs: m bits</li>
+</ul></li>
+<li>Address bus
+
+<ul>
+<li>32 bit limit: 4 GB</li>
+<li>64 bit</li>
+<li>2^m^ addresses needs: m bits</li>
+</ul></li>
+<li>Control bus
+
+<ul>
+<li>2^m^ control commands needs: m bits</li>
+</ul></li>
+</ul>
+
+<h3 id="i-o-connections">I/O Connections</h3>
+
+<ul>
+<li><a href="https://drive.google.com/file/d/1X4WUko6KoYtDg1r8TOy1BaDp_mAUYIAD/view?usp=sharing">SCSI</a></li>
+<li><a href="https://drive.google.com/file/d/194PrwJe8Vb60w91gFM-mUpVZw1lANRFB/view?usp=sharing">Firewire</a></li>
+<li><a href="https://drive.google.com/file/d/1uobBTX00PP8EkQl7Q0Ca1q7S-t_iGnV9/view?usp=sharing">USB</a>
+
+<ul>
+<li>Tree-like structure</li>
+<li>Hot pluggable</li>
+</ul></li>
+<li>VGA</li>
+<li>HDMI</li>
+</ul>
+
+<h3 id="port-mapped-i-o-pmio">Port-mapped I/O (PMIO)</h3>
+
+<ul>
+<li>== Isolated I/O</li>
+<li>Dedicated address space</li>
+<li>Dedicated instruction set</li>
+<li>Simple operations</li>
+</ul>
+
+<h3 id="memory-mapped-i-o-mmio">Memory-mapped I/O (MMIO)</h3>
+
+<ul>
+<li>Maps I/O to memory(combined address space)</li>
+</ul>
+
+<h3 id="interrupt">Interrupt</h3>
+
+<ul>
+<li>Emergency</li>
+</ul>
+
+<h2 id="program-execution">Program Execution</h2>
+
+<h3 id="instructions">Instructions</h3>
+
+<ol>
+<li>Fetch</li>
+<li>Decode</li>
+<li>Execute</li>
+</ol>
+
+<h3 id="input-output">Input/Output</h3>
+
+<h4 id="programmed-i-o">Programmed I/O</h4>
+
+<ul>
+<li>CPU direct</li>
+</ul>
+
+<ol>
+<li>Issue command</li>
+<li>Constantly check availability</li>
+<li>Transfer</li>
+</ol>
+
+<h4 id="interrupt-i-o">Interrupt I/O</h4>
+
+<ul>
+<li>CPU direct</li>
+</ul>
+
+<ol>
+<li>Device interruption</li>
+<li>Transfer</li>
+</ol>
+
+<h4 id="direct-memory-access">Direct Memory Access</h4>
+
+<p>If there&rsquo;s no DMA, CPU would be working on I/Os mostly!</p>
+
+<ul>
+<li>CPU indirect</li>
+</ul>
+
+<ol>
+<li>CPU issues command(what to do, starting address, number of bytes)</li>
+<li>DMA preperation</li>
+<li>DMA is ready and interrupts CPU</li>
+<li>CPU checks and gives bus permission to DMA</li>
+<li>DMA transfers data</li>
+<li>DMA finishes its job and intrrupts CPU</li>
+</ol>
+
+<h2 id="instruction-set-architecture-isa">Instruction Set Architecture(ISA)</h2>
+
+<h3 id="complex-instruction-set-computer-cisc">Complex Instruction Set Computer(CISC)</h3>
+
+<ul>
+<li>Large set of complex and specialized instructions</li>
+<li>Complex instructions are translated into simple ones (microoperations)before executing.</li>
+<li>Architecture: x86, x86-64, Zen, Zen+, Zen2</li>
+<li>Products
+
+<ul>
+<li>Intel: Core, Xeon&hellip;</li>
+<li>AMD: Ryzen&hellip;</li>
+</ul></li>
+<li>Target: Desktops, servers, etc.</li>
+</ul>
+
+<h3 id="reduced-instruction-set-computer-risc">Reduced Instruction Set Computer(RISC)</h3>
+
+<ul>
+<li>Small set of simple and general instructions</li>
+<li>Usually: uniform instruction format, using single word with the opcode in the same bit positions for simpler decoding</li>
+<li>Architectures: ARM, MIPS, RISC-V</li>
+<li>Products: Cortex, Snapdragon</li>
+<li>Target: Smartphones, IOT devices&hellip;</li>
+</ul>
+
+<h3 id="pipelining">Pipelining</h3>
+
+<p><img src="https://www.cise.ufl.edu/~mssz/CompOrg/Figure5.3-MipsPipeline.gif" alt="" /></p>
+
+<h3 id="parallel-processing">Parallel Processing</h3>
+
+<ul>
+<li>SISD: non-parallel</li>
+<li>SIMD</li>
+<li>MISD?</li>
+<li>MIMD: Modern PCs</li>
+</ul>
+
+    </div>
+
+    
+    
+        <div id="comments">
+    <button id="expand-btn" href="" onclick="expand_disqus()">Comments</button>
+    <div id="disqus_thread"></div>
+</div>
+
+<script type="text/javascript">
+
+function expand_disqus() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    document.getElementById('expand-btn').style.display = "none";
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = false;
+    var disqus_shortname = 'superdanby-blog';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+};
+</script>
+    
+</article>
+
+        </main>
+
+        
+        <footer>
+    
+    <p>
+        Powered by <a href="https://gohugo.io/">Hugo</a> with theme
+        <a href="https://github.com/Superdanby/hugo-zmd-theme">zmd</a>
+    </p>
+    <p>
+        © 2018 by Superdanby
+        <a href="./index.xml" title="RSS">♥</a>
+    </p>
+</footer>
+
+
+        
+        
+            <script>
+                anchors.options = {
+                    placement: 'right',
+                };
+                anchors.add('.md-content > h1, .md-content > h2, .md-content > h3, .md-content > h4');
+            </script>
+        
+</body>
+
+</html>

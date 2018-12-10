@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Register on Superdanby</title>
+    <link>https://superdanby.github.io/Blog/tags/register.html</link>
+    <description>Recent content in Register on Superdanby</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Dec 2018 22:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://superdanby.github.io/Blog/tags/register/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Computer Organization</title>
+      <link>https://superdanby.github.io/Blog/foundations-of-computer-science/computer-organization.html</link>
+      <pubDate>Sun, 09 Dec 2018 22:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/foundations-of-computer-science/computer-organization.html</guid>
+      <description>CPU  Control Unit  A logic circuit that controls the CPU in respond of the given instructions.  Arithmetic Logic Unit  logic operations, shift operations, arithmetic operations  Registers(basic C programming knowledge required)  word size: 64 bits vs 32 bits User accessible:  General purpose register: stores data or addresses Data register: stores data Address register: stores address Stack pointer: address of the top of the current program stack Base pointer: address of the starting position of the current stack frame Program counter: address of the next instruction Constant register: e.</description>
+    </item>
+    
+  </channel>
+</rss>

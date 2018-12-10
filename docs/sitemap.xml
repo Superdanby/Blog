@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://superdanby.github.io/Blog/foundations-of-computer-science/c-and-c&#43;&#43;-programming-overview.html</loc>
+    <lastmod>2018-12-10T20:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://superdanby.github.io/Blog/foundations-of-computer-science/computer-organization.html</loc>
+    <lastmod>2018-12-09T22:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://superdanby.github.io/Blog/foundations-of-computer-science.html</loc>
     <lastmod>2018-12-05T12:03:00+08:00</lastmod>
   </url>
@@ -214,8 +224,38 @@
   </url>
   
   <url>
+    <loc>https://superdanby.github.io/Blog/tags/c.html</loc>
+    <lastmod>2018-12-10T20:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://superdanby.github.io/Blog/tags/c&#43;&#43;.html</loc>
+    <lastmod>2018-12-10T20:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://superdanby.github.io/Blog/tags/cd.html</loc>
+    <lastmod>2018-12-09T22:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://superdanby.github.io/Blog/tags/cisc.html</loc>
+    <lastmod>2018-12-09T22:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://superdanby.github.io/Blog/tags/cpu.html</loc>
-    <lastmod>2018-11-29T22:30:00+08:00</lastmod>
+    <lastmod>2018-12-09T22:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://superdanby.github.io/Blog/tags/cache.html</loc>
+    <lastmod>2018-12-09T22:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -232,14 +272,20 @@
   </url>
   
   <url>
+    <loc>https://superdanby.github.io/Blog/tags/cheatsheet.html</loc>
+    <lastmod>2017-12-09T13:55:37+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://superdanby.github.io/Blog/categories/cheatsheet.html</loc>
     <lastmod>2017-12-09T13:55:37+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://superdanby.github.io/Blog/tags/cheatsheet.html</loc>
-    <lastmod>2017-12-09T13:55:37+08:00</lastmod>
+    <loc>https://superdanby.github.io/Blog/tags/dma.html</loc>
+    <lastmod>2018-12-09T22:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -250,19 +296,25 @@
   </url>
   
   <url>
+    <loc>https://superdanby.github.io/Blog/tags/dvd.html</loc>
+    <lastmod>2018-12-09T22:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://superdanby.github.io/Blog/tags/excess.html</loc>
     <lastmod>2018-12-03T11:30:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://superdanby.github.io/Blog/categories/fedora.html</loc>
+    <loc>https://superdanby.github.io/Blog/tags/fedora.html</loc>
     <lastmod>2018-04-03T23:45:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://superdanby.github.io/Blog/tags/fedora.html</loc>
+    <loc>https://superdanby.github.io/Blog/categories/fedora.html</loc>
     <lastmod>2018-04-03T23:45:00+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -275,19 +327,19 @@
   
   <url>
     <loc>https://superdanby.github.io/Blog/categories/foundations-of-computer-science.html</loc>
-    <lastmod>2018-12-05T12:03:00+08:00</lastmod>
+    <lastmod>2018-12-10T20:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://superdanby.github.io/Blog/foundations-of-computer-science.html</loc>
-    <lastmod>2018-12-05T12:00:00+08:00</lastmod>
+    <lastmod>2018-12-10T20:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://superdanby.github.io/Blog/tags/gpu.html</loc>
-    <lastmod>2018-11-29T22:30:00+08:00</lastmod>
+    <lastmod>2018-12-09T22:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -299,7 +351,7 @@
   
   <url>
     <loc>https://superdanby.github.io/Blog/tags/hdd.html</loc>
-    <lastmod>2018-11-29T22:30:00+08:00</lastmod>
+    <lastmod>2018-12-09T22:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -312,6 +364,12 @@
   <url>
     <loc>https://superdanby.github.io/Blog/tags/hugo.html</loc>
     <lastmod>2018-03-24T17:46:50+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://superdanby.github.io/Blog/tags/i/o.html</loc>
+    <lastmod>2018-12-09T22:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -334,13 +392,13 @@
   </url>
   
   <url>
-    <loc>https://superdanby.github.io/Blog/categories/laravel.html</loc>
+    <loc>https://superdanby.github.io/Blog/tags/laravel.html</loc>
     <lastmod>2018-03-11T00:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://superdanby.github.io/Blog/tags/laravel.html</loc>
+    <loc>https://superdanby.github.io/Blog/categories/laravel.html</loc>
     <lastmod>2018-03-11T00:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -383,7 +441,7 @@
   
   <url>
     <loc>https://superdanby.github.io/Blog/tags/memory.html</loc>
-    <lastmod>2018-11-29T22:30:00+08:00</lastmod>
+    <lastmod>2018-12-09T22:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -442,6 +500,18 @@
   </url>
   
   <url>
+    <loc>https://superdanby.github.io/Blog/tags/risc.html</loc>
+    <lastmod>2018-12-09T22:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://superdanby.github.io/Blog/tags/register.html</loc>
+    <lastmod>2018-12-09T22:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://superdanby.github.io/Blog/tags/selinux.html</loc>
     <lastmod>2017-09-25T00:20:00+08:00</lastmod>
     <priority>0</priority>
@@ -449,7 +519,7 @@
   
   <url>
     <loc>https://superdanby.github.io/Blog/tags/ssd.html</loc>
-    <lastmod>2018-11-29T22:30:00+08:00</lastmod>
+    <lastmod>2018-12-09T22:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -478,13 +548,13 @@
   </url>
   
   <url>
-    <loc>https://superdanby.github.io/Blog/categories/security.html</loc>
+    <loc>https://superdanby.github.io/Blog/tags/security.html</loc>
     <lastmod>0001-01-01T00:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://superdanby.github.io/Blog/tags/security.html</loc>
+    <loc>https://superdanby.github.io/Blog/categories/security.html</loc>
     <lastmod>0001-01-01T00:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -502,14 +572,14 @@
   </url>
   
   <url>
-    <loc>https://superdanby.github.io/Blog/categories/software.html</loc>
-    <lastmod>2017-07-25T00:20:00+08:00</lastmod>
+    <loc>https://superdanby.github.io/Blog/tags/software.html</loc>
+    <lastmod>2017-02-27T20:20:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://superdanby.github.io/Blog/tags/software.html</loc>
-    <lastmod>2017-02-27T20:20:00+08:00</lastmod>
+    <loc>https://superdanby.github.io/Blog/categories/software.html</loc>
+    <lastmod>2017-07-25T00:20:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -527,7 +597,7 @@
   
   <url>
     <loc>https://superdanby.github.io/Blog/</loc>
-    <lastmod>2018-12-05T12:03:00+08:00</lastmod>
+    <lastmod>2018-12-10T20:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -538,13 +608,13 @@
   </url>
   
   <url>
-    <loc>https://superdanby.github.io/Blog/categories/system-program.html</loc>
+    <loc>https://superdanby.github.io/Blog/tags/system-program.html</loc>
     <lastmod>2017-03-15T20:20:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://superdanby.github.io/Blog/tags/system-program.html</loc>
+    <loc>https://superdanby.github.io/Blog/categories/system-program.html</loc>
     <lastmod>2017-03-15T20:20:00+08:00</lastmod>
     <priority>0</priority>
   </url>

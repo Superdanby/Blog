@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C&#43;&#43; on Superdanby</title>
+    <link>https://superdanby.github.io/Blog/tags/c&#43;&#43;.html</link>
+    <description>Recent content in C&#43;&#43; on Superdanby</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Dec 2018 20:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://superdanby.github.io/Blog/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C/C&#43;&#43; Programming Overview</title>
+      <link>https://superdanby.github.io/Blog/foundations-of-computer-science/c-and-c&#43;&#43;-programming-overview.html</link>
+      <pubDate>Mon, 10 Dec 2018 20:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/foundations-of-computer-science/c-and-c&#43;&#43;-programming-overview.html</guid>
+      <description>Basic types  data register int, float, char, long long, double, short C++ exclusive: bool  int i = 0; int a = b;  Array char carray[23]; // char carray2[4] = a; long long po [8]; po[0] = 1; po[7] = po[0]; // po[8];  Pointers and Reference  address register *, &amp;amp;  int a = 10, b = 1; int* aptr = NULL; // double * dptr = &amp;amp;a; aptr = &amp;amp;a; // aptr -&amp;gt; a, a = 10, b = 1 *aptr = b; // aptr -&amp;gt; a, a = 1, b = 1 a = 2; // aptr -&amp;gt; a, a = 2, b = 1 b = 7; // aptr -&amp;gt; a, a = 2, b = 7 &amp;amp;a = b; // aptr -&amp;gt; old a, old a = 2, b(a) = 7; printf(&amp;quot;%d %d&amp;quot;, a, *aptr); // 7 2 int * potato = NULL; if(potato == NULL) printf(&amp;quot;hi&amp;quot;); potato = (int *)malloc(sizeof(int) * 127); if(potato == NULL) printf(&amp;quot;Memory allocation failed.</description>
+    </item>
+    
+  </channel>
+</rss>

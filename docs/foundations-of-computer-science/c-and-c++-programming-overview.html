@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="tw">
+    <head>
+        <title> 
+    C/C&#43;&#43; Programming Overview | Superdanby
+ </title>
+
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <link rel="shortcut icon" type="image/jpeg" href="/Blog/abouts/me.gif" />
+
+        
+        <link rel="stylesheet" href="/Blog/style.min.css">
+
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"></script>
+        
+
+        
+        
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116389618-1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'UA-116389618-1');
+            </script>
+        
+
+        
+        
+
+        
+        <script>
+document.addEventListener("DOMContentLoaded", function() {
+	var article = document.getElementsByTagName("article")[0];
+
+	if (typeof article == "undefined")
+		return;
+
+	var s = article.getElementsByTagName("a");
+	var i = 0;
+	var re = new RegExp("([\\.\\/\\,\\s]|\w\-)","g");
+	while (s[i] && typeof s[i].innerHTML != "undefined")
+	{
+		if (s[i].getElementsByTagName("code").length == 0)
+			s[i].innerHTML = s[i].innerHTML.replace(re,"$1<wbr>");
+		++i;
+	}
+
+	s = article.getElementsByTagName("code");
+	i = 0;
+	while (s[i] && typeof s[i].innerHTML != "undefined")
+	{
+		var parent = s[i].parentElement;
+		while (parent && parent.tagName != "PRE" && parent.tagName != "A")
+			parent = parent.parentElement;
+		if (!parent)
+			s[i].innerHTML = s[i].innerHTML.replace(re,"$1<wbr>");
+		++i;
+	}
+});
+</script>
+
+
+    </head>
+
+    <body>
+        
+        <header>
+    
+    
+    <div class="icon">
+        <a href="https://superdanby.github.io/Blog"><img src="/Blog/abouts/me.gif" alt="me"></a>
+    </div>
+
+    
+    <div class="name">
+        <a href="https://superdanby.github.io/Blog">Superdanby</a>
+    </div>
+
+    
+    <div class="menu">
+        <a href="/Blog/abouts.html">ABOUT</a>
+        <a href="/Blog/categories.html">CATEGORY</a>
+        <a href="/Blog/tags.html">TAG</a>
+    </div>
+
+</header>
+
+        
+        <main>
+            
+    <article>
+
+    
+    <div class="info">
+        <div class="top">
+            <span title="Date">2018/12/10</span>
+            <span>@</span>
+            <span>
+                
+                   
+                   <a href="https://superdanby.github.io/Blog/categories/foundations-of-computer-science.html">Foundations of Computer Science</a>
+                
+            </span>
+        </div>
+
+        <h1 class="title">C/C&#43;&#43; Programming Overview</h1>
+
+        <div class="bottom">
+            
+                <a href="https://superdanby.github.io/Blog/tags/c.html">C</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/c&#43;&#43;.html">C&#43;&#43;</a>
+            
+        </div>
+    </div>
+
+    
+    
+    <div class="md-content">
+        
+        
+            <div class="toc">
+                <span>TOC</span>
+                <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#basic-types">Basic types</a></li>
+<li><a href="#array">Array</a></li>
+<li><a href="#pointers-and-reference">Pointers and Reference</a></li>
+<li><a href="#operators">Operators</a></li>
+<li><a href="#conditional-control">Conditional control</a></li>
+<li><a href="#loops">Loops</a></li>
+<li><a href="#functions">Functions</a></li>
+<li><a href="#scope">Scope</a></li>
+<li><a href="#user-defined-types">User-defined Types</a></li>
+<li><a href="#preprocessors">Preprocessors</a></li>
+<li><a href="#qualifiers">Qualifiers</a></li>
+</ul></li>
+</ul>
+</nav>
+            </div>
+        
+        
+        
+
+<h2 id="basic-types">Basic types</h2>
+
+<ul>
+<li>data register</li>
+<li><code>int</code>, <code>float</code>, <code>char</code>, <code>long long</code>, <code>double</code>, <code>short</code></li>
+<li>C++ exclusive: <code>bool</code></li>
+</ul>
+
+<pre><code class="language-c">int i = 0;
+int a = b;
+</code></pre>
+
+<h2 id="array">Array</h2>
+
+<pre><code class="language-c=">char carray[23];
+// char carray2[4] = a;
+long long po [8];
+po[0] = 1;
+po[7] = po[0];
+// po[8];
+</code></pre>
+
+<h2 id="pointers-and-reference">Pointers and Reference</h2>
+
+<ul>
+<li>address register</li>
+<li>*, &amp;</li>
+</ul>
+
+<pre><code class="language-c=">int a = 10, b = 1;
+int* aptr = NULL;
+// double * dptr = &amp;a;
+aptr = &amp;a; // aptr -&gt; a, a = 10, b = 1
+*aptr = b; // aptr -&gt; a, a = 1, b = 1
+a = 2; // aptr -&gt; a, a = 2, b = 1
+b = 7; // aptr -&gt; a, a = 2, b = 7
+&amp;a = b; // aptr -&gt; old a, old a = 2, b(a) = 7;
+printf(&quot;%d %d&quot;, a, *aptr); // 7 2
+
+int * potato = NULL;
+if(potato == NULL)
+    printf(&quot;hi&quot;);
+
+potato = (int *)malloc(sizeof(int) * 127);
+
+if(potato == NULL)
+    printf(&quot;Memory allocation failed.\n&quot;);
+
+potato = NULL;
+if(potato != NULL)
+    free(potato);
+
+potato[4] = 4; // *(potato + 4) = 4;
+</code></pre>
+
+<h2 id="operators">Operators</h2>
+
+<ol>
+<li><code>=</code>, assignment, <code>double d = 3.1415926;</code></li>
+<li><code>+ - * / %</code>, basic arithmetic, <code>e = d / 12;</code></li>
+<li><code>&lt; &gt; ==</code>, comparisons, <code>a &gt; b</code></li>
+<li><code>&amp;&amp; ||</code>, logic operations, <code>a &amp;&amp; b || c</code></li>
+<li><code>&amp; | ^ &gt;&gt; &lt;&lt;</code>, bit operations, <code>a &amp; 1</code> === <code>a % 2 == 1</code></li>
+<li><code>()</code>, priority, <code>a || b &amp;&amp; c</code> vs <code>(a || b) &amp;&amp; c</code></li>
+<li><code>++</code>, <code>--</code>, increment &amp; decrement by 1, <code>++a vs a++</code></li>
+<li><a href="https://en.cppreference.com/w/cpp/language/operator_precedence">Precedence</a></li>
+</ol>
+
+<h2 id="conditional-control">Conditional control</h2>
+
+<ul>
+<li>0 means <code>False</code>, non-0 means <code>True</code></li>
+</ul>
+
+<ol>
+<li><code>if</code>, <code>else</code>
+```c=
+if(1)
+{
+printf(&ldquo;Potato&rdquo;);
+}
+else
+{
+printf(&ldquo;P04A40&rdquo;);
+}</li>
+</ol>
+
+<p>int a = 0;
+if(a++)
+{
+    printf(&ldquo;Smashed potato.&rdquo;);
+}</p>
+
+<pre><code>
+2. `switch` `case`
+```css=
+int a = 32, b = 0;
+
+switch (a) {
+    case 32:
+        printf(&quot;32 potatos&quot;);
+    case 0:
+        printf(&quot;Void&quot;);
+        break;
+    default:
+        printf(&quot;Frog&quot;);
+}
+</code></pre>
+
+<h2 id="loops">Loops</h2>
+
+<ol>
+<li><code>for</code>
+```c=
+int i = 1;
+for(i -= 1; i &lt;= INT_MAX; i++)
+{
+printf(&ldquo;%d&rdquo;, i);
+}</li>
+</ol>
+
+<p>float a[10];
+float * b = (float *)malloc(sizeof(float) * 10);
+float* a_end = a + 10;</p>
+
+<p>for(float* a_ptr = a; a &lt; a_end; a++)
+    printf(&ldquo;%f &ldquo;, *a_ptr);</p>
+
+<p>// deferences between array and pointer
+// C++ only
+for(auto x : a)
+    printf(&ldquo;%f &ldquo;, x);
+/*
+for(auto x : b)
+    printf(&ldquo;%f &ldquo;, x);
+*/</p>
+
+<pre><code>
+2. `while`
+
+```c=
+while(True)
+{}
+</code></pre>
+
+<pre><code class="language-c=">int x = 10;
+while(x--)
+{}
+</code></pre>
+
+<h2 id="functions">Functions</h2>
+
+<pre><code class="language-c=">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int potato(int frog)
+{
+    int potato2;
+    frog = 11;
+    return 0;
+}
+
+int main()
+{
+    int frog = 1;
+    int potato2;
+    potato(frog);
+    printf(&quot;%d\n&quot;, frog);
+    return 0;
+}
+</code></pre>
+
+<pre><code class="language-c=">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int potato()
+{
+    // int frog = 11;
+    // return frog;
+    return 11;
+}
+
+void potato2(int * frog1, int * frog2)
+{
+    *frog1 = 11;
+    *frog2 = 12;
+    return;
+}
+
+int main()
+{
+    int frog = 1;
+    frog = potato();
+    printf(&quot;%d\n&quot;, frog);
+
+    frog = 1;
+    int frogg = 2;
+    potato2(&amp;frog, &amp;frogg);
+    printf(&quot;%d %d\n&quot;, frog, frogg);
+    return 0;
+}
+</code></pre>
+
+<pre><code class="language-c=">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int potato(int ** frog)
+{
+    // int a[1];
+    // int * aptr = (int *)malloc(sizeof(int));
+    *frog = (int *)malloc(sizeof(int));
+    (*frog)[0] = -1; // *(frog + 0) = -1;
+    return 0;
+}
+
+int main()
+{
+    int * frog = NULL;
+    potato(&amp;frog);
+    printf(&quot;%d\n&quot;, frog[0]);
+    return 0;
+}
+</code></pre>
+
+<pre><code class="language-cpp=">#include &lt;iostream&gt;
+
+using namespace std;
+
+int potato(int &amp;frog) // int &amp;frog(potato function) = frog(main function)
+{
+    frog = 11;
+    return 0;
+}
+
+int main()
+{
+    int frog = 1;
+    potato(frog);
+    cout &lt;&lt; frog &lt;&lt; &quot;\n&quot;;
+}
+</code></pre>
+
+<pre><code class="language-cpp=">#include &lt;iostream&gt;
+
+using namespace std;
+
+
+void swap(int &amp;potato, int &amp;frog)
+{
+    int s = potato;
+    potato = frog;
+    frog = s;
+    return;
+}
+
+int main()
+{
+    int potato, frog;
+    cin &gt;&gt; potato &gt;&gt; frog;
+    swap(potato, frog);
+    cout &lt;&lt; potato &lt;&lt; frog &lt;&lt; &quot;\n&quot;;
+}
+</code></pre>
+
+<ol>
+<li><a href="https://www.google.com.tw/search?q=Recursion&amp;spell=1&amp;sa=X&amp;ved=0ahUKEwjDzPnI6P3eAhVG6bwKHTPkBxcQBQgoKAA&amp;biw=1536&amp;bih=785">Recursion</a></li>
+</ol>
+
+<h2 id="scope">Scope</h2>
+
+<ul>
+<li><code>global</code></li>
+<li><code>local</code></li>
+<li><code>{}</code></li>
+</ul>
+
+<h2 id="user-defined-types">User-defined Types</h2>
+
+<ul>
+<li><code>typedef</code></li>
+<li><code>struct</code></li>
+</ul>
+
+<pre><code class="language-c=">typedef long long ll;
+
+typedef struct potato{
+int frog;
+potato* next;
+} potato;
+</code></pre>
+
+<pre><code class="language-cpp">struct potato {
+int frog;
+potato* next;
+};
+
+potato potato1, potato2;
+potato1.frog = 1;
+potato1.next = &amp;potato2;
+potato2.frog = 2;
+potato2.next = &amp;potato1;
+
+potato * potato_ptr;
+potato_ptr -&gt; frog = potato1.frog;
+potato_ptr -&gt; next = potato1.next;
+
+for(int i = 0; i &lt; 10; i++)
+{
+    cout &lt;&lt; potato_ptr -&gt; frog &lt;&lt; &quot; &quot;;
+    potato_ptr -&gt; frog = (potato1 -&gt; next) -&gt; frog;
+    potato_ptr -&gt; next = (potato1 -&gt; next) -&gt; next;
+}
+
+potato * potato3, * potato4;
+potato3 -&gt; frog = 3;
+potato3 -&gt; next = potato4;
+potato4 -&gt; frog = 4;
+potato4 -&gt; next = potato3;
+
+potato_ptr = potato3;
+
+for(int i = 0; i &lt; 10; i++)
+{
+    cout &lt;&lt; potato_ptr -&gt; frog &lt;&lt; &quot; &quot;;
+    potato_ptr = potato_ptr -&gt; next;
+}
+</code></pre>
+
+<h2 id="preprocessors">Preprocessors</h2>
+
+<pre><code class="language-c">
+#include &lt;stdlib.h&gt;
+#include &quot;user-defined.h&quot;
+
+#define potato frog
+
+int x = potato; // int x = frog;
+
+#define multiply(potato2, frog2) (potato2 * frog2)
+
+int y, z;
+
+x = multiply(y, z); // x = (y * z);
+
+#undef potato
+
+x = potato; // x = potato
+
+#if 1 == 2
+    printf(&quot;OMG!\n&quot;);
+#elif 2 == 3
+    printf(&quot;LOL\n&quot;);
+#else
+    printf(&quot;LGTM!\n&quot;);
+#endif
+
+#ifndef potato
+    #define potato
+    #include &quot;potato.h&quot;
+#endif
+</code></pre>
+
+<h2 id="qualifiers">Qualifiers</h2>
+
+<ul>
+<li><code>const</code>: forbids assignement
+<code>c=
+int a = 10;
+const int b = a;
+int * ptr1 = a;
+const int * ptr2 = a;
+int const * ptr3 = a;
+int * const ptr4 = a;
+const int * const ptr5 = a;
+</code></li>
+<li><code>static</code>
+<code>c=
+foo()
+{
+    static int i = 0;
+    ++i;
+}
+bar()
+{
+    int i = 0;
+    ++i;
+}
+</code></li>
+<li><a href="https://en.wikipedia.org/wiki/Volatile_(computer_programming)#Optimization_comparison_in_C"><code>volatile</code></a></li>
+</ul>
+
+    </div>
+
+    
+    
+        <div id="comments">
+    <button id="expand-btn" href="" onclick="expand_disqus()">Comments</button>
+    <div id="disqus_thread"></div>
+</div>
+
+<script type="text/javascript">
+
+function expand_disqus() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    document.getElementById('expand-btn').style.display = "none";
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = false;
+    var disqus_shortname = 'superdanby-blog';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+};
+</script>
+    
+</article>
+
+        </main>
+
+        
+        <footer>
+    
+    <p>
+        Powered by <a href="https://gohugo.io/">Hugo</a> with theme
+        <a href="https://github.com/Superdanby/hugo-zmd-theme">zmd</a>
+    </p>
+    <p>
+        © 2018 by Superdanby
+        <a href="./index.xml" title="RSS">♥</a>
+    </p>
+</footer>
+
+
+        
+        
+            <script>
+                anchors.options = {
+                    placement: 'right',
+                };
+                anchors.add('.md-content > h1, .md-content > h2, .md-content > h3, .md-content > h4');
+            </script>
+        
+</body>
+
+</html>

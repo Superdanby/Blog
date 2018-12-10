@@ -6,10 +6,28 @@
     <description>Recent content in Foundations of Computer Science on Superdanby</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Dec 2018 12:03:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 10 Dec 2018 20:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://superdanby.github.io/Blog/categories/foundations-of-computer-science/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C/C&#43;&#43; Programming Overview</title>
+      <link>https://superdanby.github.io/Blog/foundations-of-computer-science/c-and-c&#43;&#43;-programming-overview.html</link>
+      <pubDate>Mon, 10 Dec 2018 20:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/foundations-of-computer-science/c-and-c&#43;&#43;-programming-overview.html</guid>
+      <description>Basic types  data register int, float, char, long long, double, short C++ exclusive: bool  int i = 0; int a = b;  Array char carray[23]; // char carray2[4] = a; long long po [8]; po[0] = 1; po[7] = po[0]; // po[8];  Pointers and Reference  address register *, &amp;amp;  int a = 10, b = 1; int* aptr = NULL; // double * dptr = &amp;amp;a; aptr = &amp;amp;a; // aptr -&amp;gt; a, a = 10, b = 1 *aptr = b; // aptr -&amp;gt; a, a = 1, b = 1 a = 2; // aptr -&amp;gt; a, a = 2, b = 1 b = 7; // aptr -&amp;gt; a, a = 2, b = 7 &amp;amp;a = b; // aptr -&amp;gt; old a, old a = 2, b(a) = 7; printf(&amp;quot;%d %d&amp;quot;, a, *aptr); // 7 2 int * potato = NULL; if(potato == NULL) printf(&amp;quot;hi&amp;quot;); potato = (int *)malloc(sizeof(int) * 127); if(potato == NULL) printf(&amp;quot;Memory allocation failed.</description>
+    </item>
+    
+    <item>
+      <title>Computer Organization</title>
+      <link>https://superdanby.github.io/Blog/foundations-of-computer-science/computer-organization.html</link>
+      <pubDate>Sun, 09 Dec 2018 22:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/foundations-of-computer-science/computer-organization.html</guid>
+      <description>CPU  Control Unit  A logic circuit that controls the CPU in respond of the given instructions.  Arithmetic Logic Unit  logic operations, shift operations, arithmetic operations  Registers(basic C programming knowledge required)  word size: 64 bits vs 32 bits User accessible:  General purpose register: stores data or addresses Data register: stores data Address register: stores address Stack pointer: address of the top of the current program stack Base pointer: address of the starting position of the current stack frame Program counter: address of the next instruction Constant register: e.</description>
+    </item>
     
     <item>
       <title>Foundations of Computer Science</title>
@@ -45,8 +63,7 @@ Hackmd file</description>
       <pubDate>Thu, 29 Nov 2018 22:30:00 +0800</pubDate>
       
       <guid>https://superdanby.github.io/Blog/foundations-of-computer-science/computer-hardware.html</guid>
-      <description>CPU  CU ALU Data registers I/O  Architecture: x86, x86-64, ARM, RISC-V, MIPS Vendors: Intel, AMD, Apple  Storage
- Register  User accessible  General purpose register: stores data or addresses Data register: stores data Address register: stores address Stack pointer: address of the top of the current program stack Base pointer: address of the starting position of the current stack frame Program counter: address of the next instruction Constant register: e.</description>
+      <description>CPU  CU ALU Data registers I/O  Architecture: x86, x86-64, ARM, RISC-V, MIPS Vendors: Intel, AMD, Apple  Storage  Register Cache  L1 ~ L3 Motivation: Fetching data from main memory takes a lot of time.  (Main) memory = RAM  What is RAM Volatile  SRAM  Fast  DRAM  Slow  SDRAM  DDR1 ~ DDR4  Speed: 2133, 2400, 1600MHz  Non-volatile(NVRAM)  Flash   Massive Storage</description>
     </item>
     
     <item>

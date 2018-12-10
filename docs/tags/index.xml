@@ -84,11 +84,56 @@
     </item>
     
     <item>
+      <title>C</title>
+      <link>https://superdanby.github.io/Blog/tags/c.html</link>
+      <pubDate>Mon, 10 Dec 2018 20:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/c.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>https://superdanby.github.io/Blog/tags/c&#43;&#43;.html</link>
+      <pubDate>Mon, 10 Dec 2018 20:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/c&#43;&#43;.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CD</title>
+      <link>https://superdanby.github.io/Blog/tags/cd.html</link>
+      <pubDate>Sun, 09 Dec 2018 22:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/cd.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CISC</title>
+      <link>https://superdanby.github.io/Blog/tags/cisc.html</link>
+      <pubDate>Sun, 09 Dec 2018 22:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/cisc.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>CPU</title>
       <link>https://superdanby.github.io/Blog/tags/cpu.html</link>
-      <pubDate>Thu, 29 Nov 2018 22:30:00 +0800</pubDate>
+      <pubDate>Sun, 09 Dec 2018 22:00:00 +0800</pubDate>
       
       <guid>https://superdanby.github.io/Blog/tags/cpu.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cache</title>
+      <link>https://superdanby.github.io/Blog/tags/cache.html</link>
+      <pubDate>Sun, 09 Dec 2018 22:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/cache.html</guid>
       <description></description>
     </item>
     
@@ -111,11 +156,29 @@
     </item>
     
     <item>
+      <title>DMA</title>
+      <link>https://superdanby.github.io/Blog/tags/dma.html</link>
+      <pubDate>Sun, 09 Dec 2018 22:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/dma.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>DNF</title>
       <link>https://superdanby.github.io/Blog/tags/dnf.html</link>
       <pubDate>Tue, 03 Apr 2018 23:45:00 +0800</pubDate>
       
       <guid>https://superdanby.github.io/Blog/tags/dnf.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DVD</title>
+      <link>https://superdanby.github.io/Blog/tags/dvd.html</link>
+      <pubDate>Sun, 09 Dec 2018 22:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/dvd.html</guid>
       <description></description>
     </item>
     
@@ -149,7 +212,7 @@
     <item>
       <title>GPU</title>
       <link>https://superdanby.github.io/Blog/tags/gpu.html</link>
-      <pubDate>Thu, 29 Nov 2018 22:30:00 +0800</pubDate>
+      <pubDate>Sun, 09 Dec 2018 22:00:00 +0800</pubDate>
       
       <guid>https://superdanby.github.io/Blog/tags/gpu.html</guid>
       <description></description>
@@ -167,7 +230,7 @@
     <item>
       <title>HDD</title>
       <link>https://superdanby.github.io/Blog/tags/hdd.html</link>
-      <pubDate>Thu, 29 Nov 2018 22:30:00 +0800</pubDate>
+      <pubDate>Sun, 09 Dec 2018 22:00:00 +0800</pubDate>
       
       <guid>https://superdanby.github.io/Blog/tags/hdd.html</guid>
       <description></description>
@@ -188,6 +251,15 @@
       <pubDate>Sat, 24 Mar 2018 17:46:50 +0800</pubDate>
       
       <guid>https://superdanby.github.io/Blog/tags/hugo.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>I/O</title>
+      <link>https://superdanby.github.io/Blog/tags/i/o.html</link>
+      <pubDate>Sun, 09 Dec 2018 22:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/i/o.html</guid>
       <description></description>
     </item>
     
@@ -284,7 +356,7 @@
     <item>
       <title>Memory</title>
       <link>https://superdanby.github.io/Blog/tags/memory.html</link>
-      <pubDate>Thu, 29 Nov 2018 22:30:00 +0800</pubDate>
+      <pubDate>Sun, 09 Dec 2018 22:00:00 +0800</pubDate>
       
       <guid>https://superdanby.github.io/Blog/tags/memory.html</guid>
       <description></description>
@@ -372,6 +444,24 @@
     </item>
     
     <item>
+      <title>RISC</title>
+      <link>https://superdanby.github.io/Blog/tags/risc.html</link>
+      <pubDate>Sun, 09 Dec 2018 22:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/risc.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Register</title>
+      <link>https://superdanby.github.io/Blog/tags/register.html</link>
+      <pubDate>Sun, 09 Dec 2018 22:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/register.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>SELinux</title>
       <link>https://superdanby.github.io/Blog/tags/selinux.html</link>
       <pubDate>Mon, 25 Sep 2017 00:20:00 +0800</pubDate>
@@ -383,7 +473,7 @@
     <item>
       <title>SSD</title>
       <link>https://superdanby.github.io/Blog/tags/ssd.html</link>
-      <pubDate>Thu, 29 Nov 2018 22:30:00 +0800</pubDate>
+      <pubDate>Sun, 09 Dec 2018 22:00:00 +0800</pubDate>
       
       <guid>https://superdanby.github.io/Blog/tags/ssd.html</guid>
       <description></description>
