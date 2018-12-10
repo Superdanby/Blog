@@ -19,14 +19,15 @@ int a = b;
 ```
 
 ## Array
-```c=
+
+{{< highlight python "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
 char carray[23];
 // char carray2[4] = a;
 long long po [8];
 po[0] = 1;
 po[7] = po[0];
 // po[8];
-```
+{{< / highlight >}}
 
 ## Pointers and Reference
 
