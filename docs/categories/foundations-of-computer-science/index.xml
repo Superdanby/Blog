@@ -6,10 +6,20 @@
     <description>Recent content in Foundations of Computer Science on Superdanby</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Dec 2018 20:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 10 Dec 2018 21:55:00 +0800</lastBuildDate>
     
 	<atom:link href="https://superdanby.github.io/Blog/categories/foundations-of-computer-science/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Foundations of Computer Science</title>
+      <link>https://superdanby.github.io/Blog/foundations-of-computer-science.html</link>
+      <pubDate>Mon, 10 Dec 2018 21:55:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/foundations-of-computer-science.html</guid>
+      <description>The series contains the essential materials of the foundations of coumputer science. The original purpose is to mentor my close friend who has decided to march in the world of Computer Science. However, anyone is welcomed to read the contents and give feedback. :)
+Hackmd file</description>
+    </item>
     
     <item>
       <title>C/C&#43;&#43; Programming Overview</title>
@@ -27,16 +37,6 @@
       
       <guid>https://superdanby.github.io/Blog/foundations-of-computer-science/computer-organization.html</guid>
       <description>CPU  Control Unit  A logic circuit that controls the CPU in respond of the given instructions.  Arithmetic Logic Unit  logic operations, shift operations, arithmetic operations  Registers(basic C programming knowledge required)  word size: 64 bits vs 32 bits User accessible:  General purpose register: stores data or addresses Data register: stores data Address register: stores address Stack pointer: address of the top of the current program stack Base pointer: address of the starting position of the current stack frame Program counter: address of the next instruction Constant register: e.</description>
-    </item>
-    
-    <item>
-      <title>Foundations of Computer Science</title>
-      <link>https://superdanby.github.io/Blog/foundations-of-computer-science.html</link>
-      <pubDate>Wed, 05 Dec 2018 12:03:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/foundations-of-computer-science.html</guid>
-      <description>The series contains the essential materials of the foundations of coumputer science. The original purpose is to mentor my close friend who has decided to march in the world of Computer Science. However, anyone is welcomed to read the contents and give feedback. :)
-Hackmd file</description>
     </item>
     
     <item>

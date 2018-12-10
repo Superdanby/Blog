@@ -1,6 +1,6 @@
 ---
 title: "Foundations of Computer Science"
-date: 2018-12-05T12:03:00+08:00
+date: 2018-12-10T21:55:00+08:00
 categories: [Foundations of Computer Science]
 tags: []
 toc: false
