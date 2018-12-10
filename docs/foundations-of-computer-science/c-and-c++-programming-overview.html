@@ -165,11 +165,11 @@ int a = b;
 
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1</span><span class="lnt">2</span><span class="hl"><span class="lnt">3</span></span><span class="lnt">4</span><span class="hl"><span class="lnt">5</span></span><span class="hl"><span class="lnt">6</span></span></code></pre></td>
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1</span><span class="lnt">2</span><span class="hl"><span class="lnt">3</span></span><span class="lnt">4</span><span class="hl"><span class="lnt">5</span></span><span class="hl"><span class="lnt">6</span></span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">char</span> <span class="n">carray</span><span class="p">[</span><span class="mi">23</span><span class="p">];</span>
-<span class="o">//</span> <span class="n">char</span> <span class="n">carray2</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
-<span class="hl"><span class="nb">long</span> <span class="nb">long</span> <span class="n">po</span> <span class="p">[</span><span class="mi">8</span><span class="p">];</span>
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">char</span> <span class="n">carray</span><span class="p">[</span><span class="mi">23</span><span class="p">];</span>
+<span class="c1">// char carray2[4] = a;
+</span><span class="hl"><span class="c1"></span><span class="kt">long</span> <span class="kt">long</span> <span class="n">po</span> <span class="p">[</span><span class="mi">8</span><span class="p">];</span>
 </span><span class="n">po</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="hl"><span class="n">po</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="n">po</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
 </span><span class="hl"><span class="o">//</span> <span class="n">po</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span></span></code></pre></td></tr></table>
@@ -183,31 +183,36 @@ int a = b;
 <li>*, &amp;</li>
 </ul>
 
-<pre><code class="language-c=">int a = 10, b = 1;
-int* aptr = NULL;
-// double * dptr = &amp;a;
-aptr = &amp;a; // aptr -&gt; a, a = 10, b = 1
-*aptr = b; // aptr -&gt; a, a = 1, b = 1
-a = 2; // aptr -&gt; a, a = 2, b = 1
-b = 7; // aptr -&gt; a, a = 2, b = 7
-&amp;a = b; // aptr -&gt; old a, old a = 2, b(a) = 7;
-printf(&quot;%d %d&quot;, a, *aptr); // 7 2
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="hl"><span class="lnt"> 3</span></span><span class="lnt"> 4</span><span class="hl"><span class="lnt"> 5</span></span><span class="hl"><span class="lnt"> 6</span></span><span class="hl"><span class="lnt"> 7</span></span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="lnt">13</span><span class="lnt">14</span><span class="lnt">15</span><span class="lnt">16</span><span class="lnt">17</span><span class="lnt">18</span><span class="lnt">19</span><span class="lnt">20</span><span class="lnt">21</span><span class="lnt">22</span><span class="lnt">23</span><span class="lnt">24</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">*</span> <span class="n">aptr</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="hl"><span class="c1">// double * dptr = &amp;a;
+</span></span><span class="c1"></span><span class="n">aptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span> <span class="c1">// aptr -&gt; a, a = 10, b = 1
+</span><span class="hl"><span class="c1"></span><span class="o">*</span><span class="n">aptr</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span> <span class="c1">// aptr -&gt; a, a = 1, b = 1
+</span></span><span class="hl"><span class="c1"></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// aptr -&gt; a, a = 2, b = 1
+</span></span><span class="hl"><span class="c1"></span><span class="n">b</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span> <span class="c1">// aptr -&gt; a, a = 2, b = 7
+</span></span><span class="c1"></span><span class="o">&amp;</span><span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span> <span class="c1">// aptr -&gt; old a, old a = 2, b(a) = 7;
+</span><span class="c1"></span><span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;%d %d&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="o">*</span><span class="n">aptr</span><span class="p">);</span> <span class="c1">// 7 2
+</span><span class="c1"></span>
+<span class="kt">int</span> <span class="o">*</span> <span class="n">potato</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="n">potato</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;hi&#34;</span><span class="p">);</span>
 
-int * potato = NULL;
-if(potato == NULL)
-    printf(&quot;hi&quot;);
+<span class="n">potato</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="mi">127</span><span class="p">);</span>
 
-potato = (int *)malloc(sizeof(int) * 127);
+<span class="k">if</span><span class="p">(</span><span class="n">potato</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;Memory allocation failed.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
 
-if(potato == NULL)
-    printf(&quot;Memory allocation failed.\n&quot;);
+<span class="n">potato</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="n">potato</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">potato</span><span class="p">);</span>
 
-potato = NULL;
-if(potato != NULL)
-    free(potato);
-
-potato[4] = 4; // *(potato + 4) = 4;
-</code></pre>
+<span class="n">potato</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="o">//</span> <span class="o">*</span><span class="p">(</span><span class="n">potato</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span></code></pre></td></tr></table>
+</div>
+</div>
 
 <h2 id="operators">Operators</h2>
 
@@ -229,194 +234,246 @@ potato[4] = 4; // *(potato + 4) = 4;
 </ul>
 
 <ol>
-<li><code>if</code>, <code>else</code>
-```c=
-if(1)
-{
-printf(&ldquo;Potato&rdquo;);
-}
-else
-{
-printf(&ldquo;P04A40&rdquo;);
-}</li>
+<li><code>if</code>, <code>else</code></li>
 </ol>
 
-<p>int a = 0;
-if(a++)
-{
-    printf(&ldquo;Smashed potato.&rdquo;);
-}</p>
+<p><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="hl"><span class="lnt"> 3</span></span><span class="lnt"> 4</span><span class="hl"><span class="lnt"> 5</span></span><span class="hl"><span class="lnt"> 6</span></span><span class="hl"><span class="lnt"> 7</span></span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="lnt">13</span><span class="lnt">14</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">if</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="hl">    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;Potato&#34;</span><span class="p">);</span>
+</span><span class="p">}</span>
+<span class="hl"><span class="k">else</span>
+</span><span class="hl"><span class="p">{</span>
+</span><span class="hl">    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;P04A40&#34;</span><span class="p">);</span>
+</span><span class="p">}</span>
 
-<pre><code>
-2. `switch` `case`
-```css=
-int a = 32, b = 0;
+<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;Smashed potato.&#34;</span><span class="p">);</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div></p>
 
-switch (a) {
-    case 32:
-        printf(&quot;32 potatos&quot;);
-    case 0:
-        printf(&quot;Void&quot;);
-        break;
-    default:
-        printf(&quot;Frog&quot;);
-}
-</code></pre>
+<ol>
+<li><code>switch</code> <code>case</code></li>
+</ol>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="hl"><span class="lnt"> 3</span></span><span class="lnt"> 4</span><span class="hl"><span class="lnt"> 5</span></span><span class="hl"><span class="lnt"> 6</span></span><span class="hl"><span class="lnt"> 7</span></span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="hl"><span class="k">switch</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+</span>    <span class="k">case</span> <span class="mi">32</span><span class="o">:</span>
+<span class="hl">        <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;32 potatos&#34;</span><span class="p">);</span>
+</span><span class="hl">    <span class="k">case</span> <span class="mi">0</span><span class="o">:</span>
+</span><span class="hl">        <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;Void&#34;</span><span class="p">);</span>
+</span>        <span class="k">break</span><span class="p">;</span>
+    <span class="k">default</span><span class="o">:</span>
+        <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;Frog&#34;</span><span class="p">);</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 
 <h2 id="loops">Loops</h2>
 
 <ol>
-<li><code>for</code>
-```c=
-int i = 1;
-for(i -= 1; i &lt;= INT_MAX; i++)
-{
-printf(&ldquo;%d&rdquo;, i);
-}</li>
+<li><code>for</code></li>
 </ol>
 
-<p>float a[10];
-float * b = (float *)malloc(sizeof(float) * 10);
-float* a_end = a + 10;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="hl"><span class="lnt"> 3</span></span><span class="lnt"> 4</span><span class="hl"><span class="lnt"> 5</span></span><span class="hl"><span class="lnt"> 6</span></span><span class="hl"><span class="lnt"> 7</span></span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="lnt">13</span><span class="lnt">14</span><span class="lnt">15</span><span class="lnt">16</span><span class="lnt">17</span><span class="lnt">18</span><span class="lnt">19</span><span class="lnt">20</span><span class="lnt">21</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">INT_MAX</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="hl"><span class="p">{</span>
+</span>    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+<span class="hl"><span class="p">}</span>
+</span><span class="hl">
+</span><span class="hl"><span class="kt">float</span> <span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+</span><span class="kt">float</span> <span class="o">*</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="p">);</span>
+<span class="kt">float</span><span class="o">*</span> <span class="n">a_end</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
 
-<p>for(float* a_ptr = a; a &lt; a_end; a++)
-    printf(&ldquo;%f &ldquo;, *a_ptr);</p>
+<span class="k">for</span><span class="p">(</span><span class="kt">float</span><span class="o">*</span> <span class="n">a_ptr</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">a_end</span><span class="p">;</span> <span class="n">a</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;%f &#34;</span><span class="p">,</span> <span class="o">*</span><span class="n">a_ptr</span><span class="p">);</span>
 
-<p>// deferences between array and pointer
-// C++ only
-for(auto x : a)
-    printf(&ldquo;%f &ldquo;, x);
-/*
-for(auto x : b)
-    printf(&ldquo;%f &ldquo;, x);
-*/</p>
+<span class="c1">// deferences between array and pointer
+</span><span class="c1">// C++ only
+</span><span class="c1"></span><span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">a</span><span class="p">)</span>
+    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;%f &#34;</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+<span class="cm">/*
+</span><span class="cm">for(auto x : b)
+</span><span class="cm">    printf(&#34;%f &#34;, x);
+</span><span class="cm">*/</span></code></pre></td></tr></table>
+</div>
+</div>
 
-<pre><code>
-2. `while`
+<ol>
+<li><code>while</code></li>
+</ol>
 
-```c=
-while(True)
-{}
-</code></pre>
-
-<pre><code class="language-c=">int x = 10;
-while(x--)
-{}
-</code></pre>
+<p><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1</span><span class="lnt">2</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">while</span><span class="p">(</span><span class="n">True</span><span class="p">)</span>
+<span class="p">{}</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1</span><span class="lnt">2</span><span class="hl"><span class="lnt">3</span></span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="k">while</span><span class="p">(</span><span class="n">x</span><span class="o">--</span><span class="p">)</span>
+<span class="hl"><span class="p">{}</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
 
 <h2 id="functions">Functions</h2>
 
-<pre><code class="language-c=">#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="hl"><span class="lnt"> 3</span></span><span class="lnt"> 4</span><span class="hl"><span class="lnt"> 5</span></span><span class="hl"><span class="lnt"> 6</span></span><span class="hl"><span class="lnt"> 7</span></span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="lnt">13</span><span class="lnt">14</span><span class="lnt">15</span><span class="lnt">16</span><span class="lnt">17</span><span class="lnt">18</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span><span class="hl"><span class="cp"></span>
+</span><span class="kt">int</span> <span class="nf">potato</span><span class="p">(</span><span class="kt">int</span> <span class="n">frog</span><span class="p">)</span>
+<span class="hl"><span class="p">{</span>
+</span><span class="hl">    <span class="kt">int</span> <span class="n">potato2</span><span class="p">;</span>
+</span><span class="hl">    <span class="n">frog</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+</span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-int potato(int frog)
-{
-    int potato2;
-    frog = 11;
-    return 0;
-}
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">frog</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">potato2</span><span class="p">;</span>
+    <span class="n">potato</span><span class="p">(</span><span class="n">frog</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">frog</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 
-int main()
-{
-    int frog = 1;
-    int potato2;
-    potato(frog);
-    printf(&quot;%d\n&quot;, frog);
-    return 0;
-}
-</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="hl"><span class="lnt"> 3</span></span><span class="lnt"> 4</span><span class="hl"><span class="lnt"> 5</span></span><span class="hl"><span class="lnt"> 6</span></span><span class="hl"><span class="lnt"> 7</span></span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="lnt">13</span><span class="lnt">14</span><span class="lnt">15</span><span class="lnt">16</span><span class="lnt">17</span><span class="lnt">18</span><span class="lnt">19</span><span class="lnt">20</span><span class="lnt">21</span><span class="lnt">22</span><span class="lnt">23</span><span class="lnt">24</span><span class="lnt">25</span><span class="lnt">26</span><span class="lnt">27</span><span class="lnt">28</span><span class="lnt">29</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span><span class="hl"><span class="cp"></span>
+</span><span class="kt">int</span> <span class="nf">potato</span><span class="p">()</span>
+<span class="hl"><span class="p">{</span>
+</span><span class="hl">    <span class="c1">// int frog = 11;
+</span></span><span class="hl"><span class="c1"></span>    <span class="c1">// return frog;
+</span></span><span class="c1"></span>    <span class="k">return</span> <span class="mi">11</span><span class="p">;</span>
+<span class="p">}</span>
 
-<pre><code class="language-c=">#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
+<span class="kt">void</span> <span class="nf">potato2</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span> <span class="n">frog1</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span> <span class="n">frog2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="o">*</span><span class="n">frog1</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">frog2</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
 
-int potato()
-{
-    // int frog = 11;
-    // return frog;
-    return 11;
-}
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">frog</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">frog</span> <span class="o">=</span> <span class="n">potato</span><span class="p">();</span>
+    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">frog</span><span class="p">);</span>
 
-void potato2(int * frog1, int * frog2)
-{
-    *frog1 = 11;
-    *frog2 = 12;
-    return;
-}
+    <span class="n">frog</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">frogg</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">potato2</span><span class="p">(</span><span class="o">&amp;</span><span class="n">frog</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">frogg</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;%d %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">frog</span><span class="p">,</span> <span class="n">frogg</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 
-int main()
-{
-    int frog = 1;
-    frog = potato();
-    printf(&quot;%d\n&quot;, frog);
+<p><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="hl"><span class="lnt"> 3</span></span><span class="lnt"> 4</span><span class="hl"><span class="lnt"> 5</span></span><span class="hl"><span class="lnt"> 6</span></span><span class="hl"><span class="lnt"> 7</span></span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="lnt">13</span><span class="lnt">14</span><span class="lnt">15</span><span class="lnt">16</span><span class="lnt">17</span><span class="lnt">18</span><span class="lnt">19</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span><span class="hl"><span class="cp"></span>
+</span><span class="kt">int</span> <span class="nf">potato</span><span class="p">(</span><span class="kt">int</span> <span class="o">**</span> <span class="n">frog</span><span class="p">)</span>
+<span class="hl"><span class="p">{</span>
+</span><span class="hl">    <span class="c1">// int a[1];
+</span></span><span class="hl"><span class="c1"></span>    <span class="c1">// int * aptr = (int *)malloc(sizeof(int));
+</span></span><span class="c1"></span>    <span class="o">*</span><span class="n">frog</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+    <span class="p">(</span><span class="o">*</span><span class="n">frog</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="c1">// *(frog + 0) = -1;
+</span><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-    frog = 1;
-    int frogg = 2;
-    potato2(&amp;frog, &amp;frogg);
-    printf(&quot;%d %d\n&quot;, frog, frogg);
-    return 0;
-}
-</code></pre>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="o">*</span> <span class="n">frog</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="n">potato</span><span class="p">(</span><span class="o">&amp;</span><span class="n">frog</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">frog</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div></p>
 
-<pre><code class="language-c=">#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
+<p><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="hl"><span class="lnt"> 3</span></span><span class="lnt"> 4</span><span class="hl"><span class="lnt"> 5</span></span><span class="hl"><span class="lnt"> 6</span></span><span class="hl"><span class="lnt"> 7</span></span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="lnt">13</span><span class="lnt">14</span><span class="lnt">15</span><span class="lnt">16</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="hl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span>
+<span class="hl"><span class="kt">int</span> <span class="nf">potato</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">frog</span><span class="p">)</span> <span class="c1">// int &amp;frog(potato function) = frog(main function)
+</span></span><span class="hl"><span class="c1"></span><span class="p">{</span>
+</span><span class="hl">    <span class="n">frog</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+</span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-int potato(int ** frog)
-{
-    // int a[1];
-    // int * aptr = (int *)malloc(sizeof(int));
-    *frog = (int *)malloc(sizeof(int));
-    (*frog)[0] = -1; // *(frog + 0) = -1;
-    return 0;
-}
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">frog</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">potato</span><span class="p">(</span><span class="n">frog</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">frog</span> <span class="o">&lt;&lt;</span> <span class="sa"></span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div></p>
 
-int main()
-{
-    int * frog = NULL;
-    potato(&amp;frog);
-    printf(&quot;%d\n&quot;, frog[0]);
-    return 0;
-}
-</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="hl"><span class="lnt"> 3</span></span><span class="lnt"> 4</span><span class="hl"><span class="lnt"> 5</span></span><span class="hl"><span class="lnt"> 6</span></span><span class="hl"><span class="lnt"> 7</span></span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="lnt">13</span><span class="lnt">14</span><span class="lnt">15</span><span class="lnt">16</span><span class="lnt">17</span><span class="lnt">18</span><span class="lnt">19</span><span class="lnt">20</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="hl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span>
+<span class="hl">
+</span><span class="hl"><span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">potato</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">frog</span><span class="p">)</span>
+</span><span class="hl"><span class="p">{</span>
+</span>    <span class="kt">int</span> <span class="n">s</span> <span class="o">=</span> <span class="n">potato</span><span class="p">;</span>
+    <span class="n">potato</span> <span class="o">=</span> <span class="n">frog</span><span class="p">;</span>
+    <span class="n">frog</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
 
-<pre><code class="language-cpp=">#include &lt;iostream&gt;
-
-using namespace std;
-
-int potato(int &amp;frog) // int &amp;frog(potato function) = frog(main function)
-{
-    frog = 11;
-    return 0;
-}
-
-int main()
-{
-    int frog = 1;
-    potato(frog);
-    cout &lt;&lt; frog &lt;&lt; &quot;\n&quot;;
-}
-</code></pre>
-
-<pre><code class="language-cpp=">#include &lt;iostream&gt;
-
-using namespace std;
-
-
-void swap(int &amp;potato, int &amp;frog)
-{
-    int s = potato;
-    potato = frog;
-    frog = s;
-    return;
-}
-
-int main()
-{
-    int potato, frog;
-    cin &gt;&gt; potato &gt;&gt; frog;
-    swap(potato, frog);
-    cout &lt;&lt; potato &lt;&lt; frog &lt;&lt; &quot;\n&quot;;
-}
-</code></pre>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">potato</span><span class="p">,</span> <span class="n">frog</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">potato</span> <span class="o">&gt;&gt;</span> <span class="n">frog</span><span class="p">;</span>
+    <span class="n">swap</span><span class="p">(</span><span class="n">potato</span><span class="p">,</span> <span class="n">frog</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">potato</span> <span class="o">&lt;&lt;</span> <span class="n">frog</span> <span class="o">&lt;&lt;</span> <span class="sa"></span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 
 <ol>
 <li><a href="https://www.google.com.tw/search?q=Recursion&amp;spell=1&amp;sa=X&amp;ved=0ahUKEwjDzPnI6P3eAhVG6bwKHTPkBxcQBQgoKAA&amp;biw=1536&amp;bih=785">Recursion</a></li>
@@ -437,112 +494,136 @@ int main()
 <li><code>struct</code></li>
 </ul>
 
-<pre><code class="language-c=">typedef long long ll;
+<p><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1</span><span class="lnt">2</span><span class="hl"><span class="lnt">3</span></span><span class="lnt">4</span><span class="hl"><span class="lnt">5</span></span><span class="hl"><span class="lnt">6</span></span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
 
-typedef struct potato{
-int frog;
-potato* next;
-} potato;
-</code></pre>
+<span class="hl"><span class="k">typedef</span> <span class="k">struct</span> <span class="n">potato</span><span class="p">{</span>
+</span><span class="kt">int</span> <span class="n">frog</span><span class="p">;</span>
+<span class="hl"><span class="n">potato</span><span class="o">*</span> <span class="n">next</span><span class="p">;</span>
+</span><span class="hl"><span class="p">}</span> <span class="n">potato</span><span class="p">;</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
 
-<pre><code class="language-cpp">struct potato {
-int frog;
-potato* next;
-};
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="hl"><span class="lnt"> 3</span></span><span class="lnt"> 4</span><span class="hl"><span class="lnt"> 5</span></span><span class="hl"><span class="lnt"> 6</span></span><span class="hl"><span class="lnt"> 7</span></span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="lnt">13</span><span class="lnt">14</span><span class="lnt">15</span><span class="lnt">16</span><span class="lnt">17</span><span class="lnt">18</span><span class="lnt">19</span><span class="lnt">20</span><span class="lnt">21</span><span class="lnt">22</span><span class="lnt">23</span><span class="lnt">24</span><span class="lnt">25</span><span class="lnt">26</span><span class="lnt">27</span><span class="lnt">28</span><span class="lnt">29</span><span class="lnt">30</span><span class="lnt">31</span><span class="lnt">32</span><span class="lnt">33</span><span class="lnt">34</span><span class="lnt">35</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">struct</span> <span class="n">potato</span> <span class="p">{</span>
+<span class="kt">int</span> <span class="n">frog</span><span class="p">;</span>
+<span class="hl"><span class="n">potato</span><span class="o">*</span> <span class="n">next</span><span class="p">;</span>
+</span><span class="p">};</span>
+<span class="hl">
+</span><span class="hl"><span class="n">potato</span> <span class="n">potato1</span><span class="p">,</span> <span class="n">potato2</span><span class="p">;</span>
+</span><span class="hl"><span class="n">potato1</span><span class="p">.</span><span class="n">frog</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class="n">potato1</span><span class="p">.</span><span class="n">next</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">potato2</span><span class="p">;</span>
+<span class="n">potato2</span><span class="p">.</span><span class="n">frog</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="n">potato2</span><span class="p">.</span><span class="n">next</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">potato1</span><span class="p">;</span>
 
-potato potato1, potato2;
-potato1.frog = 1;
-potato1.next = &amp;potato2;
-potato2.frog = 2;
-potato2.next = &amp;potato1;
+<span class="n">potato</span> <span class="o">*</span> <span class="n">potato_ptr</span><span class="p">;</span>
+<span class="n">potato_ptr</span> <span class="o">-&gt;</span> <span class="n">frog</span> <span class="o">=</span> <span class="n">potato1</span><span class="p">.</span><span class="n">frog</span><span class="p">;</span>
+<span class="n">potato_ptr</span> <span class="o">-&gt;</span> <span class="n">next</span> <span class="o">=</span> <span class="n">potato1</span><span class="p">.</span><span class="n">next</span><span class="p">;</span>
 
-potato * potato_ptr;
-potato_ptr -&gt; frog = potato1.frog;
-potato_ptr -&gt; next = potato1.next;
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">potato_ptr</span> <span class="o">-&gt;</span> <span class="n">frog</span> <span class="o">&lt;&lt;</span> <span class="sa"></span><span class="s">&#34; &#34;</span><span class="p">;</span>
+    <span class="n">potato_ptr</span> <span class="o">-&gt;</span> <span class="n">frog</span> <span class="o">=</span> <span class="p">(</span><span class="n">potato1</span> <span class="o">-&gt;</span> <span class="n">next</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">frog</span><span class="p">;</span>
+    <span class="n">potato_ptr</span> <span class="o">-&gt;</span> <span class="n">next</span> <span class="o">=</span> <span class="p">(</span><span class="n">potato1</span> <span class="o">-&gt;</span> <span class="n">next</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">next</span><span class="p">;</span>
+<span class="p">}</span>
 
-for(int i = 0; i &lt; 10; i++)
-{
-    cout &lt;&lt; potato_ptr -&gt; frog &lt;&lt; &quot; &quot;;
-    potato_ptr -&gt; frog = (potato1 -&gt; next) -&gt; frog;
-    potato_ptr -&gt; next = (potato1 -&gt; next) -&gt; next;
-}
+<span class="n">potato</span> <span class="o">*</span> <span class="n">potato3</span><span class="p">,</span> <span class="o">*</span> <span class="n">potato4</span><span class="p">;</span>
+<span class="n">potato3</span> <span class="o">-&gt;</span> <span class="n">frog</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="n">potato3</span> <span class="o">-&gt;</span> <span class="n">next</span> <span class="o">=</span> <span class="n">potato4</span><span class="p">;</span>
+<span class="n">potato4</span> <span class="o">-&gt;</span> <span class="n">frog</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="n">potato4</span> <span class="o">-&gt;</span> <span class="n">next</span> <span class="o">=</span> <span class="n">potato3</span><span class="p">;</span>
 
-potato * potato3, * potato4;
-potato3 -&gt; frog = 3;
-potato3 -&gt; next = potato4;
-potato4 -&gt; frog = 4;
-potato4 -&gt; next = potato3;
+<span class="n">potato_ptr</span> <span class="o">=</span> <span class="n">potato3</span><span class="p">;</span>
 
-potato_ptr = potato3;
-
-for(int i = 0; i &lt; 10; i++)
-{
-    cout &lt;&lt; potato_ptr -&gt; frog &lt;&lt; &quot; &quot;;
-    potato_ptr = potato_ptr -&gt; next;
-}
-</code></pre>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">potato_ptr</span> <span class="o">-&gt;</span> <span class="n">frog</span> <span class="o">&lt;&lt;</span> <span class="sa"></span><span class="s">&#34; &#34;</span><span class="p">;</span>
+    <span class="n">potato_ptr</span> <span class="o">=</span> <span class="n">potato_ptr</span> <span class="o">-&gt;</span> <span class="n">next</span><span class="p">;</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 
 <h2 id="preprocessors">Preprocessors</h2>
 
-<pre><code class="language-c">
-#include &lt;stdlib.h&gt;
-#include &quot;user-defined.h&quot;
+<p><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="hl"><span class="lnt"> 3</span></span><span class="lnt"> 4</span><span class="hl"><span class="lnt"> 5</span></span><span class="hl"><span class="lnt"> 6</span></span><span class="hl"><span class="lnt"> 7</span></span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="lnt">13</span><span class="lnt">14</span><span class="lnt">15</span><span class="lnt">16</span><span class="lnt">17</span><span class="lnt">18</span><span class="lnt">19</span><span class="lnt">20</span><span class="lnt">21</span><span class="lnt">22</span><span class="lnt">23</span><span class="lnt">24</span><span class="lnt">25</span><span class="lnt">26</span><span class="lnt">27</span><span class="lnt">28</span><span class="lnt">29</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&#34;user-defined.h&#34;</span><span class="cp">
+</span><span class="hl"><span class="cp"></span>
+</span><span class="cp">#define potato frog
+</span><span class="hl"><span class="cp"></span>
+</span><span class="hl"><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">potato</span><span class="p">;</span> <span class="c1">// int x = frog;
+</span></span><span class="hl"><span class="c1"></span>
+</span><span class="cp">#define multiply(potato2, frog2) (potato2 * frog2)
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">;</span>
 
-#define potato frog
-
-int x = potato; // int x = frog;
-
-#define multiply(potato2, frog2) (potato2 * frog2)
-
-int y, z;
-
-x = multiply(y, z); // x = (y * z);
-
-#undef potato
-
-x = potato; // x = potato
-
-#if 1 == 2
-    printf(&quot;OMG!\n&quot;);
-#elif 2 == 3
-    printf(&quot;LOL\n&quot;);
-#else
-    printf(&quot;LGTM!\n&quot;);
-#endif
-
-#ifndef potato
-    #define potato
-    #include &quot;potato.h&quot;
-#endif
-</code></pre>
+<span class="n">x</span> <span class="o">=</span> <span class="n">multiply</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">);</span> <span class="c1">// x = (y * z);
+</span><span class="c1"></span>
+<span class="cp">#undef potato
+</span><span class="cp"></span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">potato</span><span class="p">;</span> <span class="c1">// x = potato
+</span><span class="c1"></span>
+<span class="cp">#if 1 == 2
+</span><span class="cp"></span>    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;OMG!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+<span class="cp">#elif 2 == 3
+</span><span class="cp"></span>    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;LOL</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+<span class="cp">#else
+</span><span class="cp"></span>    <span class="n">printf</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;LGTM!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+<span class="cp">#endif
+</span><span class="cp"></span>
+<span class="cp">#ifndef potato
+</span><span class="cp"></span>    <span class="cp">#define potato
+</span><span class="cp"></span>    <span class="cp">#include</span> <span class="cpf">&#34;potato.h&#34;</span><span class="cp">
+</span><span class="cp">#endif</span></code></pre></td></tr></table>
+</div>
+</div></p>
 
 <h2 id="qualifiers">Qualifiers</h2>
 
 <ul>
-<li><code>const</code>: forbids assignement
-<code>c=
-int a = 10;
-const int b = a;
-int * ptr1 = a;
-const int * ptr2 = a;
-int const * ptr3 = a;
-int * const ptr4 = a;
-const int * const ptr5 = a;
-</code></li>
-<li><code>static</code>
-<code>c=
-foo()
-{
-    static int i = 0;
-    ++i;
-}
-bar()
-{
-    int i = 0;
-    ++i;
-}
-</code></li>
-<li><a href="https://en.wikipedia.org/wiki/Volatile_(computer_programming)#Optimization_comparison_in_C"><code>volatile</code></a></li>
+<li><p><code>const</code>: forbids assignement
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1</span><span class="lnt">2</span><span class="hl"><span class="lnt">3</span></span><span class="lnt">4</span><span class="hl"><span class="lnt">5</span></span><span class="hl"><span class="lnt">6</span></span><span class="hl"><span class="lnt">7</span></span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+<span class="hl"><span class="kt">int</span> <span class="o">*</span> <span class="n">ptr1</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+</span><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span> <span class="n">ptr2</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+<span class="hl"><span class="kt">int</span> <span class="k">const</span> <span class="o">*</span> <span class="n">ptr3</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+</span><span class="hl"><span class="kt">int</span> <span class="o">*</span> <span class="k">const</span> <span class="n">ptr4</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+</span><span class="hl"><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span> <span class="k">const</span> <span class="n">ptr5</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span></span></code></pre></td></tr></table>
+</div>
+</div></p></li>
+
+<li><p><code>static</code>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="hl"><span class="lnt"> 3</span></span><span class="lnt"> 4</span><span class="hl"><span class="lnt"> 5</span></span><span class="hl"><span class="lnt"> 6</span></span><span class="hl"><span class="lnt"> 7</span></span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">foo</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="hl">    <span class="k">static</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span>    <span class="o">++</span><span class="n">i</span><span class="p">;</span>
+<span class="hl"><span class="p">}</span>
+</span><span class="hl"><span class="n">bar</span><span class="p">()</span>
+</span><span class="hl"><span class="p">{</span>
+</span>    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="o">++</span><span class="n">i</span><span class="p">;</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div></p></li>
+
+<li><p><a href="https://en.wikipedia.org/wiki/Volatile_(computer_programming)#Optimization_comparison_in_C"><code>volatile</code></a></p></li>
 </ul>
 
     </div>

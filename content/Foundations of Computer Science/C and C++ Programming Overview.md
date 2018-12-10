@@ -20,7 +20,7 @@ int a = b;
 
 ## Array
 
-{{< highlight python "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
+{{< highlight cpp "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
 char carray[23];
 // char carray2[4] = a;
 long long po [8];
@@ -34,7 +34,7 @@ po[7] = po[0];
 - address register
 - *, &
 
-```c=
+{{< highlight cpp "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
 int a = 10, b = 1;
 int* aptr = NULL;
 // double * dptr = &a;
@@ -59,7 +59,7 @@ if(potato != NULL)
     free(potato);
 
 potato[4] = 4; // *(potato + 4) = 4;
-```
+{{< / highlight >}}
 
 ## Operators
 
@@ -77,7 +77,8 @@ potato[4] = 4; // *(potato + 4) = 4;
 - 0 means `False`, non-0 means `True`
 
 1. `if`, `else`
-```c=
+
+{{< highlight cpp "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
 if(1)
 {
     printf("Potato");
@@ -92,10 +93,11 @@ if(a++)
 {
     printf("Smashed potato.");
 }
-```
+{{< / highlight >}}
 
 2. `switch` `case`
-```css=
+
+{{< highlight cpp "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
 int a = 32, b = 0;
 
 switch (a) {
@@ -107,12 +109,13 @@ switch (a) {
     default:
         printf("Frog");
 }
-```
+{{< / highlight >}}
 
 ## Loops
 
 1. `for`
-```c=
+
+{{< highlight cpp "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
 int i = 1;
 for(i -= 1; i <= INT_MAX; i++)
 {
@@ -134,23 +137,23 @@ for(auto x : a)
 for(auto x : b)
     printf("%f ", x);
 */
-```
+{{< / highlight >}}
 
 2. `while`
 
-```c=
+{{< highlight cpp "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
 while(True)
 {}
-```
-```c=
+{{< / highlight >}}
+{{< highlight cpp "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
 int x = 10;
 while(x--)
 {}
-```
+{{< / highlight >}}
 
 ## Functions
 
-```c=
+{{< highlight cpp "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -169,9 +172,9 @@ int main()
     printf("%d\n", frog);
     return 0;
 }
-```
+{{< / highlight >}}
 
-```c=
+{{< highlight cpp "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -201,9 +204,9 @@ int main()
     printf("%d %d\n", frog, frogg);
     return 0;
 }
-```
+{{< / highlight >}}
 
-```c=
+{{< highlight cpp "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -223,9 +226,9 @@ int main()
     printf("%d\n", frog[0]);
     return 0;
 }
-```
+{{< / highlight >}}
 
-```cpp=
+{{< highlight cpp "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
 #include <iostream>
 
 using namespace std;
@@ -242,9 +245,9 @@ int main()
     potato(frog);
     cout << frog << "\n";
 }
-```
+{{< / highlight >}}
 
-```cpp=
+{{< highlight cpp "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
 #include <iostream>
 
 using namespace std;
@@ -265,7 +268,7 @@ int main()
     swap(potato, frog);
     cout << potato << frog << "\n";
 }
-```
+{{< / highlight >}}
 
 1. [Recursion](https://www.google.com.tw/search?q=Recursion&spell=1&sa=X&ved=0ahUKEwjDzPnI6P3eAhVG6bwKHTPkBxcQBQgoKAA&biw=1536&bih=785)
 
@@ -280,16 +283,16 @@ int main()
 - `typedef`
 - `struct`
 
-```c=
+{{< highlight cpp "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
 typedef long long ll;
 
 typedef struct potato{
 int frog;
 potato* next;
 } potato;
-```
+{{< / highlight >}}
 
-```cpp
+{{< highlight cpp "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
 struct potato {
 int frog;
 potato* next;
@@ -325,12 +328,11 @@ for(int i = 0; i < 10; i++)
     cout << potato_ptr -> frog << " ";
     potato_ptr = potato_ptr -> next;
 }
-```
+{{< / highlight >}}
 
 ## Preprocessors
 
-```c
-
+{{< highlight cpp "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
 #include <stdlib.h>
 #include "user-defined.h"
 
@@ -360,31 +362,33 @@ x = potato; // x = potato
     #define potato
     #include "potato.h"
 #endif
-```
+{{< / highlight >}}
 
 ## Qualifiers
 
 - `const`: forbids assignement
-    ```c=
-    int a = 10;
-    const int b = a;
-    int * ptr1 = a;
-    const int * ptr2 = a;
-    int const * ptr3 = a;
-    int * const ptr4 = a;
-    const int * const ptr5 = a;
-    ```
+{{< highlight cpp "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
+int a = 10;
+const int b = a;
+int * ptr1 = a;
+const int * ptr2 = a;
+int const * ptr3 = a;
+int * const ptr4 = a;
+const int * const ptr5 = a;
+{{< / highlight >}}
+
 - `static`
-    ```c=
-    foo()
-    {
-        static int i = 0;
-        ++i;
-    }
-    bar()
-    {
-        int i = 0;
-        ++i;
-    }
-    ```
+{{< highlight cpp "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
+foo()
+{
+    static int i = 0;
+    ++i;
+}
+bar()
+{
+    int i = 0;
+    ++i;
+}
+{{< / highlight >}}
+
 - [`volatile`](https://en.wikipedia.org/wiki/Volatile_(computer_programming)#Optimization_comparison_in_C)
