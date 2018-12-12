@@ -47,8 +47,9 @@ math: false
 
 ## Text
 
-- ASCII
-- Unicode
+- [ASCII](https://zh.wikipedia.org/wiki/ASCII)
+- [Unicode](https://stackoverflow.com/questions/5290182/how-many-bytes-does-one-unicode-character-take#answer-33349765)
+    - [Implementation](https://stackoverflow.com/questions/21737906/how-to-read-write-utf8-text-files-in-c#answer-21745211)
 
 ## Audio
 
