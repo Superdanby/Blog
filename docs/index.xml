@@ -6,10 +6,19 @@
     <description>Recent content on Superdanby</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Dec 2018 21:55:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 05 Jan 2019 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://superdanby.github.io/Blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C&#43;&#43; Notes</title>
+      <link>https://superdanby.github.io/Blog/c&#43;&#43;-notes.html</link>
+      <pubDate>Sat, 05 Jan 2019 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/c&#43;&#43;-notes.html</guid>
+      <description>Important Concepts  Rvalue Reference(move &amp;amp; perfect forward) glvalue prvalue xvalue  decltype behavior  constexpr vs const constexpr variables will be evaluated on compile time while const variables may be evaluated  checking with noexcept  list initialization vs non-list initialization Read array declarations from inside to outside cpp int \*ptrs[10]; // ptrs is an array of ten pointers to int int &amp;amp;refs[10] = /* ? \*/; // error: no arrays of references int (\*Parray)[10] = &amp;amp;arr; // Parray points to an array of ten ints int (&amp;amp;arrRef)[10] = arr; // arrRef refers to an array of ten ints int \*(&amp;amp;arry)[10] = ptrs; // arry is a reference to an array of ten pointers  size_t is a machine-specific unsigned type that is guaranteed to be large enough to hold the size of any object in memory.</description>
+    </item>
     
     <item>
       <title>Foundations of Computer Science</title>

@@ -2,7 +2,7 @@
 <html lang="tw">
     <head>
         <title> 
-    Create a New Hugo Site | Superdanby
+    C&#43;&#43; Notes | Superdanby
  </title>
 
         
@@ -98,23 +98,23 @@ document.addEventListener("DOMContentLoaded", function() {
     
     <div class="info">
         <div class="top">
-            <span title="Date">2018/03/24</span>
+            <span title="Date">2019/01/05</span>
             <span>@</span>
             <span>
                 
                    
-                   <a href="https://superdanby.github.io/Blog/categories/blog.html">Blog</a>
+                   <a href="https://superdanby.github.io/Blog/categories/c&#43;&#43;.html">C&#43;&#43;</a>
                 
             </span>
         </div>
 
-        <h1 class="title">Create a New Hugo Site</h1>
+        <h1 class="title">C&#43;&#43; Notes</h1>
 
         <div class="bottom">
             
-                <a href="https://superdanby.github.io/Blog/tags/hugo.html">Hugo</a>
+                <a href="https://superdanby.github.io/Blog/tags/c.html">C</a>
             
-                <a href="https://superdanby.github.io/Blog/tags/fedora.html">Fedora</a>
+                <a href="https://superdanby.github.io/Blog/tags/c&#43;&#43;.html">C&#43;&#43;</a>
             
         </div>
     </div>
@@ -128,18 +128,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 <span>TOC</span>
                 <nav id="TableOfContents">
 <ul>
-<li><a href="#prerequisites">Prerequisites</a>
+<li>
 <ul>
-<li><a href="#install-hugo-on-fedora">Install Hugo on Fedora</a></li>
+<li><a href="#important-concepts">Important Concepts</a></li>
 </ul></li>
-<li><a href="#initial-setup">Initial Setup</a></li>
-<li><a href="#setup-a-github-repository">Setup a Github Repository</a></li>
-<li><a href="#setup-custom-theme-zmd-https-github-com-superdanby-hugo-zmd-theme">Setup Custom Theme: <a href="https://github.com/Superdanby/hugo-zmd-theme">zmd</a></a>
-<ul>
-<li><a href="#there-are-some-settings-needs-to-be-modified">There are some settings needs to be modified:</a></li>
-</ul></li>
-<li><a href="#reduce-upload-process">Reduce Upload Process</a></li>
-<li><a href="#original-post">Original Post</a></li>
 </ul>
 </nav>
             </div>
@@ -147,75 +139,38 @@ document.addEventListener("DOMContentLoaded", function() {
         
         
 
-<h1 id="prerequisites">Prerequisites</h1>
-
-<p><code>hugo</code></p>
-
-<h2 id="install-hugo-on-fedora">Install Hugo on Fedora</h2>
+<h2 id="important-concepts">Important Concepts</h2>
 
 <ul>
-<li>Fedora 28+: <code>sudo dnf install hugo</code></li>
-<li>Fedora 27-:
-
-<ol>
-<li><code>sudo dnf install snap</code></li>
-<li><code>snap install hugo</code></li>
-</ol></li>
-</ul>
-
-<h1 id="initial-setup">Initial Setup</h1>
-
-<ol>
-<li><code>hugo new site</code> <strong><em>PROJECT NAME</em></strong></li>
-<li><code>cd</code> <strong><em>PROJECT NAME</em></strong></li>
-<li><code>git init</code></li>
-</ol>
-
-<h1 id="setup-a-github-repository">Setup a Github Repository</h1>
-
-<ol>
-<li>Create a new repository</li>
-<li><code>git remote add origin</code> <strong><em>REPO ADDRESS</em></strong>: usually <code>git@github.com:...git</code></li>
-<li><code>git pull origin master</code></li>
-<li><code>git push</code></li>
-<li>Repository settings &gt; Source: master branch /docs folder</li>
-</ol>
-
-<h1 id="setup-custom-theme-zmd-https-github-com-superdanby-hugo-zmd-theme">Setup Custom Theme: <a href="https://github.com/Superdanby/hugo-zmd-theme">zmd</a></h1>
-
-<ol>
-<li>Fork the Github repository.</li>
-<li><code>git submodule add https://github.com/Superdanby/hugo-zmd-theme themes/zmd</code></li>
-<li>Backup <code>config.toml</code> and replace it with <code>themes/zmd/exampleSite/config.toml</code></li>
-<li>Backup <code>archetypes/default.md</code> and replace it with<code>themes/zmd/exampleSite/archetypes/default.md</code></li>
-<li><code>mkdir content/abouts</code></li>
-<li>Place your profile picture in <code>content/abouts</code></li>
-</ol>
-
-<h2 id="there-are-some-settings-needs-to-be-modified">There are some settings needs to be modified:</h2>
+<li><a href="http://thbecker.net/articles/rvalue_references/section_01.html">Rvalue Reference(move &amp; perfect forward)</a></li>
+<li><a href="https://en.cppreference.com/w/cpp/language/value_category">glvalue prvalue xvalue</a>
 
 <ul>
-<li><code>config.toml</code>: blog base URL</li>
-<li><code>themes/zmd/layouts/_default/baseof.html</code>: profile picture <code>abouts/me.jpg</code></li>
-<li><code>themes/zmd/layouts/partials/header.html</code>: profile picture <code>abouts/me.jpg</code></li>
+<li><a href="https://en.cppreference.com/w/cpp/language/decltype"><code>decltype</code> behavior</a></li>
+</ul></li>
+<li><a href="https://stackoverflow.com/questions/13346879/const-vs-constexpr-on-variables"><code>constexpr</code> vs <code>const</code></a>
+<code>constexpr</code> variables will be evaluated on compile time while <code>const</code> variables may be evaluated
+
+<ul>
+<li>checking with <a href="https://en.cppreference.com/w/cpp/language/constexpr#Notes"><code>noexcept</code></a></li>
+</ul></li>
+<li><a href="https://stackoverflow.com/questions/18222926/why-is-list-initialization-using-curly-braces-better-than-the-alternatives">list initialization vs non-list initialization</a></li>
+<li>Read array declarations from inside to outside
+<code>cpp
+int \*ptrs[10];            //  ptrs is an array of ten pointers to int
+int &amp;refs[10] = /* ? \*/;  //  error: no arrays of references
+int (\*Parray)[10] = &amp;arr; //  Parray points to an array of ten ints
+int (&amp;arrRef)[10] = arr;  //  arrRef refers to an array of ten ints
+int \*(&amp;arry)[10] = ptrs; // arry is a reference to an array of ten pointers
+</code></li>
+<li><code>size_t</code> is a machine-specific unsigned type that is
+guaranteed to be large enough to hold the size of any object in memory.</li>
+<li><a href="https://stackoverflow.com/questions/13722426/why-can-lambdas-be-better-optimized-by-the-compiler-than-plain-functions">lambda expression vs inline function</a>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/15930755/are-lambdas-inlined-like-functions-in-c#answer-15931934">The <code>inline</code> specifier will not guarantee the function call to be inlined.</a></li>
+</ul></li>
 </ul>
-
-<h1 id="reduce-upload-process">Reduce Upload Process</h1>
-
-<p>Paste the following into a makefile:</p>
-
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">MSG</span> <span class="o">=</span> <span class="s2">&#34;Build at </span><span class="k">$(</span>shell /bin/date <span class="s1">&#39;+%Y-%m-%d %H-%M-%S&#39;</span><span class="k">)</span><span class="s2">&#34;</span>
-upload:
-	rm -rf ./docs <span class="o">&amp;&amp;</span> hugo
-	git add -A
-	git commit -m <span class="k">$(</span>MSG<span class="k">)</span>
-	git push origin master</code></pre></div>
-
-<p><code>make upload</code>: build and upload all content to Github.</p>
-
-<h1 id="original-post">Original Post</h1>
-
-<p><a href="https://amoshyc.github.io/blog/abouts/site.html">https://amoshyc.github.io/blog/abouts/site.html</a></p>
 
     </div>
 
