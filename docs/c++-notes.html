@@ -128,8 +128,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 <span>TOC</span>
                 <nav id="TableOfContents">
 <ul>
-<li>
-<ul>
 <li><a href="#important-concepts">Important Concepts</a>
 <ul>
 <li><a href="#rvalue-reference">Rvalue Reference</a></li>
@@ -140,7 +138,6 @@ document.addEventListener("DOMContentLoaded", function() {
 <li><a href="#size-t"><code>size_t</code></a></li>
 <li><a href="#lambda-expression">Lambda expression</a></li>
 </ul></li>
-</ul></li>
 </ul>
 </nav>
             </div>
@@ -148,15 +145,15 @@ document.addEventListener("DOMContentLoaded", function() {
         
         
 
-<h2 id="important-concepts">Important Concepts</h2>
+<h1 id="important-concepts">Important Concepts</h1>
 
-<h3 id="rvalue-reference">Rvalue Reference</h3>
+<h2 id="rvalue-reference">Rvalue Reference</h2>
 
 <ul>
 <li><a href="http://thbecker.net/articles/rvalue_references/section_01.html">Rvalue Reference(move &amp; perfect forward)</a></li>
 </ul>
 
-<h3 id="value-category">Value Category</h3>
+<h2 id="value-category">Value Category</h2>
 
 <ul>
 <li><a href="https://en.cppreference.com/w/cpp/language/value_category">glvalue prvalue xvalue</a>
@@ -166,43 +163,40 @@ document.addEventListener("DOMContentLoaded", function() {
 </ul></li>
 </ul>
 
-<h3 id="constexpr"><code>constexpr</code></h3>
+<h2 id="constexpr"><code>constexpr</code></h2>
 
 <ul>
-<li><a href="https://stackoverflow.com/questions/13346879/const-vs-constexpr-on-variables"><code>constexpr</code> vs <code>const</code></a>
-<code>constexpr</code> variables will be evaluated on compile time while <code>const</code> variables may be evaluated
-
-<ul>
+<li><a href="https://stackoverflow.com/questions/13346879/const-vs-constexpr-on-variables"><code>constexpr</code> vs <code>const</code></a>:
+<code>constexpr</code> variables will be evaluated in compile time while <code>const</code> variables may be evaluated in compile time or runtime.</li>
 <li>checking with <a href="https://en.cppreference.com/w/cpp/language/constexpr#Notes"><code>noexcept</code></a></li>
-</ul></li>
 </ul>
 
-<h3 id="list-initialization">List Initialization</h3>
+<h2 id="list-initialization">List Initialization</h2>
 
 <ul>
 <li><a href="https://stackoverflow.com/questions/18222926/why-is-list-initialization-using-curly-braces-better-than-the-alternatives">list initialization vs non-list initialization</a></li>
 </ul>
 
-<h3 id="array-declaration">Array declaration</h3>
+<h2 id="array-declaration">Array declaration</h2>
 
 <p>Read array declarations from inside to outside
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1</span><span class="lnt">2</span><span class="hl"><span class="lnt">3</span></span><span class="lnt">4</span><span class="hl"><span class="lnt">5</span></span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="err">\</span><span class="o">*</span><span class="n">ptrs</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>            <span class="c1">//  ptrs is an array of ten pointers to int
-</span><span class="c1"></span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">refs</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="cm">/* ? \*/</span><span class="p">;</span>  <span class="c1">//  error: no arrays of references
-</span><span class="hl"><span class="c1"></span><span class="kt">int</span> <span class="p">(</span><span class="err">\</span><span class="o">*</span><span class="n">Parray</span><span class="p">)[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">arr</span><span class="p">;</span> <span class="c1">//  Parray points to an array of ten ints
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="o">*</span><span class="n">ptrs</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>            <span class="c1">//  ptrs is an array of ten pointers to int
+</span><span class="c1"></span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">refs</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="cm">/* ? */</span><span class="p">;</span>  <span class="c1">//  error: no arrays of references
+</span><span class="hl"><span class="c1"></span><span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">Parray</span><span class="p">)[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">arr</span><span class="p">;</span> <span class="c1">//  Parray points to an array of ten ints
 </span></span><span class="c1"></span><span class="kt">int</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">arrRef</span><span class="p">)[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">;</span>  <span class="c1">//  arrRef refers to an array of ten ints
-</span><span class="hl"><span class="c1"></span><span class="kt">int</span> <span class="err">\</span><span class="o">*</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arry</span><span class="p">)[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="n">ptrs</span><span class="p">;</span> <span class="o">//</span> <span class="n">arry</span> <span class="n">is</span> <span class="n">a</span> <span class="n">reference</span> <span class="n">to</span> <span class="n">an</span> <span class="n">array</span> <span class="n">of</span> <span class="n">ten</span> <span class="n">pointers</span></span></code></pre></td></tr></table>
+</span><span class="hl"><span class="c1"></span><span class="kt">int</span> <span class="o">*</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arry</span><span class="p">)[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="n">ptrs</span><span class="p">;</span> <span class="o">//</span> <span class="n">arry</span> <span class="n">is</span> <span class="n">a</span> <span class="n">reference</span> <span class="n">to</span> <span class="n">an</span> <span class="n">array</span> <span class="n">of</span> <span class="n">ten</span> <span class="n">pointers</span></span></code></pre></td></tr></table>
 </div>
 </div></p>
 
-<h3 id="size-t"><code>size_t</code></h3>
+<h2 id="size-t"><code>size_t</code></h2>
 
 <p><code>size_t</code> is a machine-specific unsigned type that is guaranteed to be large enough to hold the size of any object in memory.</p>
 
-<h3 id="lambda-expression">Lambda expression</h3>
+<h2 id="lambda-expression">Lambda expression</h2>
 
 <ul>
 <li><a href="https://stackoverflow.com/questions/13722426/why-can-lambdas-be-better-optimized-by-the-compiler-than-plain-functions">lambda expression vs inline function</a>
