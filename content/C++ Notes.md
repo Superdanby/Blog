@@ -40,3 +40,23 @@ int *(&arry)[10] = ptrs; // arry is a reference to an array of ten pointers
 ## Lambda expression
 -	[lambda expression vs inline function](https://stackoverflow.com/questions/13722426/why-can-lambdas-be-better-optimized-by-the-compiler-than-plain-functions)
 	- [The `inline` specifier will not guarantee the function call to be inlined.](https://stackoverflow.com/questions/15930755/are-lambdas-inlined-like-functions-in-c#answer-15931934)
+
+# Interesting Stuff
+
+## Non-const Initialized Array
+
+This is against the ISO standard. But, GCC allows this as an extension by default.
+
+Pros:
+-	convenient when initializing variable length arrays
+-	Reduces memory fragmentation on heap.
+
+Side effects:
+- Users may be able to overuse stack, causing runtime error.
+
+## Stopping Loops Before End
+
+{{< highlight cpp "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
+auto back = std::prev(STL.end());
+for(auto it = STL.begin(); it != back; it = std::next(it));
+{{< / highlight >}}

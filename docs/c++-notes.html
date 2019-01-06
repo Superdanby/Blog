@@ -138,6 +138,11 @@ document.addEventListener("DOMContentLoaded", function() {
 <li><a href="#size-t"><code>size_t</code></a></li>
 <li><a href="#lambda-expression">Lambda expression</a></li>
 </ul></li>
+<li><a href="#interesting-stuff">Interesting Stuff</a>
+<ul>
+<li><a href="#non-const-initialized-array">Non-const Initialized Array</a></li>
+<li><a href="#stopping-loops-before-end">Stopping Loops Before End</a></li>
+</ul></li>
 </ul>
 </nav>
             </div>
@@ -205,6 +210,30 @@ document.addEventListener("DOMContentLoaded", function() {
 <li><a href="https://stackoverflow.com/questions/15930755/are-lambdas-inlined-like-functions-in-c#answer-15931934">The <code>inline</code> specifier will not guarantee the function call to be inlined.</a></li>
 </ul></li>
 </ul>
+
+<h1 id="interesting-stuff">Interesting Stuff</h1>
+
+<h2 id="non-const-initialized-array">Non-const Initialized Array</h2>
+
+<p>This is against the ISO standard. But, GCC allows this as an extension by default.</p>
+
+<p>Pros:
+-   convenient when initializing variable length arrays
+-   Reduces memory fragmentation on heap.</p>
+
+<p>Side effects:
+- Users may be able to overuse stack, causing runtime error.</p>
+
+<h2 id="stopping-loops-before-end">Stopping Loops Before End</h2>
+
+<p><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1</span><span class="lnt">2</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">auto</span> <span class="n">back</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">prev</span><span class="p">(</span><span class="n">STL</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+<span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">STL</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">back</span><span class="p">;</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">next</span><span class="p">(</span><span class="n">it</span><span class="p">));</span></code></pre></td></tr></table>
+</div>
+</div></p>
 
     </div>
 
