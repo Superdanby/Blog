@@ -39,7 +39,15 @@ int *(&arry)[10] = ptrs; // arry is a reference to an array of ten pointers
 
 ## Lambda expression
 -	[lambda expression vs inline function](https://stackoverflow.com/questions/13722426/why-can-lambdas-be-better-optimized-by-the-compiler-than-plain-functions)
-	- [The `inline` specifier will not guarantee the function call to be inlined.](https://stackoverflow.com/questions/15930755/are-lambdas-inlined-like-functions-in-c#answer-15931934)
+	-	The `inline` specifier will not guarantee the function call to be inlined.[^1]
+
+[^1]: https://stackoverflow.com/questions/15930755/are-lambdas-inlined-like-functions-in-c#answer-15931934
+
+## `auto` Runtime Performance
+
+Type deduction is done in compile time.[^2]
+
+[^2]: https://stackoverflow.com/questions/19618759/c-11-auto-compile-time-or-runtime
 
 # Interesting Stuff
 

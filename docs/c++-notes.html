@@ -137,6 +137,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <li><a href="#array-declaration">Array declaration</a></li>
 <li><a href="#size-t"><code>size_t</code></a></li>
 <li><a href="#lambda-expression">Lambda expression</a></li>
+<li><a href="#auto-runtime-performance"><code>auto</code> Runtime Performance</a></li>
 </ul></li>
 <li><a href="#interesting-stuff">Interesting Stuff</a>
 <ul>
@@ -207,9 +208,13 @@ document.addEventListener("DOMContentLoaded", function() {
 <li><a href="https://stackoverflow.com/questions/13722426/why-can-lambdas-be-better-optimized-by-the-compiler-than-plain-functions">lambda expression vs inline function</a>
 
 <ul>
-<li><a href="https://stackoverflow.com/questions/15930755/are-lambdas-inlined-like-functions-in-c#answer-15931934">The <code>inline</code> specifier will not guarantee the function call to be inlined.</a></li>
+<li>The <code>inline</code> specifier will not guarantee the function call to be inlined.<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup></li>
 </ul></li>
 </ul>
+
+<h2 id="auto-runtime-performance"><code>auto</code> Runtime Performance</h2>
+
+<p>Type deduction is done in compile time.<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup></p>
 
 <h1 id="interesting-stuff">Interesting Stuff</h1>
 
@@ -234,6 +239,17 @@ document.addEventListener("DOMContentLoaded", function() {
 <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">STL</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">back</span><span class="p">;</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">next</span><span class="p">(</span><span class="n">it</span><span class="p">));</span></code></pre></td></tr></table>
 </div>
 </div></p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1"><a href="https://stackoverflow.com/questions/15930755/are-lambdas-inlined-like-functions-in-c#answer-15931934">https://stackoverflow.com/questions/15930755/are-lambdas-inlined-like-functions-in-c#answer-15931934</a>
+ <a class="footnote-return" href="#fnref:1">↩</a></li>
+<li id="fn:2"><a href="https://stackoverflow.com/questions/19618759/c-11-auto-compile-time-or-runtime">https://stackoverflow.com/questions/19618759/c-11-auto-compile-time-or-runtime</a>
+ <a class="footnote-return" href="#fnref:2">↩</a></li>
+</ol>
+</div>
 
     </div>
 
