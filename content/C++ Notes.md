@@ -45,7 +45,7 @@ int *(&arry)[10] = ptrs; // arry is a reference to an array of ten pointers
 
 ## `auto` Runtime Performance
 
-Type deduction is done in compile time.[^2]
+Type deduction is done in compile time instead of runtime.[^2]
 
 [^2]: https://stackoverflow.com/questions/19618759/c-11-auto-compile-time-or-runtime
 
@@ -68,3 +68,7 @@ Side effects:
 auto back = std::prev(STL.end());
 for(auto it = STL.begin(); it != back; it = std::next(it));
 {{< / highlight >}}
+
+## Syntax Alias
+
+-	`Using A = B`: A will be resolved as B at syntax level, similar to `#define`

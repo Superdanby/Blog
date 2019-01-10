@@ -143,6 +143,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <ul>
 <li><a href="#non-const-initialized-array">Non-const Initialized Array</a></li>
 <li><a href="#stopping-loops-before-end">Stopping Loops Before End</a></li>
+<li><a href="#syntax-alias">Syntax Alias</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -214,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <h2 id="auto-runtime-performance"><code>auto</code> Runtime Performance</h2>
 
-<p>Type deduction is done in compile time.<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup></p>
+<p>Type deduction is done in compile time instead of runtime.<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup></p>
 
 <h1 id="interesting-stuff">Interesting Stuff</h1>
 
@@ -239,6 +240,12 @@ document.addEventListener("DOMContentLoaded", function() {
 <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">STL</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">back</span><span class="p">;</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">next</span><span class="p">(</span><span class="n">it</span><span class="p">));</span></code></pre></td></tr></table>
 </div>
 </div></p>
+
+<h2 id="syntax-alias">Syntax Alias</h2>
+
+<ul>
+<li><code>Using A = B</code>: A will be resolved as B at syntax level, similar to <code>#define</code></li>
+</ul>
 <div class="footnotes">
 
 <hr />
