@@ -49,6 +49,12 @@ Type deduction is done in compile time instead of runtime.[^2]
 
 [^2]: https://stackoverflow.com/questions/19618759/c-11-auto-compile-time-or-runtime
 
+## Variable Number of Arguments
+
+-	`initializer_list<T>`
+-	variadic template
+-	ellipsis
+
 # Interesting Stuff
 
 ## Non-const Initialized Array
@@ -72,3 +78,13 @@ for(auto it = STL.begin(); it != back; it = std::next(it));
 ## Syntax Alias
 
 -	`Using A = B`: A will be resolved as B at syntax level, similar to `#define`
+
+## Negative Division
+
+Except for the obscure case where -m overflows, (-m)/n and m/(-n) are always equal to -(m/n), m%(-n) is equal to m%n, and (-m)%n is equal to -(m%n).
+
+{{< highlight cpp "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
+-21 % -8; /* -5 */    -21 / -8 /* 3 */
+21 % 6; /* 3 */    21 / 6 /* 3 */
+
+{{< / highlight >}}

@@ -138,12 +138,14 @@ document.addEventListener("DOMContentLoaded", function() {
 <li><a href="#size-t"><code>size_t</code></a></li>
 <li><a href="#lambda-expression">Lambda expression</a></li>
 <li><a href="#auto-runtime-performance"><code>auto</code> Runtime Performance</a></li>
+<li><a href="#variable-number-of-arguments">Variable Number of Arguments</a></li>
 </ul></li>
 <li><a href="#interesting-stuff">Interesting Stuff</a>
 <ul>
 <li><a href="#non-const-initialized-array">Non-const Initialized Array</a></li>
 <li><a href="#stopping-loops-before-end">Stopping Loops Before End</a></li>
 <li><a href="#syntax-alias">Syntax Alias</a></li>
+<li><a href="#negative-division">Negative Division</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -217,6 +219,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <p>Type deduction is done in compile time instead of runtime.<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup></p>
 
+<h2 id="variable-number-of-arguments">Variable Number of Arguments</h2>
+
+<ul>
+<li><code>initializer_list&lt;T&gt;</code></li>
+<li>variadic template</li>
+<li>ellipsis</li>
+</ul>
+
 <h1 id="interesting-stuff">Interesting Stuff</h1>
 
 <h2 id="non-const-initialized-array">Non-const Initialized Array</h2>
@@ -246,6 +256,19 @@ document.addEventListener("DOMContentLoaded", function() {
 <ul>
 <li><code>Using A = B</code>: A will be resolved as B at syntax level, similar to <code>#define</code></li>
 </ul>
+
+<h2 id="negative-division">Negative Division</h2>
+
+<p>Except for the obscure case where -m overflows, (-m)/n and m/(-n) are always equal to -(m/n), m%(-n) is equal to m%n, and (-m)%n is equal to -(m%n).</p>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1</span><span class="lnt">2</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="o">-</span><span class="mi">21</span> <span class="o">%</span> <span class="o">-</span><span class="mi">8</span><span class="p">;</span> <span class="cm">/* -5 */</span>    <span class="o">-</span><span class="mi">21</span> <span class="o">/</span> <span class="o">-</span><span class="mi">8</span> <span class="cm">/* 3 */</span>
+<span class="mi">21</span> <span class="o">%</span> <span class="mi">6</span><span class="p">;</span> <span class="cm">/* 3 */</span>    <span class="mi">21</span> <span class="o">/</span> <span class="mi">6</span> <span class="cm">/* 3 */</span></code></pre></td></tr></table>
+</div>
+</div>
 <div class="footnotes">
 
 <hr />
