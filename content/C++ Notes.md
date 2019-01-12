@@ -52,8 +52,19 @@ Type deduction is done in compile time instead of runtime.[^2]
 ## Variable Number of Arguments
 
 -	`initializer_list<T>`
--	variadic template
--	ellipsis
+{{< highlight cpp "linenos=table,hl_lines=3 5-7,linenostart=1,noclasses=false" >}}
+void foo(initializer_list<int> il)
+{
+	for(auto x: il)
+		cout << il << " ";
+	return;
+}
+foo({1, 2, 3});
+{{< / highlight >}}
+
+-	[variadic template](https://www.geeksforgeeks.org/variadic-function-templates-c/)
+-	[ellipsis](https://en.cppreference.com/w/cpp/utility/variadic): no type check being conducted.
+
 
 # Interesting Stuff
 
