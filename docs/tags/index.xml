@@ -39,6 +39,15 @@
     </item>
     
     <item>
+      <title>Ansible</title>
+      <link>https://superdanby.github.io/Blog/tags/ansible.html</link>
+      <pubDate>Wed, 15 May 2019 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/ansible.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Atom</title>
       <link>https://superdanby.github.io/Blog/tags/atom.html</link>
       <pubDate>Sun, 18 Mar 2018 00:00:00 +0800</pubDate>
@@ -179,6 +188,15 @@
       <pubDate>Sun, 09 Dec 2018 22:00:00 +0800</pubDate>
       
       <guid>https://superdanby.github.io/Blog/tags/dvd.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Domjudge</title>
+      <link>https://superdanby.github.io/Blog/tags/domjudge.html</link>
+      <pubDate>Wed, 15 May 2019 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/domjudge.html</guid>
       <description></description>
     </item>
     
@@ -413,6 +431,24 @@
       <pubDate>Mon, 24 Jul 2017 18:30:00 +0800</pubDate>
       
       <guid>https://superdanby.github.io/Blog/tags/nvidia.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OKD</title>
+      <link>https://superdanby.github.io/Blog/tags/okd.html</link>
+      <pubDate>Wed, 15 May 2019 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/okd.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Openshift</title>
+      <link>https://superdanby.github.io/Blog/tags/openshift.html</link>
+      <pubDate>Wed, 15 May 2019 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/openshift.html</guid>
       <description></description>
     </item>
     

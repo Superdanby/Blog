@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="tw">
     <head>
-	<meta name="generator" content="Hugo 0.37.1" />
         <title> 
-    Superdanby
+    Openshift Installation | Superdanby
  </title>
 
         
@@ -94,71 +93,87 @@ document.addEventListener("DOMContentLoaded", function() {
         
         <main>
             
-    <div class="list">
-        
+    <article>
+
+    
+    <div class="info">
+        <div class="top">
+            <span title="Date">2019/05/15</span>
+            <span>@</span>
+            <span>
+                
+                   
+                   <a href="https://superdanby.github.io/Blog/categories/openshift.html">Openshift</a>
+                
+            </span>
+        </div>
+
+        <h1 class="title">Openshift Installation</h1>
+
+        <div class="bottom">
             
-                <div class="entry">
-                    <span class="title"><a href="/Blog/linux-system-program.html">Linux System Program</a></span>
-                    <span class="info">2017/03/15</span>
-                </div>
+                <a href="https://superdanby.github.io/Blog/tags/okd.html">OKD</a>
             
-        
+                <a href="https://superdanby.github.io/Blog/tags/openshift.html">Openshift</a>
             
-                <div class="entry">
-                    <span class="title"><a href="/Blog/xps-15-9550-issues-with-fedora-25.html">XPS 15 9550 Issues with Fedora 25</a></span>
-                    <span class="info">2017/03/09</span>
-                </div>
+                <a href="https://superdanby.github.io/Blog/tags/ansible.html">Ansible</a>
             
-        
+                <a href="https://superdanby.github.io/Blog/tags/domjudge.html">Domjudge</a>
             
-                <div class="entry">
-                    <span class="title"><a href="/Blog/user-experience-enhencements.html">User Experience Enhancements</a></span>
-                    <span class="info">2017/02/27</span>
-                </div>
-            
-        
-            
-                <div class="entry">
-                    <span class="title"><a href="/Blog/security.html">Security</a></span>
-                    <span class="info">0001/01/01</span>
-                </div>
-            
-        
+        </div>
     </div>
 
     
-    <div class="pagination">
+    
+    <div class="md-content">
         
-            <a class="prev" href="/Blog/page/3.html">Prev</a>
+        
+            <div class="toc">
+                <span>TOC</span>
+                <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#motivation">Motivation</a></li>
+</ul></li>
+</ul>
+</nav>
+            </div>
+        
+        
         
 
-        <div class="numbers">
-            
-                
-                
-                    <a href="/Blog/">1</a>
-                
-            
-                
-                
-                    <a href="/Blog/page/2.html">2</a>
-                
-            
-                
-                
-                    <a href="/Blog/page/3.html">3</a>
-                
-            
-                
-                
-                    <a class="current" href="/Blog/page/4.html">4</a>
-                
-            
-        </div>
+<h2 id="motivation">Motivation</h2>
 
-        
+<p>Our school is going to hold a competitive programming contest. This time we are choosing <a href="https://www.domjudge.org/">Domjudge</a> in favor of <a href="https://pc2.ecs.csus.edu/">PC^2</a> as our judging system. Our contest is split into 2 groups. Both groups have their own database, server, and judges. And it would be really convenient for us if we can move the judges between the contests based on their loading. Fortunately, <a href="https://hub.docker.com/u/domjudge">Domjudge provides docker images</a>. This is where Openshift comes into play. We can easily manage compute resources between containerized applications.</p>
+
     </div>
 
+    
+    
+        <div id="comments">
+    <button id="expand-btn" href="" onclick="expand_disqus()">Comments</button>
+    <div id="disqus_thread"></div>
+</div>
+
+<script type="text/javascript">
+
+function expand_disqus() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    document.getElementById('expand-btn').style.display = "none";
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = false;
+    var disqus_shortname = 'superdanby-blog';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+};
+</script>
+    
+</article>
 
         </main>
 

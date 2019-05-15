@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Openshift on Superdanby</title>
+    <link>https://superdanby.github.io/Blog/categories/openshift.html</link>
+    <description>Recent content in Openshift on Superdanby</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 May 2019 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://superdanby.github.io/Blog/categories/openshift/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Openshift Installation</title>
+      <link>https://superdanby.github.io/Blog/openshift-installation.html</link>
+      <pubDate>Wed, 15 May 2019 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/openshift-installation.html</guid>
+      <description>Motivation Our school is going to hold a competitive programming contest. This time we are choosing Domjudge in favor of PC^2 as our judging system. Our contest is split into 2 groups. Both groups have their own database, server, and judges. And it would be really convenient for us if we can move the judges between the contests based on their loading. Fortunately, Domjudge provides docker images. This is where Openshift comes into play.</description>
+    </item>
+    
+  </channel>
+</rss>

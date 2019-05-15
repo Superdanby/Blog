@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://superdanby.github.io/Blog/openshift-installation.html</loc>
+    <lastmod>2019-05-15T00:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://superdanby.github.io/Blog/c&#43;&#43;-notes.html</loc>
     <lastmod>2019-01-05T00:00:00+08:00</lastmod>
   </url>
@@ -193,6 +198,12 @@
   </url>
   
   <url>
+    <loc>https://superdanby.github.io/Blog/tags/ansible.html</loc>
+    <lastmod>2019-05-15T00:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://superdanby.github.io/Blog/tags/atom.html</loc>
     <lastmod>2018-03-18T00:00:00+08:00</lastmod>
     <priority>0</priority>
@@ -309,6 +320,12 @@
   <url>
     <loc>https://superdanby.github.io/Blog/tags/dvd.html</loc>
     <lastmod>2018-12-09T22:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://superdanby.github.io/Blog/tags/domjudge.html</loc>
+    <lastmod>2019-05-15T00:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -493,6 +510,24 @@
   </url>
   
   <url>
+    <loc>https://superdanby.github.io/Blog/tags/okd.html</loc>
+    <lastmod>2019-05-15T00:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://superdanby.github.io/Blog/tags/openshift.html</loc>
+    <lastmod>2019-05-15T00:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://superdanby.github.io/Blog/categories/openshift.html</loc>
+    <lastmod>2019-05-15T00:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://superdanby.github.io/Blog/tags/optimus.html</loc>
     <lastmod>2017-07-24T18:30:00+08:00</lastmod>
     <priority>0</priority>
@@ -608,7 +643,7 @@
   
   <url>
     <loc>https://superdanby.github.io/Blog/</loc>
-    <lastmod>2019-01-05T00:00:00+08:00</lastmod>
+    <lastmod>2019-05-15T00:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
