@@ -171,9 +171,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <h3 id="setting-up-dns">Setting up DNS</h3>
 
-<p>There are 2 software people usually use to setup DNS. One is <a href="https://www.isc.org/downloads/bind/"><code>BIND</code></a> and the other is <a href="http://www.thekelleys.org.uk/dnsmasq/doc.html"><code>dnsmasq</code></a>. Setting up <code>dnsmasq</code> is much easier than <code>BIND</code>. Beside a light weight DNS, it also comes with a light weight DHCP server. <code>dnsmasq</code> reads its configurations from <code>/etc/dnsmasq.conf</code>.
-dnsmaq
-The following are some options I set to setup a local DNS. First, <code>server=8.8.8.8</code> will forward all queries not found locally to the upstream DNS <code>8.8.8.8</code>. Next, I set the name of each host manually in <code>/etc/hosts_domjudge</code>, so I&rsquo;ll have to set the option: <code>addn-hosts=/etc/hosts_domjudge</code>. The other 2 options are <code>expand-hosts</code> and <code>domain=domjudge,192.168.218.0/24</code>. They mean that all machines under <code>192.168.218.0/24</code> have their FQDN end with <code>domjudge</code>, and if the domain name written in <code>/etc/hosts_dojudge</code> doesn&rsquo;t end with <code>domjudge</code>, <code>dnsmaq</code> will automatically append it. Let&rsquo;s say we have an entry <code>192.168.218.1 01 master01.domjudge</code>. Our query results will be:</p>
+<p>There are 2 software people usually use to setup DNS. One is <a href="https://www.isc.org/downloads/bind/"><code>BIND</code></a> and the other is <a href="http://www.thekelleys.org.uk/dnsmasq/doc.html"><code>dnsmasq</code></a>. Setting up <code>dnsmasq</code> is much easier than <code>BIND</code>. Beside a light weight DNS, it also comes with a light weight DHCP server. <code>dnsmasq</code> reads its configurations from <code>/etc/dnsmasq.conf</code>.</p>
+
+<p>The following are some options I set to setup a local DNS. First, <code>server=8.8.8.8</code> will forward all queries not found locally to the upstream DNS <code>8.8.8.8</code>. Next, I set the name of each host manually in <code>/etc/hosts_domjudge</code>, so I&rsquo;ll have to set the option: <code>addn-hosts=/etc/hosts_domjudge</code>. The other 2 options are <code>expand-hosts</code> and <code>domain=domjudge,192.168.218.0/24</code>. They mean that all machines under <code>192.168.218.0/24</code> have their FQDN end with <code>domjudge</code>, and if the domain name written in <code>/etc/hosts_dojudge</code> doesn&rsquo;t end with <code>domjudge</code>, <code>dnsmaq</code> will automatically append it. Let&rsquo;s say we have an entry <code>192.168.218.1 01 master01.domjudge</code>. Our query results will be:</p>
 
 <table>
 <thead>
@@ -212,6 +212,30 @@ The following are some options I set to setup a local DNS. First, <code>server=8
 </table>
 
 <h3 id="disaster-of-1-master-infra-node-with-dnsmasq-and-1-compute-node">Disaster of 1 Master + Infra Node with <code>dnsmasq</code> and 1 Compute Node</h3>
+
+<p>The DNS settings above was formed after many tries. Prior to that, I&rsquo;ve met several problems with this host mapping.</p>
+
+<div class="admonition">
+    
+    
+
+    
+        
+        
+    
+    
+    
+    
+        
+    
+
+    <span class="title" style="background-color: #ffc107">
+        title
+    </span>
+
+    <div class="content"><p>Under Construction~</p>
+</div>
+</div>
 
     </div>
 
