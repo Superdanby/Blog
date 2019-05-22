@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Openshift Installation</title>
-      <link>https://superdanby.github.io/Blog/openshift-installation.html</link>
+      <title>Setup a Multi-Node Local Openshift Cluster</title>
+      <link>https://superdanby.github.io/Blog/setup-a-multi-node-local-openshift-cluster.html</link>
       <pubDate>Wed, 15 May 2019 00:00:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/openshift-installation.html</guid>
-      <description>Motivation Our school is going to hold a competitive programming contest. This time we are choosing Domjudge in favor of PC^2 as our judging system. Our contest is split into 2 groups. Both groups have their own database, server, and judges. And it would be really convenient for us if we can move the judges between the contests based on their loading. Fortunately, Domjudge provides docker images. This is where Openshift comes into play.</description>
+      <guid>https://superdanby.github.io/Blog/setup-a-multi-node-local-openshift-cluster.html</guid>
+      <description>Motivation Our school was going to hold a competitive programming contest. This time we were choosing Domjudge in favor of PC^2 as our judging system. The former is an open source project, which is pretty convenient for us to modify its content to suite our needs. About its robustness, it was the judging system for ICPC World Final 2019. Our contest was split into 2 groups. Both groups have their own database, server, and judge hosts.</description>
     </item>
     
     <item>

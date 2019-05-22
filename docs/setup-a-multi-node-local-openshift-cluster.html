@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="tw">
+    <head>
+        <title> 
+    Setup a Multi-Node Local Openshift Cluster | Superdanby
+ </title>
+
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <link rel="shortcut icon" type="image/jpeg" href="/Blog/abouts/me.gif" />
+
+        
+        <link rel="stylesheet" href="/Blog/style.min.css">
+
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"></script>
+        
+
+        
+        
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116389618-1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'UA-116389618-1');
+            </script>
+        
+
+        
+        
+
+        
+        <script>
+document.addEventListener("DOMContentLoaded", function() {
+	var article = document.getElementsByTagName("article")[0];
+
+	if (typeof article == "undefined")
+		return;
+
+	var s = article.getElementsByTagName("a");
+	var i = 0;
+	var re = new RegExp("([\\.\\/\\,\\s]|\w\-)","g");
+	while (s[i] && typeof s[i].innerHTML != "undefined")
+	{
+		if (s[i].getElementsByTagName("code").length == 0)
+			s[i].innerHTML = s[i].innerHTML.replace(re,"$1<wbr>");
+		++i;
+	}
+
+	s = article.getElementsByTagName("code");
+	i = 0;
+	while (s[i] && typeof s[i].innerHTML != "undefined")
+	{
+		var parent = s[i].parentElement;
+		while (parent && parent.tagName != "PRE" && parent.tagName != "A")
+			parent = parent.parentElement;
+		if (!parent)
+			s[i].innerHTML = s[i].innerHTML.replace(re,"$1<wbr>");
+		++i;
+	}
+});
+</script>
+
+
+    </head>
+
+    <body>
+        
+        <header>
+    
+    
+    <div class="icon">
+        <a href="https://superdanby.github.io/Blog"><img src="/Blog/abouts/me.gif" alt="me"></a>
+    </div>
+
+    
+    <div class="name">
+        <a href="https://superdanby.github.io/Blog">Superdanby</a>
+    </div>
+
+    
+    <div class="menu">
+        <a href="/Blog/abouts.html">ABOUT</a>
+        <a href="/Blog/categories.html">CATEGORY</a>
+        <a href="/Blog/tags.html">TAG</a>
+    </div>
+
+</header>
+
+        
+        <main>
+            
+    <article>
+
+    
+    <div class="info">
+        <div class="top">
+            <span title="Date">2019/05/15</span>
+            <span>@</span>
+            <span>
+                
+                   
+                   <a href="https://superdanby.github.io/Blog/categories/openshift.html">Openshift</a>
+                
+            </span>
+        </div>
+
+        <h1 class="title">Setup a Multi-Node Local Openshift Cluster</h1>
+
+        <div class="bottom">
+            
+                <a href="https://superdanby.github.io/Blog/tags/okd.html">OKD</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/openshift.html">Openshift</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/ansible.html">Ansible</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/domjudge.html">Domjudge</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/kubernetes.html">Kubernetes</a>
+            
+        </div>
+    </div>
+
+    
+    
+    <div class="md-content">
+        
+        
+            <div class="toc">
+                <span>TOC</span>
+                <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#motivation">Motivation</a></li>
+<li><a href="#from-kubernetes-k8s-to-openshift">From Kubernetes(K8s) to Openshift</a></li>
+<li><a href="#try-and-error">Try and Error</a>
+<ul>
+<li><a href="#setting-up-dns">Setting up DNS</a></li>
+<li><a href="#disaster-of-1-master-infra-node-with-dnsmasq-and-1-compute-node">Disaster of 1 Master + Infra Node with <code>dnsmasq</code> and 1 Compute Node</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+            </div>
+        
+        
+        
+
+<h2 id="motivation">Motivation</h2>
+
+<p>Our school was going to hold a competitive programming contest. This time we were choosing <a href="https://www.domjudge.org/">Domjudge</a> in favor of <a href="https://pc2.ecs.csus.edu/">PC^2</a> as our judging system. The former is an open source project, which is pretty convenient for us to modify its content to suite our needs. About its robustness, it was the judging system for ICPC World Final 2019. Our contest was split into 2 groups. Both groups have their own database, server, and judge hosts. It would be ideal for us if we can assign the compute resources dynamically between the contests based on their loading. As <a href="https://hub.docker.com/u/domjudge">Domjudge provides docker images</a>, this is where <a href="https://kubernetes.io/">Kubernetes</a> comes into play. It allows us to easily manage compute resources for containerized applications. Another advantage is that if a running app dies, Kubernetes is able to recover the app automatically. For example, if a judge crashes for some reason, we don&rsquo;t have to manually determine which machine the judge sits on and restart it from that machine. Kubernetes handles these matters for us instead.</p>
+
+<h2 id="from-kubernetes-k8s-to-openshift">From Kubernetes(K8s) to Openshift</h2>
+
+<p>Knowing the benefits of K8s, I started to study how it works. Frankly, I think it&rsquo;s fairly hard to understand the whole architecture and concepts of K8s for a newbie who has no prior experience in container orchestration frameworks. After poking around the official documents and watching some videos on Youtube, I managed to get a grip of K8s&rsquo; high-level concept.</p>
+
+<p>The next step would be installing a K8s cluster. Looking at the <a href="https://kubernetes.io/docs/setup/#hosted-solutions">setup page</a>, there are dozens of solutions to choose. Since we have 21 local machines, <a href="https://kubernetes.io/docs/setup/pick-right-solution/#community-supported-tools">Kubeadm-dind and Kubernetes IN Docker</a> seems to be what I&rsquo;m looking for. But then, I realized that we were using Fedora as our underlying operating system. And the classic SELinux issue popped up. As expected, the original <a href="https://github.com/kubernetes/kubeadm/issues/279"><code>Kubeadm</code> hadn&rsquo;t support SELinux</a> yet. Googling for a bit, Openshift, a distribution of Kubernetes, is designed for the RHEL family and also backed by Red Hat. Finding this fact made me so happy, for Openshift ought to support Fedora better than the original K8s. In fact, Openshift requires SELinux to be enabled on the machines!</p>
+
+<p>Openshift has an open source counterpart called Openshift Origin or OKD, the Origin Community Distribution of Kubernetes. I used the open source version.</p>
+
+<h2 id="try-and-error">Try and Error</h2>
+
+<p>The latest official release of Openshift is version 3.11. It uses <a href="https://www.ansible.com/">Ansible</a> playbooks to install the Openshift cluster.</p>
+
+<p>At first, I chose 2 machines and tried to use their IP to setup a small cluster. The components are 1 master + infra node and 1 compute node. The install went smoothly without any error produced. Verifying the installation from command line with <code>sudo oc get pods</code> also seemed fine. I was so excited until I found that I couldn&rsquo;t access the web console. Apparently, something gone wrong. I didn&rsquo;t found many people have the same problem as mine. In most cases, web console not showing up always comes with an installation error. Not getting any constructive feedback from Googling, I then went back and check the installation requirements which stated that DNS is required.</p>
+
+<h3 id="setting-up-dns">Setting up DNS</h3>
+
+<p>There are 2 software people usually use to setup DNS. One is <a href="https://www.isc.org/downloads/bind/"><code>BIND</code></a> and the other is <a href="http://www.thekelleys.org.uk/dnsmasq/doc.html"><code>dnsmasq</code></a>. Setting up <code>dnsmasq</code> is much easier than <code>BIND</code>. Beside a light weight DNS, it also comes with a light weight DHCP server. <code>dnsmasq</code> reads its configurations from <code>/etc/dnsmasq.conf</code>.
+dnsmaq
+The following are some options I set to setup a local DNS. First, <code>server=8.8.8.8</code> will forward all queries not found locally to the upstream DNS <code>8.8.8.8</code>. Next, I set the name of each host manually in <code>/etc/hosts_domjudge</code>, so I&rsquo;ll have to set the option: <code>addn-hosts=/etc/hosts_domjudge</code>. The other 2 options are <code>expand-hosts</code> and <code>domain=domjudge,192.168.218.0/24</code>. They mean that all machines under <code>192.168.218.0/24</code> have their FQDN end with <code>domjudge</code>, and if the domain name written in <code>/etc/hosts_dojudge</code> doesn&rsquo;t end with <code>domjudge</code>, <code>dnsmaq</code> will automatically append it. Let&rsquo;s say we have an entry <code>192.168.218.1 01 master01.domjudge</code>. Our query results will be:</p>
+
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th>Result</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>01</code></td>
+<td><code>192.168.218.1</code></td>
+</tr>
+
+<tr>
+<td><code>01.domjudge</code></td>
+<td><code>192.168.218.1</code></td>
+</tr>
+
+<tr>
+<td><code>master01</code></td>
+<td>not found</td>
+</tr>
+
+<tr>
+<td><code>master01.domjudge</code></td>
+<td><code>192.168.218.1</code></td>
+</tr>
+
+<tr>
+<td><code>google.com</code></td>
+<td>one of Google&rsquo;s public IP, e.g. <code>216.58.200.46</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="disaster-of-1-master-infra-node-with-dnsmasq-and-1-compute-node">Disaster of 1 Master + Infra Node with <code>dnsmasq</code> and 1 Compute Node</h3>
+
+    </div>
+
+    
+    
+        <div id="comments">
+    <button id="expand-btn" href="" onclick="expand_disqus()">Comments</button>
+    <div id="disqus_thread"></div>
+</div>
+
+<script type="text/javascript">
+
+function expand_disqus() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    document.getElementById('expand-btn').style.display = "none";
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = false;
+    var disqus_shortname = 'superdanby-blog';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+};
+</script>
+    
+</article>
+
+        </main>
+
+        
+        <footer>
+    
+    <p>
+        Powered by <a href="https://gohugo.io/">Hugo</a> with theme
+        <a href="https://github.com/Superdanby/hugo-zmd-theme">zmd</a>
+    </p>
+    <p>
+        © 2019 by Superdanby
+        <a href="./index.xml" title="RSS">♥</a>
+    </p>
+</footer>
+
+
+        
+        
+            <script>
+                anchors.options = {
+                    placement: 'right',
+                };
+                anchors.add('.md-content > h1, .md-content > h2, .md-content > h3, .md-content > h4');
+            </script>
+        
+</body>
+
+</html>
