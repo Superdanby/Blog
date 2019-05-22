@@ -7,11 +7,11 @@ toc: true
 math: false
 ---
 
-## Motivation
+# Motivation
 
 Our school was going to hold a competitive programming contest. This time we were choosing [Domjudge](https://www.domjudge.org/) in favor of [PC^2](https://pc2.ecs.csus.edu/) as our judging system. The former is an open source project, which is pretty convenient for us to modify its content to suite our needs. About its robustness, it was the judging system for ICPC World Final 2019. Our contest was split into 2 groups. Both groups have their own database, server, and judge hosts. It would be ideal for us if we can assign the compute resources dynamically between the contests based on their loading. As [Domjudge provides docker images](https://hub.docker.com/u/domjudge), this is where [Kubernetes](https://kubernetes.io/) comes into play. It allows us to easily manage compute resources for containerized applications. Another advantage is that if a running app dies, Kubernetes is able to recover the app automatically. For example, if a judge crashes for some reason, we don't have to manually determine which machine the judge sits on and restart it from that machine. Kubernetes handles these matters for us instead.
 
-## From Kubernetes(K8s) to Openshift
+# From Kubernetes(K8s) to Openshift
 
 Knowing the benefits of K8s, I started to study how it works. Frankly, I think it's fairly hard to understand the whole architecture and concepts of K8s for a newbie who has no prior experience in container orchestration frameworks. After poking around the official documents and watching some videos on Youtube, I managed to get a grip of K8s' high-level concept.
 
@@ -19,7 +19,7 @@ The next step would be installing a K8s cluster. Looking at the [setup page](htt
 
 Openshift has an open source counterpart called Openshift Origin or OKD, the Origin Community Distribution of Kubernetes. I used the open source version.
 
-## Try and Error
+# Try and Error
 
 The latest official release of Openshift is version 3.11. It uses [Ansible](https://www.ansible.com/) playbooks to install the Openshift cluster.
 
@@ -39,7 +39,7 @@ The following are some options I set to setup a local DNS. First, `server=8.8.8.
 | `master01.domjudge` | `192.168.218.1` |
 | `google.com` | one of Google's public IP, e.g. `216.58.200.46` |
 
-### Disaster of 1 Master + Infra Node with `dnsmasq` and 1 Compute Node
+## Disaster of 1 Master + Infra Node with `dnsmasq` and 1 Compute Node
 
 The DNS settings above was formed after many tries. Prior to that, I've met several problems with this host mapping.
 

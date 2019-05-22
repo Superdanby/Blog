@@ -134,15 +134,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 <span>TOC</span>
                 <nav id="TableOfContents">
 <ul>
-<li>
-<ul>
 <li><a href="#motivation">Motivation</a></li>
 <li><a href="#from-kubernetes-k8s-to-openshift">From Kubernetes(K8s) to Openshift</a></li>
 <li><a href="#try-and-error">Try and Error</a>
 <ul>
+<li>
+<ul>
 <li><a href="#setting-up-dns">Setting up DNS</a></li>
-<li><a href="#disaster-of-1-master-infra-node-with-dnsmasq-and-1-compute-node">Disaster of 1 Master + Infra Node with <code>dnsmasq</code> and 1 Compute Node</a></li>
 </ul></li>
+<li><a href="#disaster-of-1-master-infra-node-with-dnsmasq-and-1-compute-node">Disaster of 1 Master + Infra Node with <code>dnsmasq</code> and 1 Compute Node</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -151,11 +151,11 @@ document.addEventListener("DOMContentLoaded", function() {
         
         
 
-<h2 id="motivation">Motivation</h2>
+<h1 id="motivation">Motivation</h1>
 
 <p>Our school was going to hold a competitive programming contest. This time we were choosing <a href="https://www.domjudge.org/">Domjudge</a> in favor of <a href="https://pc2.ecs.csus.edu/">PC^2</a> as our judging system. The former is an open source project, which is pretty convenient for us to modify its content to suite our needs. About its robustness, it was the judging system for ICPC World Final 2019. Our contest was split into 2 groups. Both groups have their own database, server, and judge hosts. It would be ideal for us if we can assign the compute resources dynamically between the contests based on their loading. As <a href="https://hub.docker.com/u/domjudge">Domjudge provides docker images</a>, this is where <a href="https://kubernetes.io/">Kubernetes</a> comes into play. It allows us to easily manage compute resources for containerized applications. Another advantage is that if a running app dies, Kubernetes is able to recover the app automatically. For example, if a judge crashes for some reason, we don&rsquo;t have to manually determine which machine the judge sits on and restart it from that machine. Kubernetes handles these matters for us instead.</p>
 
-<h2 id="from-kubernetes-k8s-to-openshift">From Kubernetes(K8s) to Openshift</h2>
+<h1 id="from-kubernetes-k8s-to-openshift">From Kubernetes(K8s) to Openshift</h1>
 
 <p>Knowing the benefits of K8s, I started to study how it works. Frankly, I think it&rsquo;s fairly hard to understand the whole architecture and concepts of K8s for a newbie who has no prior experience in container orchestration frameworks. After poking around the official documents and watching some videos on Youtube, I managed to get a grip of K8s&rsquo; high-level concept.</p>
 
@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <p>Openshift has an open source counterpart called Openshift Origin or OKD, the Origin Community Distribution of Kubernetes. I used the open source version.</p>
 
-<h2 id="try-and-error">Try and Error</h2>
+<h1 id="try-and-error">Try and Error</h1>
 
 <p>The latest official release of Openshift is version 3.11. It uses <a href="https://www.ansible.com/">Ansible</a> playbooks to install the Openshift cluster.</p>
 
@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </tbody>
 </table>
 
-<h3 id="disaster-of-1-master-infra-node-with-dnsmasq-and-1-compute-node">Disaster of 1 Master + Infra Node with <code>dnsmasq</code> and 1 Compute Node</h3>
+<h2 id="disaster-of-1-master-infra-node-with-dnsmasq-and-1-compute-node">Disaster of 1 Master + Infra Node with <code>dnsmasq</code> and 1 Compute Node</h2>
 
 <p>The DNS settings above was formed after many tries. Prior to that, I&rsquo;ve met several problems with this host mapping.</p>
 
