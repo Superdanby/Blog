@@ -43,6 +43,6 @@ The following are some options I set to setup a local DNS. First, `server=8.8.8.
 
 The DNS settings above was formed after many tries. Prior to that, I've met several problems with this host mapping.
 
-{{% admonition title="title" color="yellow" %}}
+{{% admonition title="Under Construction" color="yellow" %}}
 Under Construction~
 {{% /admonition %}}
