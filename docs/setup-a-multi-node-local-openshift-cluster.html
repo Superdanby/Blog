@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <p>Environment setup for 21 machines is time-consuming if I have to do the same setting on each of the machines. Fortunately, we had PXE already setup for all the machines. However, PXE was not enough for this situation. The weakness of PXE can be amended by <a href="https://www.ansible.com/">Ansible</a>.</p>
 
-<p>|   | Strength | Weakness |
+<p>| - | Strength | Weakness |
 | - | &mdash;&mdash;&ndash; | &mdash;&mdash;&ndash; |
 | PXE | base operating system deployment, system wipes/recoveries | time consuming for small changes, no individual customization per deployment(even <code>machine-id</code> will remain the same) |
 | Ansible | fast for small changes, customizable settings on different machines per deployment | OS being deployed and SSH server pre-enabled on targets |</p>
