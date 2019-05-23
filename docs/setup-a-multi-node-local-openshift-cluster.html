@@ -196,42 +196,6 @@ document.addEventListener("DOMContentLoaded", function() {
 </tbody>
 </table>
 
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Bumblebee</th>
-<th>Negativo17</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Nvidia Driver Version</td>
-<td>Old</td>
-<td>Up to date</td>
-</tr>
-
-<tr>
-<td>Usage</td>
-<td>Turn on when needed</td>
-<td>Always on with Nvidia Optimus</td>
-</tr>
-
-<tr>
-<td>Status</td>
-<td>No updates since 2013</td>
-<td>Still being maintained and has <a href="https://negativo17.org/nvidia-driver/#reply-title">good support</a></td>
-</tr>
-
-<tr>
-<td>Platform</td>
-<td>Wayland &amp; X</td>
-<td>Only on X</td>
-</tr>
-</tbody>
-</table>
-
 <p>The base image was <a href="https://getfedora.org/en/workstation/">Fedora 30 Workstation</a>(I should have gone with the server edition. LOL) with OpenSSH server enabled(<code>sudo systemctl start sshd &amp;&amp; sudo systemctl enable sshd</code>).</p>
 
 <p>I&rsquo;ve read <a href="https://en-wiki.ikoula.com/en/Deploy_a_cluster_Kubernetes_with_CoreOS">somewhere</a> that <code>machine-id</code> should be different for all nodes in a K8s cluster. So, I wrote <a href="https://github.com/Superdanby/Openshift-Ansible-Domjudge/blob/master/tasks/01.change_mahcine_id.yml">an ansible script</a> change it on all hosts. And something fishy happened. The system logs were not shown in <code>journalctl</code>. Google then told me that <code>journalctl</code> relies on <code>machine-id</code>. A <a href="https://github.com/Superdanby/Openshift-Ansible-Domjudge/blob/master/tasks/07.reboot.yml">reboot script</a> would solve this issue.</p>
