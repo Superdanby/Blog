@@ -32,7 +32,7 @@ The base image was [Fedora 30 Workstation](https://getfedora.org/en/workstation/
 
 I've read [somewhere](https://en-wiki.ikoula.com/en/Deploy_a_cluster_Kubernetes_with_CoreOS) that `machine-id` should be different for all nodes in a K8s cluster. So, I wrote [an ansible script](https://github.com/Superdanby/Openshift-Ansible-Domjudge/blob/master/tasks/01.change_mahcine_id.yml) change it on all hosts. And something fishy happened. The system logs were not shown in `journalctl`. Google then told me that `journalctl` relies on `machine-id`. A [reboot script](https://github.com/Superdanby/Openshift-Ansible-Domjudge/blob/master/tasks/07.reboot.yml) would solve this issue.
 
-# Try and Error
+# First Try
 
 The latest official release of Openshift is version 3.11. It uses Ansible playbooks to install the Openshift cluster. The commands are `ansible-playbook -i [path_to_inventory_file] playbooks/prerequisites.yml` and `ansible-playbook -i [path_to_inventory_file] playbooks/deploy_cluster.yml`.
 
@@ -57,17 +57,21 @@ Let's say we have an entry `192.168.218.1 01 master01.domjudge` in `/etc/hosts_d
 | `master01.domjudge` | `192.168.218.1` |
 | `google.com` | one of Google's public IP, e.g. `216.58.200.46` |
 
-### Firewall
+## Firewall
 
-After setting up the DNS, I ran into a weird problem. I could access the DNS service on the same computer but not other computers. `sudo systemctl status dnsmasq` seemed fine. `journalctl` didn't report any thing weird. Checking port status with `sudo netstat -antup`, `dnsmasq` was also listening on the desired port. Using `nmap` to check open ports on the DNS host from other computers didn't showed any trace of DNS service. I was so confused. An idea then flashed through my mind. Maybe it was the firewall blocking the packages. I tried to get some information with `firewall-cmd --list-all-zones`, but it replied that `firewalld` is not running! I was shocked because I didn't disable or stop `firewalld` and it'd be extremely dangerous if no firewall was running. Fortunately, `iptables` was up and doing its job. I then discovered that `os_firewall_use_firewalld=True` should be set in the Openshift host file for it to enforce `firewalld` instead of `iptables`.
+After setting up the DNS, I ran into a weird problem. I could access the DNS service on the same computer but not other computers. `sudo systemctl status dnsmasq` seemed fine. `journalctl` didn't report any thing weird. Checking port status with `sudo netstat -antup`, `dnsmasq` was also listening on the desired port. Using `nmap` to check open ports on the DNS host from other computers didn't showed any trace of DNS service. I was so confused. An idea then flashed through my mind. Maybe it was the firewall blocking the packages. I tried to get some information with `firewall-cmd --list-all-zones`, but it replied that `firewalld` is not running! I was shocked because I didn't disable or stop `firewalld` and it'd be extremely dangerous if no firewall was running. Fortunately, `iptables` was up and doing its job. I then discovered that `os_firewall_use_firewalld=True` should be set in the Openshift host file for it to enforce `firewalld` instead of `iptables`. While it is recommended to use `firewalld`, `iptables` is the default.
 
-#### Allow DNS Queries with `iptables`
+### Allow DNS Queries with `iptables`
 
 I was tricked by `iptables` because of its rule ordering. The rules are evaluated from top to bottom. Whenever a rule is matched, the corresponding action will be done and no further rules will be used. Thus, if the chain has `DROP all -- any any anywhere anywhere`, appending `ACCEPT all -- any any anywhere anywhere` will have utterly no effect. The right way of doing this is:
 1. Check `iptables` with line numbers annotated: `sudo iptables -L -v --line-numbers`
-2. Insert the new `ACCEPT` rule before the `DROP all` rule: `iptables -I [chain name] [line number] [stuff to accept] -j ACCEPT`. For example, `iptables -I INPUT 7 -p tcp --sport 53 -j ACCEPT`
+2. Insert the new `ACCEPT` rule before the `DROP all` rule: `iptables -I [chain name] [line number] [stuff to accept] -j ACCEPT`. For example, `sudo iptables -I INPUT 7 -p tcp --sport 53 -j ACCEPT`
 
-## Debugging Installation Issues
+### Allow DNS Queries with `firewalld`
+
+There is always a good reason behind when a software is frequently being recommended. In this case, running `sudo firewall-cmd --add-service=dns --permanent && sudo firewall-cmd reload` will do the job.
+
+# Debugging Installation Issues
 
 The DNS settings above was formed after many tries. Prior to that, I had have met several problems with this host mapping. There were some ways I used to find out the underlying issues:
 
@@ -78,12 +82,12 @@ The DNS settings above was formed after many tries. Prior to that, I had have me
     3. Get the logs: `sudo oc logs -n [namespace] -f [name]`
 3. If the API server is up, get events of the cluster: `sudo oc get events --all-namespaces`
 
-## Disaster of 1 Master + Infra Node with `dnsmasq` and 1 Compute Node
+# Disaster of 1 Master + Infra Node with `dnsmasq` and 1 Compute Node
 
 These were the problems I met:
 - `ansible-playbook` failed: the connection to the server 8443 was refused: I thought there was some process occupying port 8443. In the end, it was the DNS not configured correctly.
 - `ansible-playbook` failed: Wait for control plane pods to appear: DNS not configured correctly. In my case, I used `01` as the domain name for master. I wasn't aware a valid domain for HTTP or HTTPS shouldn't be merely composed with numbers.
-- `anisble-playbook` failed somewhere else
+- `anisble-playbook` failed somewhere else with pod logs complaining API service not available:
 
 {{% admonition title="Under Construction" color="yellow" %}}
 May 23, 2019

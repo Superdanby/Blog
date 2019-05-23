@@ -137,18 +137,17 @@ document.addEventListener("DOMContentLoaded", function() {
 <li><a href="#motivation">Motivation</a></li>
 <li><a href="#from-kubernetes-k8s-to-openshift">From Kubernetes(K8s) to Openshift</a></li>
 <li><a href="#environment-preparation">Environment Preparation</a></li>
-<li><a href="#try-and-error">Try and Error</a>
+<li><a href="#first-try">First Try</a>
 <ul>
-<li><a href="#setting-up-dns">Setting up DNS</a>
-<ul>
+<li><a href="#setting-up-dns">Setting up DNS</a></li>
 <li><a href="#firewall">Firewall</a>
 <ul>
 <li><a href="#allow-dns-queries-with-iptables">Allow DNS Queries with <code>iptables</code></a></li>
+<li><a href="#allow-dns-queries-with-firewalld">Allow DNS Queries with <code>firewalld</code></a></li>
 </ul></li>
 </ul></li>
 <li><a href="#debugging-installation-issues">Debugging Installation Issues</a></li>
 <li><a href="#disaster-of-1-master-infra-node-with-dnsmasq-and-1-compute-node">Disaster of 1 Master + Infra Node with <code>dnsmasq</code> and 1 Compute Node</a></li>
-</ul></li>
 </ul>
 </nav>
             </div>
@@ -200,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <p>I&rsquo;ve read <a href="https://en-wiki.ikoula.com/en/Deploy_a_cluster_Kubernetes_with_CoreOS">somewhere</a> that <code>machine-id</code> should be different for all nodes in a K8s cluster. So, I wrote <a href="https://github.com/Superdanby/Openshift-Ansible-Domjudge/blob/master/tasks/01.change_mahcine_id.yml">an ansible script</a> change it on all hosts. And something fishy happened. The system logs were not shown in <code>journalctl</code>. Google then told me that <code>journalctl</code> relies on <code>machine-id</code>. A <a href="https://github.com/Superdanby/Openshift-Ansible-Domjudge/blob/master/tasks/07.reboot.yml">reboot script</a> would solve this issue.</p>
 
-<h1 id="try-and-error">Try and Error</h1>
+<h1 id="first-try">First Try</h1>
 
 <p>The latest official release of Openshift is version 3.11. It uses Ansible playbooks to install the Openshift cluster. The commands are <code>ansible-playbook -i [path_to_inventory_file] playbooks/prerequisites.yml</code> and <code>ansible-playbook -i [path_to_inventory_file] playbooks/deploy_cluster.yml</code>.</p>
 
@@ -253,17 +252,21 @@ document.addEventListener("DOMContentLoaded", function() {
 </tbody>
 </table>
 
-<h3 id="firewall">Firewall</h3>
+<h2 id="firewall">Firewall</h2>
 
-<p>After setting up the DNS, I ran into a weird problem. I could access the DNS service on the same computer but not other computers. <code>sudo systemctl status dnsmasq</code> seemed fine. <code>journalctl</code> didn&rsquo;t report any thing weird. Checking port status with <code>sudo netstat -antup</code>, <code>dnsmasq</code> was also listening on the desired port. Using <code>nmap</code> to check open ports on the DNS host from other computers didn&rsquo;t showed any trace of DNS service. I was so confused. An idea then flashed through my mind. Maybe it was the firewall blocking the packages. I tried to get some information with <code>firewall-cmd --list-all-zones</code>, but it replied that <code>firewalld</code> is not running! I was shocked because I didn&rsquo;t disable or stop <code>firewalld</code> and it&rsquo;d be extremely dangerous if no firewall was running. Fortunately, <code>iptables</code> was up and doing its job. I then discovered that <code>os_firewall_use_firewalld=True</code> should be set in the Openshift host file for it to enforce <code>firewalld</code> instead of <code>iptables</code>.</p>
+<p>After setting up the DNS, I ran into a weird problem. I could access the DNS service on the same computer but not other computers. <code>sudo systemctl status dnsmasq</code> seemed fine. <code>journalctl</code> didn&rsquo;t report any thing weird. Checking port status with <code>sudo netstat -antup</code>, <code>dnsmasq</code> was also listening on the desired port. Using <code>nmap</code> to check open ports on the DNS host from other computers didn&rsquo;t showed any trace of DNS service. I was so confused. An idea then flashed through my mind. Maybe it was the firewall blocking the packages. I tried to get some information with <code>firewall-cmd --list-all-zones</code>, but it replied that <code>firewalld</code> is not running! I was shocked because I didn&rsquo;t disable or stop <code>firewalld</code> and it&rsquo;d be extremely dangerous if no firewall was running. Fortunately, <code>iptables</code> was up and doing its job. I then discovered that <code>os_firewall_use_firewalld=True</code> should be set in the Openshift host file for it to enforce <code>firewalld</code> instead of <code>iptables</code>. While it is recommended to use <code>firewalld</code>, <code>iptables</code> is the default.</p>
 
-<h4 id="allow-dns-queries-with-iptables">Allow DNS Queries with <code>iptables</code></h4>
+<h3 id="allow-dns-queries-with-iptables">Allow DNS Queries with <code>iptables</code></h3>
 
 <p>I was tricked by <code>iptables</code> because of its rule ordering. The rules are evaluated from top to bottom. Whenever a rule is matched, the corresponding action will be done and no further rules will be used. Thus, if the chain has <code>DROP all -- any any anywhere anywhere</code>, appending <code>ACCEPT all -- any any anywhere anywhere</code> will have utterly no effect. The right way of doing this is:
 1. Check <code>iptables</code> with line numbers annotated: <code>sudo iptables -L -v --line-numbers</code>
-2. Insert the new <code>ACCEPT</code> rule before the <code>DROP all</code> rule: <code>iptables -I [chain name] [line number] [stuff to accept] -j ACCEPT</code>. For example, <code>iptables -I INPUT 7 -p tcp --sport 53 -j ACCEPT</code></p>
+2. Insert the new <code>ACCEPT</code> rule before the <code>DROP all</code> rule: <code>iptables -I [chain name] [line number] [stuff to accept] -j ACCEPT</code>. For example, <code>sudo iptables -I INPUT 7 -p tcp --sport 53 -j ACCEPT</code></p>
 
-<h2 id="debugging-installation-issues">Debugging Installation Issues</h2>
+<h3 id="allow-dns-queries-with-firewalld">Allow DNS Queries with <code>firewalld</code></h3>
+
+<p>There is always a good reason behind when a software is frequently being recommended. In this case, running <code>sudo firewall-cmd --add-service=dns --permanent &amp;&amp; sudo firewall-cmd reload</code> will do the job.</p>
+
+<h1 id="debugging-installation-issues">Debugging Installation Issues</h1>
 
 <p>The DNS settings above was formed after many tries. Prior to that, I had have met several problems with this host mapping. There were some ways I used to find out the underlying issues:</p>
 
@@ -279,12 +282,12 @@ document.addEventListener("DOMContentLoaded", function() {
 <li>If the API server is up, get events of the cluster: <code>sudo oc get events --all-namespaces</code></li>
 </ol>
 
-<h2 id="disaster-of-1-master-infra-node-with-dnsmasq-and-1-compute-node">Disaster of 1 Master + Infra Node with <code>dnsmasq</code> and 1 Compute Node</h2>
+<h1 id="disaster-of-1-master-infra-node-with-dnsmasq-and-1-compute-node">Disaster of 1 Master + Infra Node with <code>dnsmasq</code> and 1 Compute Node</h1>
 
 <p>These were the problems I met:
 - <code>ansible-playbook</code> failed: the connection to the server 8443 was refused: I thought there was some process occupying port 8443. In the end, it was the DNS not configured correctly.
 - <code>ansible-playbook</code> failed: Wait for control plane pods to appear: DNS not configured correctly. In my case, I used <code>01</code> as the domain name for master. I wasn&rsquo;t aware a valid domain for HTTP or HTTPS shouldn&rsquo;t be merely composed with numbers.
-- <code>anisble-playbook</code> failed somewhere else</p>
+- <code>anisble-playbook</code> failed somewhere else with pod logs complaining API service not available:</p>
 
 <div class="admonition">
     
