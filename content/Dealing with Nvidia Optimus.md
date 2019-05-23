@@ -13,7 +13,7 @@ Since the release of Fedora 26, Mesa doesn't conflict with Nvidia anymore. Gener
 A brief comparison table:
 
 |                       | Bumblebee | Negativo17 |
- ---------------------- | --------- | -----------
+| --------------------- | --------- | ---------- |
 | Nvidia Driver Version | Old       | Up to date |
 | Usage                 | Turn on when needed | Always on with Nvidia Optimus |
 | Status                | No updates since 2013 | Still being maintained and has [good support](https://negativo17.org/nvidia-driver/#reply-title) |

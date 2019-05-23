@@ -212,6 +212,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <p>The following are some options I set to setup a local DNS. First, <code>server=8.8.8.8</code> will forward all queries not found locally to the upstream DNS <code>8.8.8.8</code>. Next, I set the name of each host manually in <code>/etc/hosts_domjudge</code>, so I&rsquo;ll have to set the option: <code>addn-hosts=/etc/hosts_domjudge</code>. The other 2 options are <code>expand-hosts</code> and <code>domain=domjudge,192.168.218.0/24</code>. They mean that all machines under <code>192.168.218.0/24</code> have their FQDN end with <code>domjudge</code>, and if the domain name written in <code>/etc/hosts_dojudge</code> doesn&rsquo;t end with <code>domjudge</code>, <code>dnsmaq</code> will automatically append it. Let&rsquo;s say we have an entry <code>192.168.218.1 01 master01.domjudge</code>. Our query results will be:</p>
 
+<p>The following are some options I set to setup a local DNS.
+- <code>server=8.8.8.8</code>: forward all queries not found locally to the upstream DNS <code>8.8.8.8</code>.
+- <code>addn-hosts=/etc/hosts_domjudge</code>: <code>dnsmasq</code> reads additional host pairs from <code>/etc/hosts_domjudge</code>, where I set the name of each host manually.
+- <code>expand-hosts</code> and <code>domain=domjudge,192.168.218.0/24</code>: all machines under <code>192.168.218.0/24</code> have their FQDN end with <code>domjudge</code>, and if the domain name written in <code>/etc/hosts_dojudge</code> doesn&rsquo;t end with <code>domjudge</code>, <code>dnsmaq</code> will automatically append it.</p>
+
+<p>Let&rsquo;s say we have an entry <code>192.168.218.1 01 master01.domjudge</code>. Our query results will be:</p>
+
 <table>
 <thead>
 <tr>
@@ -254,41 +261,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <h4 id="allow-dns-queries-with-iptables">Allow DNS Queries with <code>iptables</code></h4>
 
-<p>I was tricked by <code>iptables</code> because of its rule ordering. The rules are evaluated from top to bottom. Whenever a rule is matched, the corresponding action will be done and no further rules will be used.
-Thus, if the chain has <code>DROP       all  --  any    any     anywhere             anywhere</code>, appending <code>ACCEPT       all  --  any    any     anywhere             anywhere</code> will have utterly no effect. The right way of doing this is:
+<p>I was tricked by <code>iptables</code> because of its rule ordering. The rules are evaluated from top to bottom. Whenever a rule is matched, the corresponding action will be done and no further rules will be used. Thus, if the chain has <code>DROP all -- any any anywhere anywhere</code>, appending <code>ACCEPT all -- any any anywhere anywhere</code> will have utterly no effect. The right way of doing this is:
 1. Check <code>iptables</code> with line numbers annotated: <code>sudo iptables -L -v --line-numbers</code>
 2. Insert the new <code>ACCEPT</code> rule before the <code>DROP all</code> rule: <code>iptables -I [chain name] [line number] [stuff to accept] -j ACCEPT</code>. For example, <code>iptables -I INPUT 7 -p tcp --sport 53 -j ACCEPT</code></p>
 
 <h2 id="debugging-installation-issues">Debugging Installation Issues</h2>
 
-<p>The DNS settings above was formed after many tries. Prior to that, I had have met several problems with this host mapping. There are some ways I used to find out the underlying issues:</p>
+<p>The DNS settings above was formed after many tries. Prior to that, I had have met several problems with this host mapping. There were some ways I used to find out the underlying issues:</p>
 
 <ol>
 <li>Run the <code>ansible-playbook</code> commands with the <code>-vvv</code> argument. With <code>-vvv</code> set, <code>ansible-playbook</code> will be much more &ldquo;talkative&rdquo; instead of just showing the name of a task and whether it succeeded.</li>
-<li>If the API server is up, get logs from a pod:</li>
+<li>If the API server is up, get logs from a pod:
+
+<ol>
+<li>List all pods: <code>sudo oc get pods --all-namespaces</code></li>
+<li>Identify the name and namespace of the pods whose state are <code>Error</code> or <code>CrashLoopBackOff</code>. High restart counts may also be abnormal for a pod.</li>
+<li>Get the logs: <code>sudo oc logs -n [namespace] -f [name]</code></li>
+</ol></li>
+<li>If the API server is up, get events of the cluster: <code>sudo oc get events --all-namespaces</code></li>
 </ol>
-
-<div class="admonition">
-    
-    
-
-    
-        
-        
-    
-    
-    
-    
-        
-    
-
-    <span class="title" style="background-color: #ffc107">
-        Under Construction
-    </span>
-
-    <div class="content"><p>May 23, 2019</p>
-</div>
-</div>
 
 <h2 id="disaster-of-1-master-infra-node-with-dnsmasq-and-1-compute-node">Disaster of 1 Master + Infra Node with <code>dnsmasq</code> and 1 Compute Node</h2>
 

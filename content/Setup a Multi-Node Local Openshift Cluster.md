@@ -44,6 +44,13 @@ There are 2 software people usually use to setup DNS. One is [`BIND`](https://ww
 
 The following are some options I set to setup a local DNS. First, `server=8.8.8.8` will forward all queries not found locally to the upstream DNS `8.8.8.8`. Next, I set the name of each host manually in `/etc/hosts_domjudge`, so I'll have to set the option: `addn-hosts=/etc/hosts_domjudge`. The other 2 options are `expand-hosts` and `domain=domjudge,192.168.218.0/24`. They mean that all machines under `192.168.218.0/24` have their FQDN end with `domjudge`, and if the domain name written in `/etc/hosts_dojudge` doesn't end with `domjudge`, `dnsmaq` will automatically append it. Let's say we have an entry `192.168.218.1 01 master01.domjudge`. Our query results will be:
 
+The following are some options I set to setup a local DNS.
+- `server=8.8.8.8`: forward all queries not found locally to the upstream DNS `8.8.8.8`.
+- `addn-hosts=/etc/hosts_domjudge`: `dnsmasq` reads additional host pairs from `/etc/hosts_domjudge`, where I set the name of each host manually.
+- `expand-hosts` and `domain=domjudge,192.168.218.0/24`: all machines under `192.168.218.0/24` have their FQDN end with `domjudge`, and if the domain name written in `/etc/hosts_dojudge` doesn't end with `domjudge`, `dnsmaq` will automatically append it.
+
+Let's say we have an entry `192.168.218.1 01 master01.domjudge`. Our query results will be:
+
 | Query | Result |
 | ----- | ------ |
 | `01` | `192.168.218.1` |
@@ -58,21 +65,20 @@ After setting up the DNS, I ran into a weird problem. I could access the DNS ser
 
 #### Allow DNS Queries with `iptables`
 
-I was tricked by `iptables` because of its rule ordering. The rules are evaluated from top to bottom. Whenever a rule is matched, the corresponding action will be done and no further rules will be used.
-Thus, if the chain has `DROP       all  --  any    any     anywhere             anywhere`, appending `ACCEPT       all  --  any    any     anywhere             anywhere` will have utterly no effect. The right way of doing this is:
+I was tricked by `iptables` because of its rule ordering. The rules are evaluated from top to bottom. Whenever a rule is matched, the corresponding action will be done and no further rules will be used. Thus, if the chain has `DROP all -- any any anywhere anywhere`, appending `ACCEPT all -- any any anywhere anywhere` will have utterly no effect. The right way of doing this is:
 1. Check `iptables` with line numbers annotated: `sudo iptables -L -v --line-numbers`
 2. Insert the new `ACCEPT` rule before the `DROP all` rule: `iptables -I [chain name] [line number] [stuff to accept] -j ACCEPT`. For example, `iptables -I INPUT 7 -p tcp --sport 53 -j ACCEPT`
 
 ## Debugging Installation Issues
 
-The DNS settings above was formed after many tries. Prior to that, I had have met several problems with this host mapping. There are some ways I used to find out the underlying issues:
+The DNS settings above was formed after many tries. Prior to that, I had have met several problems with this host mapping. There were some ways I used to find out the underlying issues:
 
 1. Run the `ansible-playbook` commands with the `-vvv` argument. With `-vvv` set, `ansible-playbook` will be much more "talkative" instead of just showing the name of a task and whether it succeeded.
 2. If the API server is up, get logs from a pod:
-
-{{% admonition title="Under Construction" color="yellow" %}}
-May 23, 2019
-{{% /admonition %}}
+    1. List all pods: `sudo oc get pods --all-namespaces`
+    2. Identify the name and namespace of the pods whose state are `Error` or `CrashLoopBackOff`. High restart counts may also be abnormal for a pod.
+    3. Get the logs: `sudo oc logs -n [namespace] -f [name]`
+3. If the API server is up, get events of the cluster: `sudo oc get events --all-namespaces`
 
 ## Disaster of 1 Master + Infra Node with `dnsmasq` and 1 Compute Node
 
