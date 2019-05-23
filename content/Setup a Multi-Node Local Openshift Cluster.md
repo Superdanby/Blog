@@ -42,14 +42,12 @@ At first, I chose 2 machines and tried to use their IP to setup a small cluster.
 
 There are 2 software people usually use to setup DNS. One is [`BIND`](https://www.isc.org/downloads/bind/) and the other is [`dnsmasq`](http://www.thekelleys.org.uk/dnsmasq/doc.html). Setting up `dnsmasq` is much easier than `BIND`. Beside a light weight DNS, it also comes with a light weight DHCP server. `dnsmasq` reads its configurations from `/etc/dnsmasq.conf`.
 
-The following are some options I set to setup a local DNS. First, `server=8.8.8.8` will forward all queries not found locally to the upstream DNS `8.8.8.8`. Next, I set the name of each host manually in `/etc/hosts_domjudge`, so I'll have to set the option: `addn-hosts=/etc/hosts_domjudge`. The other 2 options are `expand-hosts` and `domain=domjudge,192.168.218.0/24`. They mean that all machines under `192.168.218.0/24` have their FQDN end with `domjudge`, and if the domain name written in `/etc/hosts_dojudge` doesn't end with `domjudge`, `dnsmaq` will automatically append it. Let's say we have an entry `192.168.218.1 01 master01.domjudge`. Our query results will be:
-
 The following are some options I set to setup a local DNS.
 - `server=8.8.8.8`: forward all queries not found locally to the upstream DNS `8.8.8.8`.
 - `addn-hosts=/etc/hosts_domjudge`: `dnsmasq` reads additional host pairs from `/etc/hosts_domjudge`, where I set the name of each host manually.
 - `expand-hosts` and `domain=domjudge,192.168.218.0/24`: all machines under `192.168.218.0/24` have their FQDN end with `domjudge`, and if the domain name written in `/etc/hosts_dojudge` doesn't end with `domjudge`, `dnsmaq` will automatically append it.
 
-Let's say we have an entry `192.168.218.1 01 master01.domjudge`. Our query results will be:
+Let's say we have an entry `192.168.218.1 01 master01.domjudge` in `/etc/hosts_domjudge`. Our query results will be:
 
 | Query | Result |
 | ----- | ------ |
