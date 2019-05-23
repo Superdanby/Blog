@@ -23,10 +23,17 @@ Openshift has an open source counterpart called Openshift Origin or OKD, the Ori
 
 Environment setup for 21 machines is time-consuming if I have to do the same setting on each of the machines. Fortunately, we had PXE already setup for all the machines. However, PXE was not enough for this situation. The weakness of PXE can be amended by [Ansible](https://www.ansible.com/).
 
-|  | Strength | Weakness |
- - | -------- | ---------
+|     | Strength | Weakness |
+| --- | -------- | -------- |
 | PXE | base operating system deployment, system wipes/recoveries | time consuming for small changes, no individual customization per deployment(even `machine-id` will remain the same) |
 | Ansible | fast for small changes, customizable settings on different machines per deployment | OS being deployed and SSH server pre-enabled on targets |
+
+|                       | Bumblebee | Negativo17 |
+ ---------------------- | --------- | -----------
+| Nvidia Driver Version | Old       | Up to date |
+| Usage                 | Turn on when needed | Always on with Nvidia Optimus |
+| Status                | No updates since 2013 | Still being maintained and has [good support](https://negativo17.org/nvidia-driver/#reply-title) |
+| Platform              | Wayland & X | Only on X |
 
 The base image was [Fedora 30 Workstation](https://getfedora.org/en/workstation/)(I should have gone with the server edition. LOL) with OpenSSH server enabled(`sudo systemctl start sshd && sudo systemctl enable sshd`).
 
