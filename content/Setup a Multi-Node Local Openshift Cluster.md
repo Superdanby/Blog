@@ -23,8 +23,8 @@ Openshift has an open source counterpart called Openshift Origin or OKD, the Ori
 
 Environment setup for 21 machines is time-consuming if I have to do the same setting on each of the machines. Fortunately, we had PXE already setup for all the machines. However, PXE was not enough for this situation. The weakness of PXE can be amended by [Ansible](https://www.ansible.com/).
 
-|   | Strength | Weakness |
-  - | -------- | --------
+|  | Strength | Weakness |
+ - | -------- | ---------
 | PXE | base operating system deployment, system wipes/recoveries | time consuming for small changes, no individual customization per deployment(even `machine-id` will remain the same) |
 | Ansible | fast for small changes, customizable settings on different machines per deployment | OS being deployed and SSH server pre-enabled on targets |
 
