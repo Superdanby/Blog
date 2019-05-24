@@ -17,7 +17,7 @@ Our school was going to hold a competitive programming contest. This time we wer
 | Container | easy to setup | inappropriate for large-scale deployment, no management system | Docker, Docker Compose |
 
 | Container Orchestration Platform | Setup | Scale | Node Recovery | Resource Needed | Monitoring | Readiness | Community | Backed by |
-| -------------------------------- | ----- | ----- | ------------- | --------------- | ---------- | --------- | --------- |
+| -------------------------------- | ----- | ----- | ------------- | --------------- | ---------- | --------- | --------- | --------- |
 | Kubernetes | hardest | [5000 nodes, 150000 pods](https://kubernetes.io/docs/setup/cluster-large/) | robust | resource heavy | built-in, web UI | large-scale production ready, various cloud supports | large | Google, CNCF |
 | Openshift | non-trivial installation effort, a working DNS | [2000 nodes, 150000 pods](https://docs.okd.io/latest/scaling_performance/cluster_limits.html) | robust | most resource heavy | built-in, web UI | large-scale production ready, various cloud supports | medium | Red Hat |
 | Docker Swarm | easy | ? | may fail to recover sometimes | light weight | third party | ? | small | Docker |
