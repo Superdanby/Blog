@@ -11,6 +11,17 @@ math: false
 
 Our school was going to hold a competitive programming contest. This time we were choosing [Domjudge](https://www.domjudge.org/) in favor of [PC^2](https://pc2.ecs.csus.edu/) as our judging system. The former is an open source project, which is pretty convenient for us to modify its content to suite our needs. About its robustness, it was the judging system for ICPC World Final 2019. Our contest was split into 2 groups. Both groups have their own database, server, and judge hosts. It would be ideal for us if we can assign the compute resources dynamically between the contests based on their loading. As [Domjudge provides docker images](https://hub.docker.com/u/domjudge), this is where [Kubernetes](https://kubernetes.io/) comes into play. It allows us to easily manage compute resources for containerized applications. Another advantage is that if a running app dies, Kubernetes is able to recover the app automatically. For example, if a judge crashes for some reason, we don't have to manually determine which machine the judge sits on and restart it from that machine. Kubernetes handles these matters for us instead.
 
+| Container Solution | Advantages | Disadvantages | Example Products |
+| ------------------- | ---------- | ------------- | ---------------- |
+| Container Orchestration Platforms | centralized management system, scalable, easy image deployment | needs more effort to setup | Kubernetes, Openshift, Docker Swarm |
+| Container | easy to setup | inappropriate for large-scale deployment, no management system | Docker, Docker Compose |
+
+| Container Orchestration Platform | Setup | Scale | Node Recovery | Resource Needed | Monitoring | Readiness | Community | Backed by |
+| -------------------------------- | ----- | ----- | ------------- | --------------- | ---------- | --------- | --------- |
+| Kubernetes | hardest | [5000 nodes, 150000 pods](https://kubernetes.io/docs/setup/cluster-large/) | robust | resource heavy | built-in, web UI | large-scale production ready, various cloud supports | large | Google, CNCF |
+| Openshift | non-trivial installation effort, a working DNS | [2000 nodes, 150000 pods](https://docs.okd.io/latest/scaling_performance/cluster_limits.html) | robust | most resource heavy | built-in, web UI | large-scale production ready, various cloud supports | medium | Red Hat |
+| Docker Swarm | easy | ? | may fail to recover sometimes | light weight | third party | ? | small | Docker |
+
 # From Kubernetes(K8s) to Openshift
 
 Knowing the benefits of K8s, I started to study how it works. Frankly, I think it's fairly hard to understand the whole architecture and concepts of K8s for a newbie who has no prior experience in container orchestration frameworks. After poking around the official documents and watching some videos on Youtube, I managed to get a grip of K8s' high-level concept.
@@ -38,14 +49,29 @@ The latest official release of Openshift is version 3.11. It uses Ansible playbo
 
 At first, I chose 2 machines and tried to use their IP to setup a small cluster. The components are 1 master + infra node and 1 compute node. The install went smoothly without any error produced. Verifying the installation from command line with `sudo oc get pods` also seemed fine. I was so excited until I found that I couldn't access the web console. Apparently, something gone wrong. I didn't found many people have the same problem as mine. In most cases, web console not showing up always comes with an installation error. Not getting any constructive feedback from Googling, I then went back and check the installation requirements which stated that DNS is required.
 
-## Setting up DNS
+# Setting up DNS
 
 There are 2 software people usually use to setup DNS. One is [`BIND`](https://www.isc.org/downloads/bind/) and the other is [`dnsmasq`](http://www.thekelleys.org.uk/dnsmasq/doc.html). Setting up `dnsmasq` is much easier than `BIND`. Beside a light weight DNS, it also comes with a light weight DHCP server. `dnsmasq` reads its configurations from `/etc/dnsmasq.conf`.
 
-The following are some options I set to setup a local DNS.
+## Server Side
+
+In `/etc/dnsmaq.conf`:
 - `server=8.8.8.8`: forward all queries not found locally to the upstream DNS `8.8.8.8`.
 - `addn-hosts=/etc/hosts_domjudge`: `dnsmasq` reads additional host pairs from `/etc/hosts_domjudge`, where I set the name of each host manually.
 - `expand-hosts` and `domain=domjudge,192.168.218.0/24`: all machines under `192.168.218.0/24` have their FQDN end with `domjudge`, and if the domain name written in `/etc/hosts_dojudge` doesn't end with `domjudge`, `dnsmaq` will automatically append it.
+
+Remember to start and enable `dnsmasq` via `systemctl`. If starting failed, reboot the host and `systemd-resolved` will no longer be in your way.
+
+## Client Side
+
+The DNS upstream server is set in `/etc/resolv.conf`. Linux will only use the first `nameserver` entry. Hence, we have to insert the `nameserver` in the first place. This can usually be done by saving `prepend domain-name-servers [DNS IP];` to `/etc/dhcp/dhclient.conf` and restarting NetworkManager.
+For some reason, the above doesn't work when there are changes made from Gnome's Network settings. And we will have to set it with `nmcli`:
+
+1. Identify the active connection: `nmcli -t connection show --active | grep '\:.*ethernet\|\:.*wireless' | head -n 1 | cut -d ':' -f 2`
+2. Set the upstream DNS: `sudo nmcli connection modify [the active connection ID] ipv4.dns [DNS IP]`
+3. Restart NetworkManager: `sudo systemctl restart NetworkManager`
+
+## Example
 
 Let's say we have an entry `192.168.218.1 01 master01.domjudge` in `/etc/hosts_domjudge`. Our query results will be:
 
@@ -57,17 +83,17 @@ Let's say we have an entry `192.168.218.1 01 master01.domjudge` in `/etc/hosts_d
 | `master01.domjudge` | `192.168.218.1` |
 | `google.com` | one of Google's public IP, e.g. `216.58.200.46` |
 
-## Firewall
+# Firewall
 
 After setting up the DNS, I ran into a weird problem. I could access the DNS service on the same computer but not other computers. `sudo systemctl status dnsmasq` seemed fine. `journalctl` didn't report any thing weird. Checking port status with `sudo netstat -antup`, `dnsmasq` was also listening on the desired port. Using `nmap` to check open ports on the DNS host from other computers didn't showed any trace of DNS service. I was so confused. An idea then flashed through my mind. Maybe it was the firewall blocking the packages. I tried to get some information with `firewall-cmd --list-all-zones`, but it replied that `firewalld` is not running! I was shocked because I didn't disable or stop `firewalld` and it'd be extremely dangerous if no firewall was running. Fortunately, `iptables` was up and doing its job. I then discovered that `os_firewall_use_firewalld=True` should be set in the Openshift host file for it to enforce `firewalld` instead of `iptables`. While it is recommended to use `firewalld`, `iptables` is the default.
 
-### Allow DNS Queries with `iptables`
+## Allow DNS Queries with `iptables`
 
 I was tricked by `iptables` because of its rule ordering. The rules are evaluated from top to bottom. Whenever a rule is matched, the corresponding action will be done and no further rules will be used. Thus, if the chain has `DROP all -- any any anywhere anywhere`, appending `ACCEPT all -- any any anywhere anywhere` will have utterly no effect. The right way of doing this is:
 1. Check `iptables` with line numbers annotated: `sudo iptables -L -v --line-numbers`
 2. Insert the new `ACCEPT` rule before the `DROP all` rule: `iptables -I [chain name] [line number] [stuff to accept] -j ACCEPT`. For example, `sudo iptables -I INPUT 7 -p tcp --sport 53 -j ACCEPT`
 
-### Allow DNS Queries with `firewalld`
+## Allow DNS Queries with `firewalld`
 
 There is always a good reason behind when a software is frequently being recommended. In this case, running `sudo firewall-cmd --add-service=dns --permanent && sudo firewall-cmd reload` will do the job.
 
@@ -87,8 +113,8 @@ The DNS settings above was formed after many tries. Prior to that, I had have me
 These were the problems I met:
 - `ansible-playbook` failed: the connection to the server 8443 was refused: I thought there was some process occupying port 8443. In the end, it was the DNS not configured correctly.
 - `ansible-playbook` failed: Wait for control plane pods to appear: DNS not configured correctly. In my case, I used `01` as the domain name for master. I wasn't aware a valid domain for HTTP or HTTPS shouldn't be merely composed with numbers.
-- `anisble-playbook` failed somewhere else with pod logs complaining API service not available:
+- `anisble-playbook` failed somewhere else with pod logs complaining API service not available: either DNS not configured correctly or port being occupied by another service.
 
 {{% admonition title="Under Construction" color="yellow" %}}
-May 23, 2019
+May 25, 2019
 {{% /admonition %}}

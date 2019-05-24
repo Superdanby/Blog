@@ -137,14 +137,17 @@ document.addEventListener("DOMContentLoaded", function() {
 <li><a href="#motivation">Motivation</a></li>
 <li><a href="#from-kubernetes-k8s-to-openshift">From Kubernetes(K8s) to Openshift</a></li>
 <li><a href="#environment-preparation">Environment Preparation</a></li>
-<li><a href="#first-try">First Try</a>
+<li><a href="#first-try">First Try</a></li>
+<li><a href="#setting-up-dns">Setting up DNS</a>
 <ul>
-<li><a href="#setting-up-dns">Setting up DNS</a></li>
+<li><a href="#server-side">Server Side</a></li>
+<li><a href="#client-side">Client Side</a></li>
+<li><a href="#example">Example</a></li>
+</ul></li>
 <li><a href="#firewall">Firewall</a>
 <ul>
 <li><a href="#allow-dns-queries-with-iptables">Allow DNS Queries with <code>iptables</code></a></li>
 <li><a href="#allow-dns-queries-with-firewalld">Allow DNS Queries with <code>firewalld</code></a></li>
-</ul></li>
 </ul></li>
 <li><a href="#debugging-installation-issues">Debugging Installation Issues</a></li>
 <li><a href="#disaster-of-1-master-infra-node-with-dnsmasq-and-1-compute-node">Disaster of 1 Master + Infra Node with <code>dnsmasq</code> and 1 Compute Node</a></li>
@@ -158,6 +161,39 @@ document.addEventListener("DOMContentLoaded", function() {
 <h1 id="motivation">Motivation</h1>
 
 <p>Our school was going to hold a competitive programming contest. This time we were choosing <a href="https://www.domjudge.org/">Domjudge</a> in favor of <a href="https://pc2.ecs.csus.edu/">PC^2</a> as our judging system. The former is an open source project, which is pretty convenient for us to modify its content to suite our needs. About its robustness, it was the judging system for ICPC World Final 2019. Our contest was split into 2 groups. Both groups have their own database, server, and judge hosts. It would be ideal for us if we can assign the compute resources dynamically between the contests based on their loading. As <a href="https://hub.docker.com/u/domjudge">Domjudge provides docker images</a>, this is where <a href="https://kubernetes.io/">Kubernetes</a> comes into play. It allows us to easily manage compute resources for containerized applications. Another advantage is that if a running app dies, Kubernetes is able to recover the app automatically. For example, if a judge crashes for some reason, we don&rsquo;t have to manually determine which machine the judge sits on and restart it from that machine. Kubernetes handles these matters for us instead.</p>
+
+<table>
+<thead>
+<tr>
+<th>Container Solution</th>
+<th>Advantages</th>
+<th>Disadvantages</th>
+<th>Example Products</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Container Orchestration Platforms</td>
+<td>centralized management system, scalable, easy image deployment</td>
+<td>needs more effort to setup</td>
+<td>Kubernetes, Openshift, Docker Swarm</td>
+</tr>
+
+<tr>
+<td>Container</td>
+<td>easy to setup</td>
+<td>inappropriate for large-scale deployment, no management system</td>
+<td>Docker, Docker Compose</td>
+</tr>
+</tbody>
+</table>
+
+<p>| Container Orchestration Platform | Setup | Scale | Node Recovery | Resource Needed | Monitoring | Readiness | Community | Backed by |
+| &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash; | &mdash;&ndash; | &mdash;&ndash; | &mdash;&mdash;&mdash;&mdash;- | &mdash;&mdash;&mdash;&mdash;&mdash; | &mdash;&mdash;&mdash;- | &mdash;&mdash;&mdash; | &mdash;&mdash;&mdash; |
+| Kubernetes | hardest | <a href="https://kubernetes.io/docs/setup/cluster-large/">5000 nodes, 150000 pods</a> | robust | resource heavy | built-in, web UI | large-scale production ready, various cloud supports | large | Google, CNCF |
+| Openshift | non-trivial installation effort, a working DNS | <a href="https://docs.okd.io/latest/scaling_performance/cluster_limits.html">2000 nodes, 150000 pods</a> | robust | most resource heavy | built-in, web UI | large-scale production ready, various cloud supports | medium | Red Hat |
+| Docker Swarm | easy | ? | may fail to recover sometimes | light weight | third party | ? | small | Docker |</p>
 
 <h1 id="from-kubernetes-k8s-to-openshift">From Kubernetes(K8s) to Openshift</h1>
 
@@ -205,14 +241,31 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <p>At first, I chose 2 machines and tried to use their IP to setup a small cluster. The components are 1 master + infra node and 1 compute node. The install went smoothly without any error produced. Verifying the installation from command line with <code>sudo oc get pods</code> also seemed fine. I was so excited until I found that I couldn&rsquo;t access the web console. Apparently, something gone wrong. I didn&rsquo;t found many people have the same problem as mine. In most cases, web console not showing up always comes with an installation error. Not getting any constructive feedback from Googling, I then went back and check the installation requirements which stated that DNS is required.</p>
 
-<h2 id="setting-up-dns">Setting up DNS</h2>
+<h1 id="setting-up-dns">Setting up DNS</h1>
 
 <p>There are 2 software people usually use to setup DNS. One is <a href="https://www.isc.org/downloads/bind/"><code>BIND</code></a> and the other is <a href="http://www.thekelleys.org.uk/dnsmasq/doc.html"><code>dnsmasq</code></a>. Setting up <code>dnsmasq</code> is much easier than <code>BIND</code>. Beside a light weight DNS, it also comes with a light weight DHCP server. <code>dnsmasq</code> reads its configurations from <code>/etc/dnsmasq.conf</code>.</p>
 
-<p>The following are some options I set to setup a local DNS.
+<h2 id="server-side">Server Side</h2>
+
+<p>In <code>/etc/dnsmaq.conf</code>:
 - <code>server=8.8.8.8</code>: forward all queries not found locally to the upstream DNS <code>8.8.8.8</code>.
 - <code>addn-hosts=/etc/hosts_domjudge</code>: <code>dnsmasq</code> reads additional host pairs from <code>/etc/hosts_domjudge</code>, where I set the name of each host manually.
 - <code>expand-hosts</code> and <code>domain=domjudge,192.168.218.0/24</code>: all machines under <code>192.168.218.0/24</code> have their FQDN end with <code>domjudge</code>, and if the domain name written in <code>/etc/hosts_dojudge</code> doesn&rsquo;t end with <code>domjudge</code>, <code>dnsmaq</code> will automatically append it.</p>
+
+<p>Remember to start and enable <code>dnsmasq</code> via <code>systemctl</code>. If starting failed, reboot the host and <code>systemd-resolved</code> will no longer be in your way.</p>
+
+<h2 id="client-side">Client Side</h2>
+
+<p>The DNS upstream server is set in <code>/etc/resolv.conf</code>. Linux will only use the first <code>nameserver</code> entry. Hence, we have to insert the <code>nameserver</code> in the first place. This can usually be done by saving <code>prepend domain-name-servers [DNS IP];</code> to <code>/etc/dhcp/dhclient.conf</code> and restarting NetworkManager.
+For some reason, the above doesn&rsquo;t work when there are changes made from Gnome&rsquo;s Network settings. And we will have to set it with <code>nmcli</code>:</p>
+
+<ol>
+<li>Identify the active connection: <code>nmcli -t connection show --active | grep '\:.*ethernet\|\:.*wireless' | head -n 1 | cut -d ':' -f 2</code></li>
+<li>Set the upstream DNS: <code>sudo nmcli connection modify [the active connection ID] ipv4.dns [DNS IP]</code></li>
+<li>Restart NetworkManager: <code>sudo systemctl restart NetworkManager</code></li>
+</ol>
+
+<h2 id="example">Example</h2>
 
 <p>Let&rsquo;s say we have an entry <code>192.168.218.1 01 master01.domjudge</code> in <code>/etc/hosts_domjudge</code>. Our query results will be:</p>
 
@@ -252,17 +305,17 @@ document.addEventListener("DOMContentLoaded", function() {
 </tbody>
 </table>
 
-<h2 id="firewall">Firewall</h2>
+<h1 id="firewall">Firewall</h1>
 
 <p>After setting up the DNS, I ran into a weird problem. I could access the DNS service on the same computer but not other computers. <code>sudo systemctl status dnsmasq</code> seemed fine. <code>journalctl</code> didn&rsquo;t report any thing weird. Checking port status with <code>sudo netstat -antup</code>, <code>dnsmasq</code> was also listening on the desired port. Using <code>nmap</code> to check open ports on the DNS host from other computers didn&rsquo;t showed any trace of DNS service. I was so confused. An idea then flashed through my mind. Maybe it was the firewall blocking the packages. I tried to get some information with <code>firewall-cmd --list-all-zones</code>, but it replied that <code>firewalld</code> is not running! I was shocked because I didn&rsquo;t disable or stop <code>firewalld</code> and it&rsquo;d be extremely dangerous if no firewall was running. Fortunately, <code>iptables</code> was up and doing its job. I then discovered that <code>os_firewall_use_firewalld=True</code> should be set in the Openshift host file for it to enforce <code>firewalld</code> instead of <code>iptables</code>. While it is recommended to use <code>firewalld</code>, <code>iptables</code> is the default.</p>
 
-<h3 id="allow-dns-queries-with-iptables">Allow DNS Queries with <code>iptables</code></h3>
+<h2 id="allow-dns-queries-with-iptables">Allow DNS Queries with <code>iptables</code></h2>
 
 <p>I was tricked by <code>iptables</code> because of its rule ordering. The rules are evaluated from top to bottom. Whenever a rule is matched, the corresponding action will be done and no further rules will be used. Thus, if the chain has <code>DROP all -- any any anywhere anywhere</code>, appending <code>ACCEPT all -- any any anywhere anywhere</code> will have utterly no effect. The right way of doing this is:
 1. Check <code>iptables</code> with line numbers annotated: <code>sudo iptables -L -v --line-numbers</code>
 2. Insert the new <code>ACCEPT</code> rule before the <code>DROP all</code> rule: <code>iptables -I [chain name] [line number] [stuff to accept] -j ACCEPT</code>. For example, <code>sudo iptables -I INPUT 7 -p tcp --sport 53 -j ACCEPT</code></p>
 
-<h3 id="allow-dns-queries-with-firewalld">Allow DNS Queries with <code>firewalld</code></h3>
+<h2 id="allow-dns-queries-with-firewalld">Allow DNS Queries with <code>firewalld</code></h2>
 
 <p>There is always a good reason behind when a software is frequently being recommended. In this case, running <code>sudo firewall-cmd --add-service=dns --permanent &amp;&amp; sudo firewall-cmd reload</code> will do the job.</p>
 
@@ -287,7 +340,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <p>These were the problems I met:
 - <code>ansible-playbook</code> failed: the connection to the server 8443 was refused: I thought there was some process occupying port 8443. In the end, it was the DNS not configured correctly.
 - <code>ansible-playbook</code> failed: Wait for control plane pods to appear: DNS not configured correctly. In my case, I used <code>01</code> as the domain name for master. I wasn&rsquo;t aware a valid domain for HTTP or HTTPS shouldn&rsquo;t be merely composed with numbers.
-- <code>anisble-playbook</code> failed somewhere else with pod logs complaining API service not available:</p>
+- <code>anisble-playbook</code> failed somewhere else with pod logs complaining API service not available: either DNS not configured correctly or port being occupied by another service.</p>
 
 <div class="admonition">
     
@@ -307,7 +360,7 @@ document.addEventListener("DOMContentLoaded", function() {
         Under Construction
     </span>
 
-    <div class="content"><p>May 23, 2019</p>
+    <div class="content"><p>May 25, 2019</p>
 </div>
 </div>
 
