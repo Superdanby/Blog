@@ -60,9 +60,9 @@ The latest official release of Openshift is version 3.11. It uses Ansible playbo
 
 At first, I chose 2 machines and tried to use their IP to setup a small cluster. The components are 1 master + infra node and 1 compute node. The install went smoothly without any error produced. Verifying the installation from command line with `sudo oc get pods` also seemed fine. I was so excited until I found that I couldn't access the web console. Apparently, something gone wrong. I didn't found many people have the same problem as mine. In most cases, web console not showing up always comes with an installation error. Not getting any constructive feedback from Googling, I then went back and check the installation requirements which stated that DNS is required.
 
-|----------------|---------|
+| 01 | 02 |
+| -- | -- |
 | master + infra | compute |
-|----------------|---------|
 
 # Setting up DNS
 
@@ -128,9 +128,9 @@ The DNS settings above was formed after many tries. Prior to that, I had have me
 
 Going back to Openshift installation, I had the host mapping: 1 master + infra Node with `dnsmasq` and 2 compute nodes.
 
-|----------------------|---------|---------|
+| master01.domjudge | compute02.domjudge | compute03.domjudge |
+| ----------------- | ------------------ | ------------------ |
 | master + infra + DNS | compute | compute |
-|----------------------|---------|---------|
 
 This was the first time I got to setup a DNS. The DNS settings above had been corrected many times after I met the following issues installing the cluster:
 
@@ -144,9 +144,32 @@ The first 2 were resolved by correcting DNS settings. However, after a long inve
 
 This time, I had 1 master node, 1 infra node with DNS, 1 compute node.
 
-|--------|-------------|---------|
+| master01.domjudge | infra02.domjudge | compute03.domjudge |
+| ----------------- | ---------------- | ------------------ |
 | master | infra + DNS | compute |
-|--------|-------------|---------|
+
+All installation succeeded without a hiccup!
+
+## Verifying the Installation
+
+On master node:
+
+1. Check if all nodes are up: `sudo oc get nodes`
+2. Check if all pods are ready: `sudo oc get pods --all-namespaces`
+3. Check if the web console can be reached: `http://[master domain name]:8443` or `https://[master domain name]:8443`
+    - If `http` or `https` isn't given explicitly, you may see some broken encoding characters instead of the login page.
+
+If anything seems not quite right, a further [inspection](#debugging-installation-issues) is recommended.
+
+# Openshift Web Console
+
+We'll need to setup an account to access the web console. I chose [`htpasswd` as my identity provider](https://docs.okd.io/latest/install_config/configuring_authentication.html#identity-providers-ansible).
+
+On master node:
+
+1. Create an user: `sudo htpasswd /etc/origin/master/htpasswd [username]`
+2. Give the user super powers: `sudo oc adm policy add-cluster-role-to-user cluster-admin [username] --rolebinding-name=cluster-admins`
+Before starting any project, we'll need an account
 
 {{% admonition title="Under Construction" color="yellow" %}}
 May 25, 2019
