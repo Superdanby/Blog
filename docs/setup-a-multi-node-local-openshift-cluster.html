@@ -163,7 +163,8 @@ document.addEventListener("DOMContentLoaded", function() {
 <li><a href="#application-deployment">Application Deployment</a>
 <ul>
 <li><a href="#running-privileged-applications">Running Privileged Applications</a></li>
-<li><a href="#cluster-console">Cluster Console</a></li>
+<li><a href="#setting-up-persistent-volume">Setting up Persistent Volume</a></li>
+<li><a href="#using-openshift">Using Openshift</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -584,17 +585,83 @@ For some reason, the above doesn&rsquo;t work when there are changes made from G
 
 <h2 id="running-privileged-applications">Running Privileged Applications</h2>
 
-<p>The domjudge system needs elevated privileges to work. While my account was in the cluster administrator category, the app must have an privileged Service Account execute it to gain privileged access.</p>
+<p>The domjudge system needs elevated privileges to work. While my account was bound to the cluster admins, the app must have an privileged Service Account to execute it to gain privileged access.</p>
 
-<p>local volume</p>
+<ol>
+<li>Create an Service Account: <code>sudo oc create [name] -n [namespace]</code></li>
+<li>Give the Service Account privileges: <code>sudo oc adm policy add-scc-to-user privileged -z [name] -n [namespace]</code></li>
+<li>Associate the app to this particular service account by specifying in the app&rsquo;s Deployment Config:</li>
+</ol>
 
-<p>running privileged container</p>
+<pre><code class="language-YAML=">apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  name: pod_name
+  namespace: project_name
+spec:
+  selector:
+    app: app_label
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: app_label
+    spec:
+      containers:
+        - args:
+          - --arg_name=arg_value
+          env:
+          - name: env_name
+            value: env_value
+          image: ' '
+          imagePullPolicy: Always
+          name: container_name
+          resources:
+              requests:
+                  cpu: 1500m
+                  memory: 2000Mi
+              limits:
+                  cpu: 2
+                  memory: 3Gi
+          securityContext:
+            privileged: true
+      serviceAccountName: service_account_name
+      serviceAccount: service_account_name
+  triggers:
+    - type: &quot;ConfigChange&quot;
+    - type: &quot;ImageChange&quot;
+      imageChangeParams:
+        automatic: true
+        containerNames:
+          - container_name
+        from:
+          kind: &quot;ImageStreamTag&quot;
+          name: &quot;image_stream_name:version&quot;
+  strategy:
+    type: &quot;Recreate&quot;
+  revisionHistoryLimit: 2
+  minReadySeconds: 0
+</code></pre>
 
-<p>accessing the container logs events selectors</p>
+<h2 id="setting-up-persistent-volume">Setting up Persistent Volume</h2>
 
-<h2 id="cluster-console">Cluster Console</h2>
+<p>The Domjudge system requires a database.</p>
 
-<p>This is where the administrator
+<p>The easiest solution is using Host Path. On whatever machine the pod is running, it will use the host path provided as its storage. I went for this solution because I didn&rsquo;t have enough time setting up other solutions. <strong>I highly recommend one to setup NFS or <a href="https://docs.okd.io/latest/install_config/configuring_local.html">local volume</a></strong></p>
+
+<p>To prevent the database pod to respawn on other nodes, I added <code>Nodename: [database node]</code> to <a href="https://github.com/Superdanby/Openshift-Ansible-Domjudge/blob/master/openshift_domjudge_config/deploy_config/mariadb.yaml">its Deployment Config</a>.</p>
+
+<h2 id="using-openshift">Using Openshift</h2>
+
+<p>I found the documentation not so newbie-friendly. Explanations and examples seem to be scattered around, especially for the configuration file guides. It was really a struggle to get to know what to write in a configuration file to get the effects I wanted.</p>
+
+<p>I want to highlight 2 places in the documentation to make our lives easier:</p>
+
+<ol>
+<li><a href="https://docs.okd.io/latest/cli_reference/basic_cli_operations.html">CLI reference guide</a></li>
+<li><a href="https://docs.okd.io/latest/rest_api/index.html">REST API reference</a>: it contains all fields for the configuration files. Although it doesn&rsquo;t have all the option listed for a field, it will show the explanation for that field when your mouse is hovering on it. It is also good for people to check if their indent is correct.</li>
+</ol>
+
 <div class="admonition">
     
     
@@ -615,7 +682,7 @@ For some reason, the above doesn&rsquo;t work when there are changes made from G
 
     <div class="content"><p>May 25, 2019</p>
 </div>
-</div></p>
+</div>
 <div class="footnotes">
 
 <hr />

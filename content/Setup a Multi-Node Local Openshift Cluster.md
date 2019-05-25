@@ -195,18 +195,80 @@ Here are some essential components the cluster administrator needs to know:
 
 ## Running Privileged Applications
 
-The domjudge system needs elevated privileges to work. While my account was in the cluster administrator category, the app must have an privileged Service Account execute it to gain privileged access.
+The domjudge system needs elevated privileges to work. While my account was bound to the cluster admins, the app must have an privileged Service Account to execute it to gain privileged access.
 
-local volume
+1. Create an Service Account: `sudo oc create [name] -n [namespace]`
+2. Give the Service Account privileges: `sudo oc adm policy add-scc-to-user privileged -z [name] -n [namespace]`
+3. Associate the app to this particular service account by specifying in the app's Deployment Config:
 
-running privileged container
+```YAML=
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  name: pod_name
+  namespace: project_name
+spec:
+  selector:
+    app: app_label
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: app_label
+    spec:
+      containers:
+        - args:
+          - --arg_name=arg_value
+          env:
+          - name: env_name
+            value: env_value
+          image: ' '
+          imagePullPolicy: Always
+          name: container_name
+          resources:
+              requests:
+                  cpu: 1500m
+                  memory: 2000Mi
+              limits:
+                  cpu: 2
+                  memory: 3Gi
+          securityContext:
+            privileged: true
+      serviceAccountName: service_account_name
+      serviceAccount: service_account_name
+  triggers:
+    - type: "ConfigChange"
+    - type: "ImageChange"
+      imageChangeParams:
+        automatic: true
+        containerNames:
+          - container_name
+        from:
+          kind: "ImageStreamTag"
+          name: "image_stream_name:version"
+  strategy:
+    type: "Recreate"
+  revisionHistoryLimit: 2
+  minReadySeconds: 0
+```
 
-accessing the container logs events selectors
+## Setting up Persistent Volume
 
+The Domjudge system requires a database.
 
-## Cluster Console
+The easiest solution is using Host Path. On whatever machine the pod is running, it will use the host path provided as its storage. I went for this solution because I didn't have enough time setting up other solutions. **I highly recommend one to setup NFS or [local volume](https://docs.okd.io/latest/install_config/configuring_local.html)**
 
-This is where the administrator
+To prevent the database pod to respawn on other nodes, I added `Nodename: [database node]` to [its Deployment Config](https://github.com/Superdanby/Openshift-Ansible-Domjudge/blob/master/openshift_domjudge_config/deploy_config/mariadb.yaml).
+
+## Using Openshift
+
+I found the documentation not so newbie-friendly. Explanations and examples seem to be scattered around, especially for the configuration file guides. It was really a struggle to get to know what to write in a configuration file to get the effects I wanted.
+
+I want to highlight 2 places in the documentation to make our lives easier:
+
+1. [CLI reference guide](https://docs.okd.io/latest/cli_reference/basic_cli_operations.html)
+2. [REST API reference](https://docs.okd.io/latest/rest_api/index.html): it contains all fields for the configuration files. Although it doesn't have all the option listed for a field, it will show the explanation for that field when your mouse is hovering on it. It is also good for people to check if their indent is correct.
+
 {{% admonition title="Under Construction" color="yellow" %}}
 May 25, 2019
 {{% /admonition %}}
