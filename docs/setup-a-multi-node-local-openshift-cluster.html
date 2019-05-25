@@ -151,11 +151,20 @@ document.addEventListener("DOMContentLoaded", function() {
 </ul></li>
 <li><a href="#debugging-installation-issues">Debugging Installation Issues</a></li>
 <li><a href="#host-mapping-messed-up">Host Mapping Messed up</a></li>
+<li><a href="#pods-per-core">Pods per Core</a></li>
 <li><a href="#successful-installation">Successful Installation</a>
 <ul>
 <li><a href="#verifying-the-installation">Verifying the Installation</a></li>
 </ul></li>
-<li><a href="#openshift-web-console">Openshift Web Console</a></li>
+<li><a href="#openshift-web-console">Openshift Web Console</a>
+<ul>
+<li><a href="#usage">Usage</a></li>
+</ul></li>
+<li><a href="#application-deployment">Application Deployment</a>
+<ul>
+<li><a href="#running-privileged-applications">Running Privileged Applications</a></li>
+<li><a href="#cluster-console">Cluster Console</a></li>
+</ul></li>
 </ul>
 </nav>
             </div>
@@ -321,13 +330,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <h1 id="first-try">First Try</h1>
 
-<p>The latest official release of Openshift is version 3.11. It uses Ansible playbooks to install the Openshift cluster. The commands are <code>ansible-playbook -i [path_to_inventory_file] playbooks/prerequisites.yml</code> and <code>ansible-playbook -i [path_to_inventory_file] playbooks/deploy_cluster.yml</code>.</p>
+<p>The latest official release of Openshift is version 3.11. It uses Ansible playbooks to install the Openshift cluster. The commands are:</p>
+
+<ol>
+<li><code>ansible-playbook -i [path_to_inventory_file] playbooks/prerequisites.yml</code></li>
+<li><code>ansible-playbook -i [path_to_inventory_file] playbooks/deploy_cluster.yml</code>.</li>
+</ol>
 
 <p>At first, I chose 2 machines and tried to use their IP to setup a small cluster. The components are 1 master + infra node and 1 compute node. The install went smoothly without any error produced. Verifying the installation from command line with <code>sudo oc get pods</code> also seemed fine. I was so excited until I found that I couldn&rsquo;t access the web console. Apparently, something gone wrong. I didn&rsquo;t found many people have the same problem as mine. In most cases, web console not showing up always comes with an installation error. Not getting any constructive feedback from Googling, I then went back and check the installation requirements which stated that DNS is required.</p>
 
-<p>| 01 | 02 |
-| &ndash; | &ndash; |
-| master + infra | compute |</p>
+<table>
+<thead>
+<tr>
+<th>01</th>
+<th>02</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>master + infra</td>
+<td>compute</td>
+</tr>
+</tbody>
+</table>
 
 <h1 id="setting-up-dns">Setting up DNS</h1>
 
@@ -336,15 +362,15 @@ document.addEventListener("DOMContentLoaded", function() {
 <h2 id="server-side">Server Side</h2>
 
 <p>In <code>/etc/dnsmaq.conf</code>:
-- <code>server=8.8.8.8</code>: forward all queries not found locally to the upstream DNS <code>8.8.8.8</code>.
-- <code>addn-hosts=/etc/hosts_domjudge</code>: <code>dnsmasq</code> reads additional host pairs from <code>/etc/hosts_domjudge</code>, where I set the name of each host manually.
-- <code>expand-hosts</code> and <code>domain=domjudge,192.168.218.0/24</code>: all machines under <code>192.168.218.0/24</code> have their FQDN end with <code>domjudge</code>, and if the domain name written in <code>/etc/hosts_dojudge</code> doesn&rsquo;t end with <code>domjudge</code>, <code>dnsmaq</code> will automatically append it.</p>
+- <code>server=8.8.8.8</code>: set upstream DNS to <code>8.8.8.8</code>.
+- <code>addn-hosts=/etc/hosts_domjudge</code>: reads additional host pairs from <code>/etc/hosts_domjudge</code>, where I set the name of each host manually.
+- <code>expand-hosts</code> + <code>domain=domjudge,192.168.218.0/24</code>: all machines under <code>192.168.218.0/24</code> have their FQDN end with <code>domjudge</code>, and if the domain names written in host files don&rsquo;t end with <code>domjudge</code>, <code>dnsmaq</code> will automatically append it.</p>
 
-<p>Remember to start and enable <code>dnsmasq</code> via <code>systemctl</code>. If starting failed, reboot the host and <code>systemd-resolved</code> will no longer be in your way.</p>
+<p>Remember to start and enable <code>dnsmasq</code> via <code>systemctl</code>. If starting failed, it is possible that <code>systemd-resolved</code> is occupying port 53. A reboot will resolve it.</p>
 
 <h2 id="client-side">Client Side</h2>
 
-<p>The DNS upstream server is set in <code>/etc/resolv.conf</code>. Linux will only use the first <code>nameserver</code> entry. Hence, we have to insert the <code>nameserver</code> in the first place. This can usually be done by saving <code>prepend domain-name-servers [DNS IP];</code> to <code>/etc/dhcp/dhclient.conf</code> and restarting NetworkManager.
+<p>The DNS upstream server is set in <code>/etc/resolv.conf</code>. Linux will only use the first <code>nameserver</code> entry in default. Hence, we have to insert the <code>nameserver</code> in the first place. This can usually be done by saving <code>prepend domain-name-servers [DNS IP];</code> to <code>/etc/dhcp/dhclient.conf</code> and restarting NetworkManager.
 For some reason, the above doesn&rsquo;t work when there are changes made from Gnome&rsquo;s Network settings. And we will have to set it with <code>nmcli</code>:</p>
 
 <ol>
@@ -458,6 +484,12 @@ For some reason, the above doesn&rsquo;t work when there are changes made from G
 
 <p>The first 2 were resolved by correcting DNS settings. However, after a long investigation, the last one was really caused by service port conflict. I tried to modify many port settings in <code>roles/openshift_facts/defaults/main.yml</code>, but it was all in vain. I should really separate some services from master node.</p>
 
+<h1 id="pods-per-core">Pods per Core</h1>
+
+<p>I had an misconception of the <code>pods-per-core</code> setting at first. I thought it was a way to limit the resource of a pod or a container. Our judge host should be using 1 CPU only when evaluating the performance of a program. So, I set <code>pods-per-core</code> to 1(default is 10, maximum is 250).</p>
+
+<p>Our machines comes with 4 cores. And the compute nodes have 4 pods running on each node in default. And I couldn&rsquo;t deploy any more pods after the installation completed. Finding the fact that I configured the whole cluster the wrong way, I was forced to do a re-installation.</p>
+
 <h1 id="successful-installation">Successful Installation</h1>
 
 <p>This time, I had 1 master node, 1 infra node with DNS, 1 compute node.</p>
@@ -500,16 +532,69 @@ For some reason, the above doesn&rsquo;t work when there are changes made from G
 
 <h1 id="openshift-web-console">Openshift Web Console</h1>
 
-<p>We&rsquo;ll need to setup an account to access the web console. I chose <a href="https://docs.okd.io/latest/install_config/configuring_authentication.html#identity-providers-ansible"><code>htpasswd</code> as my identity provider</a>.</p>
+<p>An account was needed to access the web console. I had chosen <a href="https://docs.okd.io/latest/install_config/configuring_authentication.html#identity-providers-ansible"><code>htpasswd</code> as my identity provider</a>. Therefore, the new account was created on master node with: <code>sudo htpasswd /etc/origin/master/htpasswd [username]</code>. Sadly, I couldn&rsquo;t access the Cluster Console. I quickly found out it was due to lack of privileges. <code>sudo oc adm policy add-cluster-role-to-user cluster-admin [username] --rolebinding-name=cluster-admins</code> did the trick for me. And I was able to access the Cluster Console, Application Console, and Service Catalog from menu on the top left corner of the web console.</p>
 
-<p>On master node:</p>
+<h2 id="usage">Usage</h2>
 
-<ol>
-<li>Create an user: <code>sudo htpasswd /etc/origin/master/htpasswd [username]</code></li>
-<li>Give the user super powers: <code>sudo oc adm policy add-cluster-role-to-user cluster-admin [username] --rolebinding-name=cluster-admins</code>
-Before starting any project, we&rsquo;ll need an account</li>
-</ol>
+<p>Cluster Console: monitor cluster status and events, check on all nodes, define and change all configurations, user management, read container logs, access a running container, show cluster resource with Grafana</p>
 
+<p>Application Console: change the number of replicas easily</p>
+
+<h1 id="application-deployment">Application Deployment</h1>
+
+<p>There wasn&rsquo;t any big issue deploying our Domjudge system. But for writing the configuration files, I think the documentation and examples aren&rsquo;t enough on the Internet. Sometimes, I would also check out Kubernetes examples as references.</p>
+
+<p>Here are some essential components the cluster administrator needs to know:</p>
+
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Explanation</th>
+<th>Example</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Image Stream</td>
+<td>internal registry, similar to an internal Docker Hub</td>
+<td>save an image from Docker Hub to Image Stream A for later use</td>
+</tr>
+
+<tr>
+<td>Build Config</td>
+<td>build an image from one Image Stream and output to another</td>
+<td>build more layers to the image from Image Stream A and output to Image Stream B</td>
+</tr>
+
+<tr>
+<td>Deploy Config</td>
+<td>defines how to run the application, what scale it needs</td>
+<td>run 10 replicas of an image form Image Stream B with the label <code>app=hi</code></td>
+</tr>
+
+<tr>
+<td>Service</td>
+<td>make the running app available inside or outside the cluster</td>
+<td>select pods whose label are <code>app=hi</code> and advertise them at 172.30.123.123(internal), 192.168.123.123(external), and 123.123.123.123(external)</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="running-privileged-applications">Running Privileged Applications</h2>
+
+<p>The domjudge system needs elevated privileges to work. While my account was in the cluster administrator category, the app must have an privileged Service Account execute it to gain privileged access.</p>
+
+<p>local volume</p>
+
+<p>running privileged container</p>
+
+<p>accessing the container logs events selectors</p>
+
+<h2 id="cluster-console">Cluster Console</h2>
+
+<p>This is where the administrator
 <div class="admonition">
     
     
@@ -530,7 +615,7 @@ Before starting any project, we&rsquo;ll need an account</li>
 
     <div class="content"><p>May 25, 2019</p>
 </div>
-</div>
+</div></p>
 <div class="footnotes">
 
 <hr />

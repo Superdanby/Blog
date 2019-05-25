@@ -56,12 +56,15 @@ I've read [somewhere](https://en-wiki.ikoula.com/en/Deploy_a_cluster_Kubernetes_
 
 # First Try
 
-The latest official release of Openshift is version 3.11. It uses Ansible playbooks to install the Openshift cluster. The commands are `ansible-playbook -i [path_to_inventory_file] playbooks/prerequisites.yml` and `ansible-playbook -i [path_to_inventory_file] playbooks/deploy_cluster.yml`.
+The latest official release of Openshift is version 3.11. It uses Ansible playbooks to install the Openshift cluster. The commands are:
+
+1. `ansible-playbook -i [path_to_inventory_file] playbooks/prerequisites.yml`
+2. `ansible-playbook -i [path_to_inventory_file] playbooks/deploy_cluster.yml`.
 
 At first, I chose 2 machines and tried to use their IP to setup a small cluster. The components are 1 master + infra node and 1 compute node. The install went smoothly without any error produced. Verifying the installation from command line with `sudo oc get pods` also seemed fine. I was so excited until I found that I couldn't access the web console. Apparently, something gone wrong. I didn't found many people have the same problem as mine. In most cases, web console not showing up always comes with an installation error. Not getting any constructive feedback from Googling, I then went back and check the installation requirements which stated that DNS is required.
 
 | 01 | 02 |
-| -- | -- |
+| --- | --- |
 | master + infra | compute |
 
 # Setting up DNS
@@ -71,15 +74,15 @@ There are 2 software people usually use to setup DNS. One is [`BIND`](https://ww
 ## Server Side
 
 In `/etc/dnsmaq.conf`:
-- `server=8.8.8.8`: forward all queries not found locally to the upstream DNS `8.8.8.8`.
-- `addn-hosts=/etc/hosts_domjudge`: `dnsmasq` reads additional host pairs from `/etc/hosts_domjudge`, where I set the name of each host manually.
-- `expand-hosts` and `domain=domjudge,192.168.218.0/24`: all machines under `192.168.218.0/24` have their FQDN end with `domjudge`, and if the domain name written in `/etc/hosts_dojudge` doesn't end with `domjudge`, `dnsmaq` will automatically append it.
+- `server=8.8.8.8`: set upstream DNS to `8.8.8.8`.
+- `addn-hosts=/etc/hosts_domjudge`: reads additional host pairs from `/etc/hosts_domjudge`, where I set the name of each host manually.
+- `expand-hosts` + `domain=domjudge,192.168.218.0/24`: all machines under `192.168.218.0/24` have their FQDN end with `domjudge`, and if the domain names written in host files don't end with `domjudge`, `dnsmaq` will automatically append it.
 
-Remember to start and enable `dnsmasq` via `systemctl`. If starting failed, reboot the host and `systemd-resolved` will no longer be in your way.
+Remember to start and enable `dnsmasq` via `systemctl`. If starting failed, it is possible that `systemd-resolved` is occupying port 53. A reboot will resolve it.
 
 ## Client Side
 
-The DNS upstream server is set in `/etc/resolv.conf`. Linux will only use the first `nameserver` entry. Hence, we have to insert the `nameserver` in the first place. This can usually be done by saving `prepend domain-name-servers [DNS IP];` to `/etc/dhcp/dhclient.conf` and restarting NetworkManager.
+The DNS upstream server is set in `/etc/resolv.conf`. Linux will only use the first `nameserver` entry in default. Hence, we have to insert the `nameserver` in the first place. This can usually be done by saving `prepend domain-name-servers [DNS IP];` to `/etc/dhcp/dhclient.conf` and restarting NetworkManager.
 For some reason, the above doesn't work when there are changes made from Gnome's Network settings. And we will have to set it with `nmcli`:
 
 1. Identify the active connection: `nmcli -t connection show --active | grep '\:.*ethernet\|\:.*wireless' | head -n 1 | cut -d ':' -f 2`
@@ -140,6 +143,12 @@ This was the first time I got to setup a DNS. The DNS settings above had been co
 
 The first 2 were resolved by correcting DNS settings. However, after a long investigation, the last one was really caused by service port conflict. I tried to modify many port settings in `roles/openshift_facts/defaults/main.yml`, but it was all in vain. I should really separate some services from master node.
 
+# Pods per Core
+
+I had an misconception of the `pods-per-core` setting at first. I thought it was a way to limit the resource of a pod or a container. Our judge host should be using 1 CPU only when evaluating the performance of a program. So, I set `pods-per-core` to 1(default is 10, maximum is 250).
+
+Our machines comes with 4 cores. And the compute nodes have 4 pods running on each node in default. And I couldn't deploy any more pods after the installation completed. Finding the fact that I configured the whole cluster the wrong way, I was forced to do a re-installation.
+
 # Successful Installation
 
 This time, I had 1 master node, 1 infra node with DNS, 1 compute node.
@@ -163,14 +172,41 @@ If anything seems not quite right, a further [inspection](#debugging-installatio
 
 # Openshift Web Console
 
-We'll need to setup an account to access the web console. I chose [`htpasswd` as my identity provider](https://docs.okd.io/latest/install_config/configuring_authentication.html#identity-providers-ansible).
+An account was needed to access the web console. I had chosen [`htpasswd` as my identity provider](https://docs.okd.io/latest/install_config/configuring_authentication.html#identity-providers-ansible). Therefore, the new account was created on master node with: `sudo htpasswd /etc/origin/master/htpasswd [username]`. Sadly, I couldn't access the Cluster Console. I quickly found out it was due to lack of privileges. `sudo oc adm policy add-cluster-role-to-user cluster-admin [username] --rolebinding-name=cluster-admins` did the trick for me. And I was able to access the Cluster Console, Application Console, and Service Catalog from menu on the top left corner of the web console.
 
-On master node:
+## Usage
 
-1. Create an user: `sudo htpasswd /etc/origin/master/htpasswd [username]`
-2. Give the user super powers: `sudo oc adm policy add-cluster-role-to-user cluster-admin [username] --rolebinding-name=cluster-admins`
-Before starting any project, we'll need an account
+Cluster Console: monitor cluster status and events, check on all nodes, define and change all configurations, user management, read container logs, access a running container, show cluster resource with Grafana
 
+Application Console: change the number of replicas easily
+
+# Application Deployment
+
+There wasn't any big issue deploying our Domjudge system. But for writing the configuration files, I think the documentation and examples aren't enough on the Internet. Sometimes, I would also check out Kubernetes examples as references.
+
+Here are some essential components the cluster administrator needs to know:
+
+| Component | Explanation | Example |
+| --------- | ----------- | ------- |
+| Image Stream | internal registry, similar to an internal Docker Hub | save an image from Docker Hub to Image Stream A for later use |
+| Build Config | build an image from one Image Stream and output to another | build more layers to the image from Image Stream A and output to Image Stream B |
+| Deploy Config | defines how to run the application, what scale it needs | run 10 replicas of an image form Image Stream B with the label `app=hi` |
+| Service | make the running app available inside or outside the cluster | select pods whose label are `app=hi` and advertise them at 172.30.123.123(internal), 192.168.123.123(external), and 123.123.123.123(external) |
+
+## Running Privileged Applications
+
+The domjudge system needs elevated privileges to work. While my account was in the cluster administrator category, the app must have an privileged Service Account execute it to gain privileged access.
+
+local volume
+
+running privileged container
+
+accessing the container logs events selectors
+
+
+## Cluster Console
+
+This is where the administrator
 {{% admonition title="Under Construction" color="yellow" %}}
 May 25, 2019
 {{% /admonition %}}
