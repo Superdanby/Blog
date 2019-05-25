@@ -164,8 +164,10 @@ document.addEventListener("DOMContentLoaded", function() {
 <ul>
 <li><a href="#running-privileged-applications">Running Privileged Applications</a></li>
 <li><a href="#setting-up-persistent-volume">Setting up Persistent Volume</a></li>
-<li><a href="#using-openshift">Using Openshift</a></li>
 </ul></li>
+<li><a href="#using-openshift">Using Openshift</a></li>
+<li><a href="#the-complete-example">The Complete Example</a></li>
+<li><a href="#special-thanks">Special Thanks</a></li>
 </ul>
 </nav>
             </div>
@@ -651,7 +653,7 @@ spec:
 
 <p>To prevent the database pod to respawn on other nodes, I added <code>Nodename: [database node]</code> to <a href="https://github.com/Superdanby/Openshift-Ansible-Domjudge/blob/master/openshift_domjudge_config/deploy_config/mariadb.yaml">its Deployment Config</a>.</p>
 
-<h2 id="using-openshift">Using Openshift</h2>
+<h1 id="using-openshift">Using Openshift</h1>
 
 <p>I found the documentation not so newbie-friendly. Explanations and examples seem to be scattered around, especially for the configuration file guides. It was really a struggle to get to know what to write in a configuration file to get the effects I wanted.</p>
 
@@ -662,27 +664,18 @@ spec:
 <li><a href="https://docs.okd.io/latest/rest_api/index.html">REST API reference</a>: it contains all fields for the configuration files. Although it doesn&rsquo;t have all the option listed for a field, it will show the explanation for that field when your mouse is hovering on it. It is also good for people to check if their indent is correct.</li>
 </ol>
 
-<div class="admonition">
-    
-    
+<h1 id="the-complete-example">The Complete Example</h1>
 
-    
-        
-        
-    
-    
-    
-    
-        
-    
+<p>Aside from just setting up an Openshift cluster, I automated many installation processes in order to reproduce the whole environment faster. The complete example is on my <a href="https://github.com/Superdanby/Openshift-Ansible-Domjudge">Github repository</a>. Feel free using it to create your first local-hosted Openshift cluster.</p>
 
-    <span class="title" style="background-color: #ffc107">
-        Under Construction
-    </span>
+<h1 id="special-thanks">Special Thanks</h1>
 
-    <div class="content"><p>May 25, 2019</p>
-</div>
-</div>
+<p>There are 2 people I would like to thank. They were extremely helpful throughout installation process.</p>
+
+<ol>
+<li><a href="https://www.linkedin.com/in/chun-hung-tseng/">Henry</a>: sharp observation skills and good sense when encountering a problem. I often discuss the problems I meet with him. He was also responsible for modifying the judge images to make them suite our needs.</li>
+<li><a href="https://it.ccu.edu.tw/center_department.php?section=2">林俊男</a>: he helped us a lot with PXE configuration for uploading and deploying base operating system images. He&rsquo;s also responsible for networking outside the cluster and the hardware equipment used for the contest.</li>
+</ol>
 <div class="footnotes">
 
 <hr />

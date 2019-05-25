@@ -260,7 +260,7 @@ The easiest solution is using Host Path. On whatever machine the pod is running,
 
 To prevent the database pod to respawn on other nodes, I added `Nodename: [database node]` to [its Deployment Config](https://github.com/Superdanby/Openshift-Ansible-Domjudge/blob/master/openshift_domjudge_config/deploy_config/mariadb.yaml).
 
-## Using Openshift
+# Using Openshift
 
 I found the documentation not so newbie-friendly. Explanations and examples seem to be scattered around, especially for the configuration file guides. It was really a struggle to get to know what to write in a configuration file to get the effects I wanted.
 
@@ -269,6 +269,13 @@ I want to highlight 2 places in the documentation to make our lives easier:
 1. [CLI reference guide](https://docs.okd.io/latest/cli_reference/basic_cli_operations.html)
 2. [REST API reference](https://docs.okd.io/latest/rest_api/index.html): it contains all fields for the configuration files. Although it doesn't have all the option listed for a field, it will show the explanation for that field when your mouse is hovering on it. It is also good for people to check if their indent is correct.
 
-{{% admonition title="Under Construction" color="yellow" %}}
-May 25, 2019
-{{% /admonition %}}
+# The Complete Example
+
+Aside from just setting up an Openshift cluster, I automated many installation processes in order to reproduce the whole environment faster. The complete example is on my [Github repository](https://github.com/Superdanby/Openshift-Ansible-Domjudge). Feel free using it to create your first local-hosted Openshift cluster.
+
+# Special Thanks
+
+There are 2 people I would like to thank. They were extremely helpful throughout installation process.
+
+1. [Henry](https://www.linkedin.com/in/chun-hung-tseng/): sharp observation skills and good sense when encountering a problem. I often discuss the problems I meet with him. He was also responsible for modifying the judge images to make them suite our needs.
+2. [林俊男](https://it.ccu.edu.tw/center_department.php?section=2): he helped us a lot with PXE configuration for uploading and deploying base operating system images. He's also responsible for networking outside the cluster and the hardware equipment used for the contest.
