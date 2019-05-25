@@ -9,7 +9,9 @@ math: false
 
 # Motivation
 
-Our school was going to hold a competitive programming contest. This time we were choosing [Domjudge](https://www.domjudge.org/) in favor of [PC^2](https://pc2.ecs.csus.edu/) as our judging system. The former is an open source project, which is pretty convenient for us to modify its content to suite our needs. About its robustness, it was the judging system for ICPC World Final 2019. Our contest was split into 2 groups. Both groups have their own database, server, and judge hosts. It would be ideal for us if we can assign the compute resources dynamically between the contests based on their loading. As [Domjudge provides docker images](https://hub.docker.com/u/domjudge), this is where [Kubernetes](https://kubernetes.io/) comes into play. It allows us to easily manage compute resources for containerized applications. Another advantage is that if a running app dies, Kubernetes is able to recover the app automatically. For example, if a judge crashes for some reason, we don't have to manually determine which machine the judge sits on and restart it from that machine. Kubernetes handles these matters for us instead.
+Our school was going to hold a competitive programming contest. This time we were choosing [Domjudge](https://www.domjudge.org/) in favor of [PC^2](https://pc2.ecs.csus.edu/) as our judging system. The former is an open source project, which is pretty convenient for us to modify its content to suite our needs. About its robustness, it was the judging system for ICPC World Final 2019. Our contest was split into 2 groups. Both groups have their own database, server, and judge hosts.
+
+It would be ideal for us if we can assign the compute resources dynamically between the contests based on their loading. As [Domjudge provides docker images](https://hub.docker.com/u/domjudge), this is where [Kubernetes](https://kubernetes.io/) comes into play. It allows us to easily manage compute resources for containerized applications. Another advantage is that if a running app dies, Kubernetes is able to recover the app automatically. For example, if a judge crashes for some reason, we don't have to manually determine which machine the judge sits on and restart it from that machine. Kubernetes handles these matters for us instead.
 
 | Container Solution | Advantages | Disadvantages | Example Products |
 | ------------------- | ---------- | ------------- | ---------------- |
@@ -99,6 +101,7 @@ After setting up the DNS, I ran into a weird problem. I could access the DNS ser
 ## Allow DNS Queries with `iptables`
 
 I was tricked by `iptables` because of its rule ordering. The rules are evaluated from top to bottom. Whenever a rule is matched, the corresponding action will be done and no further rules will be used. Thus, if the chain has `DROP all -- any any anywhere anywhere`, appending `ACCEPT all -- any any anywhere anywhere` will have utterly no effect. The right way of doing this is:
+
 1. Check `iptables` with line numbers annotated: `sudo iptables -L -v --line-numbers`
 2. Insert the new `ACCEPT` rule before the `DROP all` rule: `iptables -I [chain name] [line number] [stuff to accept] -j ACCEPT`. For example, `sudo iptables -I INPUT 7 -p tcp --sport 53 -j ACCEPT`
 
