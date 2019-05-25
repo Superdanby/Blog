@@ -18,16 +18,16 @@ Our school was going to hold a competitive programming contest. This time we wer
 
 | Container Orchestration Platform | Kubernetes | Openshift[^1] | Docker Swarm |
 | -------------------------------- | ---------- | ------------- | ------------ |
-| *Architecture* | Complex but powerful | Complex but powerful | Simple |
-| Setup | hardest | non trivial installation effort, a working DNS | easy |
-| Scale | [5000 nodes, 150000 pods](https://kubernetes.io/docs/setup/cluster-large/) | [2000 nodes, 150000 pods](https://docs.okd.io/latest/scaling_performance/cluster_limits.html) | ? |
-| Node Recovery | robust | robust | may sometimes fail to recover |
-| Resource Demand | medium | resource heavy | light weight |
-| Monitoring | built-in, web UI | built-in, web UI | third party |
-| SELinux Support | [not ready](https://github.com/kubernetes/kubeadm/issues/279) | fully supported and must be enabled | ? |
-| Readiness | large-scale production ready, various cloud supports | large-scale production ready, various cloud supports | ? |
-| Community | large | medium | small |
-| Backed by | Google, CNCF | Red Hat | Docker |
+| **Architecture** | Complex but powerful | Complex but powerful | Simple |
+| **Setup** | hardest | non trivial installation effort, a working DNS | easy |
+| **Scale** | [5000 nodes, 150000 pods](https://kubernetes.io/docs/setup/cluster-large/) | [2000 nodes, 150000 pods](https://docs.okd.io/latest/scaling_performance/cluster_limits.html) | ? |
+| **Node Recovery** | robust | robust | may sometimes fail to recover |
+| **Resource Demand** | medium | resource heavy | light weight |
+| **Monitoring** | built-in, web UI | built-in, web UI | third party |
+| **SELinux Support** | [not ready](https://github.com/kubernetes/kubeadm/issues/279) | fully supported and must be enabled | ? |
+| **Readiness** | large-scale production ready, various cloud supports | large-scale production ready, various cloud supports | ? |
+| **Community** | large | medium | small |
+| **Backed by** | Google, CNCF | Red Hat | Docker |
 
 [^1]: Openshift is built upon Kubernetes
 
