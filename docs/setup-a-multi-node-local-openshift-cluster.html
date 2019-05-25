@@ -150,7 +150,8 @@ document.addEventListener("DOMContentLoaded", function() {
 <li><a href="#allow-dns-queries-with-firewalld">Allow DNS Queries with <code>firewalld</code></a></li>
 </ul></li>
 <li><a href="#debugging-installation-issues">Debugging Installation Issues</a></li>
-<li><a href="#messed-up-host-mapping">Messed up Host Mapping</a></li>
+<li><a href="#host-mapping-messed-up">Host Mapping Messed up</a></li>
+<li><a href="#successful-installation">Successful Installation</a></li>
 </ul>
 </nav>
             </div>
@@ -421,21 +422,31 @@ For some reason, the above doesn&rsquo;t work when there are changes made from G
 <li>If the API server is up, get events of the cluster: <code>sudo oc get events --all-namespaces</code></li>
 </ol>
 
-<h1 id="messed-up-host-mapping">Messed up Host Mapping</h1>
+<h1 id="host-mapping-messed-up">Host Mapping Messed up</h1>
 
-<p>Going back to Openshift installation, I had the host mapping this time: 1 Master + Infra Node with <code>dnsmasq</code> and 1 Compute Node.</p>
+<p>Going back to Openshift installation, I had the host mapping: 1 master + infra Node with <code>dnsmasq</code> and 2 compute nodes.</p>
 
-<p>|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;|
-| master + infra + DNS | compute |
-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;|</p>
+<p>|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;|
+| master + infra + DNS | compute | compute |
+|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;|</p>
 
-<p>These were the problems I met:</p>
+<p>This was the first time I got to setup a DNS. The DNS settings above had been corrected many times after I met the following issues installing the cluster:</p>
 
-<ul>
+<ol>
 <li><code>ansible-playbook</code> failed: the connection to the server 8443 was refused: I thought there was some process occupying port 8443. In the end, it was the DNS not configured correctly.</li>
 <li><code>ansible-playbook</code> failed: Wait for control plane pods to appear: DNS not configured correctly. In my case, I used <code>01</code> as the domain name for master. I wasn&rsquo;t aware a valid domain for HTTP or HTTPS shouldn&rsquo;t be merely composed with numbers.</li>
 <li><code>anisble-playbook</code> failed somewhere else with pod logs complaining API service not available: either DNS not configured correctly or port being occupied by another service.</li>
-</ul>
+</ol>
+
+<p>The first 2 were resolved by correcting DNS settings. However, after a long investigation, the last one was really caused by service port conflict. I tried to modify many port settings in <code>roles/openshift_facts/defaults/main.yml</code>, but it was all in vain. I should really separate some services from master node.</p>
+
+<h1 id="successful-installation">Successful Installation</h1>
+
+<p>This time, I had 1 master node, 1 infra node with DNS, 1 compute node.</p>
+
+<p>|&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;|
+| master | infra + DNS | compute |
+|&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;|</p>
 
 <div class="admonition">
     

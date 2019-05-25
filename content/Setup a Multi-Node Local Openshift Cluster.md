@@ -124,20 +124,29 @@ The DNS settings above was formed after many tries. Prior to that, I had have me
     3. Get the logs: `sudo oc logs -n [namespace] -f [name]`
 3. If the API server is up, get events of the cluster: `sudo oc get events --all-namespaces`
 
-# Messed up Host Mapping
+# Host Mapping Messed up
 
-Going back to Openshift installation, I had the host mapping this time: 1 Master + Infra Node with `dnsmasq` and 1 Compute Node.
+Going back to Openshift installation, I had the host mapping: 1 master + infra Node with `dnsmasq` and 2 compute nodes.
 
-|----------------------|---------|
-| master + infra + DNS | compute |
-|----------------------|---------|
+|----------------------|---------|---------|
+| master + infra + DNS | compute | compute |
+|----------------------|---------|---------|
 
+This was the first time I got to setup a DNS. The DNS settings above had been corrected many times after I met the following issues installing the cluster:
 
-These were the problems I met:
+1. `ansible-playbook` failed: the connection to the server 8443 was refused: I thought there was some process occupying port 8443. In the end, it was the DNS not configured correctly.
+2. `ansible-playbook` failed: Wait for control plane pods to appear: DNS not configured correctly. In my case, I used `01` as the domain name for master. I wasn't aware a valid domain for HTTP or HTTPS shouldn't be merely composed with numbers.
+3. `anisble-playbook` failed somewhere else with pod logs complaining API service not available: either DNS not configured correctly or port being occupied by another service.
 
-- `ansible-playbook` failed: the connection to the server 8443 was refused: I thought there was some process occupying port 8443. In the end, it was the DNS not configured correctly.
-- `ansible-playbook` failed: Wait for control plane pods to appear: DNS not configured correctly. In my case, I used `01` as the domain name for master. I wasn't aware a valid domain for HTTP or HTTPS shouldn't be merely composed with numbers.
-- `anisble-playbook` failed somewhere else with pod logs complaining API service not available: either DNS not configured correctly or port being occupied by another service.
+The first 2 were resolved by correcting DNS settings. However, after a long investigation, the last one was really caused by service port conflict. I tried to modify many port settings in `roles/openshift_facts/defaults/main.yml`, but it was all in vain. I should really separate some services from master node.
+
+# Successful Installation
+
+This time, I had 1 master node, 1 infra node with DNS, 1 compute node.
+
+|--------|-------------|---------|
+| master | infra + DNS | compute |
+|--------|-------------|---------|
 
 {{% admonition title="Under Construction" color="yellow" %}}
 May 25, 2019
