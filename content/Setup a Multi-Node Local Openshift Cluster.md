@@ -271,7 +271,7 @@ I want to highlight 2 places in the documentation to make our lives easier:
 
 # The Complete Example
 
-Aside from just setting up an Openshift cluster, I automated many installation processes in order to reproduce the whole environment faster. The complete example is on my [Github repository](https://github.com/Superdanby/Openshift-Ansible-Domjudge). Feel free using it to create your first local-hosted Openshift cluster.
+Aside from just setting up an Openshift cluster, I automated many installation processes in order to reproduce the whole environment faster. The complete example is on my [Github repository](https://github.com/Superdanby/Openshift-Ansible-Domjudge). Feel free using it to create your first multi-node local Openshift cluster.
 
 # Special Thanks
 
