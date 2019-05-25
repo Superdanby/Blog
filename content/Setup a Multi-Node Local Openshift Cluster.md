@@ -19,8 +19,22 @@ Our school was going to hold a competitive programming contest. This time we wer
 | Container Orchestration Platform | Setup | Scale | Node Recovery | Resource Needed | Monitoring | Readiness | Community | Backed by |
 | -------------------------------- | ----- | ----- | ------------- | --------------- | ---------- | --------- | --------- | --------- |
 | Kubernetes | hardest | [5000 nodes, 150000 pods](https://kubernetes.io/docs/setup/cluster-large/) | robust | resource heavy | built-in, web UI | large-scale production ready, various cloud supports | large | Google, CNCF |
-| Openshift | non-trivial installation effort, a working DNS | [2000 nodes, 150000 pods](https://docs.okd.io/latest/scaling_performance/cluster_limits.html) | robust | most resource heavy | built-in, web UI | large-scale production ready, various cloud supports | medium | Red Hat |
+| Openshift[^1] | non-trivial installation effort, a working DNS | [2000 nodes, 150000 pods](https://docs.okd.io/latest/scaling_performance/cluster_limits.html) | robust | most resource heavy | built-in, web UI | large-scale production ready, various cloud supports | medium | Red Hat |
 | Docker Swarm | easy | ? | may fail to recover sometimes | light weight | third party | ? | small | Docker |
+
+| Container Orchestration Platform | Kubernetes | Openshift[^1] | Docker Swarm |
+| -------------------------------- | ---------- | ------------- | ------------ |
+| Setup | hardest | non trivial installation effort, a working DNS | easy |
+| Scale | [5000 nodes, 150000 pods](https://kubernetes.io/docs/setup/cluster-large/) | [2000 nodes, 150000 pods](https://docs.okd.io/latest/scaling_performance/cluster_limits.html) | ? |
+| Node Recovery | robust | robust | may sometimes fail to recover |
+| Resource Demand | medium | resource heavy | light weight |
+| Monitoring | built-in, web UI | built-in, web UI | third party |
+| SELinux Support | [not ready](https://github.com/kubernetes/kubeadm/issues/279) | fully supported and must be enabled | ? |
+| Readiness | large-scale production ready, various cloud supports | large-scale production ready, various cloud supports | ? |
+| Community | large | medium | small |
+| Backed by | Google, CNCF | Red Hat | Docker |
+
+[^1]: Openshift is built upon Kubernetes
 
 # From Kubernetes(K8s) to Openshift
 

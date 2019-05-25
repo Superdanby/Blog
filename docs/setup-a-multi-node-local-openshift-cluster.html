@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </tr>
 
 <tr>
-<td>Openshift</td>
+<td>Openshift<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup></td>
 <td>non-trivial installation effort, a working DNS</td>
 <td><a href="https://docs.okd.io/latest/scaling_performance/cluster_limits.html">2000 nodes, 150000 pods</a></td>
 <td>robust</td>
@@ -238,6 +238,82 @@ document.addEventListener("DOMContentLoaded", function() {
 <td>third party</td>
 <td>?</td>
 <td>small</td>
+<td>Docker</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>Container Orchestration Platform</th>
+<th>Kubernetes</th>
+<th>Openshift<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup></th>
+<th>Docker Swarm</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Setup</td>
+<td>hardest</td>
+<td>non trivial installation effort, a working DNS</td>
+<td>easy</td>
+</tr>
+
+<tr>
+<td>Scale</td>
+<td><a href="https://kubernetes.io/docs/setup/cluster-large/">5000 nodes, 150000 pods</a></td>
+<td><a href="https://docs.okd.io/latest/scaling_performance/cluster_limits.html">2000 nodes, 150000 pods</a></td>
+<td>?</td>
+</tr>
+
+<tr>
+<td>Node Recovery</td>
+<td>robust</td>
+<td>robust</td>
+<td>may sometimes fail to recover</td>
+</tr>
+
+<tr>
+<td>Resource Demand</td>
+<td>medium</td>
+<td>resource heavy</td>
+<td>light weight</td>
+</tr>
+
+<tr>
+<td>Monitoring</td>
+<td>built-in, web UI</td>
+<td>built-in, web UI</td>
+<td>third party</td>
+</tr>
+
+<tr>
+<td>SELinux Support</td>
+<td><a href="https://github.com/kubernetes/kubeadm/issues/279">not ready</a></td>
+<td>fully supported and must be enabled</td>
+<td>?</td>
+</tr>
+
+<tr>
+<td>Readiness</td>
+<td>large-scale production ready, various cloud supports</td>
+<td>large-scale production ready, various cloud supports</td>
+<td>?</td>
+</tr>
+
+<tr>
+<td>Community</td>
+<td>large</td>
+<td>medium</td>
+<td>small</td>
+</tr>
+
+<tr>
+<td>Backed by</td>
+<td>Google, CNCF</td>
+<td>Red Hat</td>
 <td>Docker</td>
 </tr>
 </tbody>
@@ -410,6 +486,15 @@ For some reason, the above doesn&rsquo;t work when there are changes made from G
 
     <div class="content"><p>May 25, 2019</p>
 </div>
+</div>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">Openshift is built upon Kubernetes
+ <a class="footnote-return" href="#fnref:1">↩</a></li>
+</ol>
 </div>
 
     </div>
