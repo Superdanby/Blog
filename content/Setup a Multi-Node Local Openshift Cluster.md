@@ -13,11 +13,12 @@ Our school was going to hold a competitive programming contest. This time we wer
 
 | Container Solution | Advantages | Disadvantages | Example Products |
 | ------------------- | ---------- | ------------- | ---------------- |
-| Container Orchestration Platforms | centralized management system, scalable, easy image deployment | needs more effort to setup | Kubernetes, Openshift, Docker Swarm |
+| Container Orchestration Platforms | centralized management system, scalable, easy image deployment, application auto recovery | needs more effort to setup | Kubernetes, Openshift, Docker Swarm |
 | Container | easy to setup | inappropriate for large-scale deployment, no management system | Docker, Docker Compose |
 
 | Container Orchestration Platform | Kubernetes | Openshift[^1] | Docker Swarm |
 | -------------------------------- | ---------- | ------------- | ------------ |
+| *Architecture* | Complex but powerful | Complex but powerful | Simple |
 | Setup | hardest | non trivial installation effort, a working DNS | easy |
 | Scale | [5000 nodes, 150000 pods](https://kubernetes.io/docs/setup/cluster-large/) | [2000 nodes, 150000 pods](https://docs.okd.io/latest/scaling_performance/cluster_limits.html) | ? |
 | Node Recovery | robust | robust | may sometimes fail to recover |
