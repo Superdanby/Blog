@@ -208,6 +208,14 @@ document.addEventListener("DOMContentLoaded", function() {
 </tbody>
 </table>
 
+<h1 id="from-kubernetes-k8s-to-openshift">From Kubernetes(K8s) to Openshift</h1>
+
+<p>Knowing the benefits of K8s, I started to study how it works. Frankly, I think it&rsquo;s fairly hard to understand the whole architecture and concepts of K8s for a newbie who has no prior experience in container orchestration frameworks. After poking around the official documents and watching some videos on Youtube, I managed to get a grip of K8s&rsquo; high-level concept.</p>
+
+<p>The next step would be installing a K8s cluster. Looking at the <a href="https://kubernetes.io/docs/setup/#hosted-solutions">setup page</a>, there are dozens of solutions to choose. Since we have 21 local machines, <a href="https://kubernetes.io/docs/setup/pick-right-solution/#community-supported-tools">Kubeadm-dind and Kubernetes IN Docker</a> seems to be what I&rsquo;m looking for. But then, I realized that we were using Fedora as our underlying operating system. And the classic SELinux issue popped up. As expected, the original <a href="https://github.com/kubernetes/kubeadm/issues/279"><code>Kubeadm</code> hadn&rsquo;t support SELinux</a> yet. Googling for a bit, Openshift, a distribution of Kubernetes, is designed for the RHEL family and also backed by Red Hat. Finding this fact made me so happy, for Openshift ought to support Fedora better than the original K8s. In fact, Openshift requires SELinux to be enabled on the machines!</p>
+
+<p>Openshift has an open source counterpart called Openshift Origin or OKD, the Origin Community Distribution of Kubernetes. I used the open source version.</p>
+
 <table>
 <thead>
 <tr>
@@ -290,14 +298,6 @@ document.addEventListener("DOMContentLoaded", function() {
 </tr>
 </tbody>
 </table>
-
-<h1 id="from-kubernetes-k8s-to-openshift">From Kubernetes(K8s) to Openshift</h1>
-
-<p>Knowing the benefits of K8s, I started to study how it works. Frankly, I think it&rsquo;s fairly hard to understand the whole architecture and concepts of K8s for a newbie who has no prior experience in container orchestration frameworks. After poking around the official documents and watching some videos on Youtube, I managed to get a grip of K8s&rsquo; high-level concept.</p>
-
-<p>The next step would be installing a K8s cluster. Looking at the <a href="https://kubernetes.io/docs/setup/#hosted-solutions">setup page</a>, there are dozens of solutions to choose. Since we have 21 local machines, <a href="https://kubernetes.io/docs/setup/pick-right-solution/#community-supported-tools">Kubeadm-dind and Kubernetes IN Docker</a> seems to be what I&rsquo;m looking for. But then, I realized that we were using Fedora as our underlying operating system. And the classic SELinux issue popped up. As expected, the original <a href="https://github.com/kubernetes/kubeadm/issues/279"><code>Kubeadm</code> hadn&rsquo;t support SELinux</a> yet. Googling for a bit, Openshift, a distribution of Kubernetes, is designed for the RHEL family and also backed by Red Hat. Finding this fact made me so happy, for Openshift ought to support Fedora better than the original K8s. In fact, Openshift requires SELinux to be enabled on the machines!</p>
-
-<p>Openshift has an open source counterpart called Openshift Origin or OKD, the Origin Community Distribution of Kubernetes. I used the open source version.</p>
 
 <h1 id="environment-preparation">Environment Preparation</h1>
 

@@ -18,6 +18,14 @@ It would be ideal for us if we can assign the compute resources dynamically betw
 | Container Orchestration Platforms | centralized management system, scalable, easy image deployment, application auto recovery | needs more effort to setup | Kubernetes, Openshift, Docker Swarm |
 | Container | easy to setup | inappropriate for large-scale deployment, no management system | Docker, Docker Compose |
 
+# From Kubernetes(K8s) to Openshift
+
+Knowing the benefits of K8s, I started to study how it works. Frankly, I think it's fairly hard to understand the whole architecture and concepts of K8s for a newbie who has no prior experience in container orchestration frameworks. After poking around the official documents and watching some videos on Youtube, I managed to get a grip of K8s' high-level concept.
+
+The next step would be installing a K8s cluster. Looking at the [setup page](https://kubernetes.io/docs/setup/#hosted-solutions), there are dozens of solutions to choose. Since we have 21 local machines, [Kubeadm-dind and Kubernetes IN Docker](https://kubernetes.io/docs/setup/pick-right-solution/#community-supported-tools) seems to be what I'm looking for. But then, I realized that we were using Fedora as our underlying operating system. And the classic SELinux issue popped up. As expected, the original [`Kubeadm` hadn't support SELinux](https://github.com/kubernetes/kubeadm/issues/279) yet. Googling for a bit, Openshift, a distribution of Kubernetes, is designed for the RHEL family and also backed by Red Hat. Finding this fact made me so happy, for Openshift ought to support Fedora better than the original K8s. In fact, Openshift requires SELinux to be enabled on the machines!
+
+Openshift has an open source counterpart called Openshift Origin or OKD, the Origin Community Distribution of Kubernetes. I used the open source version.
+
 | Container Orchestration Platform | Kubernetes | Openshift[^1] | Docker Swarm |
 | -------------------------------- | ---------- | ------------- | ------------ |
 | **Architecture** | Complex but powerful | Complex but powerful | Simple |
@@ -32,14 +40,6 @@ It would be ideal for us if we can assign the compute resources dynamically betw
 | **Backed by** | Google, CNCF | Red Hat | Docker |
 
 [^1]: Openshift is built upon Kubernetes
-
-# From Kubernetes(K8s) to Openshift
-
-Knowing the benefits of K8s, I started to study how it works. Frankly, I think it's fairly hard to understand the whole architecture and concepts of K8s for a newbie who has no prior experience in container orchestration frameworks. After poking around the official documents and watching some videos on Youtube, I managed to get a grip of K8s' high-level concept.
-
-The next step would be installing a K8s cluster. Looking at the [setup page](https://kubernetes.io/docs/setup/#hosted-solutions), there are dozens of solutions to choose. Since we have 21 local machines, [Kubeadm-dind and Kubernetes IN Docker](https://kubernetes.io/docs/setup/pick-right-solution/#community-supported-tools) seems to be what I'm looking for. But then, I realized that we were using Fedora as our underlying operating system. And the classic SELinux issue popped up. As expected, the original [`Kubeadm` hadn't support SELinux](https://github.com/kubernetes/kubeadm/issues/279) yet. Googling for a bit, Openshift, a distribution of Kubernetes, is designed for the RHEL family and also backed by Red Hat. Finding this fact made me so happy, for Openshift ought to support Fedora better than the original K8s. In fact, Openshift requires SELinux to be enabled on the machines!
-
-Openshift has an open source counterpart called Openshift Origin or OKD, the Origin Community Distribution of Kubernetes. I used the open source version.
 
 # Environment Preparation
 
