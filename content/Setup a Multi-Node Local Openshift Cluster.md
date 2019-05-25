@@ -60,6 +60,10 @@ The latest official release of Openshift is version 3.11. It uses Ansible playbo
 
 At first, I chose 2 machines and tried to use their IP to setup a small cluster. The components are 1 master + infra node and 1 compute node. The install went smoothly without any error produced. Verifying the installation from command line with `sudo oc get pods` also seemed fine. I was so excited until I found that I couldn't access the web console. Apparently, something gone wrong. I didn't found many people have the same problem as mine. In most cases, web console not showing up always comes with an installation error. Not getting any constructive feedback from Googling, I then went back and check the installation requirements which stated that DNS is required.
 
+|----------------|---------|
+| master + infra | compute |
+|----------------|---------|
+
 # Setting up DNS
 
 There are 2 software people usually use to setup DNS. One is [`BIND`](https://www.isc.org/downloads/bind/) and the other is [`dnsmasq`](http://www.thekelleys.org.uk/dnsmasq/doc.html). Setting up `dnsmasq` is much easier than `BIND`. Beside a light weight DNS, it also comes with a light weight DHCP server. `dnsmasq` reads its configurations from `/etc/dnsmasq.conf`.
@@ -120,9 +124,17 @@ The DNS settings above was formed after many tries. Prior to that, I had have me
     3. Get the logs: `sudo oc logs -n [namespace] -f [name]`
 3. If the API server is up, get events of the cluster: `sudo oc get events --all-namespaces`
 
-# Disaster of 1 Master + Infra Node with `dnsmasq` and 1 Compute Node
+# Messed up Host Mapping
+
+Going back to Openshift installation, I had the host mapping this time: 1 Master + Infra Node with `dnsmasq` and 1 Compute Node.
+
+|----------------------|---------|
+| master + infra + DNS | compute |
+|----------------------|---------|
+
 
 These were the problems I met:
+
 - `ansible-playbook` failed: the connection to the server 8443 was refused: I thought there was some process occupying port 8443. In the end, it was the DNS not configured correctly.
 - `ansible-playbook` failed: Wait for control plane pods to appear: DNS not configured correctly. In my case, I used `01` as the domain name for master. I wasn't aware a valid domain for HTTP or HTTPS shouldn't be merely composed with numbers.
 - `anisble-playbook` failed somewhere else with pod logs complaining API service not available: either DNS not configured correctly or port being occupied by another service.
