@@ -342,6 +342,6 @@ There are 2 people I would like to thank. They have been extremely helpful throu
 1. [Henry](https://www.linkedin.com/in/chun-hung-tseng/): sharp observation skills and good sense when encountering a problem. I often discuss the problems I meet with him. He was also responsible for modifying the judge images to make them suite our needs.
 2. [林俊男](https://it.ccu.edu.tw/center_department.php?section=2): he helped us a lot with PXE configuration for uploading and deploying base operating system images. He was also responsible for the networking outside the cluster and the hardware equipment used for the contest.
 
-{{% admonition title="Finally finished!" color="green" %}}
+{{% admonition title="Under Construction" color="yellow" %}}
 May 25, 2019
 {{% /admonition %}}
