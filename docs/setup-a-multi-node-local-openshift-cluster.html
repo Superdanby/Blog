@@ -137,6 +137,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <li><a href="#motivation">Motivation</a></li>
 <li><a href="#from-kubernetes-k8s-to-openshift">From Kubernetes(K8s) to Openshift</a></li>
 <li><a href="#environment-preparation">Environment Preparation</a></li>
+<li><a href="#preparing-the-inventory-file">Preparing the Inventory File</a></li>
 <li><a href="#first-try">First Try</a>
 <ul>
 <li><a href="#rpm-version-unmatched">RPM Version Unmatched</a></li>
@@ -335,9 +336,47 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <p>I&rsquo;ve read <a href="https://en-wiki.ikoula.com/en/Deploy_a_cluster_Kubernetes_with_CoreOS">somewhere</a> that <code>machine-id</code> should be different for all nodes in a K8s cluster. So, I wrote <a href="https://github.com/Superdanby/Openshift-Ansible-Domjudge/blob/master/tasks/01.change_mahcine_id.yml">an ansible script</a> change it on all hosts. And something fishy happened. The system logs were not shown in <code>journalctl</code>. Google then told me that <code>journalctl</code> relies on <code>machine-id</code>. A <a href="https://github.com/Superdanby/Openshift-Ansible-Domjudge/blob/master/tasks/07.reboot.yml">reboot script</a> would solve this issue.</p>
 
+<h1 id="preparing-the-inventory-file">Preparing the Inventory File</h1>
+
+<p>The latest official release of Openshift is version 3.11. It uses Ansible playbooks to install the Openshift cluster. Ansible reads installation configurations from an inventory file. The first version of my inventory file looks like this:</p>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="lnt"> 3</span><span class="lnt"> 4</span><span class="lnt"> 5</span><span class="lnt"> 6</span><span class="lnt"> 7</span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="hl"><span class="lnt">13</span></span><span class="lnt">14</span><span class="hl"><span class="lnt">15</span></span><span class="lnt">16</span><span class="lnt">17</span><span class="lnt">18</span><span class="hl"><span class="lnt">19</span></span><span class="hl"><span class="lnt">20</span></span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="p">[</span>masters<span class="p">]</span><span class="w">
+</span><span class="w"></span><span class="m">192.168</span>.<span class="m">218.1</span><span class="w">
+</span><span class="w"></span><span class="p">[</span>etcd<span class="p">]</span><span class="w">
+</span><span class="w"></span><span class="m">192.168</span>.<span class="m">218.1</span><span class="w">
+</span><span class="w"></span><span class="p">[</span>nodes<span class="p">]</span><span class="w">
+</span><span class="w"></span><span class="m">192.168</span>.<span class="m">218.1</span><span class="w"> </span>openshift_node_group_name=<span class="s2">&#34;node-config-master-infra&#34;</span><span class="w">
+</span><span class="w"></span><span class="m">192.168</span>.<span class="m">218.2</span><span class="w"> </span>openshift_node_group_name=<span class="s2">&#34;node-config-compute&#34;</span><span class="w">
+</span><span class="w"></span><span class="p">[</span>OSEv<span class="m">3</span><span class="p">:</span>children<span class="p">]</span><span class="w">
+</span><span class="w"></span>masters<span class="w">
+</span><span class="w"></span>nodes<span class="w">
+</span><span class="w"></span>etcd<span class="w">
+</span><span class="w"></span><span class="p">[</span>OSEv<span class="m">3</span><span class="p">:</span>vars<span class="p">]</span><span class="w">
+</span><span class="hl"><span class="w"></span>ansible_python_interpreter=/usr/bin/python<span class="m">3</span><span class="w">
+</span></span><span class="w"></span>ansible_user=root<span class="w">
+</span><span class="hl"><span class="w"></span>openshift_deployment_type=origin<span class="w">
+</span></span><span class="w"></span>openshift_release=<span class="s2">&#34;3.11&#34;</span><span class="w">
+</span><span class="w"></span>debug_level=<span class="m">4</span><span class="w">
+</span><span class="w"></span>openshift_docker_insecure_registries=<span class="m">172.30</span>.<span class="m">0.0</span>/<span class="m">16</span><span class="w">
+</span><span class="hl"><span class="w"></span>openshift_master_identity_providers=<span class="p">[</span>{<span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;htpasswd_auth&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;login&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;challenge&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;kind&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;HTPasswdPasswordIdentityProvider&#39;</span>}<span class="p">]</span><span class="w">
+</span></span><span class="hl"><span class="w"></span>openshift_disable_check=memory_availability</span></code></pre></td></tr></table>
+</div>
+</div>
+
+<ul>
+<li>Line 13: assign Python interpreter</li>
+<li>Line 15: use the open source version</li>
+<li>Line 19: use <code>htpasswd</code> for user authentication</li>
+<li>Line 20: the machines I had only had 8 GB of RAM while <a href="https://docs.okd.io/latest/install/prerequisites.html#hardware">master node requires 16 GB of RAM</a>.</li>
+</ul>
+
 <h1 id="first-try">First Try</h1>
 
-<p>The latest official release of Openshift is version 3.11. It uses Ansible playbooks to install the Openshift cluster. The commands are:</p>
+<p>The commands are:</p>
 
 <ol>
 <li><code>ansible-playbook -i [path_to_inventory_file] playbooks/prerequisites.yml</code></li>
@@ -606,58 +645,64 @@ For some reason, the above doesn&rsquo;t work when there are changes made from G
 <ol>
 <li>Create an Service Account: <code>sudo oc create [name] -n [namespace]</code></li>
 <li>Give the Service Account privileges: <code>sudo oc adm policy add-scc-to-user privileged -z [name] -n [namespace]</code></li>
-<li>Associate the app to this particular service account by specifying in the app&rsquo;s Deployment Config:</li>
+<li>Associate the app to this particular service account by specifying in the app&rsquo;s Deployment Config(line 31 ~ 34):</li>
 </ol>
 
-<pre><code class="language-YAML=">apiVersion: apps.openshift.io/v1
-kind: DeploymentConfig
-metadata:
-  name: pod_name
-  namespace: project_name
-spec:
-  selector:
-    app: app_label
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        app: app_label
-    spec:
-      containers:
-        - args:
-          - --arg_name=arg_value
-          env:
-          - name: env_name
-            value: env_value
-          image: ' '
-          imagePullPolicy: Always
-          name: container_name
-          resources:
-              requests:
-                  cpu: 1500m
-                  memory: 2000Mi
-              limits:
-                  cpu: 2
-                  memory: 3Gi
-          securityContext:
-            privileged: true
-      serviceAccountName: service_account_name
-      serviceAccount: service_account_name
-  triggers:
-    - type: &quot;ConfigChange&quot;
-    - type: &quot;ImageChange&quot;
-      imageChangeParams:
-        automatic: true
-        containerNames:
-          - container_name
-        from:
-          kind: &quot;ImageStreamTag&quot;
-          name: &quot;image_stream_name:version&quot;
-  strategy:
-    type: &quot;Recreate&quot;
-  revisionHistoryLimit: 2
-  minReadySeconds: 0
-</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="lnt"> 3</span><span class="lnt"> 4</span><span class="lnt"> 5</span><span class="lnt"> 6</span><span class="lnt"> 7</span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="lnt">13</span><span class="lnt">14</span><span class="lnt">15</span><span class="lnt">16</span><span class="lnt">17</span><span class="lnt">18</span><span class="lnt">19</span><span class="lnt">20</span><span class="lnt">21</span><span class="lnt">22</span><span class="lnt">23</span><span class="lnt">24</span><span class="lnt">25</span><span class="lnt">26</span><span class="lnt">27</span><span class="lnt">28</span><span class="lnt">29</span><span class="lnt">30</span><span class="hl"><span class="lnt">31</span></span><span class="hl"><span class="lnt">32</span></span><span class="hl"><span class="lnt">33</span></span><span class="hl"><span class="lnt">34</span></span><span class="lnt">35</span><span class="lnt">36</span><span class="lnt">37</span><span class="lnt">38</span><span class="lnt">39</span><span class="lnt">40</span><span class="lnt">41</span><span class="lnt">42</span><span class="lnt">43</span><span class="lnt">44</span><span class="lnt">45</span><span class="lnt">46</span><span class="lnt">47</span><span class="lnt">48</span><span class="lnt">49</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml">apiVersion<span class="p">:</span><span class="w"> </span>apps.openshift.io/v<span class="m">1</span><span class="w">
+</span><span class="w"></span>kind<span class="p">:</span><span class="w"> </span>DeploymentConfig<span class="w">
+</span><span class="w"></span>metadata<span class="p">:</span><span class="w">
+</span><span class="w">  </span>name<span class="p">:</span><span class="w"> </span>pod_name<span class="w">
+</span><span class="w">  </span>namespace<span class="p">:</span><span class="w"> </span>project_name<span class="w">
+</span><span class="w"></span>spec<span class="p">:</span><span class="w">
+</span><span class="w">  </span>selector<span class="p">:</span><span class="w">
+</span><span class="w">    </span>app<span class="p">:</span><span class="w"> </span>app_label<span class="w">
+</span><span class="w">  </span>replicas<span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span><span class="w">  </span>template<span class="p">:</span><span class="w">
+</span><span class="w">    </span>metadata<span class="p">:</span><span class="w">
+</span><span class="w">      </span>labels<span class="p">:</span><span class="w">
+</span><span class="w">        </span>app<span class="p">:</span><span class="w"> </span>app_label<span class="w">
+</span><span class="w">    </span>spec<span class="p">:</span><span class="w">
+</span><span class="w">      </span>containers<span class="p">:</span><span class="w">
+</span><span class="w">        </span>-<span class="w"> </span>args<span class="p">:</span><span class="w">
+</span><span class="w">          </span>-<span class="w"> </span>--arg_name=arg_value<span class="w">
+</span><span class="w">          </span>env<span class="p">:</span><span class="w">
+</span><span class="w">          </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span>env_name<span class="w">
+</span><span class="w">            </span>value<span class="p">:</span><span class="w"> </span>env_value<span class="w">
+</span><span class="w">          </span>image<span class="p">:</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="w">
+</span><span class="w">          </span>imagePullPolicy<span class="p">:</span><span class="w"> </span>Always<span class="w">
+</span><span class="w">          </span>name<span class="p">:</span><span class="w"> </span>container_name<span class="w">
+</span><span class="w">          </span>resources<span class="p">:</span><span class="w">
+</span><span class="w">              </span>requests<span class="p">:</span><span class="w">
+</span><span class="w">                  </span>cpu<span class="p">:</span><span class="w"> </span>1500m<span class="w">
+</span><span class="w">                  </span>memory<span class="p">:</span><span class="w"> </span>2000Mi<span class="w">
+</span><span class="w">              </span>limits<span class="p">:</span><span class="w">
+</span><span class="w">                  </span>cpu<span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span><span class="w">                  </span>memory<span class="p">:</span><span class="w"> </span>3Gi<span class="w">
+</span><span class="hl"><span class="w">          </span>securityContext<span class="p">:</span><span class="w">
+</span></span><span class="hl"><span class="w">            </span>privileged<span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span><span class="hl"><span class="w">      </span>serviceAccountName<span class="p">:</span><span class="w"> </span>service_account_name<span class="w">
+</span></span><span class="hl"><span class="w">      </span>serviceAccount<span class="p">:</span><span class="w"> </span>service_account_name<span class="w">
+</span></span><span class="w">  </span>triggers<span class="p">:</span><span class="w">
+</span><span class="w">    </span>-<span class="w"> </span>type<span class="p">:</span><span class="w"> </span><span class="s2">&#34;ConfigChange&#34;</span><span class="w">
+</span><span class="w">    </span>-<span class="w"> </span>type<span class="p">:</span><span class="w"> </span><span class="s2">&#34;ImageChange&#34;</span><span class="w">
+</span><span class="w">      </span>imageChangeParams<span class="p">:</span><span class="w">
+</span><span class="w">        </span>automatic<span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">        </span>containerNames<span class="p">:</span><span class="w">
+</span><span class="w">          </span>-<span class="w"> </span>container_name<span class="w">
+</span><span class="w">        </span>from<span class="p">:</span><span class="w">
+</span><span class="w">          </span>kind<span class="p">:</span><span class="w"> </span><span class="s2">&#34;ImageStreamTag&#34;</span><span class="w">
+</span><span class="w">          </span>name<span class="p">:</span><span class="w"> </span><span class="s2">&#34;image_stream_name:version&#34;</span><span class="w">
+</span><span class="w">  </span>strategy<span class="p">:</span><span class="w">
+</span><span class="w">    </span>type<span class="p">:</span><span class="w"> </span><span class="s2">&#34;Recreate&#34;</span><span class="w">
+</span><span class="w">  </span>revisionHistoryLimit<span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span><span class="w">  </span>minReadySeconds<span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span><span class="w"> </span></code></pre></td></tr></table>
+</div>
+</div>
 
 <h2 id="setting-up-persistent-volume">Setting up Persistent Volume</h2>
 

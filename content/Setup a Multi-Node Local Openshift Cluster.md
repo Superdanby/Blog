@@ -54,9 +54,41 @@ The base image was [Fedora 30 Workstation](https://getfedora.org/en/workstation/
 
 I've read [somewhere](https://en-wiki.ikoula.com/en/Deploy_a_cluster_Kubernetes_with_CoreOS) that `machine-id` should be different for all nodes in a K8s cluster. So, I wrote [an ansible script](https://github.com/Superdanby/Openshift-Ansible-Domjudge/blob/master/tasks/01.change_mahcine_id.yml) change it on all hosts. And something fishy happened. The system logs were not shown in `journalctl`. Google then told me that `journalctl` relies on `machine-id`. A [reboot script](https://github.com/Superdanby/Openshift-Ansible-Domjudge/blob/master/tasks/07.reboot.yml) would solve this issue.
 
+# Preparing the Inventory File
+
+The latest official release of Openshift is version 3.11. It uses Ansible playbooks to install the Openshift cluster. Ansible reads installation configurations from an inventory file. The first version of my inventory file looks like this:
+
+{{< highlight yaml "linenos=table,hl_lines=13 15 19-20,linenostart=1,noclasses=false" >}}
+[masters]
+192.168.218.1
+[etcd]
+192.168.218.1
+[nodes]
+192.168.218.1 openshift_node_group_name="node-config-master-infra"
+192.168.218.2 openshift_node_group_name="node-config-compute"
+[OSEv3:children]
+masters
+nodes
+etcd
+[OSEv3:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible_user=root
+openshift_deployment_type=origin
+openshift_release="3.11"
+debug_level=4
+openshift_docker_insecure_registries=172.30.0.0/16
+openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider'}]
+openshift_disable_check=memory_availability
+{{< /highlight >}}
+
+- Line 13: assign Python interpreter
+- Line 15: use the open source version
+- Line 19: use `htpasswd` for user authentication
+- Line 20: the machines I had only had 8 GB of RAM while [master node requires 16 GB of RAM](https://docs.okd.io/latest/install/prerequisites.html#hardware).
+
 # First Try
 
-The latest official release of Openshift is version 3.11. It uses Ansible playbooks to install the Openshift cluster. The commands are:
+ The commands are:
 
 1. `ansible-playbook -i [path_to_inventory_file] playbooks/prerequisites.yml`
 2. `ansible-playbook -i [path_to_inventory_file] playbooks/deploy_cluster.yml`.
@@ -209,9 +241,9 @@ The domjudge system needs elevated privileges to work. While my account was boun
 
 1. Create an Service Account: `sudo oc create [name] -n [namespace]`
 2. Give the Service Account privileges: `sudo oc adm policy add-scc-to-user privileged -z [name] -n [namespace]`
-3. Associate the app to this particular service account by specifying in the app's Deployment Config:
+3. Associate the app to this particular service account by specifying in the app's Deployment Config(line 31 ~ 34):
 
-```YAML=
+{{< highlight yaml "linenos=table,hl_lines=31-34,linenostart=1,noclasses=false" >}}
 apiVersion: apps.openshift.io/v1
 kind: DeploymentConfig
 metadata:
@@ -260,7 +292,7 @@ spec:
     type: "Recreate"
   revisionHistoryLimit: 2
   minReadySeconds: 0
-```
+ {{< /highlight >}}
 
 ## Setting up Persistent Volume
 
