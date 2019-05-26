@@ -342,28 +342,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="lnt"> 3</span><span class="lnt"> 4</span><span class="lnt"> 5</span><span class="lnt"> 6</span><span class="lnt"> 7</span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="hl"><span class="lnt">13</span></span><span class="lnt">14</span><span class="hl"><span class="lnt">15</span></span><span class="lnt">16</span><span class="lnt">17</span><span class="lnt">18</span><span class="hl"><span class="lnt">19</span></span><span class="hl"><span class="lnt">20</span></span></code></pre></td>
+<pre class="chroma"><code class="language-ini" data-lang="ini"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="lnt"> 3</span><span class="lnt"> 4</span><span class="lnt"> 5</span><span class="lnt"> 6</span><span class="lnt"> 7</span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="hl"><span class="lnt">13</span></span><span class="lnt">14</span><span class="hl"><span class="lnt">15</span></span><span class="lnt">16</span><span class="lnt">17</span><span class="lnt">18</span><span class="hl"><span class="lnt">19</span></span><span class="hl"><span class="lnt">20</span></span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="p">[</span>masters<span class="p">]</span><span class="w">
-</span><span class="w"></span><span class="m">192.168</span>.<span class="m">218.1</span><span class="w">
-</span><span class="w"></span><span class="p">[</span>etcd<span class="p">]</span><span class="w">
-</span><span class="w"></span><span class="m">192.168</span>.<span class="m">218.1</span><span class="w">
-</span><span class="w"></span><span class="p">[</span>nodes<span class="p">]</span><span class="w">
-</span><span class="w"></span><span class="m">192.168</span>.<span class="m">218.1</span><span class="w"> </span>openshift_node_group_name=<span class="s2">&#34;node-config-master-infra&#34;</span><span class="w">
-</span><span class="w"></span><span class="m">192.168</span>.<span class="m">218.2</span><span class="w"> </span>openshift_node_group_name=<span class="s2">&#34;node-config-compute&#34;</span><span class="w">
-</span><span class="w"></span><span class="p">[</span>OSEv<span class="m">3</span><span class="p">:</span>children<span class="p">]</span><span class="w">
-</span><span class="w"></span>masters<span class="w">
-</span><span class="w"></span>nodes<span class="w">
-</span><span class="w"></span>etcd<span class="w">
-</span><span class="w"></span><span class="p">[</span>OSEv<span class="m">3</span><span class="p">:</span>vars<span class="p">]</span><span class="w">
-</span><span class="hl"><span class="w"></span>ansible_python_interpreter=/usr/bin/python<span class="m">3</span><span class="w">
-</span></span><span class="w"></span>ansible_user=root<span class="w">
-</span><span class="hl"><span class="w"></span>openshift_deployment_type=origin<span class="w">
-</span></span><span class="w"></span>openshift_release=<span class="s2">&#34;3.11&#34;</span><span class="w">
-</span><span class="w"></span>debug_level=<span class="m">4</span><span class="w">
-</span><span class="w"></span>openshift_docker_insecure_registries=<span class="m">172.30</span>.<span class="m">0.0</span>/<span class="m">16</span><span class="w">
-</span><span class="hl"><span class="w"></span>openshift_master_identity_providers=<span class="p">[</span>{<span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;htpasswd_auth&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;login&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;challenge&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;kind&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;HTPasswdPasswordIdentityProvider&#39;</span>}<span class="p">]</span><span class="w">
-</span></span><span class="hl"><span class="w"></span>openshift_disable_check=memory_availability</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-ini" data-lang="ini"><span class="k">[masters]</span>
+<span class="na">192.168.218.1</span>
+<span class="k">[etcd]</span>
+<span class="na">192.168.218.1</span>
+<span class="k">[nodes]</span>
+<span class="na">192.168.218.1 openshift_node_group_name</span><span class="o">=</span><span class="s">&#34;node-config-master-infra&#34;</span>
+<span class="na">192.168.218.2 openshift_node_group_name</span><span class="o">=</span><span class="s">&#34;node-config-compute&#34;</span>
+<span class="k">[OSEv3:children]</span>
+<span class="na">masters</span>
+<span class="na">nodes</span>
+<span class="na">etcd</span>
+<span class="k">[OSEv3:vars]</span>
+<span class="hl"><span class="na">ansible_python_interpreter</span><span class="o">=</span><span class="s">/usr/bin/python3</span>
+</span><span class="na">ansible_user</span><span class="o">=</span><span class="s">root</span>
+<span class="hl"><span class="na">openshift_deployment_type</span><span class="o">=</span><span class="s">origin</span>
+</span><span class="na">openshift_release</span><span class="o">=</span><span class="s">&#34;3.11&#34;</span>
+<span class="na">debug_level</span><span class="o">=</span><span class="s">4</span>
+<span class="na">openshift_docker_insecure_registries</span><span class="o">=</span><span class="s">172.30.0.0/16</span>
+<span class="hl"><span class="na">openshift_master_identity_providers</span><span class="o">=</span><span class="s">[{&#39;name&#39;: &#39;htpasswd_auth&#39;, &#39;login&#39;: &#39;true&#39;, &#39;challenge&#39;: &#39;true&#39;, &#39;kind&#39;: &#39;HTPasswdPasswordIdentityProvider&#39;}]</span>
+</span><span class="hl"><span class="na">openshift_disable_check</span><span class="o">=</span><span class="s">memory_availability</span></span></code></pre></td></tr></table>
 </div>
 </div>
 
@@ -376,7 +376,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <h1 id="first-try">First Try</h1>
 
-<p>The commands are:</p>
+<p>The installation commands are:</p>
 
 <ol>
 <li><code>ansible-playbook -i [path_to_inventory_file] playbooks/prerequisites.yml</code></li>
@@ -415,10 +415,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <h2 id="server-side">Server Side</h2>
 
-<p>In <code>/etc/dnsmaq.conf</code>:
-- <code>server=8.8.8.8</code>: set upstream DNS to <code>8.8.8.8</code>.
-- <code>addn-hosts=/etc/hosts_domjudge</code>: reads additional host pairs from <code>/etc/hosts_domjudge</code>, where I set the name of each host manually.
-- <code>expand-hosts</code> + <code>domain=domjudge,192.168.218.0/24</code>: all machines under <code>192.168.218.0/24</code> have their FQDN end with <code>domjudge</code>, and if the domain names written in host files don&rsquo;t end with <code>domjudge</code>, <code>dnsmaq</code> will automatically append it.</p>
+<p>In <code>/etc/dnsmaq.conf</code>:</p>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-ini" data-lang="ini"><span class="hl"><span class="lnt">1</span></span><span class="lnt">2</span><span class="lnt">3</span><span class="hl"><span class="lnt">4</span></span><span class="hl"><span class="lnt">5</span></span><span class="hl"><span class="lnt">6</span></span><span class="lnt">7</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ini" data-lang="ini"><span class="hl"><span class="na">server</span><span class="o">=</span><span class="s">8.8.8.8</span>
+</span><span class="na">user</span><span class="o">=</span><span class="s">dnsmasq</span>
+<span class="na">group</span><span class="o">=</span><span class="s">dnsmasq</span>
+<span class="hl"><span class="na">addn-hosts</span><span class="o">=</span><span class="s">/etc/hosts_domjudge</span>
+</span><span class="hl"><span class="na">expand-hosts</span>
+</span><span class="hl"><span class="na">domain</span><span class="o">=</span><span class="s">domjudge,192.168.218.0/24</span>
+</span><span class="na">conf-dir</span><span class="o">=</span><span class="s">/etc/dnsmasq.d,.rpmnew,.rpmsave,.rpmorig</span></code></pre></td></tr></table>
+</div>
+</div>
+
+<ul>
+<li>Line 1: set upstream DNS to <code>8.8.8.8</code>.</li>
+<li>Line 4: reads additional host pairs from <code>/etc/hosts_domjudge</code>, where I set the name of each host manually.</li>
+<li>Line 5 ~ 6: all machines under <code>192.168.218.0/24</code> have their FQDN end with <code>domjudge</code>, and if the domain names written in host files don&rsquo;t end with <code>domjudge</code>, <code>dnsmaq</code> will automatically append it.</li>
+</ul>
 
 <p>Remember to start and enable <code>dnsmasq</code> via <code>systemctl</code>. If starting failed, it is possible that <code>systemd-resolved</code> is occupying port 53. A reboot will resolve it.</p>
 

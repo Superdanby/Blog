@@ -58,7 +58,7 @@ I've read [somewhere](https://en-wiki.ikoula.com/en/Deploy_a_cluster_Kubernetes_
 
 The latest official release of Openshift is version 3.11. It uses Ansible playbooks to install the Openshift cluster. Ansible reads installation configurations from an inventory file. The first version of my inventory file looks like this:
 
-{{< highlight yaml "linenos=table,hl_lines=13 15 19-20,linenostart=1,noclasses=false" >}}
+{{< highlight ini "linenos=table,hl_lines=13 15 19-20,linenostart=1,noclasses=false" >}}
 [masters]
 192.168.218.1
 [etcd]
@@ -88,7 +88,7 @@ openshift_disable_check=memory_availability
 
 # First Try
 
- The commands are:
+The installation commands are:
 
 1. `ansible-playbook -i [path_to_inventory_file] playbooks/prerequisites.yml`
 2. `ansible-playbook -i [path_to_inventory_file] playbooks/deploy_cluster.yml`.
@@ -114,9 +114,20 @@ There are 2 software people usually use to setup DNS. One is [`BIND`](https://ww
 ## Server Side
 
 In `/etc/dnsmaq.conf`:
-- `server=8.8.8.8`: set upstream DNS to `8.8.8.8`.
-- `addn-hosts=/etc/hosts_domjudge`: reads additional host pairs from `/etc/hosts_domjudge`, where I set the name of each host manually.
-- `expand-hosts` + `domain=domjudge,192.168.218.0/24`: all machines under `192.168.218.0/24` have their FQDN end with `domjudge`, and if the domain names written in host files don't end with `domjudge`, `dnsmaq` will automatically append it.
+
+{{< highlight ini "linenos=table,hl_lines=1 4-6,linenostart=1,noclasses=false" >}}
+server=8.8.8.8
+user=dnsmasq
+group=dnsmasq
+addn-hosts=/etc/hosts_domjudge
+expand-hosts
+domain=domjudge,192.168.218.0/24
+conf-dir=/etc/dnsmasq.d,.rpmnew,.rpmsave,.rpmorig
+{{< /highlight >}}
+
+- Line 1: set upstream DNS to `8.8.8.8`.
+- Line 4: reads additional host pairs from `/etc/hosts_domjudge`, where I set the name of each host manually.
+- Line 5 ~ 6: all machines under `192.168.218.0/24` have their FQDN end with `domjudge`, and if the domain names written in host files don't end with `domjudge`, `dnsmaq` will automatically append it.
 
 Remember to start and enable `dnsmasq` via `systemctl`. If starting failed, it is possible that `systemd-resolved` is occupying port 53. A reboot will resolve it.
 
