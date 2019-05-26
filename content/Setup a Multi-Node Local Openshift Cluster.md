@@ -24,7 +24,7 @@ Knowing the benefits of K8s, I started to study how it works. Frankly, I think i
 
 The next step would be installing a K8s cluster. Looking at the [setup page](https://kubernetes.io/docs/setup/#hosted-solutions), there are dozens of solutions to choose. Since we have 21 local machines, [Kubeadm-dind and Kubernetes IN Docker](https://kubernetes.io/docs/setup/pick-right-solution/#community-supported-tools) seems to be what I'm looking for. But then, I realized that we were using Fedora as our underlying operating system. And the classic SELinux issue popped up. As expected, the original [`Kubeadm` hadn't support SELinux](https://github.com/kubernetes/kubeadm/issues/279) yet. Googling for a bit, Openshift, a distribution of Kubernetes, is designed for the RHEL family and also backed by Red Hat. Finding this fact made me so happy, for Openshift ought to support Fedora better than the original K8s. In fact, Openshift requires SELinux to be enabled on the machines!
 
-Openshift has an open source counterpart called Openshift Origin or OKD, the Origin Community Distribution of Kubernetes. I used the open source version.
+Openshift has an open source counterpart called Openshift Origin or OKD, the Origin Community Distribution of Kubernetes. I [used the open source version](https://github.com/Superdanby/Openshift-Ansible-Domjudge/blob/master/openshift_install_config/hosts.domjudge#L51).
 
 | Container Orchestration Platform | Kubernetes | Openshift[^1] | Docker Swarm |
 | -------------------------------- | ---------- | ------------- | ------------ |
@@ -61,11 +61,19 @@ The latest official release of Openshift is version 3.11. It uses Ansible playbo
 1. `ansible-playbook -i [path_to_inventory_file] playbooks/prerequisites.yml`
 2. `ansible-playbook -i [path_to_inventory_file] playbooks/deploy_cluster.yml`.
 
-At first, I chose 2 machines and tried to use their IP to setup a small cluster. The components are 1 master + infra node and 1 compute node. The install went smoothly without any error produced. Verifying the installation from command line with `sudo oc get pods` also seemed fine. I was so excited until I found that I couldn't access the web console. Apparently, something gone wrong. I didn't found many people have the same problem as mine. In most cases, web console not showing up always comes with an installation error. Not getting any constructive feedback from Googling, I then went back and check the installation requirements which stated that DNS is required.
+At first, I chose 2 machines and tried to use their IP to setup a small cluster. The components are 1 master + infra node and 1 compute node.
 
 | 01 | 02 |
 | --- | --- |
 | master + infra | compute |
+
+## RPM Version Unmatched
+
+I quickly ran into the first problem. Ansible complained about package version unmatched. It was expecting `origin-3.11.0` while the Fedora repository provides `origin-3.11.1`. This could be fixed by [specifying the subversion in the inventory file](https://github.com/Superdanby/Openshift-Ansible-Domjudge/blob/master/openshift_install_config/hosts.domjudge#L799).
+
+## Success?
+
+The install went smoothly without any error produced afterwards. Verifying the installation from command line with `sudo oc get pods` also seemed fine. I was so excited until I found that I couldn't access the web console. Apparently, something gone wrong. I didn't found many people have the same problem as mine. In most cases, web console not showing up always comes with an installation error. Not getting any constructive feedback from Googling, I then went back and check the installation requirements which stated that DNS is required.
 
 # Setting up DNS
 
