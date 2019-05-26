@@ -50,7 +50,7 @@ Environment setup for 21 machines is time-consuming if I have to do the same set
 | PXE | base operating system deployment, system wipes/recoveries | time consuming for small changes, no individual customization per deployment(even `machine-id` will remain the same) |
 | Ansible | fast for small changes, customizable settings on different machines per deployment | OS being deployed and SSH server pre-enabled on targets |
 
-The base image was [Fedora 30 Workstation](https://getfedora.org/en/workstation/)(I should have gone with the server edition. LOL) with OpenSSH server enabled(`sudo systemctl start sshd && sudo systemctl enable sshd`).
+The base image was [Fedora 30 Workstation](https://getfedora.org/en/workstation/)(I should have gone with the server edition. LOL) with OpenSSH server enabled(`sudo systemctl start sshd && sudo systemctl enable sshd`). The reason why OpenSSH server is enabled is that Openshift installation needs root access on all machines via SSH.
 
 I've read [somewhere](https://en-wiki.ikoula.com/en/Deploy_a_cluster_Kubernetes_with_CoreOS) that `machine-id` should be different for all nodes in a K8s cluster. So, I wrote [an ansible script](https://github.com/Superdanby/Openshift-Ansible-Domjudge/blob/master/tasks/01.change_mahcine_id.yml) change it on all hosts. And something fishy happened. The system logs were not shown in `journalctl`. Google then told me that `journalctl` relies on `machine-id`. A [reboot script](https://github.com/Superdanby/Openshift-Ansible-Domjudge/blob/master/tasks/07.reboot.yml) would solve this issue.
 
@@ -218,6 +218,40 @@ This time, I had 1 master node, 1 infra node with DNS, 1 compute node.
 | master01.domjudge | infra02.domjudge | compute03.domjudge |
 | ----------------- | ---------------- | ------------------ |
 | master | infra + DNS | compute |
+
+The following was the inventory file I used.
+
+{{< highlight ini "linenos=table,hl_lines=18-19 24 27-29 ,linenostart=1,noclasses=false" >}}
+[masters]
+master01.domjudge
+[new_masters]
+[etcd]
+master01.domjudge
+[nodes]
+master01.domjudge openshift_node_group_name="node-config-master"
+infra02.domjudge openshift_node_group_name="node-config-infra"
+compute03.domjudge openshift_node_group_name="node-config-compute"
+[new_nodes]
+[OSEv3:children]
+masters
+nodes
+etcd
+new_nodes
+new_masters
+[OSEv3:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible_user=root
+openshift_deployment_type=origin
+openshift_release="3.11"
+debug_level=4
+openshift_docker_insecure_registries=172.30.0.0/16
+openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider'}]
+osm_use_cockpit=true
+osm_cockpit_plugins=['cockpit-kubernetes']
+openshift_pkg_version=-3.11.1
+os_firewall_use_firewalld=True
+openshift_disable_check=memory_availability
+{{< /highlight >}}
 
 All installation succeeded without a hiccup!
 
