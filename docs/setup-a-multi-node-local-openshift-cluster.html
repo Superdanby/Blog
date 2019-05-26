@@ -436,7 +436,7 @@ For some reason, the above doesn&rsquo;t work when there are changes made from G
 
 <h1 id="firewall">Firewall</h1>
 
-<p>After setting up the DNS, I ran into a weird problem. I could access the DNS service on the same computer but not other computers. <code>sudo systemctl status dnsmasq</code> seemed fine. <code>journalctl</code> didn&rsquo;t report any thing weird. Checking port status with <code>sudo netstat -antup</code>, <code>dnsmasq</code> was also listening on the desired port. Using <code>nmap</code> to check open ports on the DNS host from other computers didn&rsquo;t showed any trace of DNS service. I was so confused. An idea then flashed through my mind. Maybe it was the firewall blocking the packages. I tried to get some information with <code>firewall-cmd --list-all-zones</code>, but it replied that <code>firewalld</code> is not running! I was shocked because I didn&rsquo;t disable or stop <code>firewalld</code> and it&rsquo;d be extremely dangerous if no firewall was running. Fortunately, <code>iptables</code> was up and doing its job. I then discovered that <code>os_firewall_use_firewalld=True</code> should be set in the Openshift host file for it to enforce <code>firewalld</code> instead of <code>iptables</code>. While it is recommended to use <code>firewalld</code>, <code>iptables</code> is the default.</p>
+<p>After setting up the DNS, I ran into a weird problem. I could access the DNS service on the same computer but not other computers. <code>sudo systemctl status dnsmasq</code> seemed fine. <code>journalctl</code> didn&rsquo;t report any thing weird. Checking port status with <code>sudo netstat -antup</code>, <code>dnsmasq</code> was also listening on the desired port. Using <code>nmap</code> to check open ports on the DNS host from other computers didn&rsquo;t showed any trace of DNS service. I was so confused. An idea then flashed through my mind. Maybe it was the firewall blocking the packages. I tried to get some information with <code>firewall-cmd --list-all-zones</code>, but it replied that <code>firewalld</code> is not running! I was shocked because I didn&rsquo;t disable or stop <code>firewalld</code> and it&rsquo;d be extremely dangerous if no firewall was running. Fortunately, <code>iptables</code> was up and doing its job. I then discovered that while <a href="https://docs.okd.io/latest/install/prerequisites.html#install-config-network-using-firewalld">it is recommended to use <code>firewalld</code>, <code>iptables</code> is the default</a>.</p>
 
 <h2 id="allow-dns-queries-with-iptables">Allow DNS Queries with <code>iptables</code></h2>
 
@@ -446,6 +446,8 @@ For some reason, the above doesn&rsquo;t work when there are changes made from G
 <li>Check <code>iptables</code> with line numbers annotated: <code>sudo iptables -L -v --line-numbers</code></li>
 <li>Insert the new <code>ACCEPT</code> rule before the <code>DROP all</code> rule: <code>iptables -I [chain name] [line number] [stuff to accept] -j ACCEPT</code>. For example, <code>sudo iptables -I INPUT 7 -p tcp --sport 53 -j ACCEPT</code></li>
 </ol>
+
+<p>I was not pleasant with <code>iptables</code> and switched back to <code>firewalld</code>.</p>
 
 <h2 id="allow-dns-queries-with-firewalld">Allow DNS Queries with <code>firewalld</code></h2>
 

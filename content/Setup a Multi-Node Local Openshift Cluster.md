@@ -111,7 +111,7 @@ Let's say we have an entry `192.168.218.1 01 master01.domjudge` in `/etc/hosts_d
 
 # Firewall
 
-After setting up the DNS, I ran into a weird problem. I could access the DNS service on the same computer but not other computers. `sudo systemctl status dnsmasq` seemed fine. `journalctl` didn't report any thing weird. Checking port status with `sudo netstat -antup`, `dnsmasq` was also listening on the desired port. Using `nmap` to check open ports on the DNS host from other computers didn't showed any trace of DNS service. I was so confused. An idea then flashed through my mind. Maybe it was the firewall blocking the packages. I tried to get some information with `firewall-cmd --list-all-zones`, but it replied that `firewalld` is not running! I was shocked because I didn't disable or stop `firewalld` and it'd be extremely dangerous if no firewall was running. Fortunately, `iptables` was up and doing its job. I then discovered that `os_firewall_use_firewalld=True` should be set in the Openshift host file for it to enforce `firewalld` instead of `iptables`. While it is recommended to use `firewalld`, `iptables` is the default.
+After setting up the DNS, I ran into a weird problem. I could access the DNS service on the same computer but not other computers. `sudo systemctl status dnsmasq` seemed fine. `journalctl` didn't report any thing weird. Checking port status with `sudo netstat -antup`, `dnsmasq` was also listening on the desired port. Using `nmap` to check open ports on the DNS host from other computers didn't showed any trace of DNS service. I was so confused. An idea then flashed through my mind. Maybe it was the firewall blocking the packages. I tried to get some information with `firewall-cmd --list-all-zones`, but it replied that `firewalld` is not running! I was shocked because I didn't disable or stop `firewalld` and it'd be extremely dangerous if no firewall was running. Fortunately, `iptables` was up and doing its job. I then discovered that while [it is recommended to use `firewalld`, `iptables` is the default](https://docs.okd.io/latest/install/prerequisites.html#install-config-network-using-firewalld).
 
 ## Allow DNS Queries with `iptables`
 
@@ -119,6 +119,8 @@ I was tricked by `iptables` because of its rule ordering. The rules are evaluate
 
 1. Check `iptables` with line numbers annotated: `sudo iptables -L -v --line-numbers`
 2. Insert the new `ACCEPT` rule before the `DROP all` rule: `iptables -I [chain name] [line number] [stuff to accept] -j ACCEPT`. For example, `sudo iptables -I INPUT 7 -p tcp --sport 53 -j ACCEPT`
+
+I was not pleasant with `iptables` and switched back to `firewalld`.
 
 ## Allow DNS Queries with `firewalld`
 
