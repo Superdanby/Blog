@@ -343,5 +343,5 @@ There are 2 people I would like to thank. They have been extremely helpful throu
 2. [林俊男](https://it.ccu.edu.tw/center_department.php?section=2): he helped us a lot with PXE configuration for uploading and deploying base operating system images. He was also responsible for the networking outside the cluster and the hardware equipment used for the contest.
 
 {{% admonition title="Under Construction" color="yellow" %}}
-May 25, 2019
+May 26, 2019
 {{% /admonition %}}
