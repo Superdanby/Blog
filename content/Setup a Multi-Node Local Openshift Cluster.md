@@ -133,12 +133,19 @@ Remember to start and enable `dnsmasq` via `systemctl`. If starting failed, it i
 
 ## Client Side
 
-The DNS upstream server is set in `/etc/resolv.conf`. Linux will only use the first `nameserver` entry in default. Hence, we have to insert the `nameserver` in the first place. This can usually be done by saving `prepend domain-name-servers [DNS IP];` to `/etc/dhcp/dhclient.conf` and restarting NetworkManager.
+The DNS upstream server is set in `/etc/resolv.conf`. Linux will only use the first `nameserver` entry by default. Hence, we have to insert the `nameserver` in the first place. This can usually be done by saving `prepend domain-name-servers [DNS IP];` to `/etc/dhcp/dhclient.conf` and restarting NetworkManager.
+
 For some reason, the above doesn't work when there are changes made from Gnome's Network settings. And we will have to set it with `nmcli`:
 
-1. Identify the active connection: `nmcli -t connection show --active | grep '\:.*ethernet\|\:.*wireless' | head -n 1 | cut -d ':' -f 2`
-2. Set the upstream DNS: `sudo nmcli connection modify [the active connection ID] ipv4.dns [DNS IP]`
-3. Restart NetworkManager: `sudo systemctl restart NetworkManager`
+{{< highlight shell "linenos=table,hl_lines=1-3,linenostart=1,noclasses=false" >}}
+nmcli -t connection show --active | grep '\:.*ethernet\|\:.*wireless' | head -n 1 | cut -d ':' -f 2
+sudo nmcli connection modify [the active connection ID] ipv4.dns [IP of DNS]
+sudo systemctl restart NetworkManager
+{{< /highlight >}}
+
+- Line 1: identify the active connection ID.
+- Line 2: set the upstream DNS.
+- Line 3: restart NetworkManager
 
 ## Example
 
@@ -151,6 +158,8 @@ Let's say we have an entry `192.168.218.1 01 master01.domjudge` in `/etc/hosts_d
 | `master01` | not found |
 | `master01.domjudge` | `192.168.218.1` |
 | `google.com` | one of Google's public IP, e.g. `216.58.200.46` |
+
+*Note that http://01 won't get you to domain `01`.*
 
 # Firewall
 
@@ -173,7 +182,7 @@ There is always a good reason behind when a software is frequently being recomme
 
 The DNS settings above was formed after many tries. Prior to that, I had have met several problems with this host mapping. There were some ways I used to find out the underlying issues:
 
-1. Run the `ansible-playbook` commands with the `-vvv` argument. With `-vvv` set, `ansible-playbook` will be much more "talkative" instead of just showing the name of a task and whether it succeeded.
+1. [Run the `ansible-playbook` commands](#first-try) with the `-vvv` argument. With `-vvv` set, `ansible-playbook` will be much more "talkative" instead of just showing the name of a task and whether it succeeded.
 2. If the API server is up, get logs from a pod:
     1. List all pods: `sudo oc get pods --all-namespaces`
     2. Identify the name and namespace of the pods whose state are `Error` or `CrashLoopBackOff`. High restart counts may also be abnormal for a pod.
@@ -324,7 +333,7 @@ I want to highlight 2 places in the documentation to make our lives easier:
 
 # The Complete Example
 
-Aside from just setting up an Openshift cluster, I automated many installation processes in order to reproduce the whole environment faster. The complete example is on my [Github repository](https://github.com/Superdanby/Openshift-Ansible-Domjudge). Feel free using it to create your first multi-node local Openshift cluster.
+Aside from just setting up an Openshift cluster, I have automated many installation processes with Ansible in order to reproduce the whole environment faster. The complete example is on my [Github repository](https://github.com/Superdanby/Openshift-Ansible-Domjudge). Feel free using it to create your first multi-node local Openshift cluster.
 
 # Special Thanks
 

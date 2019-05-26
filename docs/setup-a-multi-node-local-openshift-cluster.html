@@ -441,14 +441,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <h2 id="client-side">Client Side</h2>
 
-<p>The DNS upstream server is set in <code>/etc/resolv.conf</code>. Linux will only use the first <code>nameserver</code> entry in default. Hence, we have to insert the <code>nameserver</code> in the first place. This can usually be done by saving <code>prepend domain-name-servers [DNS IP];</code> to <code>/etc/dhcp/dhclient.conf</code> and restarting NetworkManager.
-For some reason, the above doesn&rsquo;t work when there are changes made from Gnome&rsquo;s Network settings. And we will have to set it with <code>nmcli</code>:</p>
+<p>The DNS upstream server is set in <code>/etc/resolv.conf</code>. Linux will only use the first <code>nameserver</code> entry by default. Hence, we have to insert the <code>nameserver</code> in the first place. This can usually be done by saving <code>prepend domain-name-servers [DNS IP];</code> to <code>/etc/dhcp/dhclient.conf</code> and restarting NetworkManager.</p>
 
-<ol>
-<li>Identify the active connection: <code>nmcli -t connection show --active | grep '\:.*ethernet\|\:.*wireless' | head -n 1 | cut -d ':' -f 2</code></li>
-<li>Set the upstream DNS: <code>sudo nmcli connection modify [the active connection ID] ipv4.dns [DNS IP]</code></li>
-<li>Restart NetworkManager: <code>sudo systemctl restart NetworkManager</code></li>
-</ol>
+<p>For some reason, the above doesn&rsquo;t work when there are changes made from Gnome&rsquo;s Network settings. And we will have to set it with <code>nmcli</code>:</p>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="hl"><span class="lnt">1</span></span><span class="hl"><span class="lnt">2</span></span><span class="hl"><span class="lnt">3</span></span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="hl">nmcli -t connection show --active <span class="p">|</span> grep <span class="s1">&#39;\:.*ethernet\|\:.*wireless&#39;</span> <span class="p">|</span> head -n <span class="m">1</span> <span class="p">|</span> cut -d <span class="s1">&#39;:&#39;</span> -f <span class="m">2</span>
+</span><span class="hl">sudo nmcli connection modify <span class="o">[</span>the active connection ID<span class="o">]</span> ipv4.dns <span class="o">[</span>IP of DNS<span class="o">]</span>
+</span><span class="hl">sudo systemctl restart NetworkManager</span></code></pre></td></tr></table>
+</div>
+</div>
+
+<ul>
+<li>Line 1: identify the active connection ID.</li>
+<li>Line 2: set the upstream DNS.</li>
+<li>Line 3: restart NetworkManager</li>
+</ul>
 
 <h2 id="example">Example</h2>
 
@@ -490,6 +501,8 @@ For some reason, the above doesn&rsquo;t work when there are changes made from G
 </tbody>
 </table>
 
+<p><em>Note that <a href="http://01">http://01</a> won&rsquo;t get you to domain <code>01</code>.</em></p>
+
 <h1 id="firewall">Firewall</h1>
 
 <p>After setting up the DNS, I ran into a weird problem. I could access the DNS service on the same computer but not other computers. <code>sudo systemctl status dnsmasq</code> seemed fine. <code>journalctl</code> didn&rsquo;t report any thing weird. Checking port status with <code>sudo netstat -antup</code>, <code>dnsmasq</code> was also listening on the desired port. Using <code>nmap</code> to check open ports on the DNS host from other computers didn&rsquo;t showed any trace of DNS service. I was so confused. An idea then flashed through my mind. Maybe it was the firewall blocking the packages. I tried to get some information with <code>firewall-cmd --list-all-zones</code>, but it replied that <code>firewalld</code> is not running! I was shocked because I didn&rsquo;t disable or stop <code>firewalld</code> and it&rsquo;d be extremely dangerous if no firewall was running. Fortunately, <code>iptables</code> was up and doing its job. I then discovered that while <a href="https://docs.okd.io/latest/install/prerequisites.html#install-config-network-using-firewalld">it is recommended to use <code>firewalld</code>, <code>iptables</code> is the default</a>.</p>
@@ -514,7 +527,7 @@ For some reason, the above doesn&rsquo;t work when there are changes made from G
 <p>The DNS settings above was formed after many tries. Prior to that, I had have met several problems with this host mapping. There were some ways I used to find out the underlying issues:</p>
 
 <ol>
-<li>Run the <code>ansible-playbook</code> commands with the <code>-vvv</code> argument. With <code>-vvv</code> set, <code>ansible-playbook</code> will be much more &ldquo;talkative&rdquo; instead of just showing the name of a task and whether it succeeded.</li>
+<li><a href="#first-try">Run the <code>ansible-playbook</code> commands</a> with the <code>-vvv</code> argument. With <code>-vvv</code> set, <code>ansible-playbook</code> will be much more &ldquo;talkative&rdquo; instead of just showing the name of a task and whether it succeeded.</li>
 <li>If the API server is up, get logs from a pod:
 
 <ol>
@@ -742,7 +755,7 @@ For some reason, the above doesn&rsquo;t work when there are changes made from G
 
 <h1 id="the-complete-example">The Complete Example</h1>
 
-<p>Aside from just setting up an Openshift cluster, I automated many installation processes in order to reproduce the whole environment faster. The complete example is on my <a href="https://github.com/Superdanby/Openshift-Ansible-Domjudge">Github repository</a>. Feel free using it to create your first multi-node local Openshift cluster.</p>
+<p>Aside from just setting up an Openshift cluster, I have automated many installation processes with Ansible in order to reproduce the whole environment faster. The complete example is on my <a href="https://github.com/Superdanby/Openshift-Ansible-Domjudge">Github repository</a>. Feel free using it to create your first multi-node local Openshift cluster.</p>
 
 <h1 id="special-thanks">Special Thanks</h1>
 
