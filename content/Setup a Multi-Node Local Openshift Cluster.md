@@ -374,8 +374,8 @@ Aside from just setting up an Openshift cluster, I have automated many installat
 There are 2 people I would like to thank. They have been extremely helpful throughout installation process.
 
 1. [Henry](https://www.linkedin.com/in/chun-hung-tseng/): sharp observation skills and good sense when encountering a problem. I often discuss the problems I meet with him. He was also responsible for modifying the judge images to make them suite our needs.
-2. [林俊男](https://www.linkedin.com/in/junnan-lin-584627188/): he helped us a lot with PXE configuration for uploading and deploying base operating system images. He was also responsible for the networking outside the cluster and the hardware equipment used for the contest.
+2. [Junnan](https://www.linkedin.com/in/junnan-lin-584627188/): he helped us a lot with PXE configuration for uploading and deploying base operating system images. He was also responsible for the networking outside the cluster and the hardware equipment used for the contest.
 
-{{% admonition title="Under Construction" color="yellow" %}}
+{{% admonition title="Finished!" color="green" %}}
 May 26, 2019
 {{% /admonition %}}
