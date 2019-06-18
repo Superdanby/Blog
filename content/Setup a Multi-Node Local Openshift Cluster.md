@@ -376,6 +376,10 @@ There are 2 people I would like to thank. They have been extremely helpful throu
 1. [Henry](https://www.linkedin.com/in/chun-hung-tseng/): sharp observation skills and good sense when encountering a problem. I often discuss the problems I meet with him. He was also responsible for modifying the judge images to make them suite our needs.
 2. [Junnan](https://www.linkedin.com/in/junnan-lin-584627188/): he helped us a lot with PXE configuration for uploading and deploying base operating system images. He was also responsible for the networking outside the cluster and the hardware equipment used for the contest.
 
+## Modifying Domjudge images
+
+Please see [Henry's blog](https://henrybear327.github.io/blog/post/pineapple/judge/).
+
 {{% admonition title="Finished!" color="green" %}}
 May 26, 2019
 {{% /admonition %}}
