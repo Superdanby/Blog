@@ -176,7 +176,7 @@ I was not pleasant with `iptables` and switched back to `firewalld`.
 
 ## Allow DNS Queries with `firewalld`
 
-There is always a good reason behind when a software is frequently being recommended. In this case, running `sudo firewall-cmd --add-service=dns --permanent && sudo firewall-cmd reload` will do the job.
+There is always a good reason behind when a software is frequently being recommended. In this case, simply running `sudo firewall-cmd --add-service=dns --permanent && sudo firewall-cmd reload` will do the messy job above.
 
 # Debugging Installation Issues
 
