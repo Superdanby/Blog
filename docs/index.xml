@@ -6,10 +6,20 @@
     <description>Recent content on Superdanby</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 May 2019 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Feb 2020 16:45:00 +0800</lastBuildDate>
     
 	<atom:link href="https://superdanby.github.io/Blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HTTPS with Self-signed Certificates</title>
+      <link>https://superdanby.github.io/Blog/https-with-self-signed-certificates.html</link>
+      <pubDate>Wed, 12 Feb 2020 16:45:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/https-with-self-signed-certificates.html</guid>
+      <description>Importance of HTTPS In the world of which hackers are everywhere, our messages and passwords may be easily stolen if they are not encrypted in a network connection. HTTPS provides 2 very important functionalities:
+ Encrypted connection Trusted URL and website binding  Self-signed Certificates HTTPS requires a valid certificate to work. While there are many HTTPS services out there like Let&amp;rsquo;s Encrypt, sometimes we need to sign the certificates on our own.</description>
+    </item>
     
     <item>
       <title>Setup a Multi-Node Local Openshift Cluster</title>
@@ -26,7 +36,7 @@
       <pubDate>Sat, 05 Jan 2019 00:00:00 +0800</pubDate>
       
       <guid>https://superdanby.github.io/Blog/c&#43;&#43;-notes.html</guid>
-      <description>Important Concepts Rvalue Reference  Rvalue Reference(move &amp;amp; perfect forward)  Value Category  glvalue prvalue xvalue  decltype behavior   constexpr  constexpr vs const: constexpr variables will be evaluated in compile time while const variables may be evaluated in compile time or runtime. checking with noexcept  List Initialization  list initialization vs non-list initialization  Array declaration Read array declarations from inside to outside 12345 int *ptrs[10]; // ptrs is an array of ten pointers to int int &amp;amp;refs[10] = /* ?</description>
+      <description>Important Concepts Rvalue Reference  Rvalue Reference(move &amp;amp; perfect forward)  Value Category  glvalue prvalue xvalue  decltype behavior   constexpr  constexpr vs const: constexpr variables will be evaluated in compile time while const variables may be evaluated in compile time or runtime. checking with noexcept  List Initialization  list initialization vs non-list initialization  Array declaration Read array declarations from inside to outside 1 2 3 4 5  int *ptrs[10]; // ptrs is an array of ten pointers to int int &amp;amp;refs[10] = /* ?</description>
     </item>
     
     <item>
@@ -45,7 +55,7 @@ Hackmd file</description>
       <pubDate>Mon, 10 Dec 2018 20:00:00 +0800</pubDate>
       
       <guid>https://superdanby.github.io/Blog/foundations-of-computer-science/c-and-c&#43;&#43;-programming-overview.html</guid>
-      <description>Basic types  data register int, float, char, long long, double, short C++ exclusive: bool  int i = 0; int a = b;  Array 123456 char carray[23]; // char carray2[4] = a; long long po [8]; po[0] = 1; po[7] = po[0]; // po[8];   Pointers and Reference  address register *, &amp;amp;  123456789101112131415161718192021222324 int a = 10, b = 1; int* aptr = NULL; // double * dptr = &amp;amp;a; aptr = &amp;amp;a; // aptr -&amp;gt; a, a = 10, b = 1 *aptr = b; // aptr -&amp;gt; a, a = 1, b = 1 a = 2; // aptr -&amp;gt; a, a = 2, b = 1 b = 7; // aptr -&amp;gt; a, a = 2, b = 7 &amp;amp;a = b; // aptr -&amp;gt; old a, old a = 2, b(a) = 7; printf(&amp;#34;%d %d&amp;#34;, a, *aptr); // 7 2  int * potato = NULL; if(potato == NULL) printf(&amp;#34;hi&amp;#34;); potato = (int *)malloc(sizeof(int) * 127); if(potato == NULL) printf(&amp;#34;Memory allocation failed.</description>
+      <description>Basic types  data register int, float, char, long long, double, short C++ exclusive: bool  int i = 0; int a = b;  Array 1 2 3 4 5 6  char carray[23]; // char carray2[4] = a; long long po [8]; po[0] = 1; po[7] = po[0]; // po[8];    Pointers and Reference  address register *, &amp;amp;  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  int a = 10, b = 1; int* aptr = NULL; // double * dptr = &amp;amp;a; aptr = &amp;amp;a; // aptr -&amp;gt; a, a = 10, b = 1 *aptr = b; // aptr -&amp;gt; a, a = 1, b = 1 a = 2; // aptr -&amp;gt; a, a = 2, b = 1 b = 7; // aptr -&amp;gt; a, a = 2, b = 7 &amp;amp;a = b; // aptr -&amp;gt; old a, old a = 2, b(a) = 7; printf(&amp;#34;%d %d&amp;#34;, a, *aptr); // 7 2  int * potato = NULL; if(potato == NULL) printf(&amp;#34;hi&amp;#34;); potato = (int *)malloc(sizeof(int) * 127); if(potato == NULL) printf(&amp;#34;Memory allocation failed.</description>
     </item>
     
     <item>

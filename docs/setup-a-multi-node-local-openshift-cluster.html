@@ -345,7 +345,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-ini" data-lang="ini"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="lnt"> 3</span><span class="lnt"> 4</span><span class="lnt"> 5</span><span class="lnt"> 6</span><span class="lnt"> 7</span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="hl"><span class="lnt">13</span></span><span class="lnt">14</span><span class="hl"><span class="lnt">15</span></span><span class="lnt">16</span><span class="lnt">17</span><span class="lnt">18</span><span class="hl"><span class="lnt">19</span></span><span class="hl"><span class="lnt">20</span></span></code></pre></td>
+<pre class="chroma"><code class="language-ini" data-lang="ini"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="hl"><span class="lnt">13
+</span></span><span class="lnt">14
+</span><span class="hl"><span class="lnt">15
+</span></span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="hl"><span class="lnt">19
+</span></span><span class="hl"><span class="lnt">20
+</span></span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-ini" data-lang="ini"><span class="k">[masters]</span>
 <span class="na">192.168.218.1</span>
@@ -422,7 +442,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-ini" data-lang="ini"><span class="hl"><span class="lnt">1</span></span><span class="lnt">2</span><span class="lnt">3</span><span class="hl"><span class="lnt">4</span></span><span class="hl"><span class="lnt">5</span></span><span class="hl"><span class="lnt">6</span></span><span class="lnt">7</span></code></pre></td>
+<pre class="chroma"><code class="language-ini" data-lang="ini"><span class="hl"><span class="lnt">1
+</span></span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="hl"><span class="lnt">4
+</span></span><span class="hl"><span class="lnt">5
+</span></span><span class="hl"><span class="lnt">6
+</span></span><span class="lnt">7
+</span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-ini" data-lang="ini"><span class="hl"><span class="na">server</span><span class="o">=</span><span class="s">8.8.8.8</span>
 </span><span class="na">user</span><span class="o">=</span><span class="s">dnsmasq</span>
@@ -450,7 +477,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="hl"><span class="lnt">1</span></span><span class="hl"><span class="lnt">2</span></span><span class="hl"><span class="lnt">3</span></span></code></pre></td>
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="hl"><span class="lnt">1
+</span></span><span class="hl"><span class="lnt">2
+</span></span><span class="hl"><span class="lnt">3
+</span></span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell"><span class="hl">nmcli -t connection show --active <span class="p">|</span> grep <span class="s1">&#39;\:.*ethernet\|\:.*wireless&#39;</span> <span class="p">|</span> head -n <span class="m">1</span> <span class="p">|</span> cut -d <span class="s1">&#39;:&#39;</span> -f <span class="m">2</span>
 </span><span class="hl">sudo nmcli connection modify <span class="o">[</span>the active connection ID<span class="o">]</span> ipv4.dns <span class="o">[</span>IP of DNS<span class="o">]</span>
@@ -605,7 +635,36 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-ini" data-lang="ini"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="lnt"> 3</span><span class="lnt"> 4</span><span class="lnt"> 5</span><span class="lnt"> 6</span><span class="lnt"> 7</span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="lnt">13</span><span class="lnt">14</span><span class="lnt">15</span><span class="lnt">16</span><span class="lnt">17</span><span class="hl"><span class="lnt">18</span></span><span class="hl"><span class="lnt">19</span></span><span class="lnt">20</span><span class="lnt">21</span><span class="lnt">22</span><span class="lnt">23</span><span class="hl"><span class="lnt">24</span></span><span class="lnt">25</span><span class="lnt">26</span><span class="hl"><span class="lnt">27</span></span><span class="hl"><span class="lnt">28</span></span><span class="hl"><span class="lnt">29</span></span></code></pre></td>
+<pre class="chroma"><code class="language-ini" data-lang="ini"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="hl"><span class="lnt">18
+</span></span><span class="hl"><span class="lnt">19
+</span></span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="hl"><span class="lnt">24
+</span></span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="hl"><span class="lnt">27
+</span></span><span class="hl"><span class="lnt">28
+</span></span><span class="hl"><span class="lnt">29
+</span></span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-ini" data-lang="ini"><span class="k">[masters]</span>
 <span class="na">master01.domjudge</span>
@@ -721,9 +780,58 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="lnt"> 1</span><span class="lnt"> 2</span><span class="lnt"> 3</span><span class="lnt"> 4</span><span class="lnt"> 5</span><span class="lnt"> 6</span><span class="lnt"> 7</span><span class="lnt"> 8</span><span class="lnt"> 9</span><span class="lnt">10</span><span class="lnt">11</span><span class="lnt">12</span><span class="lnt">13</span><span class="lnt">14</span><span class="lnt">15</span><span class="lnt">16</span><span class="lnt">17</span><span class="lnt">18</span><span class="lnt">19</span><span class="lnt">20</span><span class="lnt">21</span><span class="lnt">22</span><span class="lnt">23</span><span class="lnt">24</span><span class="lnt">25</span><span class="lnt">26</span><span class="lnt">27</span><span class="lnt">28</span><span class="lnt">29</span><span class="lnt">30</span><span class="hl"><span class="lnt">31</span></span><span class="hl"><span class="lnt">32</span></span><span class="hl"><span class="lnt">33</span></span><span class="hl"><span class="lnt">34</span></span><span class="lnt">35</span><span class="lnt">36</span><span class="lnt">37</span><span class="lnt">38</span><span class="lnt">39</span><span class="lnt">40</span><span class="lnt">41</span><span class="lnt">42</span><span class="lnt">43</span><span class="lnt">44</span><span class="lnt">45</span><span class="lnt">46</span><span class="lnt">47</span><span class="lnt">48</span><span class="lnt">49</span></code></pre></td>
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="hl"><span class="lnt">31
+</span></span><span class="hl"><span class="lnt">32
+</span></span><span class="hl"><span class="lnt">33
+</span></span><span class="hl"><span class="lnt">34
+</span></span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml">apiVersion<span class="p">:</span><span class="w"> </span>apps.openshift.io/v<span class="m">1</span><span class="w">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml">apiVersion<span class="p">:</span><span class="w"> </span>apps.openshift.io/v1<span class="w">
 </span><span class="w"></span>kind<span class="p">:</span><span class="w"> </span>DeploymentConfig<span class="w">
 </span><span class="w"></span>metadata<span class="p">:</span><span class="w">
 </span><span class="w">  </span>name<span class="p">:</span><span class="w"> </span>pod_name<span class="w">
@@ -827,7 +935,8 @@ document.addEventListener("DOMContentLoaded", function() {
         Finished!
     </span>
 
-    <div class="content"><p>May 26, 2019</p>
+    <div class="content">
+May 26, 2019
 </div>
 </div>
 <div class="footnotes">
@@ -878,7 +987,7 @@ function expand_disqus() {
         <a href="https://github.com/Superdanby/hugo-zmd-theme">zmd</a>
     </p>
     <p>
-        © 2019 by Superdanby
+        © 2020 by Superdanby
         <a href="./index.xml" title="RSS">♥</a>
     </p>
 </footer>

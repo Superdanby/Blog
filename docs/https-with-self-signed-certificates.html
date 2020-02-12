@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="tw">
+    <head>
+        <title> 
+    HTTPS with Self-signed Certificates | Superdanby
+ </title>
+
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <link rel="shortcut icon" type="image/jpeg" href="/Blog/abouts/me.gif" />
+
+        
+        <link rel="stylesheet" href="/Blog/style.min.css">
+
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"></script>
+        
+
+        
+        
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116389618-1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'UA-116389618-1');
+            </script>
+        
+
+        
+        
+
+        
+        <script>
+document.addEventListener("DOMContentLoaded", function() {
+	var article = document.getElementsByTagName("article")[0];
+
+	if (typeof article == "undefined")
+		return;
+
+	var s = article.getElementsByTagName("a");
+	var i = 0;
+	var re = new RegExp("([\\.\\/\\,\\s]|\w\-)","g");
+	while (s[i] && typeof s[i].innerHTML != "undefined")
+	{
+		if (s[i].getElementsByTagName("code").length == 0)
+			s[i].innerHTML = s[i].innerHTML.replace(re,"$1<wbr>");
+		++i;
+	}
+
+	s = article.getElementsByTagName("code");
+	i = 0;
+	while (s[i] && typeof s[i].innerHTML != "undefined")
+	{
+		var parent = s[i].parentElement;
+		while (parent && parent.tagName != "PRE" && parent.tagName != "A")
+			parent = parent.parentElement;
+		if (!parent)
+			s[i].innerHTML = s[i].innerHTML.replace(re,"$1<wbr>");
+		++i;
+	}
+});
+</script>
+
+
+    </head>
+
+    <body>
+        
+        <header>
+    
+    
+    <div class="icon">
+        <a href="https://superdanby.github.io/Blog"><img src="/Blog/abouts/me.gif" alt="me"></a>
+    </div>
+
+    
+    <div class="name">
+        <a href="https://superdanby.github.io/Blog">Superdanby</a>
+    </div>
+
+    
+    <div class="menu">
+        <a href="/Blog/abouts.html">ABOUT</a>
+        <a href="/Blog/categories.html">CATEGORY</a>
+        <a href="/Blog/tags.html">TAG</a>
+    </div>
+
+</header>
+
+        
+        <main>
+            
+    <article>
+
+    
+    <div class="info">
+        <div class="top">
+            <span title="Date">2020/02/12</span>
+            <span>@</span>
+            <span>
+                
+                   
+                   <a href="https://superdanby.github.io/Blog/categories/server.html">Server</a>
+                
+            </span>
+        </div>
+
+        <h1 class="title">HTTPS with Self-signed Certificates</h1>
+
+        <div class="bottom">
+            
+                <a href="https://superdanby.github.io/Blog/tags/https.html">HTTPS</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/ssl.html">SSL</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/tls.html">TLS</a>
+            
+                <a href="https://superdanby.github.io/Blog/tags/self-signed.html">Self-signed</a>
+            
+        </div>
+    </div>
+
+    
+    
+    <div class="md-content">
+        
+        
+            <div class="toc">
+                <span>TOC</span>
+                <nav id="TableOfContents">
+<ul>
+<li><a href="#importance-of-https">Importance of HTTPS</a></li>
+<li><a href="#self-signed-certificates">Self-signed Certificates</a>
+<ul>
+<li><a href="#difference-between-ca-issued-certificates-and-self-signed-certificates">Difference between CA-issued Certificates and Self-signed Certificates</a></li>
+<li><a href="#trusting-the-self-signed-certificate">Trusting the Self-signed Certificate</a></li>
+<li><a href="#generate-self-signed-certificates">Generate self-signed Certificates</a></li>
+</ul></li>
+<li><a href="#web-server-configuration">Web Server Configuration</a></li>
+</ul>
+</nav>
+            </div>
+        
+        
+        
+
+<h1 id="importance-of-https">Importance of HTTPS</h1>
+
+<p>In the world of which hackers are everywhere, our messages and passwords may be easily stolen if they are not encrypted in a network connection. HTTPS provides 2 very important functionalities:</p>
+
+<ul>
+<li>Encrypted connection</li>
+<li>Trusted URL and website binding</li>
+</ul>
+
+<h1 id="self-signed-certificates">Self-signed Certificates</h1>
+
+<p>HTTPS requires a valid certificate to work. While there are many HTTPS services out there like <a href="https://superdanby.github.io/Blog/manually-obtain-letsencrypt-certificate-for-websites.html">Let&rsquo;s Encrypt</a>, sometimes we need to sign the certificates on our own. Common scenarios are when the server doesn&rsquo;t have a public domain or the server is inside a private network.</p>
+
+<h2 id="difference-between-ca-issued-certificates-and-self-signed-certificates">Difference between CA-issued Certificates and Self-signed Certificates</h2>
+
+<p>Client browsers has a list of trusted certificate authority certificates. If a CA certificate is on the list, other certificates issued by them will also be trusted. Since self-signed certificates are not on the list, clients will see a warning that the certificate of the website is not trusted.</p>
+
+<p>Although the self-signed certificate is not trusted, the connection is still encrypted while using HTTPS.</p>
+
+<h2 id="trusting-the-self-signed-certificate">Trusting the Self-signed Certificate</h2>
+
+<p>Importing the certificate into the client&rsquo;s system can solve the problem.</p>
+
+<h2 id="generate-self-signed-certificates">Generate self-signed Certificates</h2>
+
+<p><code>openssl req -x509 -nodes -days 7300 -newkey rsa:4096 -keyout /etc/ssl/private/selfsigned.key -subj &quot;/C=${C}/ST=${ST}/L=${L}/O=${O}/OU=${OU}/CN=${CN}&quot; -addext &quot;subjectAltName = ${SAN}&quot; -out /etc/ssl/certs/selfsigned.crt</code></p>
+
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>C</code></td>
+<td>2-digit country code, arguments for generating SSL certificate(optional)</td>
+</tr>
+
+<tr>
+<td><code>ST</code></td>
+<td>state, arguments for generating SSL certificate(optional)</td>
+</tr>
+
+<tr>
+<td><code>L</code></td>
+<td>location(city), arguments for generating SSL certificate(optional)</td>
+</tr>
+
+<tr>
+<td><code>O</code></td>
+<td>organization, arguments for generating SSL certificate(optional)</td>
+</tr>
+
+<tr>
+<td><code>OU</code></td>
+<td>organization unit(division), arguments for generating SSL certificate(optional)</td>
+</tr>
+
+<tr>
+<td><code>CN</code></td>
+<td>common name(FQDN/IP), e.g. <code>www.example.com</code> / <code>0.0.0.0</code>, arguments for generating SSL certificate</td>
+</tr>
+
+<tr>
+<td><code>SAN</code></td>
+<td>subject alternative name(DNS:FQDN/IP:IP), e.g. <code>DNS:www.exmple.com</code> / <code>IP:0.0.0.0</code>, arguments for generating SSL certificate</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Note that if you are creating a certificate signing request(CSR) the optional fields are usually required.</strong></p>
+
+<h1 id="web-server-configuration">Web Server Configuration</h1>
+
+<p>For web server configurations I recommend checking out <a href="https://github.com/RaymiiOrg/cipherli.st">https://github.com/RaymiiOrg/cipherli.st</a>.</p>
+
+    </div>
+
+    
+    
+        <div id="comments">
+    <button id="expand-btn" href="" onclick="expand_disqus()">Comments</button>
+    <div id="disqus_thread"></div>
+</div>
+
+<script type="text/javascript">
+
+function expand_disqus() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    document.getElementById('expand-btn').style.display = "none";
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = false;
+    var disqus_shortname = 'superdanby-blog';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+};
+</script>
+    
+</article>
+
+        </main>
+
+        
+        <footer>
+    
+    <p>
+        Powered by <a href="https://gohugo.io/">Hugo</a> with theme
+        <a href="https://github.com/Superdanby/hugo-zmd-theme">zmd</a>
+    </p>
+    <p>
+        © 2020 by Superdanby
+        <a href="./index.xml" title="RSS">♥</a>
+    </p>
+</footer>
+
+
+        
+        
+            <script>
+                anchors.options = {
+                    placement: 'right',
+                };
+                anchors.add('.md-content > h1, .md-content > h2, .md-content > h3, .md-content > h4');
+            </script>
+        
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Self-signed on Superdanby</title>
+    <link>https://superdanby.github.io/Blog/tags/self-signed.html</link>
+    <description>Recent content in Self-signed on Superdanby</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Feb 2020 16:45:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://superdanby.github.io/Blog/tags/self-signed/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HTTPS with Self-signed Certificates</title>
+      <link>https://superdanby.github.io/Blog/https-with-self-signed-certificates.html</link>
+      <pubDate>Wed, 12 Feb 2020 16:45:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/https-with-self-signed-certificates.html</guid>
+      <description>Importance of HTTPS In the world of which hackers are everywhere, our messages and passwords may be easily stolen if they are not encrypted in a network connection. HTTPS provides 2 very important functionalities:
+ Encrypted connection Trusted URL and website binding  Self-signed Certificates HTTPS requires a valid certificate to work. While there are many HTTPS services out there like Let&amp;rsquo;s Encrypt, sometimes we need to sign the certificates on our own.</description>
+    </item>
+    
+  </channel>
+</rss>

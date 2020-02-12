@@ -191,13 +191,19 @@ document.addEventListener("DOMContentLoaded", function() {
 <p>Read array declarations from inside to outside
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1</span><span class="lnt">2</span><span class="hl"><span class="lnt">3</span></span><span class="lnt">4</span><span class="hl"><span class="lnt">5</span></span></code></pre></td>
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="hl"><span class="lnt">3
+</span></span><span class="lnt">4
+</span><span class="hl"><span class="lnt">5
+</span></span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="o">*</span><span class="n">ptrs</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>            <span class="c1">//  ptrs is an array of ten pointers to int
 </span><span class="c1"></span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">refs</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="cm">/* ? */</span><span class="p">;</span>  <span class="c1">//  error: no arrays of references
 </span><span class="hl"><span class="c1"></span><span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">Parray</span><span class="p">)[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">arr</span><span class="p">;</span> <span class="c1">//  Parray points to an array of ten ints
 </span></span><span class="c1"></span><span class="kt">int</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">arrRef</span><span class="p">)[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">;</span>  <span class="c1">//  arrRef refers to an array of ten ints
-</span><span class="hl"><span class="c1"></span><span class="kt">int</span> <span class="o">*</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arry</span><span class="p">)[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="n">ptrs</span><span class="p">;</span> <span class="o">//</span> <span class="n">arry</span> <span class="n">is</span> <span class="n">a</span> <span class="n">reference</span> <span class="n">to</span> <span class="n">an</span> <span class="n">array</span> <span class="n">of</span> <span class="n">ten</span> <span class="n">pointers</span></span></code></pre></td></tr></table>
+</span><span class="hl"><span class="c1"></span><span class="kt">int</span> <span class="o">*</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arry</span><span class="p">)[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="n">ptrs</span><span class="p">;</span> <span class="c1">// arry is a reference to an array of ten pointers
+</span></span></code></pre></td></tr></table>
 </div>
 </div></p>
 
@@ -225,15 +231,23 @@ document.addEventListener("DOMContentLoaded", function() {
 <li><p><code>initializer_list&lt;T&gt;</code>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1</span><span class="lnt">2</span><span class="hl"><span class="lnt">3</span></span><span class="lnt">4</span><span class="hl"><span class="lnt">5</span></span><span class="hl"><span class="lnt">6</span></span><span class="hl"><span class="lnt">7</span></span></code></pre></td>
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="hl"><span class="lnt">3
+</span></span><span class="lnt">4
+</span><span class="hl"><span class="lnt">5
+</span></span><span class="hl"><span class="lnt">6
+</span></span><span class="hl"><span class="lnt">7
+</span></span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">foo</span><span class="p">(</span><span class="n">initializer_list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">il</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="hl">	<span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="nl">x</span><span class="p">:</span> <span class="n">il</span><span class="p">)</span>
-</span>		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">il</span> <span class="o">&lt;&lt;</span> <span class="sa"></span><span class="s">&#34; &#34;</span><span class="p">;</span>
+</span>		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">il</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span><span class="p">;</span>
 <span class="hl">	<span class="k">return</span><span class="p">;</span>
 </span><span class="hl"><span class="p">}</span>
-</span><span class="hl"><span class="n">foo</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">});</span></span></code></pre></td></tr></table>
+</span><span class="hl"><span class="n">foo</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">});</span>
+</span></code></pre></td></tr></table>
 </div>
 </div></p></li>
 
@@ -259,10 +273,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1</span><span class="lnt">2</span></code></pre></td>
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">auto</span> <span class="n">back</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">prev</span><span class="p">(</span><span class="n">STL</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-<span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">STL</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">back</span><span class="p">;</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">next</span><span class="p">(</span><span class="n">it</span><span class="p">));</span></code></pre></td></tr></table>
+<span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">STL</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">back</span><span class="p">;</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">next</span><span class="p">(</span><span class="n">it</span><span class="p">));</span>
+</code></pre></td></tr></table>
 </div>
 </div>
 
@@ -278,10 +295,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1</span><span class="lnt">2</span></code></pre></td>
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="o">-</span><span class="mi">21</span> <span class="o">%</span> <span class="o">-</span><span class="mi">8</span><span class="p">;</span> <span class="cm">/* -5 */</span>    <span class="o">-</span><span class="mi">21</span> <span class="o">/</span> <span class="o">-</span><span class="mi">8</span> <span class="cm">/* 3 */</span>
-<span class="mi">21</span> <span class="o">%</span> <span class="mi">6</span><span class="p">;</span> <span class="cm">/* 3 */</span>    <span class="mi">21</span> <span class="o">/</span> <span class="mi">6</span> <span class="cm">/* 3 */</span></code></pre></td></tr></table>
+<span class="mi">21</span> <span class="o">%</span> <span class="mi">6</span><span class="p">;</span> <span class="cm">/* 3 */</span>    <span class="mi">21</span> <span class="o">/</span> <span class="mi">6</span> <span class="cm">/* 3 */</span>
+</code></pre></td></tr></table>
 </div>
 </div>
 <div class="footnotes">
@@ -334,7 +354,7 @@ function expand_disqus() {
         <a href="https://github.com/Superdanby/hugo-zmd-theme">zmd</a>
     </p>
     <p>
-        © 2019 by Superdanby
+        © 2020 by Superdanby
         <a href="./index.xml" title="RSS">♥</a>
     </p>
 </footer>

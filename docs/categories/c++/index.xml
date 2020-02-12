@@ -17,7 +17,7 @@
       <pubDate>Sat, 05 Jan 2019 00:00:00 +0800</pubDate>
       
       <guid>https://superdanby.github.io/Blog/c&#43;&#43;-notes.html</guid>
-      <description>Important Concepts Rvalue Reference  Rvalue Reference(move &amp;amp; perfect forward)  Value Category  glvalue prvalue xvalue  decltype behavior   constexpr  constexpr vs const: constexpr variables will be evaluated in compile time while const variables may be evaluated in compile time or runtime. checking with noexcept  List Initialization  list initialization vs non-list initialization  Array declaration Read array declarations from inside to outside 12345 int *ptrs[10]; // ptrs is an array of ten pointers to int int &amp;amp;refs[10] = /* ?</description>
+      <description>Important Concepts Rvalue Reference  Rvalue Reference(move &amp;amp; perfect forward)  Value Category  glvalue prvalue xvalue  decltype behavior   constexpr  constexpr vs const: constexpr variables will be evaluated in compile time while const variables may be evaluated in compile time or runtime. checking with noexcept  List Initialization  list initialization vs non-list initialization  Array declaration Read array declarations from inside to outside 1 2 3 4 5  int *ptrs[10]; // ptrs is an array of ten pointers to int int &amp;amp;refs[10] = /* ?</description>
     </item>
     
   </channel>

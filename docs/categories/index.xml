@@ -6,71 +6,17 @@
     <description>Recent content in Categories on Superdanby</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 May 2018 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Feb 2020 16:45:00 +0800</lastBuildDate>
     
 	<atom:link href="https://superdanby.github.io/Blog/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>About</title>
-      <link>https://superdanby.github.io/Blog/categories/about.html</link>
-      <pubDate>Wed, 16 May 2018 00:00:00 +0800</pubDate>
+      <title>Server</title>
+      <link>https://superdanby.github.io/Blog/categories/server.html</link>
+      <pubDate>Wed, 12 Feb 2020 16:45:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/categories/about.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Blog</title>
-      <link>https://superdanby.github.io/Blog/categories/blog.html</link>
-      <pubDate>Sat, 24 Mar 2018 17:46:50 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/categories/blog.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C&#43;&#43;</title>
-      <link>https://superdanby.github.io/Blog/categories/c&#43;&#43;.html</link>
-      <pubDate>Sat, 05 Jan 2019 00:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/categories/c&#43;&#43;.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cheatsheet</title>
-      <link>https://superdanby.github.io/Blog/categories/cheatsheet.html</link>
-      <pubDate>Sat, 09 Dec 2017 13:55:37 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/categories/cheatsheet.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fedora</title>
-      <link>https://superdanby.github.io/Blog/categories/fedora.html</link>
-      <pubDate>Tue, 03 Apr 2018 23:45:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/categories/fedora.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Foundations of Computer Science</title>
-      <link>https://superdanby.github.io/Blog/categories/foundations-of-computer-science.html</link>
-      <pubDate>Mon, 10 Dec 2018 21:55:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/categories/foundations-of-computer-science.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Laravel</title>
-      <link>https://superdanby.github.io/Blog/categories/laravel.html</link>
-      <pubDate>Sun, 11 Mar 2018 00:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/categories/laravel.html</guid>
+      <guid>https://superdanby.github.io/Blog/categories/server.html</guid>
       <description></description>
     </item>
     
@@ -84,20 +30,74 @@
     </item>
     
     <item>
-      <title>Security</title>
-      <link>https://superdanby.github.io/Blog/categories/security.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0800</pubDate>
+      <title>C&#43;&#43;</title>
+      <link>https://superdanby.github.io/Blog/categories/c&#43;&#43;.html</link>
+      <pubDate>Sat, 05 Jan 2019 00:00:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/categories/security.html</guid>
+      <guid>https://superdanby.github.io/Blog/categories/c&#43;&#43;.html</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Server</title>
-      <link>https://superdanby.github.io/Blog/categories/server.html</link>
-      <pubDate>Mon, 26 Feb 2018 14:00:00 +0800</pubDate>
+      <title>Foundations of Computer Science</title>
+      <link>https://superdanby.github.io/Blog/categories/foundations-of-computer-science.html</link>
+      <pubDate>Mon, 10 Dec 2018 21:55:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/categories/server.html</guid>
+      <guid>https://superdanby.github.io/Blog/categories/foundations-of-computer-science.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://superdanby.github.io/Blog/categories/about.html</link>
+      <pubDate>Wed, 16 May 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/categories/about.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fedora</title>
+      <link>https://superdanby.github.io/Blog/categories/fedora.html</link>
+      <pubDate>Tue, 03 Apr 2018 23:45:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/categories/fedora.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Training the Next System Administrator and Web Developer</title>
+      <link>https://superdanby.github.io/Blog/categories/training-the-next-system-administrator-and-web-developer.html</link>
+      <pubDate>Tue, 03 Apr 2018 23:45:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/categories/training-the-next-system-administrator-and-web-developer.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>https://superdanby.github.io/Blog/categories/blog.html</link>
+      <pubDate>Sat, 24 Mar 2018 17:46:50 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/categories/blog.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Laravel</title>
+      <link>https://superdanby.github.io/Blog/categories/laravel.html</link>
+      <pubDate>Sun, 11 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/categories/laravel.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cheatsheet</title>
+      <link>https://superdanby.github.io/Blog/categories/cheatsheet.html</link>
+      <pubDate>Sat, 09 Dec 2017 13:55:37 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/categories/cheatsheet.html</guid>
       <description></description>
     </item>
     
@@ -129,11 +129,11 @@
     </item>
     
     <item>
-      <title>Training the Next System Administrator and Web Developer</title>
-      <link>https://superdanby.github.io/Blog/categories/training-the-next-system-administrator-and-web-developer.html</link>
-      <pubDate>Tue, 03 Apr 2018 23:45:00 +0800</pubDate>
+      <title>Security</title>
+      <link>https://superdanby.github.io/Blog/categories/security.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/categories/training-the-next-system-administrator-and-web-developer.html</guid>
+      <guid>https://superdanby.github.io/Blog/categories/security.html</guid>
       <description></description>
     </item>
     

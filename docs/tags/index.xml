@@ -6,35 +6,44 @@
     <description>Recent content in Tags on Superdanby</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Dec 2018 11:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Feb 2020 16:45:00 +0800</lastBuildDate>
     
 	<atom:link href="https://superdanby.github.io/Blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>2&#39;s complement</title>
-      <link>https://superdanby.github.io/Blog/tags/2s-complement.html</link>
-      <pubDate>Mon, 03 Dec 2018 11:30:00 +0800</pubDate>
+      <title>Https</title>
+      <link>https://superdanby.github.io/Blog/tags/https.html</link>
+      <pubDate>Wed, 12 Feb 2020 16:45:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/tags/2s-complement.html</guid>
+      <guid>https://superdanby.github.io/Blog/tags/https.html</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Add</title>
-      <link>https://superdanby.github.io/Blog/tags/add.html</link>
-      <pubDate>Wed, 05 Dec 2018 12:00:00 +0800</pubDate>
+      <title>SSL</title>
+      <link>https://superdanby.github.io/Blog/tags/ssl.html</link>
+      <pubDate>Wed, 12 Feb 2020 16:45:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/tags/add.html</guid>
+      <guid>https://superdanby.github.io/Blog/tags/ssl.html</guid>
       <description></description>
     </item>
     
     <item>
-      <title>And</title>
-      <link>https://superdanby.github.io/Blog/tags/and.html</link>
-      <pubDate>Wed, 05 Dec 2018 12:00:00 +0800</pubDate>
+      <title>Self-signed</title>
+      <link>https://superdanby.github.io/Blog/tags/self-signed.html</link>
+      <pubDate>Wed, 12 Feb 2020 16:45:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/tags/and.html</guid>
+      <guid>https://superdanby.github.io/Blog/tags/self-signed.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TLS</title>
+      <link>https://superdanby.github.io/Blog/tags/tls.html</link>
+      <pubDate>Wed, 12 Feb 2020 16:45:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/tls.html</guid>
       <description></description>
     </item>
     
@@ -48,47 +57,38 @@
     </item>
     
     <item>
-      <title>Atom</title>
-      <link>https://superdanby.github.io/Blog/tags/atom.html</link>
-      <pubDate>Sun, 18 Mar 2018 00:00:00 +0800</pubDate>
+      <title>Domjudge</title>
+      <link>https://superdanby.github.io/Blog/tags/domjudge.html</link>
+      <pubDate>Wed, 15 May 2019 00:00:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/tags/atom.html</guid>
+      <guid>https://superdanby.github.io/Blog/tags/domjudge.html</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Audio</title>
-      <link>https://superdanby.github.io/Blog/tags/audio.html</link>
-      <pubDate>Mon, 03 Dec 2018 11:30:00 +0800</pubDate>
+      <title>Kubernetes</title>
+      <link>https://superdanby.github.io/Blog/tags/kubernetes.html</link>
+      <pubDate>Wed, 15 May 2019 00:00:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/tags/audio.html</guid>
+      <guid>https://superdanby.github.io/Blog/tags/kubernetes.html</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Bash</title>
-      <link>https://superdanby.github.io/Blog/tags/bash.html</link>
-      <pubDate>Sun, 18 Mar 2018 00:00:00 +0800</pubDate>
+      <title>OKD</title>
+      <link>https://superdanby.github.io/Blog/tags/okd.html</link>
+      <pubDate>Wed, 15 May 2019 00:00:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/tags/bash.html</guid>
+      <guid>https://superdanby.github.io/Blog/tags/okd.html</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Bcd</title>
-      <link>https://superdanby.github.io/Blog/tags/bcd.html</link>
-      <pubDate>Mon, 03 Dec 2018 11:30:00 +0800</pubDate>
+      <title>Openshift</title>
+      <link>https://superdanby.github.io/Blog/tags/openshift.html</link>
+      <pubDate>Wed, 15 May 2019 00:00:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/tags/bcd.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bumblebee</title>
-      <link>https://superdanby.github.io/Blog/tags/bumblebee.html</link>
-      <pubDate>Mon, 24 Jul 2017 18:30:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/bumblebee.html</guid>
+      <guid>https://superdanby.github.io/Blog/tags/openshift.html</guid>
       <description></description>
     </item>
     
@@ -147,38 +147,11 @@
     </item>
     
     <item>
-      <title>Certbot</title>
-      <link>https://superdanby.github.io/Blog/tags/certbot.html</link>
-      <pubDate>Mon, 26 Feb 2018 14:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/certbot.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cheatsheet</title>
-      <link>https://superdanby.github.io/Blog/tags/cheatsheet.html</link>
-      <pubDate>Sat, 09 Dec 2017 13:55:37 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/cheatsheet.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>DMA</title>
       <link>https://superdanby.github.io/Blog/tags/dma.html</link>
       <pubDate>Sun, 09 Dec 2018 22:00:00 +0800</pubDate>
       
       <guid>https://superdanby.github.io/Blog/tags/dma.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DNF</title>
-      <link>https://superdanby.github.io/Blog/tags/dnf.html</link>
-      <pubDate>Tue, 03 Apr 2018 23:45:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/dnf.html</guid>
       <description></description>
     </item>
     
@@ -192,56 +165,11 @@
     </item>
     
     <item>
-      <title>Domjudge</title>
-      <link>https://superdanby.github.io/Blog/tags/domjudge.html</link>
-      <pubDate>Wed, 15 May 2019 00:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/domjudge.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Excess</title>
-      <link>https://superdanby.github.io/Blog/tags/excess.html</link>
-      <pubDate>Mon, 03 Dec 2018 11:30:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/excess.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fedora</title>
-      <link>https://superdanby.github.io/Blog/tags/fedora.html</link>
-      <pubDate>Tue, 03 Apr 2018 23:45:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/fedora.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Firewalld</title>
-      <link>https://superdanby.github.io/Blog/tags/firewalld.html</link>
-      <pubDate>Thu, 09 Mar 2017 11:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/firewalld.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>GPU</title>
       <link>https://superdanby.github.io/Blog/tags/gpu.html</link>
       <pubDate>Sun, 09 Dec 2018 22:00:00 +0800</pubDate>
       
       <guid>https://superdanby.github.io/Blog/tags/gpu.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gray code</title>
-      <link>https://superdanby.github.io/Blog/tags/gray-code.html</link>
-      <pubDate>Mon, 03 Dec 2018 11:30:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/gray-code.html</guid>
       <description></description>
     </item>
     
@@ -255,24 +183,6 @@
     </item>
     
     <item>
-      <title>Https</title>
-      <link>https://superdanby.github.io/Blog/tags/https.html</link>
-      <pubDate>Mon, 26 Feb 2018 14:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/https.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://superdanby.github.io/Blog/tags/hugo.html</link>
-      <pubDate>Sat, 24 Mar 2018 17:46:50 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/hugo.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>I/O</title>
       <link>https://superdanby.github.io/Blog/tags/i/o.html</link>
       <pubDate>Sun, 09 Dec 2018 22:00:00 +0800</pubDate>
@@ -282,209 +192,11 @@
     </item>
     
     <item>
-      <title>Image</title>
-      <link>https://superdanby.github.io/Blog/tags/image.html</link>
-      <pubDate>Mon, 03 Dec 2018 11:30:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/image.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Intel</title>
-      <link>https://superdanby.github.io/Blog/tags/intel.html</link>
-      <pubDate>Wed, 31 May 2017 00:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/intel.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Intel Speed Shift</title>
-      <link>https://superdanby.github.io/Blog/tags/intel-speed-shift.html</link>
-      <pubDate>Wed, 31 May 2017 00:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/intel-speed-shift.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kubernetes</title>
-      <link>https://superdanby.github.io/Blog/tags/kubernetes.html</link>
-      <pubDate>Wed, 15 May 2019 00:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/kubernetes.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Laravel</title>
-      <link>https://superdanby.github.io/Blog/tags/laravel.html</link>
-      <pubDate>Sun, 11 Mar 2018 00:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/laravel.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Laravel 5</title>
-      <link>https://superdanby.github.io/Blog/tags/laravel-5.html</link>
-      <pubDate>Mon, 25 Sep 2017 00:20:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/laravel-5.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Letsencrypt</title>
-      <link>https://superdanby.github.io/Blog/tags/letsencrypt.html</link>
-      <pubDate>Mon, 26 Feb 2018 14:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/letsencrypt.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://superdanby.github.io/Blog/tags/linux.html</link>
-      <pubDate>Fri, 23 Mar 2018 00:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/linux.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MOK</title>
-      <link>https://superdanby.github.io/Blog/tags/mok.html</link>
-      <pubDate>Sun, 23 Jul 2017 21:46:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/mok.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Manual</title>
-      <link>https://superdanby.github.io/Blog/tags/manual.html</link>
-      <pubDate>Mon, 26 Feb 2018 14:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/manual.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Markdown</title>
-      <link>https://superdanby.github.io/Blog/tags/markdown.html</link>
-      <pubDate>Sat, 09 Dec 2017 13:55:37 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/markdown.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Memory</title>
       <link>https://superdanby.github.io/Blog/tags/memory.html</link>
       <pubDate>Sun, 09 Dec 2018 22:00:00 +0800</pubDate>
       
       <guid>https://superdanby.github.io/Blog/tags/memory.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mutiply</title>
-      <link>https://superdanby.github.io/Blog/tags/mutiply.html</link>
-      <pubDate>Wed, 05 Dec 2018 12:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/mutiply.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nand</title>
-      <link>https://superdanby.github.io/Blog/tags/nand.html</link>
-      <pubDate>Wed, 05 Dec 2018 12:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/nand.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Negativo17</title>
-      <link>https://superdanby.github.io/Blog/tags/negativo17.html</link>
-      <pubDate>Mon, 24 Jul 2017 18:30:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/negativo17.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nor</title>
-      <link>https://superdanby.github.io/Blog/tags/nor.html</link>
-      <pubDate>Wed, 05 Dec 2018 12:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/nor.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Not</title>
-      <link>https://superdanby.github.io/Blog/tags/not.html</link>
-      <pubDate>Wed, 05 Dec 2018 12:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/not.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nvidia</title>
-      <link>https://superdanby.github.io/Blog/tags/nvidia.html</link>
-      <pubDate>Mon, 24 Jul 2017 18:30:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/nvidia.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>OKD</title>
-      <link>https://superdanby.github.io/Blog/tags/okd.html</link>
-      <pubDate>Wed, 15 May 2019 00:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/okd.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Openshift</title>
-      <link>https://superdanby.github.io/Blog/tags/openshift.html</link>
-      <pubDate>Wed, 15 May 2019 00:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/openshift.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Optimus</title>
-      <link>https://superdanby.github.io/Blog/tags/optimus.html</link>
-      <pubDate>Mon, 24 Jul 2017 18:30:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/optimus.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Or</title>
-      <link>https://superdanby.github.io/Blog/tags/or.html</link>
-      <pubDate>Wed, 05 Dec 2018 12:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/or.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Osxfuse</title>
-      <link>https://superdanby.github.io/Blog/tags/osxfuse.html</link>
-      <pubDate>Sun, 11 Mar 2018 00:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/osxfuse.html</guid>
       <description></description>
     </item>
     
@@ -507,15 +219,6 @@
     </item>
     
     <item>
-      <title>SELinux</title>
-      <link>https://superdanby.github.io/Blog/tags/selinux.html</link>
-      <pubDate>Mon, 25 Sep 2017 00:20:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/selinux.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>SSD</title>
       <link>https://superdanby.github.io/Blog/tags/ssd.html</link>
       <pubDate>Sun, 09 Dec 2018 22:00:00 +0800</pubDate>
@@ -525,52 +228,70 @@
     </item>
     
     <item>
-      <title>SSH</title>
-      <link>https://superdanby.github.io/Blog/tags/ssh.html</link>
-      <pubDate>Sun, 11 Mar 2018 00:00:00 +0800</pubDate>
+      <title>add</title>
+      <link>https://superdanby.github.io/Blog/tags/add.html</link>
+      <pubDate>Wed, 05 Dec 2018 12:00:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/tags/ssh.html</guid>
+      <guid>https://superdanby.github.io/Blog/tags/add.html</guid>
       <description></description>
     </item>
     
     <item>
-      <title>SSL</title>
-      <link>https://superdanby.github.io/Blog/tags/ssl.html</link>
-      <pubDate>Mon, 26 Feb 2018 14:00:00 +0800</pubDate>
+      <title>and</title>
+      <link>https://superdanby.github.io/Blog/tags/and.html</link>
+      <pubDate>Wed, 05 Dec 2018 12:00:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/tags/ssl.html</guid>
+      <guid>https://superdanby.github.io/Blog/tags/and.html</guid>
       <description></description>
     </item>
     
     <item>
-      <title>SST</title>
-      <link>https://superdanby.github.io/Blog/tags/sst.html</link>
-      <pubDate>Wed, 31 May 2017 00:00:00 +0800</pubDate>
+      <title>mutiply</title>
+      <link>https://superdanby.github.io/Blog/tags/mutiply.html</link>
+      <pubDate>Wed, 05 Dec 2018 12:00:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/tags/sst.html</guid>
+      <guid>https://superdanby.github.io/Blog/tags/mutiply.html</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Secure Boot</title>
-      <link>https://superdanby.github.io/Blog/tags/secure-boot.html</link>
-      <pubDate>Sun, 23 Jul 2017 21:46:00 +0800</pubDate>
+      <title>nand</title>
+      <link>https://superdanby.github.io/Blog/tags/nand.html</link>
+      <pubDate>Wed, 05 Dec 2018 12:00:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/tags/secure-boot.html</guid>
+      <guid>https://superdanby.github.io/Blog/tags/nand.html</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Security</title>
-      <link>https://superdanby.github.io/Blog/tags/security.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0800</pubDate>
+      <title>nor</title>
+      <link>https://superdanby.github.io/Blog/tags/nor.html</link>
+      <pubDate>Wed, 05 Dec 2018 12:00:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/tags/security.html</guid>
+      <guid>https://superdanby.github.io/Blog/tags/nor.html</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Shift</title>
+      <title>not</title>
+      <link>https://superdanby.github.io/Blog/tags/not.html</link>
+      <pubDate>Wed, 05 Dec 2018 12:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/not.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>or</title>
+      <link>https://superdanby.github.io/Blog/tags/or.html</link>
+      <pubDate>Wed, 05 Dec 2018 12:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/or.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shift</title>
       <link>https://superdanby.github.io/Blog/tags/shift.html</link>
       <pubDate>Wed, 05 Dec 2018 12:00:00 +0800</pubDate>
       
@@ -579,25 +300,7 @@
     </item>
     
     <item>
-      <title>Software</title>
-      <link>https://superdanby.github.io/Blog/tags/software.html</link>
-      <pubDate>Mon, 27 Feb 2017 20:20:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/software.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sshfs</title>
-      <link>https://superdanby.github.io/Blog/tags/sshfs.html</link>
-      <pubDate>Sun, 11 Mar 2018 00:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/sshfs.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Substract</title>
+      <title>substract</title>
       <link>https://superdanby.github.io/Blog/tags/substract.html</link>
       <pubDate>Wed, 05 Dec 2018 12:00:00 +0800</pubDate>
       
@@ -606,38 +309,83 @@
     </item>
     
     <item>
-      <title>System Program</title>
-      <link>https://superdanby.github.io/Blog/tags/system-program.html</link>
-      <pubDate>Wed, 15 Mar 2017 20:20:00 +0800</pubDate>
+      <title>xor</title>
+      <link>https://superdanby.github.io/Blog/tags/xor.html</link>
+      <pubDate>Wed, 05 Dec 2018 12:00:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/tags/system-program.html</guid>
+      <guid>https://superdanby.github.io/Blog/tags/xor.html</guid>
       <description></description>
     </item>
     
     <item>
-      <title>System Upgrade</title>
-      <link>https://superdanby.github.io/Blog/tags/system-upgrade.html</link>
-      <pubDate>Tue, 03 Apr 2018 23:45:00 +0800</pubDate>
+      <title>2&#39;s complement</title>
+      <link>https://superdanby.github.io/Blog/tags/2s-complement.html</link>
+      <pubDate>Mon, 03 Dec 2018 11:30:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/tags/system-upgrade.html</guid>
+      <guid>https://superdanby.github.io/Blog/tags/2s-complement.html</guid>
       <description></description>
     </item>
     
     <item>
-      <title>TLS</title>
-      <link>https://superdanby.github.io/Blog/tags/tls.html</link>
-      <pubDate>Mon, 26 Feb 2018 14:00:00 +0800</pubDate>
+      <title>audio</title>
+      <link>https://superdanby.github.io/Blog/tags/audio.html</link>
+      <pubDate>Mon, 03 Dec 2018 11:30:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/tags/tls.html</guid>
+      <guid>https://superdanby.github.io/Blog/tags/audio.html</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Text</title>
+      <title>bcd</title>
+      <link>https://superdanby.github.io/Blog/tags/bcd.html</link>
+      <pubDate>Mon, 03 Dec 2018 11:30:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/bcd.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>excess</title>
+      <link>https://superdanby.github.io/Blog/tags/excess.html</link>
+      <pubDate>Mon, 03 Dec 2018 11:30:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/excess.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gray code</title>
+      <link>https://superdanby.github.io/Blog/tags/gray-code.html</link>
+      <pubDate>Mon, 03 Dec 2018 11:30:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/gray-code.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>image</title>
+      <link>https://superdanby.github.io/Blog/tags/image.html</link>
+      <pubDate>Mon, 03 Dec 2018 11:30:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/image.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>text</title>
       <link>https://superdanby.github.io/Blog/tags/text.html</link>
       <pubDate>Mon, 03 Dec 2018 11:30:00 +0800</pubDate>
       
       <guid>https://superdanby.github.io/Blog/tags/text.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>video</title>
+      <link>https://superdanby.github.io/Blog/tags/video.html</link>
+      <pubDate>Mon, 03 Dec 2018 11:30:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/video.html</guid>
       <description></description>
     </item>
     
@@ -651,24 +399,6 @@
     </item>
     
     <item>
-      <title>Video</title>
-      <link>https://superdanby.github.io/Blog/tags/video.html</link>
-      <pubDate>Mon, 03 Dec 2018 11:30:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/video.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vim</title>
-      <link>https://superdanby.github.io/Blog/tags/vim.html</link>
-      <pubDate>Sun, 18 Mar 2018 00:00:00 +0800</pubDate>
-      
-      <guid>https://superdanby.github.io/Blog/tags/vim.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Von Neumann</title>
       <link>https://superdanby.github.io/Blog/tags/von-neumann.html</link>
       <pubDate>Thu, 29 Nov 2018 21:00:00 +0800</pubDate>
@@ -678,11 +408,254 @@
     </item>
     
     <item>
-      <title>Windows 10</title>
-      <link>https://superdanby.github.io/Blog/tags/windows-10.html</link>
-      <pubDate>Sat, 20 May 2017 00:00:00 +0800</pubDate>
+      <title>DNF</title>
+      <link>https://superdanby.github.io/Blog/tags/dnf.html</link>
+      <pubDate>Tue, 03 Apr 2018 23:45:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/tags/windows-10.html</guid>
+      <guid>https://superdanby.github.io/Blog/tags/dnf.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fedora</title>
+      <link>https://superdanby.github.io/Blog/tags/fedora.html</link>
+      <pubDate>Tue, 03 Apr 2018 23:45:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/fedora.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>System Upgrade</title>
+      <link>https://superdanby.github.io/Blog/tags/system-upgrade.html</link>
+      <pubDate>Tue, 03 Apr 2018 23:45:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/system-upgrade.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://superdanby.github.io/Blog/tags/hugo.html</link>
+      <pubDate>Sat, 24 Mar 2018 17:46:50 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/hugo.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://superdanby.github.io/Blog/tags/linux.html</link>
+      <pubDate>Fri, 23 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/linux.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Atom</title>
+      <link>https://superdanby.github.io/Blog/tags/atom.html</link>
+      <pubDate>Sun, 18 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/atom.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bash</title>
+      <link>https://superdanby.github.io/Blog/tags/bash.html</link>
+      <pubDate>Sun, 18 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/bash.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>https://superdanby.github.io/Blog/tags/vim.html</link>
+      <pubDate>Sun, 18 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/vim.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Laravel</title>
+      <link>https://superdanby.github.io/Blog/tags/laravel.html</link>
+      <pubDate>Sun, 11 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/laravel.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SSH</title>
+      <link>https://superdanby.github.io/Blog/tags/ssh.html</link>
+      <pubDate>Sun, 11 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/ssh.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>osxfuse</title>
+      <link>https://superdanby.github.io/Blog/tags/osxfuse.html</link>
+      <pubDate>Sun, 11 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/osxfuse.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sshfs</title>
+      <link>https://superdanby.github.io/Blog/tags/sshfs.html</link>
+      <pubDate>Sun, 11 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/sshfs.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Certbot</title>
+      <link>https://superdanby.github.io/Blog/tags/certbot.html</link>
+      <pubDate>Mon, 26 Feb 2018 14:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/certbot.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Letsencrypt</title>
+      <link>https://superdanby.github.io/Blog/tags/letsencrypt.html</link>
+      <pubDate>Mon, 26 Feb 2018 14:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/letsencrypt.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Manual</title>
+      <link>https://superdanby.github.io/Blog/tags/manual.html</link>
+      <pubDate>Mon, 26 Feb 2018 14:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/manual.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cheatsheet</title>
+      <link>https://superdanby.github.io/Blog/tags/cheatsheet.html</link>
+      <pubDate>Sat, 09 Dec 2017 13:55:37 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/cheatsheet.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>https://superdanby.github.io/Blog/tags/markdown.html</link>
+      <pubDate>Sat, 09 Dec 2017 13:55:37 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/markdown.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Laravel 5</title>
+      <link>https://superdanby.github.io/Blog/tags/laravel-5.html</link>
+      <pubDate>Mon, 25 Sep 2017 00:20:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/laravel-5.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SELinux</title>
+      <link>https://superdanby.github.io/Blog/tags/selinux.html</link>
+      <pubDate>Mon, 25 Sep 2017 00:20:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/selinux.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bumblebee</title>
+      <link>https://superdanby.github.io/Blog/tags/bumblebee.html</link>
+      <pubDate>Mon, 24 Jul 2017 18:30:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/bumblebee.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Negativo17</title>
+      <link>https://superdanby.github.io/Blog/tags/negativo17.html</link>
+      <pubDate>Mon, 24 Jul 2017 18:30:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/negativo17.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nvidia</title>
+      <link>https://superdanby.github.io/Blog/tags/nvidia.html</link>
+      <pubDate>Mon, 24 Jul 2017 18:30:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/nvidia.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Optimus</title>
+      <link>https://superdanby.github.io/Blog/tags/optimus.html</link>
+      <pubDate>Mon, 24 Jul 2017 18:30:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/optimus.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MOK</title>
+      <link>https://superdanby.github.io/Blog/tags/mok.html</link>
+      <pubDate>Sun, 23 Jul 2017 21:46:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/mok.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Secure Boot</title>
+      <link>https://superdanby.github.io/Blog/tags/secure-boot.html</link>
+      <pubDate>Sun, 23 Jul 2017 21:46:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/secure-boot.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Intel</title>
+      <link>https://superdanby.github.io/Blog/tags/intel.html</link>
+      <pubDate>Wed, 31 May 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/intel.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Intel Speed Shift</title>
+      <link>https://superdanby.github.io/Blog/tags/intel-speed-shift.html</link>
+      <pubDate>Wed, 31 May 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/intel-speed-shift.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SST</title>
+      <link>https://superdanby.github.io/Blog/tags/sst.html</link>
+      <pubDate>Wed, 31 May 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/sst.html</guid>
       <description></description>
     </item>
     
@@ -696,11 +669,47 @@
     </item>
     
     <item>
-      <title>Xor</title>
-      <link>https://superdanby.github.io/Blog/tags/xor.html</link>
-      <pubDate>Wed, 05 Dec 2018 12:00:00 +0800</pubDate>
+      <title>Windows 10</title>
+      <link>https://superdanby.github.io/Blog/tags/windows-10.html</link>
+      <pubDate>Sat, 20 May 2017 00:00:00 +0800</pubDate>
       
-      <guid>https://superdanby.github.io/Blog/tags/xor.html</guid>
+      <guid>https://superdanby.github.io/Blog/tags/windows-10.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>System Program</title>
+      <link>https://superdanby.github.io/Blog/tags/system-program.html</link>
+      <pubDate>Wed, 15 Mar 2017 20:20:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/system-program.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Firewalld</title>
+      <link>https://superdanby.github.io/Blog/tags/firewalld.html</link>
+      <pubDate>Thu, 09 Mar 2017 11:00:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/firewalld.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software</title>
+      <link>https://superdanby.github.io/Blog/tags/software.html</link>
+      <pubDate>Mon, 27 Feb 2017 20:20:00 +0800</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/software.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://superdanby.github.io/Blog/tags/security.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superdanby.github.io/Blog/tags/security.html</guid>
       <description></description>
     </item>
     
