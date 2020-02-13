@@ -16,7 +16,7 @@ In the world of which hackers are everywhere, our messages and passwords may be 
 
 # Self-signed Certificates
 
-HTTPS requires a valid certificate to work. While there are many HTTPS services out there like [Let's Encrypt](https://superdanby.github.io/Blog/manually-obtain-letsencrypt-certificate-for-websites.html), sometimes we need to sign the certificates on our own. Common scenarios are when the server doesn't have a public domain or the server is inside a private network.
+HTTPS requires a valid certificate to work. While there are many HTTPS services out there like [Let's Encrypt](https://superdanby.github.io/Blog/manually-obtain-letsencrypt-certificate-for-websites.html), sometimes we need to sign the certificates on our own. Common scenarios are when the server doesn't have a public domain name or the server is inside a private network.
 
 ## Difference between CA-issued Certificates and Self-signed Certificates
 
